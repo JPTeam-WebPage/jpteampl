@@ -3,220 +3,437 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nieruchomości Lazurowe Wybrzeże – Polskie Biuro | JP Team</title>
-<meta name="description" content="Kupujesz nieruchomość na Lazurowym Wybrzeżu? Polskojęzyczny doradca przeprowadzi Cię przez zakup w Cannes, Nicei i Prowansji — od wyboru oferty po akt notarialny. Napisz do nas.">
+<title>Nieruchomości Lazurowe Wybrzeże – Polskie Biuro Nieruchomości | JP Team</title>
+<meta name="description" content="JP Team to polskie biuro nieruchomości na Lazurowym Wybrzeżu. Pomagamy Państwu znaleźć nieruchomość w Cannes, Nicei i Prowansji. Od wyboru oferty po akt notarialny w języku polskim. Zapraszamy do kontaktu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Georgia', serif; color: #1a1a1a; background: #fff; }
-  .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-  .page-wrap { max-width: 1240px; margin: 0 auto; }
+
+  :root {
+    --orange: #FF622E;
+    --orange-dark: #e04e1a;
+    --text: #111;
+    --text-mid: #222;
+    --text-light: #555;
+    --border: #e8e8e8;
+    --bg: #fff;
+    --bg-warm: #faf9f7;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
 
   /* NAV */
   nav {
     position: sticky; top: 0;
-    background: rgba(255,255,255,0.97); z-index: 100;
-    border-bottom: 1px solid #f0f0f0;
+    background: rgba(255,255,255,0.97);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
   }
   .nav-inner {
     max-width: 1240px; margin: 0 auto;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 48px;
+    padding: 16px 48px;
   }
-  .logo { font-family: sans-serif; font-size: 14px; letter-spacing: 3px; font-weight: 300; color: #333; }
-  .nav-logo-img { height: 112px; width: auto; display: block; }
+  .nav-logo-img { height: 146px; width: auto; display: block; }
   nav ul { list-style: none; display: flex; gap: 36px; align-items: center; }
-  nav a { font-family: sans-serif; font-size: 13px; letter-spacing: 1px; color: #444; text-decoration: none; text-transform: uppercase; }
-  .nav-phone { font-family: sans-serif; font-size: 13px; color: #E8724A; font-weight: 600; }
+  nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px; letter-spacing: 1.2px;
+    color: var(--text-mid); text-decoration: none; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--text); }
 
   /* HERO */
   .hero {
-    min-height: 88vh; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; text-align: center;
-    padding: 80px 40px 60px;
-    background: linear-gradient(180deg, #fafaf8 0%, #f4f2ed 100%);
+    min-height: 90vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 100px 40px 80px;
+    background: var(--bg);
   }
-  .hero-eyebrow { font-family: sans-serif; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: #E8724A; margin-bottom: 20px; }
-  .hero h1 { font-size: clamp(32px, 4.5vw, 58px); font-weight: 400; line-height: 1.2; color: #1a1a1a; max-width: 820px; margin-bottom: 24px; letter-spacing: -0.5px; }
-  .hero-sub { font-family: sans-serif; font-size: 18px; line-height: 1.7; color: #555; max-width: 600px; margin-bottom: 44px; }
-  .hero-ctas { display: flex; gap: 16px; align-items: center; }
-  .btn-primary { background: #E8724A; color: #fff; border: none; border-radius: 30px; padding: 16px 36px; font-family: sans-serif; font-size: 15px; cursor: pointer; transition: background 0.2s; }
-  .btn-primary:hover { background: #d4612e; }
-  .btn-secondary { color: #444; font-family: sans-serif; font-size: 15px; border: 1.5px solid #ccc; background: transparent; border-radius: 30px; padding: 15px 32px; cursor: pointer; transition: border-color 0.2s; }
-  .btn-secondary:hover { border-color: #888; }
+  .hero-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(32px, 4.5vw, 58px);
+    font-weight: 400; line-height: 1.2;
+    color: var(--text); max-width: 860px;
+    margin-bottom: 28px;
+    letter-spacing: -0.3px;
+  }
+  .hero h1 em {
+    font-style: italic; font-weight: 300;
+  }
+  .hero-sub {
+    font-size: 17px; line-height: 1.75;
+    color: var(--text-mid); max-width: 580px;
+    margin-bottom: 48px; font-weight: 300;
+  }
+  .hero-ctas { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .btn-primary {
+    background: var(--orange); color: #fff;
+    border: none; border-radius: 30px;
+    padding: 20px 52px;
+    font-family: 'Inter', sans-serif; font-size: 15px;
+    letter-spacing: 0.5px; font-weight: 500;
+    cursor: pointer; transition: background 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--orange-dark); }
+  .btn-secondary {
+    color: var(--text-mid);
+    font-family: 'Inter', sans-serif; font-size: 15px;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--border); background: transparent;
+    border-radius: 30px; padding: 19px 44px;
+    cursor: pointer; transition: border-color 0.2s, color 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-secondary:hover { border-color: #999; color: var(--text); }
 
-  /* TRUST BAR - usunięty */
+  /* EYEBROW */
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 16px; display: block;
+  }
 
-  /* SOCIAL PROOF */
-  .proof { padding: 80px 0; background: #f8f7f4; }
-  .proof-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
-  .eyebrow { font-family: sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #E8724A; margin-bottom: 16px; }
-  .proof h2 { font-size: 36px; font-weight: 400; margin-bottom: 48px; }
-  .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .testimonial { background: #fff; border-radius: 12px; padding: 32px; position: relative; }
-  .testimonial-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-  .stars { color: #E8724A; font-size: 14px; }
-  .google-link { display: flex; align-items: center; gap: 6px; text-decoration: none; opacity: 0.5; transition: opacity 0.2s; }
-  .google-link:hover { opacity: 1; }
-  .google-logo { width: 18px; height: 18px; }
-  .testimonial p { font-family: sans-serif; font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 20px; font-style: italic; }
-  .testimonial-author { font-family: sans-serif; font-size: 13px; color: #888; }
-  .press-bar { margin-top: 56px; }
-  .press-label { font-family: sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #bbb; margin-bottom: 16px; }
-  .press-logos { display: flex; align-items: center; gap: 48px; }
-  .press-logo { font-family: serif; font-size: 22px; color: #ccc; font-weight: 700; }
-
-  /* SECTION WRAPPER - wspólny max-width dla treści */
+  /* SECTION WIDTHS */
   .section-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
 
-  /* KIM JESTESMY */
-  .about { padding: 80px 0; }
-  .about-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .about-text h2 { font-size: 36px; font-weight: 400; line-height: 1.3; margin-bottom: 24px; color: #1a1a1a; }
-  .about-text p { font-family: sans-serif; font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 16px; }
-  .about-stats { display: flex; gap: 40px; margin-top: 32px; }
-  .stat-num { font-size: 38px; font-weight: 300; color: #1a1a1a; line-height: 1; }
-  .stat-label { font-family: sans-serif; font-size: 12px; color: #888; letter-spacing: 1px; margin-top: 4px; }
-  .about-links { margin-top: 28px; display: flex; gap: 20px; }
-  .about-links a { font-family: sans-serif; font-size: 14px; color: #E8724A; text-decoration: none; }
-  .about-img { width: 100%; height: 460px; object-fit: cover; border-radius: 12px; display: block; }
+  /* DIVIDER */
+  .section-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
-  /* USŁUGI */
-  .services { padding: 80px 0; background: #f8f7f4; }
-  .services h2 { font-size: 36px; font-weight: 400; margin-bottom: 60px; }
-  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-  .service-card { padding: 36px 40px; border-bottom: 1px solid #e0e0e0; }
-  .service-card:nth-child(odd) { border-right: 1px solid #e0e0e0; }
-  .service-card-num { font-family: sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: #E8724A; margin-bottom: 10px; }
-  .service-card h3 { font-family: sans-serif; font-size: 16px; font-weight: 600; color: #1a1a1a; margin-bottom: 10px; }
-  .service-card p { font-family: sans-serif; font-size: 15px; line-height: 1.6; color: #666; }
-  .service-card .card-note { font-family: sans-serif; font-size: 13px; color: #E8724A; margin-top: 10px; }
-  .services-cta { font-size: 15px; color: #888; margin-top: 40px; }
+  /* OPINIE */
+  .proof { padding: 96px 0; background: var(--bg); }
+  .proof h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400; margin-bottom: 56px;
+    line-height: 1.2;
+  }
+  .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .testimonial {
+    background: var(--bg-warm);
+    border-radius: 4px; padding: 36px;
+    border: 1px solid var(--border);
+  }
+  .testimonial-top {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 20px;
+  }
+  .stars { color: var(--orange); font-size: 14px; letter-spacing: 1px; }
+  .google-link { display: flex; align-items: center; gap: 6px; text-decoration: none; opacity: 0.4; transition: opacity 0.2s; }
+  .google-link:hover { opacity: 1; }
+  .google-logo { width: 18px; height: 18px; }
+  .testimonial p {
+    font-size: 15px; line-height: 1.75;
+    color: var(--text-mid); margin-bottom: 20px;
+    font-style: italic; font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+  }
+  .testimonial-author { font-size: 12px; color: var(--text-light); letter-spacing: 0.5px; font-weight: 700; }
+
+  /* KIM JESTESMY */
+  .about { padding: 96px 0; background: var(--bg); }
+  .about-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 48px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 96px; align-items: center;
+  }
+  .about-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 300; line-height: 1.25;
+    margin-bottom: 28px; color: var(--text);
+  }
+  .about-text p {
+    font-size: 16px; line-height: 1.8;
+    color: var(--text-mid); margin-bottom: 18px;
+    font-weight: 300;
+  }
+  .about-credentials {
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    display: flex; gap: 48px;
+  }
+  .cred-item {}
+  .cred-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px; font-weight: 300;
+    color: var(--text); line-height: 1;
+  }
+  .cred-label {
+    font-size: 12px; color: var(--text-light);
+    letter-spacing: 0.5px; margin-top: 4px;
+  }
+  .about-img { width: 100%; height: 500px; object-fit: cover; border-radius: 4px; display: block; }
+
+  /* WYRÓŻNIKI */
+  .differentiators { padding: 96px 0; background: var(--bg-warm); }
+  .differentiators h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400; margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .diff-intro {
+    font-size: 16px; color: var(--text-mid);
+    max-width: 560px; margin-bottom: 64px;
+    font-weight: 300; line-height: 1.7;
+  }
+  .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .diff-card {
+    background: var(--bg);
+    padding: 48px 40px;
+  }
+  .diff-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px; font-weight: 300;
+    color: var(--orange); line-height: 1;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .diff-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px; font-weight: 400;
+    color: var(--text); margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .diff-card p {
+    font-size: 15px; line-height: 1.75;
+    color: var(--text-mid); font-weight: 300;
+  }
+  .diff-card .diff-note {
+    margin-top: 16px;
+    font-size: 13px; color: var(--text-light);
+    line-height: 1.6;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
 
   /* PROCES */
-  .process { padding: 80px 0; }
-  .process h2 { font-size: 36px; font-weight: 400; margin-bottom: 16px; }
-  .process-sub { font-family: sans-serif; font-size: 16px; color: #666; margin-bottom: 60px; max-width: 480px; }
-  .process-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-  .process-step { display: flex; gap: 24px; padding: 28px 0; border-bottom: 1px solid #f0f0f0; }
-  .step-num { font-family: sans-serif; font-size: 11px; color: #E8724A; font-weight: 700; letter-spacing: 1px; min-width: 24px; padding-top: 2px; }
-  .step-content h4 { font-family: sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-  .step-content p { font-family: sans-serif; font-size: 14px; color: #666; line-height: 1.6; }
-  .process-aside { background: #f8f7f4; border-radius: 16px; padding: 40px; }
-  .process-aside h3 { font-family: sans-serif; font-size: 20px; font-weight: 600; margin-bottom: 20px; }
-  .process-aside p { font-family: sans-serif; font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 24px; }
+  .process { padding: 96px 0; background: var(--bg); }
+  .process h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400; margin-bottom: 12px;
+  }
+  .process-intro {
+    font-size: 16px; color: var(--text-mid);
+    max-width: 520px; margin-bottom: 64px;
+    font-weight: 300; line-height: 1.7;
+  }
+  .process-layout { display: grid; grid-template-columns: 3fr 2fr; gap: 80px; align-items: start; }
+  .process-steps {}
+  .process-step {
+    display: grid; grid-template-columns: 48px 1fr;
+    gap: 24px; padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .process-step:first-child { padding-top: 0; }
+  .step-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px; font-weight: 300;
+    color: var(--orange); line-height: 1;
+    padding-top: 2px;
+  }
+  .step-content h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; font-weight: 500;
+    margin-bottom: 8px; color: var(--text);
+  }
+  .step-content p {
+    font-size: 14px; color: var(--text-mid);
+    line-height: 1.7; font-weight: 300;
+  }
+  .process-aside {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: 4px; padding: 40px;
+    position: sticky; top: 100px;
+  }
+  .process-aside h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px; font-weight: 400;
+    margin-bottom: 16px; line-height: 1.3;
+  }
+  .process-aside p {
+    font-size: 14px; color: var(--text-mid);
+    line-height: 1.75; margin-bottom: 28px;
+    font-weight: 300;
+  }
   .contact-details { display: flex; flex-direction: column; gap: 12px; }
-  .contact-line { font-family: sans-serif; font-size: 14px; color: #444; }
-  .contact-line a { color: #E8724A; text-decoration: none; }
+  .contact-line { font-size: 14px; color: var(--text-mid); line-height: 1.5; }
+  .contact-line a { color: var(--orange); text-decoration: none; }
+  .contact-line a:hover { text-decoration: underline; }
 
   /* LOKALIZACJE */
-  .locations { padding: 80px 0; background: #f8f7f4; }
-  .locations h2 { font-size: 36px; font-weight: 400; margin-bottom: 16px; }
-  .locations-sub { font-family: sans-serif; font-size: 16px; color: #666; margin-bottom: 48px; }
+  .locations { padding: 96px 0; background: var(--bg-warm); }
+  .locations h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400; margin-bottom: 12px;
+  }
+  .locations-sub {
+    font-size: 16px; color: var(--text-mid);
+    margin-bottom: 56px; font-weight: 300;
+    max-width: 560px; line-height: 1.7;
+  }
   .locations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .loc-card { border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
-  .loc-img { height: 200px; display: flex; align-items: flex-end; padding: 20px; color: #fff; font-family: sans-serif; }
-  .loc-img.cannes { background: linear-gradient(160deg, #b8cfe0, #7a9db5); }
-  .loc-img.nice { background: linear-gradient(160deg, #b5c4a8, #7a9b6e); }
-  .loc-img.provence { background: linear-gradient(160deg, #d4c4a8, #b09870); }
-  .loc-img span { font-size: 22px; font-weight: 300; }
+  .loc-card { background: var(--bg); border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+  .loc-img { height: 200px; display: flex; align-items: flex-end; padding: 24px; color: #fff; }
+  .loc-img.cannes { background: linear-gradient(160deg, #b8cfe0 0%, #7a9db5 100%); }
+  .loc-img.nice { background: linear-gradient(160deg, #b5c4a8 0%, #7a9b6e 100%); }
+  .loc-img.provence { background: linear-gradient(160deg, #d4c4a8 0%, #b09870 100%); }
+  .loc-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px; font-weight: 300;
+    line-height: 1;
+  }
   .loc-body { padding: 24px; }
-  .loc-body p { font-family: sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 12px; }
-  .loc-price { font-family: sans-serif; font-size: 13px; color: #E8724A; font-weight: 600; }
-  .locations-note { font-size: 14px; color: #888; line-height: 1.7; margin-top: 40px; max-width: 680px; }
+  .loc-body p { font-size: 14px; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
+  .locations-note {
+    font-size: 14px; color: var(--text-light);
+    line-height: 1.75; margin-top: 40px;
+    max-width: 680px; font-weight: 300;
+  }
 
   /* KONTAKT */
-  .contact { padding: 80px 0; }
-  .contact-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-  .contact-left h2 { font-size: 36px; font-weight: 400; margin-bottom: 20px; }
-  .contact-left p { font-family: sans-serif; font-size: 16px; color: #555; line-height: 1.7; margin-bottom: 32px; }
-  .contact-info { display: flex; flex-direction: column; gap: 16px; }
-  .contact-info-line { font-family: sans-serif; font-size: 15px; color: #444; }
-  .contact-info-line a { color: #E8724A; text-decoration: none; }
-  .contact-form { background: #f8f7f4; border-radius: 16px; padding: 40px; }
+  .contact { padding: 96px 0; background: var(--bg); }
+  .contact-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 48px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 96px;
+  }
+  .contact-left h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400; margin-bottom: 20px; line-height: 1.25;
+  }
+  .contact-left p {
+    font-size: 16px; color: var(--text-mid);
+    line-height: 1.8; margin-bottom: 36px; font-weight: 300;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 14px; }
+  .contact-info-line { font-size: 15px; color: var(--text-mid); }
+  .contact-info-line a { color: var(--orange); text-decoration: none; }
+  .contact-info-line a:hover { text-decoration: underline; }
+  .contact-form { background: var(--bg-warm); border: 1px solid var(--border); border-radius: 20px; padding: 44px; }
   .form-group { margin-bottom: 20px; }
-  .form-label { font-family: sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #888; display: block; margin-bottom: 8px; }
-  .form-input { width: 100%; padding: 13px 16px; border: 1.5px solid #e8e8e8; border-radius: 8px; font-family: sans-serif; font-size: 15px; outline: none; transition: border-color 0.2s; background: #fff; }
-  .form-input:focus { border-color: #E8724A; }
+  .form-label {
+    font-size: 11px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--text-light);
+    display: block; margin-bottom: 8px;
+  }
+  .form-input {
+    width: 100%; padding: 13px 16px;
+    border: 1px solid var(--border); border-radius: 4px;
+    font-family: 'Inter', sans-serif; font-size: 14px;
+    outline: none; transition: border-color 0.2s; background: var(--bg);
+    color: var(--text);
+  }
+  .form-input:focus { border-color: var(--orange); }
   textarea.form-input { height: 110px; resize: vertical; }
-  .form-submit { width: 100%; background: #E8724A; color: #fff; border: none; border-radius: 30px; padding: 16px; font-family: sans-serif; font-size: 15px; cursor: pointer; font-weight: 600; }
+  .form-submit {
+    background: var(--orange); color: #fff;
+    border: none; border-radius: 30px; padding: 14px 32px;
+    font-family: 'Montserrat', sans-serif; font-size: 16px;
+    cursor: pointer; font-weight: 500; letter-spacing: 0.5px;
+    transition: background 0.2s; display: inline-block;
+  }
+  .form-submit:hover { background: var(--orange-dark); }
 
   /* FAQ */
-  .faq { padding: 80px 0; background: #f8f7f4; }
-  .faq h2 { font-size: 36px; font-weight: 400; margin-bottom: 60px; }
-  .faq-list { max-width: 720px; }
-  .faq-item { border-bottom: 1px solid #e0e0e0; padding: 28px 0; }
-  .faq-q { font-family: sans-serif; font-size: 17px; font-weight: 500; color: #1a1a1a; margin-bottom: 14px; }
-  .faq-a { font-family: sans-serif; font-size: 15px; line-height: 1.7; color: #555; }
+  .faq { padding: 96px 0; background: var(--bg-warm); }
+  .faq h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400; margin-bottom: 56px;
+  }
+  .faq-list { max-width: 760px; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 28px 0; }
+  .faq-q {
+    font-size: 16px; font-weight: 500;
+    color: var(--text); margin-bottom: 12px; line-height: 1.4;
+  }
+  .faq-a { font-size: 14px; line-height: 1.8; color: var(--text-mid); font-weight: 300; }
 
   /* FOOTER */
-  footer { background: #1a1a1a; color: rgba(255,255,255,0.5); font-family: sans-serif; font-size: 13px; }
-  .footer-inner { max-width: 1240px; margin: 0 auto; padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
-  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-
-  /* BADGE SYSTEM */
-  .change-badge { display: inline-block; background: #2d6a4f; color: #fff; font-family: sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; padding: 2px 7px; margin-left: 8px; vertical-align: middle; }
-  .new-badge { display: inline-block; background: #2C5F8A; color: #fff; font-family: sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; padding: 2px 7px; margin-left: 8px; vertical-align: middle; }
-  .annotation-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a2e; color: #fff; padding: 14px 40px; font-family: sans-serif; font-size: 13px; display: flex; gap: 32px; align-items: center; z-index: 200; flex-wrap: wrap; }
-  .ann-item { display: flex; align-items: center; gap: 8px; }
-  .ann-dot-green { width: 10px; height: 10px; background: #2d6a4f; border-radius: 50%; }
-  .ann-dot-blue { width: 10px; height: 10px; background: #2C5F8A; border-radius: 50%; }
-
-  /* KOLEJNOSC SEKCJI - label */
-  .section-order { font-family: sans-serif; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #ccc; margin-bottom: 8px; display: block; }
+  footer { background: #111; color: rgba(255,255,255,0.4); font-size: 13px; }
+  .footer-inner {
+    max-width: 1240px; margin: 0 auto;
+    padding: 36px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px; font-weight: 300;
+    color: rgba(255,255,255,0.6);
+  }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.7); }
 
   /* HAMBURGER */
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-  .hamburger span { display: block; width: 24px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: all 0.25s ease; }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); border-radius: 1px; transition: all 0.25s ease; }
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
   .nav-mobile-menu {
-    display: none;
-    position: absolute; top: 100%; left: 0; right: 0;
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
     background: rgba(255,255,255,0.98);
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     padding: 16px 24px 24px;
-    flex-direction: column;
-    gap: 0;
-    z-index: 99;
+    flex-direction: column; gap: 0; z-index: 99;
   }
   .nav-mobile-menu.open { display: flex; }
   .nav-mobile-menu a {
-    font-family: sans-serif; font-size: 15px; letter-spacing: 0.5px;
-    color: #1a1a1a; text-decoration: none; text-transform: uppercase;
-    padding: 14px 0; border-bottom: 1px solid #f0f0f0;
-    display: block;
+    font-family: 'Inter', sans-serif; font-size: 14px; letter-spacing: 0.5px;
+    color: var(--text); text-decoration: none; text-transform: uppercase;
+    padding: 14px 0; border-bottom: 1px solid var(--border); display: block;
   }
   .nav-mobile-menu a:last-child { border-bottom: none; }
-  .nav-mobile-menu a:hover { color: #E8724A; }
+  .nav-mobile-menu a:hover { color: var(--orange); }
 
-  @media (max-width: 900px) {
-    nav { padding: 16px 24px; }
-    .nav-logo-img { height: 40px; }
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .nav-inner { padding: 14px 24px; }
+    .nav-logo-img { height: 48px; }
     .hamburger { display: flex; }
     nav ul { display: none; }
-    .hero { padding: 60px 24px 40px; }
-    .about-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
-    .about-inner > div:first-child { order: 1; }
-    .about-inner > div:last-child { order: 2; }
-    .contact-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
-    .contact-left { order: 1; }
-    .contact-form { order: 2; }
-    .process-layout { grid-template-columns: 1fr; gap: 40px; }
-    .services-grid, .locations-grid, .testimonials { grid-template-columns: 1fr; }
-    .service-card:nth-child(odd) { border-right: none; border-bottom: 1px solid #e0e0e0; }
-    .service-card:last-child { border-bottom: none; }
-    .proof { padding: 60px 0; }
-    .proof-inner { padding: 0 24px; }
-    .section-inner { padding: 60px 24px; }
-    .services { padding: 60px 0; }
-    .locations { padding: 60px 0; }
-    .faq { padding: 60px 0; }
-    .locations-grid { grid-template-columns: 1fr; }
-    .proof-numbers { gap: 40px; flex-wrap: wrap; }
-    footer { flex-direction: column; gap: 16px; padding: 30px 24px; text-align: center; }
+    .hero { padding: 80px 24px 60px; }
+    .about-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
+    .about-credentials { gap: 32px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
+    .diff-grid { grid-template-columns: 1fr; gap: 2px; }
+    .process-layout { grid-template-columns: 1fr; gap: 48px; }
+    .process-aside { position: static; }
+    .locations-grid, .testimonials { grid-template-columns: 1fr; }
+    .section-inner { padding: 0 24px; }
+    .proof { padding: 64px 0; }
+    .about { padding: 64px 0; }
+    .differentiators { padding: 64px 0; }
+    .process { padding: 64px 0; }
+    .locations { padding: 64px 0; }
+    .faq { padding: 64px 0; }
+    .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
   }
 </style>
 </head>
@@ -225,10 +442,10 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/"><img src="https://cdn.prod.website-files.com/685675b814deed2061cb0d42/68ba9288e3854856fea7d989_Jend%20Pedersen%20Classic.png" alt="JP Team — Jens Pedersen" class="nav-logo-img"></a>
+    <a href="/"><img src="https://cdn.prod.website-files.com/685675b814deed2061cb0d42/68ba9288e3854856fea7d989_Jend%20Pedersen%20Classic.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
     <ul>
       <li><a href="/poradniki">Poradniki</a></li>
-      <li><a href="/realizacje">Realizacje klientów</a></li>
+      <li><a href="/realizacje">Realizacje</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -237,7 +454,7 @@
   </div>
   <div class="nav-mobile-menu" id="mobileMenu">
     <a href="/poradniki">Poradniki</a>
-    <a href="/realizacje">Realizacje klientów</a>
+    <a href="/realizacje">Realizacje</a>
     <a href="#kontakt" id="mobileKontakt">Kontakt</a>
   </div>
 </nav>
@@ -257,20 +474,22 @@
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hero-eyebrow">Polskie biuro nieruchomości — Lazurowe Wybrzeże</p>
-  <h1>Kupujesz nieruchomość na<br>Lazurowym Wybrzeżu?</h1>
-  <p class="hero-sub sans">Przeprowadzimy Cię przez cały proces — od wyboru lokalizacji, przez weryfikację stanu prawnego, aż po odbiór kluczy. W Twoim języku, bez niespodzianek.</p>
+  <p class="hero-eyebrow">Polskie biuro nieruchomości na Lazurowym Wybrzeżu</p>
+  <h1>Nieruchomości na Lazurowym Wybrzeżu</h1>
+  <p class="hero-sub">Pomożemy Państwu znaleźć właściwą nieruchomość w Cannes, Nicei i Prowansji. Cały proces zakupu w języku polskim.</p>
   <div class="hero-ctas">
-    <button class="btn-primary">Umów bezpłatną rozmowę</button>
-    <button class="btn-secondary" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">Napisz do nas</button>
+    <a href="#kontakt" class="btn-primary">Napisz do nas</a>
+    <a href="#wspolpraca" class="btn-secondary">Jak przebiega współpraca</a>
   </div>
 </section>
 
+<hr class="section-divider">
+
 <!-- OPINIE -->
 <section class="proof">
-  <div class="proof-inner">
-    <p class="eyebrow">Opinie klientów</p>
-    <h2>Co mówią nasi klienci</h2>
+  <div class="section-inner">
+    <span class="eyebrow">Opinie klientów</span>
+    <h2>Opinie osób, które zainwestowały z nami we Francji</h2>
     <div class="testimonials">
       <div class="testimonial">
         <div class="testimonial-top">
@@ -284,8 +503,8 @@
             </svg>
           </a>
         </div>
-        <p>"Sławomir przeprowadził nas przez cały proces zakupu apartamentu w Nicei. Wszystko było transparentne, bez niespodzianek. Polecam każdemu, kto myśli o nieruchomości we Francji."</p>
-        <div class="testimonial-author sans">Krzysztof G., Warszawa</div>
+        <p>„Sławomir przeprowadził nas przez cały proces zakupu apartamentu w Nicei. Wszystko było transparentne, na każdym etapie wiedzieliśmy co się dzieje i dlaczego. Polecamy bez zastrzeżeń."</p>
+        <div class="testimonial-author">Krzysztof G., Warszawa</div>
       </div>
       <div class="testimonial">
         <div class="testimonial-top">
@@ -299,8 +518,8 @@
             </svg>
           </a>
         </div>
-        <p>"Profesjonalne podejście i pełna obsługa po polsku. Dzięki kontaktom Sławomira mieliśmy dostęp do ofert, których nie ma w internecie."</p>
-        <div class="testimonial-author sans">Anna Z., Kraków</div>
+        <p>„Dzięki kontaktom Sławomira mieliśmy dostęp do ofert, których nie widać w internecie. Cały kontakt odbywał się po polsku, co przy tak poważnej decyzji naprawdę robi różnicę."</p>
+        <div class="testimonial-author">Anna Z., Kraków</div>
       </div>
       <div class="testimonial">
         <div class="testimonial-top">
@@ -314,169 +533,170 @@
             </svg>
           </a>
         </div>
-        <p>"Byliśmy zdezorientowani na początku — inne prawo, inny język. JP Team sprawił, że czuliśmy się bezpiecznie na każdym etapie."</p>
-        <div class="testimonial-author sans">Maciej Ł., Wrocław</div>
+        <p>„Na początku mieliśmy wiele pytań i wątpliwości. Sławomir wyjaśnił wszystko rzeczowo i cierpliwie. Czuliśmy się pewnie na każdym etapie, od pierwszej rozmowy aż po odbiór kluczy."</p>
+        <div class="testimonial-author">Maciej Ł., Wrocław</div>
       </div>
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- KIM JESTESMY -->
 <section class="about">
   <div class="about-inner">
     <div class="about-text">
-      <p class="eyebrow">Kim jesteśmy</p>
-      <h2>Sławomir Skomiał —<br>Twój doradca na Lazurowym Wybrzeżu</h2>
-      <p class="sans">Od 2018 roku prowadzę polskojęzyczny oddział duńskiej agencji nieruchomości Jens Pedersen — jednej z najdłużej działających firm na Riwierze Francuskiej, obecnej na tym rynku od 1993 roku.</p>
-      <p class="sans">Oznacza to, że masz dostęp do ponad 30 lat relacji z lokalnymi agencjami, prawnikami i notariuszami — i możesz prowadzić całą rozmowę po polsku.</p>
-      <div class="about-stats">
-        <div>
-          <div class="stat-num">30+</div>
-          <div class="stat-label sans">lat na rynku</div>
+      <span class="eyebrow">Kim jesteśmy</span>
+      <h2>Sławomir Skomiał, doradca z wieloletnim doświadczeniem na Riwierze Francuskiej</h2>
+      <p>Od 2018 roku wraz z synem prowadzę polskojęzyczny oddział agencji JP Team, duńskiej firmy obecnej na Lazurowym Wybrzeżu od 1993 roku. Przez te lata zbudowaliśmy sieć relacji z lokalnymi agencjami, notariuszami i doradcami, która pozwala nam działać skutecznie tam, gdzie samodzielne poszukiwania napotykają na bariery.</p>
+      <p>Specjalizuję się w obsłudze polskich klientów poszukujących nieruchomości w Cannes, Nicei, Antibes i okolicach. Pomagam zarówno tym, którzy mają już konkretną wizję inwestycji, jak i tym, którzy dopiero chcą poznać możliwości tego rynku.</p>
+      <div class="about-credentials">
+        <div class="cred-item">
+          <div class="cred-num">30+</div>
+          <div class="cred-label">lat agencji na rynku</div>
         </div>
-        <div>
-          <div class="stat-num">€300k+</div>
-          <div class="stat-label sans">typowy budżet</div>
+        <div class="cred-item">
+          <div class="cred-num">2018</div>
+          <div class="cred-label">rok otwarcia polskiego oddziału</div>
         </div>
-        <div>
-          <div class="stat-num">3</div>
-          <div class="stat-label sans">regiony obsługi</div>
+        <div class="cred-item">
+          <div class="cred-num">€15mln+</div>
+          <div class="cred-label">wartość kupionych nieruchomości</div>
         </div>
-      </div>
-      <div class="about-links">
-        <a href="#">Obejrzyj wywiad →</a>
-        <a href="#">Jak uniknąć błędów →</a>
       </div>
     </div>
     <div>
-      <img src="https://cdn.prod.website-files.com/685675b814deed2061cb0d42/69a118a73369eb55a1849c52_michalsko%20-%20ojciec%20jpteam.png" alt="Sławomir Skomiał — JP Team" class="about-img">
+      <img src="https://cdn.prod.website-files.com/685675b814deed2061cb0d42/69a118a73369eb55a1849c52_michalsko%20-%20ojciec%20jpteam.png" alt="Sławomir Skomiał — JP Team, nieruchomości Lazurowe Wybrzeże" class="about-img">
     </div>
   </div>
 </section>
 
-<!-- USŁUGI -->
-<section class="services">
+<hr class="section-divider">
+
+<!-- WYRÓŻNIKI -->
+<section class="differentiators">
   <div class="section-inner">
-    <p class="eyebrow">Co robimy</p>
-    <h2>Twoja przewaga przy zakupie nieruchomości we Francji</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <p class="service-card-num">01</p>
-        <h3 class="sans">Selekcja ofert</h3>
-        <p class="sans">Przeszukujemy cały rynek — w tym oferty off-market dostępne wyłącznie przez lokalne relacje.</p>
+    <span class="eyebrow">Jak pracujemy</span>
+    <h2>Trzy kluczowe elementy, które nas wyróżniają</h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <span class="diff-num">01</span>
+        <h3>Oferty dobieramy do potrzeb</h3>
+        <p>Nie ograniczamy się do własnego katalogu ofert szukając dla Państwa nieruchomości. Przeszukujemy cały rynek: lokalne agencje, oferty prywatne i nieruchomości niepublikowane publicznie. Przedstawiamy wyłącznie te, które odpowiadają Państwa oczekiwaniom.</p>
       </div>
-      <div class="service-card">
-        <p class="service-card-num">02</p>
-        <h3 class="sans">Weryfikacja prawna i techniczna</h3>
-        <p class="sans">Prześwietlamy dokumenty i stan techniczny. Zanim złożysz ofertę, wiesz dokładnie na co się decydujesz.</p>
+      <div class="diff-card">
+        <span class="diff-num">02</span>
+        <h3>Opieka notarialna po polsku</h3>
+        <p>Współpracujemy na stałe z polską notariusz pracującą w Nicei. Oznacza to, że umowa przedwstępna, dokumentacja i podpisanie aktu mogą przebiegać w języku polskim, bez potrzeby angażowania tłumacza.</p>
       </div>
-      <div class="service-card" style="border-bottom:none;">
-        <p class="service-card-num">03</p>
-        <h3 class="sans">Polski notariusz</h3>
-        <p class="sans">Współpracujemy z polskojęzycznym notariuszem, który reprezentuje Twój interes przy akcie notarialnym.</p>
-      </div>
-      <div class="service-card" style="border-bottom:none;">
-        <p class="service-card-num">04</p>
-        <h3 class="sans">Negocjacje i finalizacja</h3>
-        <p class="sans">Negocjujemy cenę w oparciu o realne dane rynkowe. Jesteśmy przy Tobie aż do odbioru kluczy.</p>
-        <p class="card-note">W większości przypadków nasze wynagrodzenie jest wliczone w cenę nieruchomości — wsparcie jest bezpłatne.</p>
+      <div class="diff-card">
+        <span class="diff-num">03</span>
+        <h3>Nasze wsparcie jest bezpłatne</h3>
+        <p>Nasze wynagrodzenie jest w zdecydowanej większości przypadków wliczone w prowizję agencji sprzedającej. Państwo nie ponoszą wówczas dodatkowych kosztów. W szczególnych sytuacjach może pojawić się opłata, o której informujemy zawsze z góry.</p>
       </div>
     </div>
-    <p class="services-cta sans">Masz pytania jak to wygląda w praktyce? <a href="#kontakt" style="color:#E8724A;text-decoration:none;border-bottom:1px solid #E8724A;">Napisz do nas →</a></p>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- PROCES -->
-<section class="process">
+<section class="process" id="wspolpraca">
   <div class="section-inner">
-    <p class="eyebrow">Proces zakupu</p>
-    <h2>Jak wygląda współpraca z JP Team</h2>
-    <p class="process-sub sans">Od pierwszej rozmowy do odbioru kluczy — prowadzimy Cię przez każdy etap.</p>
+    <span class="eyebrow">Przebieg współpracy</span>
+    <h2>Jak wygląda zakup nieruchomości na Lazurowym Wybrzeżu z JP Team</h2>
+    <p class="process-intro">Rozmowa z nami do niczego Państwa nie zobowiązuje. Zachęcamy do telefonu lub wysłania wiadomości. Z przyjemnością odpowiemy na Państwa pytania.</p>
     <div class="process-layout">
-      <div>
+      <div class="process-steps">
         <div class="process-step">
           <div class="step-num">01</div>
           <div class="step-content">
-            <h4 class="sans">Selekcja i weryfikacja</h4>
-            <p class="sans">Filtrujemy rynek i przedstawiamy tylko te oferty, które naprawdę warto zobaczyć. Sprawdzamy stan prawny zanim zaangażujesz swój czas.</p>
+            <h4>Rozmowa wstępna</h4>
+            <p>Poznajemy Państwa oczekiwania, budżet, cel zakupu i preferowane lokalizacje. Na tej podstawie przygotowujemy wstępną selekcję ofert lub opis rynku, jeśli stoją Państwo przed pytaniem czy Francja to dla Państwa odpowiedni kierunek inwestycji.</p>
           </div>
         </div>
         <div class="process-step">
           <div class="step-num">02</div>
           <div class="step-content">
-            <h4 class="sans">Wizytacje</h4>
-            <p class="sans">Organizujemy logistykę tak, abyś w 1–2 dni zobaczył wszystkie wybrane nieruchomości. Jesteśmy z Tobą na miejscu.</p>
+            <h4>Selekcja i weryfikacja ofert</h4>
+            <p>Przeszukujemy rynek i kontaktujemy się z agencjami w Państwa imieniu. Przedstawiamy nieruchomości, które spełniają ustalone kryteria, wraz z podstawowymi informacjami o stanie prawnym i opłatach.</p>
           </div>
         </div>
         <div class="process-step">
           <div class="step-num">03</div>
           <div class="step-content">
-            <h4 class="sans">Negocjacje i zakup</h4>
-            <p class="sans">Negocjujemy cenę w oparciu o realne dane rynkowe. Pilnujemy zapisów w umowie notarialnej.</p>
+            <h4>Wizytacja we Francji</h4>
+            <p>Organizujemy harmonogram wizyt tak, aby Państwa pobyt był jak najlepiej wykorzystany. Towarzyszymy Państwu podczas wizyt, pomagamy zadawać właściwe pytania i wybrać odpowiednią ofertę.</p>
           </div>
         </div>
         <div class="process-step">
           <div class="step-num">04</div>
           <div class="step-content">
-            <h4 class="sans">Finalizacja</h4>
-            <p class="sans">Jesteśmy przy akcie notarialnym. Pomagamy przepisać liczniki i media. Nie znikamy po podpisaniu umowy.</p>
+            <h4>Negocjacje i finalizacja zakupu</h4>
+            <p>Uczestniczymy w negocjacjach cenowych i pilnujemy zapisów umowy. Proces notarialny prowadzony jest przez polskojęzyczną notariusz. Jesteśmy do Państwa dyspozycji również po podpisaniu dokumentów.</p>
           </div>
         </div>
       </div>
       <div class="process-aside">
-        <h3 class="sans">Zacznij od rozmowy</h3>
-        <p class="sans">Nie musisz mieć gotowej decyzji. Wystarczy, że wiesz, że Lazurowe Wybrzeże Cię interesuje. Resztę omówimy.</p>
+        <h3>Pierwsza rozmowa do niczego nie zobowiązuje</h3>
+        <p>Proszę opisać czego Państwo szukają. Odpiszemy i zaproponujemy dalsze kroki.</p>
         <div class="contact-details">
-          <div class="contact-line sans">📞 Sławomir Skomiał<br><a href="tel:+48726806558">+48 726 806 558</a></div>
-          <div class="contact-line sans">📞 Biuro Francja<br><a href="tel:+33633766262">+33 633 766 262</a></div>
-          <div class="contact-line sans">✉️ <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></div>
+          <div class="contact-line">Michał Skomiał<br><a href="tel:+48726806558">+48 726 806 558</a></div>
+          <div class="contact-line"><a href="mailto:michal@jpteam.pl">michal@jpteam.pl</a></div>
+          <div class="contact-line">Sławomir Skomiał<br><a href="tel:+33633766262">+33 633 766 262</a></div>
+          <div class="contact-line"><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- LOKALIZACJE -->
 <section class="locations">
   <div class="section-inner">
-    <p class="eyebrow">Gdzie działamy</p>
-    <h2>Cała Riwiera Francuska</h2>
-
+    <span class="eyebrow">Gdzie pracujemy</span>
+    <h2>Nieruchomości na Lazurowym Wybrzeżu i w Prowansji</h2>
+    <p class="locations-sub">Prowadzimy transakcje na całym obszarze Riwiery Francuskiej oraz Prowansji. Poniżej 3 główne lokalizacje.</p>
     <div class="locations-grid">
       <div class="loc-card">
-        <div class="loc-img cannes"><span>Cannes</span></div>
+        <div class="loc-img cannes"><span class="loc-name">Cannes</span></div>
         <div class="loc-body">
-          <p class="sans">Prestiż, festiwale, bliskość morza. Apartamenty przy Croisette, wille w spokojnych dzielnicach, inwestycje pod wynajem sezonowy.</p>
+          <p>Apartamenty przy Croisette, wille w spokojniejszych dzielnicach oraz nieruchomości pod wynajem sezonowy. Cannes to jeden z najbardziej rozpoznawalnych adresów na Lazurowym Wybrzeżu.</p>
         </div>
       </div>
       <div class="loc-card">
-        <div class="loc-img nice"><span>Nicea</span></div>
+        <div class="loc-img nice"><span class="loc-name">Nicea</span></div>
         <div class="loc-body">
-          <p class="sans">Największe miasto Riwiery — lotnisko, całoroczna infrastruktura, szeroki wybór od studia po willę. Dobra baza dla drugiego domu i pod najem długoterminowy.</p>
+          <p>Największe miasto Lazurowego Wybrzeża, z lotniskiem i dobrą komunikacją. Szeroki wybór nieruchomości, od małych apartamentów po willę. To świetne miejsce dla inwestycji pod wynajem jak i miejsce na drugi dom.</p>
         </div>
       </div>
       <div class="loc-card">
-        <div class="loc-img provence"><span>Prowansja</span></div>
+        <div class="loc-img provence"><span class="loc-name">Prowansja</span></div>
         <div class="loc-body">
-          <p class="sans">Przestrzeń, spokój i charakter. Domy z historią, ogrody, tarasy z widokiem. Idealnie dla tych, którzy szukają czegoś więcej niż apartament przy plaży.</p>
+          <p>Domy i mieszkania w mniejszych miastach regionu, dobrze skomunikowane, w sąsiedztwie lokalnych restauracji. Dla tych, którzy szukają spokoju i oddalenia od turystów w rozsądnej cenie i bliskiej odległości od morza.</p>
         </div>
       </div>
     </div>
-    <p class="locations-note sans">Działamy na całym Lazurowym Wybrzeżu — Antibes, Èze, La Turbie, Fréjus, Menton, Saint-Tropez i okolice. Jeśli masz na oku konkretne miejsce, napisz do nas — na pewno je znamy.</p>
+    <p class="locations-note">Obsługujemy również Antibes, Monaco, Èze, La Turbie, Fréjus, Menton, Saint-Tropez i okolice. Jeśli interesuje Państwa konkretna lokalizacja, proszę napisać nam wiadomość. Odpowiemy w 24h.</p>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- KONTAKT -->
 <section class="contact" id="kontakt">
   <div class="contact-inner">
     <div class="contact-left">
-      <p class="eyebrow">Kontakt</p>
-      <h2>Nie wiesz od czego zacząć?</h2>
-      <p class="sans">Opisz czego szukasz. Dostaniesz wstępne propozycje i konkretny opis tego, jak możemy razem działać — bez zobowiązań.</p>
+      <span class="eyebrow">Kontakt</span>
+      <h2>Zapraszamy do rozmowy</h2>
+      <p>Proszę opisać czego Państwo szukają. Na tej podstawie przygotujemy dla Państwa odpowiednie oferty lub odpowiemy na pytania dotyczące inwestycji w tym rejonie Francji.</p>
       <div class="contact-info">
-        <div class="contact-info-line">📞 Sławomir Skomiał: <a href="tel:+48726806558">+48 726 806 558</a></div>
-        <div class="contact-info-line">📞 Biuro Francja: <a href="tel:+33633766262">+33 633 766 262</a></div>
-        <div class="contact-info-line">✉️ <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></div>
+        <div class="contact-info-line">Michał Skomiał: <a href="tel:+48726806558">+48 726 806 558</a></div>
+        <div class="contact-info-line">Sławomir Skomiał: <a href="tel:+33633766262">+33 633 766 262</a></div>
+        <div class="contact-info-line"><a href="mailto:michal@jpteam.pl">michal@jpteam.pl</a></div>
+        <div class="contact-info-line"><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></div>
       </div>
     </div>
     <div class="contact-form">
@@ -486,64 +706,70 @@
       </div>
       <div class="form-group">
         <label class="form-label">Adres e-mail</label>
-        <input class="form-input" type="email" placeholder="przyklad@kowalski.pl">
+        <input class="form-input" type="email" placeholder="jan@kowalski.pl">
       </div>
       <div class="form-group">
         <label class="form-label">Numer telefonu</label>
         <input class="form-input" type="tel" placeholder="+48 123 456 789">
       </div>
       <div class="form-group">
-        <label class="form-label">Twoja wiadomość</label>
-        <textarea class="form-input" placeholder="Szukam apartamentu w..."></textarea>
+        <label class="form-label">Czego Państwo szukają?</label>
+        <textarea class="form-input" placeholder="Lokalizacja, typ nieruchomości, budżet, cel zakupu..."></textarea>
       </div>
       <button class="form-submit">Wyślij wiadomość</button>
     </div>
   </div>
 </section>
 
+<hr class="section-divider">
+
 <!-- FAQ -->
 <section class="faq">
   <div class="section-inner">
-  <p class="eyebrow">FAQ</p>
-  <h2>Najczęstsze pytania o zakup nieruchomości na Lazurowym Wybrzeżu</h2>
-  <div class="faq-list">
-    <div class="faq-item">
-      <p class="faq-q">Czy jako Polak mogę kupić nieruchomość we Francji bez ograniczeń?</p>
-      <p class="faq-a sans">Tak — obywatele UE, w tym Polacy, mają pełne prawo do zakupu nieruchomości we Francji bez żadnych dodatkowych zezwoleń.</p>
+    <span class="eyebrow">Pytania i odpowiedzi</span>
+    <h2>Najczęstsze pytania o zakup nieruchomości na Lazurowym Wybrzeżu</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">Nie jestem jeszcze zdecydowany na zakup. Czy warto się kontaktować?</p>
+        <p class="faq-a">Tak, i to jest dobry moment. Wiele osób zaczyna od ogólnej rozmowy o rynku i dopiero na tej podstawie podejmuje decyzję. Chętnie odpowiemy na pytania, opiszemy realia i pomożemy ocenić, czy Lazurowe Wybrzeże jest odpowiednim kierunkiem dla Państwa sytuacji.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Czy pracują Państwo tylko z nieruchomościami z własnej oferty?</p>
+        <p class="faq-a">Nie. Nie posiadamy własnego katalogu. Współpracujemy ze wszystkimi agencjami działającymi na Riwierze Francuskiej i mamy dostęp do ofert niepublikowanych publicznie. Poszukujemy nieruchomości pod konkretne wymagania Państwa, nie na odwrót.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Czy jako obywatel Polski mogę nabyć nieruchomość we Francji bez ograniczeń?</p>
+        <p class="faq-a">Tak. Obywatele Unii Europejskiej, w tym Polacy, mają pełne prawo zakupu nieruchomości we Francji bez dodatkowych zezwoleń.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Jak długo trwa cały proces zakupu?</p>
+        <p class="faq-a">Od złożenia oferty do podpisania aktu notarialnego mija zazwyczaj około trzech miesięcy. To standardowy czas wynikający z przepisów francuskich, obejmujący m.in. obowiązkowy okres na diagnostyki i weryfikację prawną nieruchomości.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Jakie są łączne koszty zakupu, poza ceną nieruchomości?</p>
+        <p class="faq-a">Na rynku wtórnym należy doliczyć ok. 7 do 8% tytułem kosztów notarialnych i podatkowych. Wynagrodzenie agencji jest standardowo wliczone w cenę nieruchomości, kupujący co do zasady nie płaci prowizji osobno. Szczegóły dotyczące naszych warunków wyjaśniamy zawsze przed rozpoczęciem współpracy.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Co oznacza, że mają Państwo dostęp do ofert off-market?</p>
+        <p class="faq-a">We Francji część nieruchomości nigdy nie trafia na portale ogłoszeniowe. Sprzedający decydują się na dyskretną sprzedaż przez zaufanych pośredników. Dzięki wieloletnim relacjom z lokalnymi agencjami mamy wgląd w takie oferty i możemy je przedstawić Państwu, zanim staną się publicznie dostępne.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Nicea, Cannes czy Prowansja. Jak wybrać lokalizację?</p>
+        <p class="faq-a">To zależy od priorytetu: bliskość morza, infrastruktura miejska, spokój czy potencjał wynajmu. Chętnie omówimy każdą z opcji i pomożemy Państwu podjąć świadomą decyzję, zanim zaczniemy przeszukiwać oferty.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Dlaczego warto skorzystać z polskojęzycznego doradcy przy zakupie nieruchomości we Francji?</p>
+        <p class="faq-a">Różnica językowa i prawna między Polską a Francją jest istotna. Dotyczy zarówno dokumentacji, jak i zwyczajów rynkowych. Polskojęzyczny doradca z wieloletnim doświadczeniem na miejscu pozwala Państwu skupić się na decyzji, a nie na logistyce.</p>
+      </div>
     </div>
-    <div class="faq-item">
-      <p class="faq-q">Jak wygląda proces kupna nieruchomości w Cannes lub Nicei?</p>
-      <p class="faq-a sans">Proces składa się z kilku etapów: wybór i weryfikacja nieruchomości, podpisanie umowy przedwstępnej (compromis de vente), oczekiwanie ok. 3 miesięcy, a następnie akt notarialny. Na każdym etapie jesteśmy przy Tobie.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">Jakie są całkowite koszty zakupu — opłaty notarialne i podatki?</p>
-      <p class="faq-a sans">Do ceny nieruchomości należy doliczyć ok. 7–8% kosztów notarialnych i podatkowych dla rynku wtórnego. Wynagrodzenie agencji jest zazwyczaj wliczone w cenę sprzedaży — kupujący nie płaci prowizji osobno.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">Czy zakup apartamentu na Lazurowym Wybrzeżu to dobra inwestycja?</p>
-      <p class="faq-a sans">Lazurowe Wybrzeże to jeden z najbardziej stabilnych rynków nieruchomości w Europie — ograniczona podaż gruntów i stały popyt międzynarodowy powodują, że ceny rosną średnio 2–4% rocznie w kluczowych lokalizacjach. Przy wynajmie krótkoterminowym rentowność sięga 6–8% rocznie, przy długoterminowym 3–5%. Pomożemy ocenić konkretną nieruchomość pod kątem inwestycyjnym.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">Nicea, Cannes czy Prowansja — którą lokalizację wybrać?</p>
-      <p class="faq-a sans">To zależy od Twoich priorytetów. Cannes to prestiż i bliskość morza, Nicea — większy wybór i lepsza infrastruktura, Prowansja — przestrzeń, spokój i niższe ceny. Pomożemy dopasować lokalizację do Twoich potrzeb.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">Czy mogę uzyskać kredyt hipoteczny we Francji jako obywatel Polski?</p>
-      <p class="faq-a sans">Tak — banki francuskie udzielają kredytów obcokrajowcom z UE. Mamy kontakt z partnerską agencją kredytową, która przeprowadzi Cię przez ten proces.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-q">Dlaczego warto korzystać z polskojęzycznego biura nieruchomości we Francji?</p>
-      <p class="faq-a sans">Bariera językowa i różnice prawne to główne źródła ryzyka przy zakupie zagranicznym. Polskojęzyczny doradca z lokalnymi relacjami eliminuje oba problemy — prowadzisz całą rozmowę w swoim języku, mając dostęp do wiedzy i kontaktów budowanych latami.</p>
-    </div>
-  </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <span>© 2026 JP Team · Nieruchomości Lazurowe Wybrzeże</span>
-    <span><a href="#">Polityka prywatności</a></span>
+    <span class="footer-brand">JP Team · Nieruchomości Lazurowe Wybrzeże</span>
+    <span>© 2026 Jens Pedersen SARL · <a href="#">Polityka prywatności</a></span>
   </div>
 </footer>
 
