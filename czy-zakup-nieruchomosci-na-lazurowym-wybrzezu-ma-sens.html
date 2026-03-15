@@ -43,11 +43,11 @@ nav a:hover { color: #c8622a; }
 .nav-mobile-menu a:hover { color: #c8622a; }
 
 /* ARTICLE HERO */
-.article-hero { max-width: 1100px; margin: 60px auto 0; padding: 0 60px; }
+.article-hero { max-width: 1240px; margin: 60px auto 0; padding: 0 60px; }
 .article-category { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); font-weight: 500; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 .article-category::before { content: ''; display: block; width: 24px; height: 1px; background: var(--orange); }
-h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500; line-height: 1.15; color: var(--dark); margin-bottom: 24px; max-width: 900px; }
-.article-lead { font-size: 18px; line-height: 1.7; color: var(--gray); font-weight: 300; max-width: 800px; margin-bottom: 48px; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500; line-height: 1.15; color: var(--dark); margin-bottom: 24px; max-width: 1000px; }
+.article-lead { font-size: 18px; line-height: 1.7; color: var(--gray); font-weight: 300; max-width: 900px; margin-bottom: 48px; }
 
 /* TOC */
 .toc { margin: 40px 0 48px; padding: 0; }
@@ -60,7 +60,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
 .toc-list a:hover { color: var(--orange); }
 
 /* ARTICLE BODY */
-.article-body { max-width: 800px; margin: 0 auto; padding: 0 60px 80px; }
+.article-body { max-width: 1240px; margin: 0 auto; padding: 0 60px 80px; }
 .article-body p { margin-bottom: 24px; font-size: 16px; line-height: 1.8; color: var(--text); }
 .article-body p.intro { font-size: 20px; line-height: 1.7; color: var(--text); margin-bottom: 56px; }
 .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; color: var(--dark); margin: 64px 0 24px; line-height: 1.2; }
@@ -83,19 +83,194 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
 .pullquote p { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; line-height: 1.6; color: var(--dark); margin-bottom: 12px; }
 .pullquote cite { font-size: 13px; color: var(--gray); font-style: normal; }
 
-/* CTA BAND */
-.cta-band { padding: 80px 0; background: #1a1a1a; }
-.cta-band-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-.cta-band h2 { font-size: 30px; font-weight: 400; color: #fff; max-width: 540px; line-height: 1.35; font-family: 'Cormorant Garamond', serif; }
-.cta-band p { font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255,255,255,0.5); margin-top: 10px; }
-.btn-primary { background: #c8622a; color: #fff; border: none; border-radius: 30px; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; white-space: nowrap; }
-.btn-primary:hover { background: #a8501f; }
+/* TWO COLUMN LAYOUT */
+.article-layout {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 48px 80px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 80px;
+  align-items: start;
+}
 
-/* FOOTER */
-footer { background: #1a1a1a; color: rgba(255,255,255,0.5); font-family: 'DM Sans', sans-serif; font-size: 13px; border-top: 1px solid #2a2a2a; }
-.footer-inner { max-width: 1240px; margin: 0 auto; padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-footer a:hover { color: rgba(255,255,255,0.8); }
+.article-main {
+  min-width: 0;
+}
+
+.article-sidebar {
+  position: sticky;
+  top: 120px;
+}
+
+/* SIDEBAR CONTACT FORM */
+.sidebar-form-box {
+  background: #f8f4f1;
+  border-radius: 8px;
+  padding: 32px;
+}
+.sidebar-form-box h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #1a1a18;
+  margin-bottom: 8px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.sidebar-form-box p {
+  font-size: 14px;
+  color: #6b6b6b;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.sidebar-form-box label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+.sidebar-form-box label:first-of-type {
+  margin-top: 0;
+}
+.sidebar-form-box input,
+.sidebar-form-box textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e8e4dc;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #2c2c2a;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.sidebar-form-box input:focus,
+.sidebar-form-box textarea:focus {
+  border-color: #c8622a;
+}
+.sidebar-form-box textarea {
+  height: 100px;
+  resize: vertical;
+}
+.sidebar-form-box .form-submit {
+  width: 100%;
+  margin-top: 20px;
+  background: #c8622a;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.sidebar-form-box .form-submit:hover {
+  background: #a8501f;
+}
+.sidebar-form-box .form-note {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+.sidebar-form-box .form-success {
+  display: none;
+  text-align: center;
+  padding: 20px 0;
+  color: #1a1a18;
+}
+.sidebar-form-box .form-success p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+/* FOOTER — LIGHT */
+.site-footer {
+  background: #faf9f7;
+  border-top: 1px solid #e8e4dc;
+  font-family: 'DM Sans', sans-serif;
+}
+.footer-top {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 48px 48px;
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.footer-logo img {
+  height: 80px;
+  width: auto;
+}
+.footer-nav-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-nav ul li {
+  margin-bottom: 10px;
+}
+.footer-nav ul li a {
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-nav ul li a:hover {
+  color: #c8622a;
+}
+.footer-address {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.8;
+}
+.footer-address strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+.footer-bottom {
+  border-top: 1px solid #e8e4dc;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #bbb;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-bottom a {
+  color: #bbb;
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  color: #c8622a;
+}
 
 /* MOBILE */
 @media (max-width: 900px) {
@@ -108,9 +283,24 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   h1 { font-size: 32px; }
   .article-lead { font-size: 16px; }
   .article-body h2 { font-size: 26px; }
-  .cta-band { padding: 56px 0; }
-  .cta-band-inner { flex-direction: column; align-items: flex-start; padding: 0 24px; }
-  .footer-inner { flex-direction: column; text-align: center; padding: 30px 24px; }
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 0 24px 60px;
+  }
+  .article-sidebar {
+    position: static;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 24px 32px;
+  }
+  .footer-bottom {
+    padding: 16px 24px;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 </style>
 </head>
@@ -161,97 +351,150 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 </div>
 
 <!-- ARTICLE BODY -->
-<div class="article-body">
-  <p class="intro">Ten tekst nie ma Cię przekonywać do zakupu. Ma pomóc ocenić, czy Lazurowe Wybrzeże w ogóle pasuje do Twojej sytuacji.</p>
-  <p>Największym ryzykiem na Lazurowym Wybrzeżu nie jest cena metra kwadratowego. Jest nim złe dopasowanie rynku do oczekiwań kupującego.</p>
-  <p>Większość błędów pojawia się nie przy podpisaniu aktu notarialnego, ale wcześniej. Wtedy, gdy decyzja opiera się na uproszczonych założeniach o najmie, płynności, czasie i kosztach.</p>
-  <h2 id="aktywo">Jakim aktywem jest nieruchomość na Lazurowym Wybrzeżu</h2>
-  <p>Lazurowe Wybrzeże to nie rynek dynamicznych inwestycji. To rynek ochrony kapitału.</p>
-  <p>Region funkcjonuje jako klasa aktywów typu capital preservation. W okresach globalnej niepewności zachowuje się inaczej niż większość rynków mieszkaniowych. Wynika to z trwałego niedoboru podaży i odporności segmentu premium.</p>
-  <div class="highlight-box">
-    <p><strong>Sens zakupu nie wynika z samej lokalizacji.</strong> Wynika z horyzontu czasowego i celu, jakiemu nieruchomość ma służyć.</p>
-  </div>
-  <p>Jest to też rynek, na którym błędy kosztują więcej. Koszty wejścia są wysokie, czas sprzedaży bywa długi, a elastyczność wyjścia ograniczona.</p>
-  <h2 id="kiedy-sens">Kiedy ten zakup zazwyczaj ma sens</h2>
-  <p>Lazurowe Wybrzeże jest logicznym wyborem, gdy:</p>
-  <ul class="checklist">
-    <li>Myślisz w perspektywie co najmniej 10-15 lat</li>
-    <li>Priorytetem jest stabilność i ochrona wartości, nie wysoka stopa zwrotu</li>
-    <li>Akceptujesz, że rynek jest mało płynny</li>
-    <li>Dysponujesz środkami na obsługę prawną, podatkową i operacyjną</li>
-    <li>Rozumiesz, że procesy we Francji są wolniejsze niż w Polsce</li>
-  </ul>
-  <div class="pullquote">
-    <p>„To nie jest rynek okazyjnych wejść. To rynek, który nagradza cierpliwość, a karze pośpiech."</p>
-  </div>
-  <h2 id="kiedy-nie">Kiedy lepiej się zatrzymać</h2>
-  <p>Zakup często okazuje się błędem, gdy:</p>
-  <ul class="checklist checklist-negative">
-    <li>Celem jest szybki zysk lub fix and flip</li>
-    <li>Oczekiwana rentowność najmu netto ma przekraczać 2-3%</li>
-    <li>Zakup opiera się na wysokiej dźwigni finansowej w PLN</li>
-    <li>Planujesz samodzielnie zarządzać nieruchomością z Polski</li>
-    <li>Zakładasz, że sprzedaż zajmie kilka tygodni</li>
-  </ul>
-  <p>W takich scenariuszach problemem nie jest nieruchomość. Problemem jest niedopasowanie oczekiwań do realiów rynku.</p>
-  <h2 id="emocje">Emocje a decyzja finansowa</h2>
-  <p>Zakup na Lazurowym Wybrzeżu często zaczyna się od emocji. Widok, klimat, prestiż miejsca. To wszystko działa silnie. Problem pojawia się, gdy emocja staje się głównym argumentem decyzyjnym.</p>
-  <p>Wielu kupujących odkrywa po czasie, że:</p>
-  <ul class="checklist checklist-negative">
-    <li>Nieruchomość używana jest rzadziej, niż zakładali</li>
-    <li>Koszty stałe są wyższe, niż się spodziewali</li>
-    <li>Życie poza sezonem wygląda inaczej niż w wakacyjnym scenariuszu</li>
-  </ul>
-  <div class="pullquote">
-    <p>„Lazurowe Wybrzeże nie rozwiązuje problemów życiowych ani finansowych. Raczej obnaża konsekwencje źle przemyślanej decyzji."</p>
-  </div>
-  <h2 id="koszty">Czas, koszty i płynność</h2>
-  <p>Jedną z największych różnic między Polską a Francją jest tempo działania systemu. Zakup trwa długo. Remonty trwają jeszcze dłużej. Egzekwowanie umów bywa liczone w setkach dni.</p>
-  <h3>Koszty, o których warto wiedzieć</h3>
-  <ul class="checklist">
-    <li>Opłaty notarialne na rynku wtórnym: około 7-8%</li>
-    <li>Opłaty wspólnotowe w dobrych lokalizacjach: do 50 EUR/m2 rocznie</li>
-    <li>Podatek majątkowy IFI przy aktywach powyżej 1,3 mln EUR</li>
-    <li>Rentowność najmu netto w prestiżowych lokalizacjach: rzadko powyżej 2%</li>
-  </ul>
-  <h2 id="najem">Użytkowanie własne a najem</h2>
-  <p>Jednym z najczęstszych błędów jest próba pogodzenia domu dla siebie z intensywnym najmem krótkoterminowym.</p>
-  <p>Standard wykończenia pod siebie rzadko wytrzymuje eksploatację turystyczną. Dochodzą regulacje energetyczne (DPE), zamrożenia czynszów i wysokie prowizje operatorów najmu.</p>
-  <div class="highlight-box">
-    <p><strong>Efekt bywa prosty:</strong> zysk znika, a nieruchomość staje się źródłem napięć zamiast stabilizacji.</p>
-  </div>
-  <h2 id="francja">Co zaskakuje polskich kupujących we Francji</h2>
-  <p>Francuski notariusz nie jest odpowiednikiem polskiego prawnika reprezentującego klienta. Jest urzędnikiem państwowym, którego zadaniem jest zagwarantowanie bezpieczeństwa transakcji i interesu fiskalnego państwa.</p>
-  <p>Dla wielu polskich inwestorów kluczowe okazuje się uporządkowanie struktury własności (np. poprzez SCI), aby dostosować nieruchomość do planów rodzinnych i sukcesyjnych.</p>
-  <h3>Lokalizacja to nie adres, tylko mikro-rynek</h3>
-  <p>Na Lazurowym Wybrzeżu różnice wartości potrafią pojawić się w promieniu kilkuset metrów.</p>
-  <div class="pullquote">
-    <p>„Nie istnieje jedna dobra lokalizacja. Istnieje tylko lokalizacja dopasowana do konkretnego celu."</p>
-  </div>
-  <div class="highlight-box">
-    <p><strong>Ten tekst nie zastępuje decyzji.</strong> Ma sprawić, że jeśli ją podejmiesz, będzie świadoma i dopasowana do Ciebie, a nie do wyobrażenia o Lazurowym Wybrzeżu.</p>
-  </div>
-  <div class="highlight-box" style="margin-top: 32px;">
-    <p style="font-size: 16px;">Jeśli decyzja jest już podjęta, przejdź do <a href="/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu" style="color: var(--orange); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--orange);">przewodnika po procesie zakupu we Francji →</a></p>
-  </div>
-</div>
-
-<!-- CTA BAND -->
-<section class="cta-band">
-  <div class="cta-band-inner">
-    <div>
-      <h2>Rozważasz zakup, ale masz wątpliwości?</h2>
-      <p>Napisz, czego szukasz i w jakim horyzoncie. Odpowiemy, czy warto szukać dalej.</p>
+<div class="article-layout">
+  <div class="article-main article-body">
+    <p class="intro">Ten tekst nie ma Cię przekonywać do zakupu. Ma pomóc ocenić, czy Lazurowe Wybrzeże w ogóle pasuje do Twojej sytuacji.</p>
+    <p>Największym ryzykiem na Lazurowym Wybrzeżu nie jest cena metra kwadratowego. Jest nim złe dopasowanie rynku do oczekiwań kupującego.</p>
+    <p>Większość błędów pojawia się nie przy podpisaniu aktu notarialnego, ale wcześniej. Wtedy, gdy decyzja opiera się na uproszczonych założeniach o najmie, płynności, czasie i kosztach.</p>
+    <h2 id="aktywo">Jakim aktywem jest nieruchomość na Lazurowym Wybrzeżu</h2>
+    <p>Lazurowe Wybrzeże to nie rynek dynamicznych inwestycji. To rynek ochrony kapitału.</p>
+    <p>Region funkcjonuje jako klasa aktywów typu capital preservation. W okresach globalnej niepewności zachowuje się inaczej niż większość rynków mieszkaniowych. Wynika to z trwałego niedoboru podaży i odporności segmentu premium.</p>
+    <div class="highlight-box">
+      <p><strong>Sens zakupu nie wynika z samej lokalizacji.</strong> Wynika z horyzontu czasowego i celu, jakiemu nieruchomość ma służyć.</p>
     </div>
-    <a href="/#kontakt" class="btn-primary">Napisz do nas →</a>
+    <p>Jest to też rynek, na którym błędy kosztują więcej. Koszty wejścia są wysokie, czas sprzedaży bywa długi, a elastyczność wyjścia ograniczona.</p>
+    <h2 id="kiedy-sens">Kiedy ten zakup zazwyczaj ma sens</h2>
+    <p>Lazurowe Wybrzeże jest logicznym wyborem, gdy:</p>
+    <ul class="checklist">
+      <li>Myślisz w perspektywie co najmniej 10-15 lat</li>
+      <li>Priorytetem jest stabilność i ochrona wartości, nie wysoka stopa zwrotu</li>
+      <li>Akceptujesz, że rynek jest mało płynny</li>
+      <li>Dysponujesz środkami na obsługę prawną, podatkową i operacyjną</li>
+      <li>Rozumiesz, że procesy we Francji są wolniejsze niż w Polsce</li>
+    </ul>
+    <div class="pullquote">
+      <p>„To nie jest rynek okazyjnych wejść. To rynek, który nagradza cierpliwość, a karze pośpiech."</p>
+    </div>
+    <h2 id="kiedy-nie">Kiedy lepiej się zatrzymać</h2>
+    <p>Zakup często okazuje się błędem, gdy:</p>
+    <ul class="checklist checklist-negative">
+      <li>Celem jest szybki zysk lub fix and flip</li>
+      <li>Oczekiwana rentowność najmu netto ma przekraczać 2-3%</li>
+      <li>Zakup opiera się na wysokiej dźwigni finansowej w PLN</li>
+      <li>Planujesz samodzielnie zarządzać nieruchomością z Polski</li>
+      <li>Zakładasz, że sprzedaż zajmie kilka tygodni</li>
+    </ul>
+    <p>W takich scenariuszach problemem nie jest nieruchomość. Problemem jest niedopasowanie oczekiwań do realiów rynku.</p>
+    <h2 id="emocje">Emocje a decyzja finansowa</h2>
+    <p>Zakup na Lazurowym Wybrzeżu często zaczyna się od emocji. Widok, klimat, prestiż miejsca. To wszystko działa silnie. Problem pojawia się, gdy emocja staje się głównym argumentem decyzyjnym.</p>
+    <p>Wielu kupujących odkrywa po czasie, że:</p>
+    <ul class="checklist checklist-negative">
+      <li>Nieruchomość używana jest rzadziej, niż zakładali</li>
+      <li>Koszty stałe są wyższe, niż się spodziewali</li>
+      <li>Życie poza sezonem wygląda inaczej niż w wakacyjnym scenariuszu</li>
+    </ul>
+    <div class="pullquote">
+      <p>„Lazurowe Wybrzeże nie rozwiązuje problemów życiowych ani finansowych. Raczej obnaża konsekwencje źle przemyślanej decyzji."</p>
+    </div>
+    <h2 id="koszty">Czas, koszty i płynność</h2>
+    <p>Jedną z największych różnic między Polską a Francją jest tempo działania systemu. Zakup trwa długo. Remonty trwają jeszcze dłużej. Egzekwowanie umów bywa liczone w setkach dni.</p>
+    <h3>Koszty, o których warto wiedzieć</h3>
+    <ul class="checklist">
+      <li>Opłaty notarialne na rynku wtórnym: około 7-8%</li>
+      <li>Opłaty wspólnotowe w dobrych lokalizacjach: do 50 EUR/m2 rocznie</li>
+      <li>Podatek majątkowy IFI przy aktywach powyżej 1,3 mln EUR</li>
+      <li>Rentowność najmu netto w prestiżowych lokalizacjach: rzadko powyżej 2%</li>
+    </ul>
+    <h2 id="najem">Użytkowanie własne a najem</h2>
+    <p>Jednym z najczęstszych błędów jest próba pogodzenia domu dla siebie z intensywnym najmem krótkoterminowym.</p>
+    <p>Standard wykończenia pod siebie rzadko wytrzymuje eksploatację turystyczną. Dochodzą regulacje energetyczne (DPE), zamrożenia czynszów i wysokie prowizje operatorów najmu.</p>
+    <div class="highlight-box">
+      <p><strong>Efekt bywa prosty:</strong> zysk znika, a nieruchomość staje się źródłem napięć zamiast stabilizacji.</p>
+    </div>
+    <h2 id="francja">Co zaskakuje polskich kupujących we Francji</h2>
+    <p>Francuski notariusz nie jest odpowiednikiem polskiego prawnika reprezentującego klienta. Jest urzędnikiem państwowym, którego zadaniem jest zagwarantowanie bezpieczeństwa transakcji i interesu fiskalnego państwa.</p>
+    <p>Dla wielu polskich inwestorów kluczowe okazuje się uporządkowanie struktury własności (np. poprzez SCI), aby dostosować nieruchomość do planów rodzinnych i sukcesyjnych.</p>
+    <h3>Lokalizacja to nie adres, tylko mikro-rynek</h3>
+    <p>Na Lazurowym Wybrzeżu różnice wartości potrafią pojawić się w promieniu kilkuset metrów.</p>
+    <div class="pullquote">
+      <p>„Nie istnieje jedna dobra lokalizacja. Istnieje tylko lokalizacja dopasowana do konkretnego celu."</p>
+    </div>
+    <div class="highlight-box">
+      <p><strong>Ten tekst nie zastępuje decyzji.</strong> Ma sprawić, że jeśli ją podejmiesz, będzie świadoma i dopasowana do Ciebie, a nie do wyobrażenia o Lazurowym Wybrzeżu.</p>
+    </div>
+    <div class="highlight-box" style="margin-top: 32px;">
+      <p style="font-size: 16px;">Jeśli decyzja jest już podjęta, przejdź do <a href="/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu" style="color: var(--orange); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--orange);">przewodnika po procesie zakupu we Francji →</a></p>
+    </div>
   </div>
-</section>
+  <aside class="article-sidebar">
+    <div class="sidebar-form-box">
+      <h3>Masz pytania?</h3>
+      <p>Napisz do nas — odpowiemy bezpłatnie, bez zobowiązań.</p>
+      <form id="sidebar-contact-form" action="https://formspree.io/f/xpwzgqzg" method="POST">
+        <label for="s-name">Imię i nazwisko</label>
+        <input type="text" id="s-name" name="name" placeholder="Jan Kowalski" required>
+        <label for="s-email">Email</label>
+        <input type="email" id="s-email" name="email" placeholder="jan@kowalski.pl" required>
+        <label for="s-phone">Telefon</label>
+        <input type="tel" id="s-phone" name="phone" placeholder="+48 123 456 789">
+        <label for="s-message">Wiadomość</label>
+        <textarea id="s-message" name="message" placeholder="Szukam apartamentu w..."></textarea>
+        <button type="submit" class="form-submit">Wyślij wiadomość →</button>
+        <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci" style="color:#c8622a;">politykę prywatności</a>.</p>
+      </form>
+      <div class="form-success" id="form-success">
+        <p>Dziękujemy! Odpiszemy w ciągu 24h.</p>
+      </div>
+    </div>
+  </aside>
+</div>
+<script>
+  var form = document.getElementById('sidebar-contact-form');
+  if(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function(r) {
+          if(r.ok) {
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          }
+        });
+    });
+  }
+</script>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <span>© 2026 JP Team · Nieruchomości Lazurowe Wybrzeże</span>
-    <span><a href="/polityka-prywatnosci">Polityka prywatności</a></span>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="/"><img src="https://cdn.prod.website-files.com/685675b814deed2061cb0d42/68ba9288e3854856fea7d989_Jend%20Pedersen%20Classic.png" alt="JP Team"></a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-title">Menu</div>
+      <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/poradniki">Poradniki</a></li>
+        <li><a href="/realizacje">Realizacje klientów</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+        <li><a href="/polityka-prywatnosci">Polityka prywatności</a></li>
+      </ul>
+    </div>
+    <div class="footer-address">
+      <strong>Dane firmy</strong>
+      Jens Pedersen SARL<br>
+      29 impasse de la Guifette<br>
+      F-83700 Saint-Raphaël, Francja<br><br>
+      Tel. PL: <a href="tel:+48726806558">+48 726 806 558</a><br>
+      Tel. FR: <a href="tel:+33633766262">+33 633 766 262</a><br>
+      <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a><br><br>
+      Carte professionnelle: CPI83032021000000022
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Jens Pedersen SARL · Nieruchomości Lazurowe Wybrzeże</span>
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
   </div>
 </footer>
 

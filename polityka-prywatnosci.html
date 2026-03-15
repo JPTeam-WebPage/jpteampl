@@ -75,6 +75,20 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   .policy-body h2 { font-size: 22px; }
   .footer-inner { flex-direction: column; text-align: center; padding: 30px 24px; }
 }
+/* FOOTER — LIGHT */
+.site-footer { background: #faf9f7; border-top: 1px solid #e8e4dc; font-family: sans-serif; }
+.footer-top { max-width: 1240px; margin: 0 auto; padding: 56px 48px 48px; display: grid; grid-template-columns: 200px 1fr 1fr; gap: 48px; align-items: start; }
+.footer-logo img { height: 80px; width: auto; }
+.footer-nav-title { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 16px; }
+.footer-nav ul { list-style: none; padding: 0; margin: 0; }
+.footer-nav ul li { margin-bottom: 10px; }
+.footer-nav ul li a { font-size: 14px; color: #444; text-decoration: none; transition: color 0.2s; }
+.footer-nav ul li a:hover { color: #c8622a; }
+.footer-address { font-size: 13px; color: #888; line-height: 1.8; }
+.footer-address strong { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 12px; }
+.footer-bottom { border-top: 1px solid #e8e4dc; max-width: 1240px; margin: 0 auto; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #bbb; flex-wrap: wrap; gap: 8px; }
+.footer-bottom a { color: #bbb; text-decoration: none; }
+.footer-bottom a:hover { color: #c8622a; }
 </style>
 </head>
 <body>
@@ -227,10 +241,35 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 </div>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <span>© 2026 JP Team · Nieruchomości Lazurowe Wybrzeże</span>
-    <span><a href="/polityka-prywatnosci">Polityka prywatności</a></span>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="/"><img src="https://cdn.prod.website-files.com/685675b814deed2061cb0d42/68ba9288e3854856fea7d989_Jend%20Pedersen%20Classic.png" alt="JP Team"></a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-title">Menu</div>
+      <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/poradniki">Poradniki</a></li>
+        <li><a href="/realizacje">Realizacje klientów</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+        <li><a href="/polityka-prywatnosci">Polityka prywatności</a></li>
+      </ul>
+    </div>
+    <div class="footer-address">
+      <strong>Dane firmy</strong>
+      Jens Pedersen SARL<br>
+      29 impasse de la Guifette<br>
+      F-83700 Saint-Raphaël, Francja<br><br>
+      Tel. PL: <a href="tel:+48726806558">+48 726 806 558</a><br>
+      Tel. FR: <a href="tel:+33633766262">+33 633 766 262</a><br>
+      <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a><br><br>
+      Carte professionnelle: CPI83032021000000022
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Jens Pedersen SARL · Nieruchomości Lazurowe Wybrzeże</span>
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
   </div>
 </footer>
 
