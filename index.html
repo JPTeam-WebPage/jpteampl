@@ -769,9 +769,46 @@
 <footer>
   <div class="footer-inner">
     <span class="footer-brand">JP Team · Nieruchomości Lazurowe Wybrzeże</span>
-    <span>© 2026 Jens Pedersen SARL · <a href="#">Polityka prywatności</a></span>
+    <span>© 2026 Jens Pedersen SARL · <a href="/polityka-prywatnosci">Polityka prywatności</a></span>
   </div>
 </footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1a1a1a; color:rgba(255,255,255,0.85); font-family:sans-serif; font-size:13px; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; border-top:1px solid #333;">
+  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#c8622a; text-decoration:none; border-bottom:1px solid rgba(200,98,42,0.4);">polityce prywatności</a>.</span>
+  <div style="display:flex; gap:12px; flex-shrink:0;">
+    <button onclick="jpAcceptCookies()" style="background:#c8622a; color:#fff; border:none; border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Akceptuję</button>
+    <button onclick="jpRejectCookies()" style="background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Tylko niezbędne</button>
+  </div>
+</div>
+<script>
+  (function(){
+    var consent = localStorage.getItem("jp_cookie_consent");
+    if(!consent){ document.getElementById("cookie-banner").style.display = "flex"; }
+    else { document.getElementById("cookie-banner").style.display = "none"; }
+    if(consent === "accepted"){ loadGA(); }
+  })();
+  function jpAcceptCookies(){
+    localStorage.setItem("jp_cookie_consent","accepted");
+    document.getElementById("cookie-banner").style.display = "none";
+    loadGA();
+  }
+  function jpRejectCookies(){
+    localStorage.setItem("jp_cookie_consent","rejected");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+  function loadGA(){
+    if(window._gaLoaded) return; window._gaLoaded = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-TC56VMTG42";
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-TC56VMTG42");
+  }
+</script>
 
 </body>
 </html>
