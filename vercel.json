@@ -4,9 +4,6 @@
   "rewrites": [
     { "source": "/poradniki", "destination": "/poradniki.html" },
     { "source": "/realizacje", "destination": "/realizacje.html" },
-    { "source": "/jak-kupic-nieruchomosc-w-cannes", "destination": "/poradniki/jak-kupic-nieruchomosc-w-cannes.html" },
-    { "source": "/czy-zakup-nieruchomosci-na-lazurowym-wybrzezu-ma-sens", "destination": "/poradniki/czy-zakup-nieruchomosci-na-lazurowym-wybrzezu-ma-sens.html" },
-    { "source": "/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu", "destination": "/poradniki/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu.html" },
     { "source": "/polityka-prywatnosci", "destination": "/polityka-prywatnosci.html" }
   ]
 }
