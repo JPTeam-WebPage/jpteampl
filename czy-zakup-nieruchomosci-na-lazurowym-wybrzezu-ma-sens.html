@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-  --orange: #c8622a;
+  --orange: #FF622E;
   --orange-light: #f8f4f1;
   --dark: #1a1a18;
   --gray: #6b6b6b;
@@ -60,7 +60,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
 .toc-list a:hover { color: var(--orange); }
 
 /* ARTICLE BODY */
-.article-body { max-width: 1240px; margin: 0 auto; padding: 0 60px 80px; }
+.article-body { max-width: 1000px; margin: 0 auto; padding: 0 60px 80px; }
 .article-body p { margin-bottom: 24px; font-size: 16px; line-height: 1.8; color: var(--text); }
 .article-body p.intro { font-size: 20px; line-height: 1.7; color: var(--text); margin-bottom: 56px; }
 .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; color: var(--dark); margin: 64px 0 24px; line-height: 1.2; }
@@ -83,115 +83,102 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
 .pullquote p { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; line-height: 1.6; color: var(--dark); margin-bottom: 12px; }
 .pullquote cite { font-size: 13px; color: var(--gray); font-style: normal; }
 
-/* TWO COLUMN LAYOUT */
-.article-layout {
+/* CONTACT SECTION */
+.contact-section {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 80px 0;
+}
+.contact-section-inner {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 48px 80px;
+  padding: 0 60px;
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: start;
 }
-
-.article-main {
-  min-width: 0;
-}
-
-.article-sidebar {
-  position: sticky;
-  top: 120px;
-}
-
-/* SIDEBAR CONTACT FORM */
-.sidebar-form-box {
-  background: #f8f4f1;
-  border-radius: 8px;
-  padding: 32px;
-}
-.sidebar-form-box h3 {
+.contact-section-left h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 500;
-  color: #1a1a18;
-  margin-bottom: 8px;
-  letter-spacing: 0;
-  text-transform: none;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.25;
+  margin-bottom: 20px;
 }
-.sidebar-form-box p {
+.contact-section-left p {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.contact-phone-block { margin-top: 32px; }
+.contact-phone-block h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.contact-phone-block p {
   font-size: 14px;
-  color: #6b6b6b;
-  margin-bottom: 24px;
+  color: var(--gray);
+  margin-bottom: 6px;
   line-height: 1.6;
 }
-.sidebar-form-box label {
+.contact-phone-block a { color: var(--orange); text-decoration: none; }
+.contact-form-box {
+  border: 1.5px solid var(--orange);
+  border-radius: 12px;
+  padding: 36px;
+}
+.contact-form-box label {
   display: block;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6b6b6b;
+  color: var(--gray);
   margin-bottom: 6px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
-.sidebar-form-box label:first-of-type {
-  margin-top: 0;
-}
-.sidebar-form-box input,
-.sidebar-form-box textarea {
+.contact-form-box label:first-of-type { margin-top: 0; }
+.contact-form-box input,
+.contact-form-box textarea {
   width: 100%;
-  padding: 10px 14px;
-  border: 1px solid #e8e4dc;
-  border-radius: 4px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: #2c2c2a;
+  color: var(--text);
   background: #fff;
   outline: none;
   transition: border-color 0.2s;
 }
-.sidebar-form-box input:focus,
-.sidebar-form-box textarea:focus {
-  border-color: #c8622a;
-}
-.sidebar-form-box textarea {
-  height: 100px;
-  resize: vertical;
-}
-.sidebar-form-box .form-submit {
+.contact-form-box input:focus,
+.contact-form-box textarea:focus { border-color: var(--orange); }
+.contact-form-box textarea { border-radius: 12px; height: 110px; resize: vertical; }
+.contact-form-box .form-submit {
   width: 100%;
-  margin-top: 20px;
-  background: #c8622a;
+  margin-top: 24px;
+  background: var(--orange);
   color: #fff;
   border: none;
   border-radius: 30px;
-  padding: 13px 24px;
+  padding: 14px 24px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s;
 }
-.sidebar-form-box .form-submit:hover {
-  background: #a8501f;
-}
-.sidebar-form-box .form-note {
-  font-size: 11px;
-  color: #aaa;
-  margin-top: 12px;
-  line-height: 1.5;
-  text-align: center;
-}
-.sidebar-form-box .form-success {
-  display: none;
-  text-align: center;
-  padding: 20px 0;
-  color: #1a1a18;
-}
-.sidebar-form-box .form-success p {
-  font-size: 15px;
-  margin-bottom: 0;
-}
+.contact-form-box .form-submit:hover { background: #e04e1a; }
+.contact-form-box .form-note { font-size: 11px; color: #bbb; margin-top: 12px; line-height: 1.5; text-align: center; }
+.contact-form-box .form-note a { color: var(--orange); }
+.form-success { display: none; text-align: center; padding: 40px 0; font-size: 16px; color: var(--dark); }
 
 /* FOOTER — LIGHT */
 .site-footer {
@@ -283,14 +270,12 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
   h1 { font-size: 32px; }
   .article-lead { font-size: 16px; }
   .article-body h2 { font-size: 26px; }
-  .article-layout {
+  .contact-section-inner {
     grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 0 24px 60px;
+    gap: 40px;
+    padding: 0 24px;
   }
-  .article-sidebar {
-    position: static;
-  }
+  .contact-section { padding: 56px 0; }
   .footer-top {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -351,8 +336,7 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
 </div>
 
 <!-- ARTICLE BODY -->
-<div class="article-layout">
-  <div class="article-main article-body">
+<div class="article-body">
     <p class="intro">Ten tekst nie ma Cię przekonywać do zakupu. Ma pomóc ocenić, czy Lazurowe Wybrzeże w ogóle pasuje do Twojej sytuacji.</p>
     <p>Największym ryzykiem na Lazurowym Wybrzeżu nie jest cena metra kwadratowego. Jest nim złe dopasowanie rynku do oczekiwań kupującego.</p>
     <p>Większość błędów pojawia się nie przy podpisaniu aktu notarialnego, ale wcześniej. Wtedy, gdy decyzja opiera się na uproszczonych założeniach o najmie, płynności, czasie i kosztach.</p>
@@ -425,31 +409,42 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
     <div class="highlight-box" style="margin-top: 32px;">
       <p style="font-size: 16px;">Jeśli decyzja jest już podjęta, przejdź do <a href="/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu" style="color: var(--orange); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--orange);">przewodnika po procesie zakupu we Francji →</a></p>
     </div>
-  </div>
-  <aside class="article-sidebar">
-    <div class="sidebar-form-box">
-      <h3>Masz pytania?</h3>
-      <p>Napisz do nas — odpowiemy bezpłatnie, bez zobowiązań.</p>
-      <form id="sidebar-contact-form" action="https://formspree.io/f/xpwzgqzg" method="POST">
-        <label for="s-name">Imię i nazwisko</label>
-        <input type="text" id="s-name" name="name" placeholder="Jan Kowalski" required>
-        <label for="s-email">Email</label>
-        <input type="email" id="s-email" name="email" placeholder="jan@kowalski.pl" required>
-        <label for="s-phone">Telefon</label>
-        <input type="tel" id="s-phone" name="phone" placeholder="+48 123 456 789">
-        <label for="s-message">Wiadomość</label>
-        <textarea id="s-message" name="message" placeholder="Szukam apartamentu w..."></textarea>
-        <button type="submit" class="form-submit">Wyślij wiadomość →</button>
-        <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci" style="color:#c8622a;">politykę prywatności</a>.</p>
-      </form>
-      <div class="form-success" id="form-success">
-        <p>Dziękujemy! Odpiszemy w ciągu 24h.</p>
+  
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-section-inner">
+    <div class="contact-section-left">
+      <h2>Rozważasz zakup, ale masz wątpliwości?</h2>
+      <p>Napisz, czego szukasz i w jakim horyzoncie. Odpowiemy, czy warto szukać dalej.</p>
+      <div class="contact-phone-block">
+        <h3>Wolisz zadzwonić?</h3>
+        <p>Tel. Sławomir Skomiał +48 726 806 558</p>
+        <p>Tel. Biuro Francja +33 633 766 262</p>
+        <p><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></p>
       </div>
     </div>
-  </aside>
-</div>
+    <div class="contact-form-box">
+      <form id="contact-form" action="https://formspree.io/f/xpwzgqzg" method="POST">
+        <label for="c-name">Imię i Nazwisko</label>
+        <input type="text" id="c-name" name="name" placeholder="Jan Kowalski" required>
+        <label for="c-email">Adres Email</label>
+        <input type="email" id="c-email" name="email" placeholder="przyklad@kowalski.pl" required>
+        <label for="c-phone">Numer Tel.</label>
+        <input type="tel" id="c-phone" name="phone" placeholder="+48123456789">
+        <label for="c-message">Twoja wiadomość</label>
+        <textarea id="c-message" name="message" placeholder="Szukamy apartamentu w ..."></textarea>
+        <button type="submit" class="form-submit">Wyślij!</button>
+        <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci">Politykę Prywatności</a></p>
+      </form>
+      <div class="form-success" id="form-success">
+        Dziękujemy za wiadomość. Odpowiemy na Twoje zapytanie w ciągu 24h.
+      </div>
+    </div>
+  </div>
+</section>
 <script>
-  var form = document.getElementById('sidebar-contact-form');
+  var form = document.getElementById('contact-form');
   if(form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
