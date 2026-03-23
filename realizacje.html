@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Realizacje klientów — Nieruchomości na Lazurowym Wybrzeżu | JP Team</title>
+<meta name="description" content="Historie klientów JP Team — Polacy, którzy kupili nieruchomości na Lazurowym Wybrzeżu. Prawdziwe przypadki, realne liczby, konkretne doświadczenia.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', serif; color: #1a1a1a; background: #fff; }
+  .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0;
+    background: rgba(255,255,255,0.97); z-index: 100;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .nav-inner {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px;
+  }
+  .nav-logo-img { height: 72px; width: auto; display: block; }
+  nav ul { list-style: none; display: flex; gap: 36px; align-items: center; }
+  nav a { font-family: sans-serif; font-size: 13px; letter-spacing: 1px; color: #444; text-decoration: none; text-transform: uppercase; }
+  nav a.active { color: #E8724A; border-bottom: 1.5px solid #E8724A; padding-bottom: 2px; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: all 0.25s ease; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile-menu {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(255,255,255,0.98); border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0; padding: 16px 24px 24px;
+    flex-direction: column; gap: 0; z-index: 99;
+  }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a { font-family: sans-serif; font-size: 15px; letter-spacing: 0.5px; color: #1a1a1a; text-decoration: none; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid #f0f0f0; display: block; }
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+  .nav-mobile-menu a:hover { color: #E8724A; }
+
+  /* SHARED */
+  .eyebrow { font-family: sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #E8724A; margin-bottom: 16px; }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding: 80px 48px 72px;
+    background: linear-gradient(180deg, #fafaf8 0%, #f4f2ed 100%);
+  }
+  .page-hero-inner { max-width: 1240px; margin: 0 auto; }
+  .page-hero h1 { font-size: clamp(30px, 3.8vw, 50px); font-weight: 400; line-height: 1.25; color: #1a1a1a; max-width: 680px; margin-bottom: 20px; letter-spacing: -0.5px; }
+  .page-hero p { font-family: sans-serif; font-size: 17px; line-height: 1.75; color: #555; max-width: 560px; }
+
+  /* CASES LIST */
+  .cases-section { padding: 72px 0 80px; }
+  .cases-list { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
+
+  .case-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 72px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .case-row:first-of-type { border-top: 1px solid #f0f0f0; }
+  .case-row.reverse { direction: rtl; }
+  .case-row.reverse > * { direction: ltr; }
+
+  /* IMAGE SIDE */
+  .case-visual { position: relative; }
+  .case-img {
+    width: 100%; height: 380px;
+    border-radius: 12px;
+    display: flex; align-items: flex-end; padding: 24px;
+  }
+  .case-img.blue   { background: linear-gradient(140deg, #b8cfe0 0%, #6a8da8 100%); }
+  .case-img.green  { background: linear-gradient(140deg, #b8ccb0 0%, #6e9068 100%); }
+  .case-img.sand   { background: linear-gradient(140deg, #d8ccb4 0%, #a88c62 100%); }
+
+  .case-location-pill {
+    font-family: sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.9); background: rgba(0,0,0,0.28);
+    padding: 6px 14px; border-radius: 20px;
+  }
+
+  .case-stats {
+    display: flex; gap: 0;
+    margin-top: 20px;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .case-stat {
+    flex: 1; padding: 18px 20px; text-align: center;
+    border-right: 1px solid #f0f0f0;
+  }
+  .case-stat:last-child { border-right: none; }
+  .case-stat-num { font-size: 22px; font-weight: 300; color: #1a1a1a; line-height: 1; margin-bottom: 5px; }
+  .case-stat-label { font-family: sans-serif; font-size: 11px; color: #aaa; letter-spacing: 0.5px; }
+
+  /* TEXT SIDE */
+  .case-content { }
+  .case-tag { font-family: sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #E8724A; margin-bottom: 14px; }
+  .case-content h2 { font-size: 26px; font-weight: 400; line-height: 1.35; margin-bottom: 20px; color: #1a1a1a; }
+  .case-content p { font-family: sans-serif; font-size: 15px; line-height: 1.75; color: #555; margin-bottom: 16px; }
+
+  .case-quote {
+    margin: 28px 0;
+    padding: 24px 28px;
+    background: #f8f7f4;
+    border-left: 3px solid #E8724A;
+    border-radius: 0 8px 8px 0;
+  }
+  .case-quote p {
+    font-size: 16px; font-style: italic; color: #333; line-height: 1.7; margin-bottom: 12px;
+  }
+  .case-quote-author { font-family: sans-serif; font-size: 12px; color: #aaa; letter-spacing: 0.5px; margin-bottom: 0; font-style: normal; }
+
+  /* CTA BAND */
+  .cta-band { padding: 80px 0; background: #1a1a1a; }
+  .cta-band-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+  .cta-band h2 { font-size: 30px; font-weight: 400; color: #fff; max-width: 520px; line-height: 1.35; }
+  .cta-band p { font-family: sans-serif; font-size: 15px; color: rgba(255,255,255,0.5); margin-top: 10px; }
+  .btn-primary { background: #E8724A; color: #fff; border: none; border-radius: 30px; padding: 16px 36px; font-family: sans-serif; font-size: 15px; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; white-space: nowrap; }
+  .btn-primary:hover { background: #d4612e; }
+
+  /* FOOTER */
+  footer { background: #1a1a1a; color: rgba(255,255,255,0.5); font-family: sans-serif; font-size: 13px; border-top: 1px solid #2a2a2a; }
+  .footer-inner { max-width: 1240px; margin: 0 auto; padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-logo-img { height: 40px; }
+    .hamburger { display: flex; }
+    nav ul { display: none; }
+    .page-hero { padding: 56px 24px 52px; }
+    .cases-section { padding: 48px 0 60px; }
+    .cases-list { padding: 0 24px; }
+    .case-row { grid-template-columns: 1fr; gap: 36px; padding: 48px 0; }
+    .case-row.reverse { direction: ltr; }
+    .case-img { height: 240px; }
+    .case-stats { margin-top: 16px; }
+    .cta-band { padding: 56px 0; }
+    .cta-band-inner { flex-direction: column; align-items: flex-start; padding: 0 24px; }
+    .footer-inner { flex-direction: column; gap: 16px; padding: 30px 24px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/"><img src="./logo-navbar.png" alt="JP Team — Jens Pedersen" class="nav-logo-img"></a>
+    <ul>
+      <li><a href="/poradniki">Poradniki</a></li>
+      <li><a href="/#kontakt">Kontakt</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="/poradniki">Poradniki</a>
+    <a href="/#kontakt" id="mobileKontakt">Kontakt</a>
+  </div>
+</nav>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.getElementById('mobileKontakt').addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+</script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="eyebrow">Realizacje klientów</p>
+    <h1>Polacy, którzy kupili nieruchomość na Lazurowym Wybrzeżu</h1>
+    <p class="sans">Każda historia jest inna — inne potrzeby, inne lokalizacje, inny budżet. Pokazujemy jak wyglądał proces od pierwszego kontaktu do odbioru kluczy.</p>
+  </div>
+</div>
+
+<!-- CASES -->
+<section class="cases-section">
+  <div class="cases-list">
+
+    <!-- CASE 1 -->
+    <div class="case-row">
+      <div class="case-visual">
+        <div class="case-img blue">
+          <span class="case-location-pill sans">Cannes, Alpy Maritimes</span>
+        </div>
+        <div class="case-stats">
+          <div class="case-stat">
+            <div class="case-stat-num">€ 680k</div>
+            <div class="case-stat-label sans">Cena zakupu</div>
+          </div>
+          <div class="case-stat">
+            <div class="case-stat-num">4 mies.</div>
+            <div class="case-stat-label sans">Czas procesu</div>
+          </div>
+          <div class="case-stat">
+            <div class="case-stat-num">62 m²</div>
+            <div class="case-stat-label sans">Powierzchnia</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-content">
+        <p class="case-tag sans">Apartament · Cannes</p>
+        <h2>Apartament z widokiem na morze dla rodziny z Warszawy</h2>
+        <p class="sans">Krzysztof i Marta szukali miejsca, gdzie będą spędzać wakacje i które jednocześnie będzie pracować jako inwestycja pod wynajem. Mieli konkretny budżet i jedno wymaganie — widok na morze.</p>
+        <p class="sans">Znaleźliśmy trzy opcje w ciągu dwóch tygodni. Dwie odpadły przy due diligence. Trzecia — apartament w centrum Cannes, 200 metrów od Croisette — spełniała wszystkie warunki i miała czystą historię prawną.</p>
+      </div>
+    </div>
+
+    <!-- CASE 2 — reversed -->
+    <div class="case-row reverse">
+      <div class="case-visual">
+        <div class="case-img green">
+          <span class="case-location-pill sans">Nicea, Alpy Maritimes</span>
+        </div>
+        <div class="case-stats">
+          <div class="case-stat">
+            <div class="case-stat-num">€ 410k</div>
+            <div class="case-stat-label sans">Cena zakupu</div>
+          </div>
+          <div class="case-stat">
+            <div class="case-stat-num">3 mies.</div>
+            <div class="case-stat-label sans">Czas procesu</div>
+          </div>
+          <div class="case-stat">
+            <div class="case-stat-num">48 m²</div>
+            <div class="case-stat-label sans">Powierzchnia</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-content">
+        <p class="case-tag sans">Kawalerka inwestycyjna · Nicea</p>
+        <h2>Pierwsza inwestycja zagraniczna — kawalerka w centrum Nicei</h2>
+        <p class="sans">Anna trafiła do nas po tym, jak samodzielnie próbowała się zorientować w rynku przez kilka miesięcy. Bariera językowa i skomplikowane ogłoszenia lokalnych agencji sprawiły, że nie wiedziała od czego zacząć.</p>
+        <p class="sans">Skupiliśmy się na ścisłym centrum Nicei — dobra komunikacja, stały popyt na wynajem długoterminowy, mniejszy ryzyko sezonowości niż przy wynajmie krótkim. Mieszkanie zostało kupione bez kredytu, od razu weszło pod wynajem.</p>
+      </div>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case-row">
+      <div class="case-visual">
+        <div class="case-img sand">
+          <span class="case-location-pill sans">Èze, Alpy Maritimes</span>
+        </div>
+        <div class="case-stats">
+          <div class="case-stat">
+            <div class="case-stat-num">€ 1,1M</div>
+            <div class="case-stat-label sans">Cena zakupu</div>
+          </div>
+          <div class="case-stat">
+            <div class="case-stat-num">6 mies.</div>
+            <div class="case-stat-label sans">Czas procesu</div>
+          </div>
+          <div class="case-stat">
+            <div class="case-stat-num">140 m²</div>
+            <div class="case-stat-label sans">Powierzchnia</div>
+          </div>
+        </div>
+      </div>
+      <div class="case-content">
+        <p class="case-tag sans">Dom · Èze</p>
+        <h2>Dom z widokiem na Morze Śródziemne — poza utartym szlakiem</h2>
+        <p class="sans">Maciej wiedział, że nie chce ani Nicei, ani Cannes. Szukał spokoju, przestrzeni i widoków — ale nadal w rozsądnej odległości od lotniska. Przyszedł do nas z ogólnym pomysłem, bez konkretnej lokalizacji.</p>
+        <p class="sans">Zaproponowaliśmy Èze — miejscowość 15 minut od Nicei, z panoramicznym widokiem na Morze Śródziemne i znacznie mniejszą presją cenową niż Cannes. Proces był dłuższy niż zwykle, bo nieruchomość wymagała weryfikacji stanu technicznego i rozmów z kilkoma właścicielami.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2>Twoja historia może być następna</h2>
+      <p class="sans">Napisz do nas i opowiedz czego szukasz — bez zobowiązań.</p>
+    </div>
+    <a href="/#kontakt" class="btn-primary sans">Napisz do nas →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 JP Team · Nieruchomości Lazurowe Wybrzeże</span>
+    <span><a href="#">Polityka prywatności</a></span>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1a1a1a; color:rgba(255,255,255,0.85); font-family:sans-serif; font-size:13px; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; border-top:1px solid #333;">
+  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#c8622a; text-decoration:none; border-bottom:1px solid rgba(200,98,42,0.4);">polityce prywatności</a>.</span>
+  <div style="display:flex; gap:12px; flex-shrink:0;">
+    <button onclick="jpAcceptCookies()" style="background:#c8622a; color:#fff; border:none; border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Akceptuję</button>
+    <button onclick="jpRejectCookies()" style="background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Tylko niezbędne</button>
+  </div>
+</div>
+<script>
+  (function(){
+    var consent = localStorage.getItem("jp_cookie_consent");
+    if(!consent){ document.getElementById("cookie-banner").style.display = "flex"; }
+    else { document.getElementById("cookie-banner").style.display = "none"; }
+    if(consent === "accepted"){ loadGA(); }
+  })();
+  function jpAcceptCookies(){
+    localStorage.setItem("jp_cookie_consent","accepted");
+    document.getElementById("cookie-banner").style.display = "none";
+    loadGA();
+  }
+  function jpRejectCookies(){
+    localStorage.setItem("jp_cookie_consent","rejected");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+  function loadGA(){
+    if(window._gaLoaded) return; window._gaLoaded = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-TC56VMTG42";
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-TC56VMTG42");
+  }
+</script>
+
+</body>
+</html>
