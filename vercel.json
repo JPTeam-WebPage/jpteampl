@@ -1,9 +1,0 @@
-{
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/poradniki", "destination": "/poradniki.html" },
-    { "source": "/realizacje", "destination": "/realizacje.html" },
-    { "source": "/polityka-prywatnosci", "destination": "/polityka-prywatnosci.html" }
-  ]
-}
