@@ -5,17 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nieruchomości w Cannes — dzielnice, ceny i potencjał inwestycyjny | JP Team</title>
 <meta name="description" content="Które dzielnice Cannes rosną na wartości? Ile kosztuje m²? Praktyczny przewodnik dla Polaków szukających nieruchomości na Lazurowym Wybrzeżu.">
-<link rel="canonical" href="https://jpteam.pl/poradniki/jak-kupic-nieruchomosc-w-cannes">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Nieruchomości w Cannes — dzielnice, ceny i potencjał inwestycyjny | JP Team">
-<meta property="og:description" content="Które dzielnice Cannes rosną na wartości? Ile kosztuje m²? Praktyczny przewodnik dla Polaków.">
-<meta property="og:url" content="https://jpteam.pl/poradniki/jak-kupic-nieruchomosc-w-cannes">
-<meta property="og:image" content="https://jpteam.pl/logo-navbar.png">
+<link rel="canonical" href="https://jpteam.pl/jak-kupic-nieruchomosc-w-cannes">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-  --orange: #c8622a;
+  --orange: #FF622E;
   --orange-light: #f8f4f1;
   --dark: #1a1a18;
   --gray: #6b6b6b;
@@ -30,34 +25,35 @@
 body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); font-size: 16px; line-height: 1.7; }
 
 /* NAV */
-nav { position: sticky; top: 0; background: rgba(255,255,255,0.97); z-index: 100; border-bottom: 1px solid #e8e4dc; }
+nav { position: sticky; top: 0; background: rgba(255,255,255,0.97); z-index: 100; border-bottom: 1px solid #e8e8e8; }
 .nav-inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; }
 .nav-logo-img { height: 72px; width: auto; display: block; }
 nav ul { list-style: none; display: flex; gap: 36px; align-items: center; }
-nav a { font-family: 'Montserrat', sans-serif; font-size: 18px; letter-spacing: 1.2px; color: #222; text-decoration: none; text-transform: uppercase; }
-nav a:hover { color: #c8622a; }
+nav a { font-family: 'Montserrat', sans-serif; font-size: 18px; letter-spacing: 1.2px; color: #222; text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+nav a:hover { color: #111; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
 .hamburger span { display: block; width: 24px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: all 0.25s ease; }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.nav-mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.98); border-top: 1px solid #e8e4dc; border-bottom: 1px solid #e8e4dc; padding: 16px 24px 24px; flex-direction: column; gap: 0; z-index: 99; }
+.nav-mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.98); border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; padding: 16px 24px 24px; flex-direction: column; gap: 0; z-index: 99; }
 .nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { font-family: 'Inter', sans-serif; font-size: 14px; letter-spacing: 0.5px; color: #111; text-decoration: none; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid #e8e4dc; display: block; }
+.nav-mobile-menu a { font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 0.5px; color: #1a1a1a; text-decoration: none; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid #e8e8e8; display: block; }
 .nav-mobile-menu a:last-child { border-bottom: none; }
-.nav-mobile-menu a:hover { color: #c8622a; }
+.nav-mobile-menu a:hover { color: #FF622E; }
+
 
 /* ARTICLE HERO */
-.article-hero { max-width: 1100px; margin: 60px auto 0; padding: 0 60px; }
+.article-hero { max-width: 1240px; margin: 60px auto 0; padding: 0 60px; }
 .article-category { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); font-weight: 500; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 .article-category::before { content: ''; display: block; width: 24px; height: 1px; background: var(--orange); }
-h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500; line-height: 1.15; color: var(--dark); margin-bottom: 24px; max-width: 900px; }
-.article-lead { font-size: 18px; line-height: 1.7; color: var(--gray); font-weight: 300; max-width: 800px; margin-bottom: 48px; }
+h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500; line-height: 1.15; color: var(--dark); margin-bottom: 24px; max-width: 1000px; }
+.article-lead { font-size: 18px; line-height: 1.7; color: var(--gray); font-weight: 300; max-width: 900px; margin-bottom: 48px; }
 .hero-image { width: 100%; aspect-ratio: 16/7; border-radius: 4px; margin-bottom: 64px; position: relative; overflow: hidden; }
 .hero-image img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ARTICLE BODY */
-.article-body { max-width: 800px; margin: 0 auto; padding: 0 60px 80px; }
+.article-body { max-width: 1200px; margin: 0 auto; padding: 0 60px 80px; }
 .article-body p { margin-bottom: 24px; font-size: 16px; line-height: 1.8; color: var(--text); }
 .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; color: var(--dark); margin: 64px 0 24px; line-height: 1.2; }
 .article-body h3 { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange); margin: 48px 0 16px; }
@@ -85,23 +81,204 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
 /* SOURCE NOTE */
 .source-note { font-size: 13px; color: var(--gray); font-style: italic; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
 
-/* CTA BAND */
-.cta-band { padding: 80px 0; background: #1a1a1a; }
-.cta-band-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-.cta-band h2 { font-size: 30px; font-weight: 400; color: #fff; max-width: 540px; line-height: 1.35; font-family: 'Cormorant Garamond', serif; }
-.cta-band p { font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255,255,255,0.5); margin-top: 10px; }
-.btn-primary { background: #c8622a; color: #fff; border: none; border-radius: 30px; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; white-space: nowrap; }
-.btn-primary:hover { background: #a8501f; }
+/* CONTACT SECTION */
+.contact-section {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 80px 0;
+}
+.contact-section-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-section-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.contact-section-left p {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.contact-phone-block { margin-top: 32px; }
+.contact-phone-block h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.contact-phone-block p {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+.contact-phone-block a {
+  color: var(--orange);
+  text-decoration: none;
+}
+.contact-form-box {
+  border: 1.5px solid var(--orange);
+  border-radius: 12px;
+  padding: 36px;
+}
+.contact-form-box label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 6px;
+  margin-top: 20px;
+}
+.contact-form-box label:first-of-type { margin-top: 0; }
+.contact-form-box input,
+.contact-form-box textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-form-box input:focus,
+.contact-form-box textarea:focus { border-color: var(--orange); }
+.contact-form-box textarea {
+  border-radius: 12px;
+  height: 110px;
+  resize: vertical;
+}
+.contact-form-box .form-submit {
+  width: 100%;
+  margin-top: 24px;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form-box .form-submit:hover { background: #a8501f; }
+.contact-form-box .form-note {
+  font-size: 11px;
+  color: #bbb;
+  margin-top: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+.contact-form-box .form-note a { color: var(--orange); }
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 16px;
+  color: var(--dark);
+}
 
-/* FOOTER */
-footer { background: #1a1a1a; color: rgba(255,255,255,0.5); font-family: 'DM Sans', sans-serif; font-size: 13px; border-top: 1px solid #2a2a2a; }
-.footer-inner { max-width: 1240px; margin: 0 auto; padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-footer a:hover { color: rgba(255,255,255,0.8); }
+/* FOOTER — LIGHT */
+.site-footer {
+  background: #faf9f7;
+  border-top: 1px solid #e8e4dc;
+  font-family: 'DM Sans', sans-serif;
+}
+.footer-top {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 48px 48px;
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.footer-logo img {
+  height: 80px;
+  width: auto;
+}
+.footer-nav-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-nav ul li {
+  margin-bottom: 10px;
+}
+.footer-nav ul li a {
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-nav ul li a:hover {
+  color: #FF622E;
+}
+.footer-address {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.8;
+}
+.footer-address strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+.footer-bottom {
+  border-top: 1px solid #e8e4dc;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #bbb;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-bottom a {
+  color: #bbb;
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  color: #FF622E;
+}
 
 /* MOBILE */
 @media (max-width: 900px) {
-  .nav-inner { padding: 16px 24px; }
+  .nav-inner { padding: 14px 24px; }
   .nav-logo-img { height: 48px; }
   .hamburger { display: flex; }
   nav ul { display: none; }
@@ -110,10 +287,30 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   h1 { font-size: 32px; }
   .article-lead { font-size: 16px; }
   .article-body h2 { font-size: 26px; }
-  .cta-band { padding: 56px 0; }
-  .cta-band-inner { flex-direction: column; align-items: flex-start; padding: 0 24px; }
-  .footer-inner { flex-direction: column; text-align: center; padding: 30px 24px; }
+  .contact-section-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
+  }
+  .contact-section-left { order: 2; }
+  .contact-form-box { order: 1; }
+  .contact-section { padding: 56px 0; }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 24px 32px;
+  }
+  .footer-bottom {
+    padding: 16px 24px;
+    flex-direction: column;
+    text-align: center;
+  }
 }
+
+/* TABLE MOBILE SCROLL */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.table-scroll table, .table-scroll .data-table { margin: 0; min-width: 500px; }
+
 </style>
 </head>
 <body>
@@ -121,7 +318,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/"><img src="../../logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
+    <a href="/"><img src="../logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
     <ul>
       <li><a href="/poradniki">Poradniki</a></li>
       <li><a href="/#kontakt">Kontakt</a></li>
@@ -132,7 +329,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   </div>
   <div class="nav-mobile-menu" id="mobileMenu">
     <a href="/poradniki">Poradniki</a>
-    <a href="/#kontakt">Kontakt</a>
+    <a href="/#kontakt" id="mobileKontakt">Kontakt</a>
   </div>
 </nav>
 
@@ -157,97 +354,159 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
 <!-- ARTICLE BODY -->
 <div class="article-body">
-  <h2>Dlaczego Cannes? Kalendarz kongresowy</h2>
-  <p>Większość kupujących widzi Cannes przez pryzmat Festiwalu Filmowego. Ale dla inwestorów kluczowe jest coś innego: Cannes ma jeden z najgęstszych kalendarzy kongresowych w Europie.</p>
-  <p>W szczycie sezonu festiwalowego stawki za noc mogą być 2,5–3x wyższe niż w standardowym miesiącu. To oznacza, że Cannes ma dwa szczyty przychodów: kongresowy (wiosna) i wakacyjny (lato) — w przeciwieństwie do Nicei czy Antibes, które są zależne głównie od sezonu letniego.</p>
-  <h3>Kalendarz wydarzeń</h3>
-  <p>Cannes organizuje ponad 50 międzynarodowych wydarzeń rocznie. Oto te, które mają największy wpływ na rynek najmu:</p>
-  <table class="data-table">
-    <thead><tr><th>Wydarzenie</th><th>Termin</th><th>Uczestników</th><th>Wpływ na ceny</th></tr></thead>
-    <tbody>
-      <tr><td class="district">IPEM (private equity)</td><td>Luty</td><td>~3 000</td><td>Wysoki</td></tr>
-      <tr><td class="district">MIPIM (nieruchomości)</td><td>Marzec</td><td>~23 000</td><td class="price">Bardzo wysoki</td></tr>
-      <tr><td class="district">Festiwal Filmowy</td><td>Maj</td><td>~40 000</td><td class="price">2,5–3x stawki</td></tr>
-      <tr><td class="district">Cannes Lions (reklama)</td><td>Czerwiec</td><td>~12 000</td><td class="price">Bardzo wysoki</td></tr>
-      <tr><td class="district">Cannes Yachting Festival</td><td>Wrzesień</td><td>~54 000</td><td class="price">Bardzo wysoki</td></tr>
-      <tr><td class="district">TFWA / Tax Free</td><td>Wrzesień/Październik</td><td>~7 000</td><td>Wysoki</td></tr>
-      <tr><td class="district">MIPCOM (media/TV)</td><td>Październik</td><td>~12 000</td><td>Wysoki</td></tr>
-      <tr><td class="district">MAPIC (retail)</td><td>Listopad</td><td>~4 400</td><td>Wysoki</td></tr>
-      <tr><td class="district">ILTM (turystyka luksusowa)</td><td>Grudzień</td><td>~5 000</td><td>Wysoki</td></tr>
-    </tbody>
-  </table>
-  <p class="source-note">Źródła: Palais des Festivals et des Congrès de Cannes, RX France</p>
-  <h2>Mapa dzielnic — ceny i charakterystyka</h2>
-  <p>Cannes to rynek niejednorodny, gdzie wartość nieruchomości zależy od bliskości do morza i prestiżowych punktów orientacyjnych. Różnice cenowe między dzielnicami są znaczące.</p>
-  <table class="data-table">
-    <thead><tr><th>Dzielnica</th><th>Cena za m²</th><th>Charakterystyka</th></tr></thead>
-    <tbody>
-      <tr><td class="district">La Croisette</td><td class="price">15 000 – 50 000 €</td><td class="desc">Pierwsza linia, Palais des Festivals, najwyższy prestiż</td></tr>
-      <tr><td class="district">La Californie</td><td class="price">9 000 – 12 000 €</td><td class="desc">Rezydencje na wzgórzach, panoramiczne widoki na zatokę</td></tr>
-      <tr><td class="district">Super Cannes</td><td class="price">10 000 – 15 000 €</td><td class="desc">Wille na wzgórzach, zieleń, prywatność</td></tr>
-      <tr><td class="district">La Banane / Centre-ville</td><td class="price">8 000 – 12 000 €</td><td class="desc">Centrum, blisko Palais des Festivals, wysoka rentowność najmu</td></tr>
-      <tr><td class="district">Le Suquet</td><td class="price">6 000 – 8 000 €</td><td class="desc">Historyczne stare miasto, klimatyczne uliczki</td></tr>
-    </tbody>
-  </table>
-  <div class="highlight-box">
-    <p><strong>La Banane</strong> — dzielnica między bulwarem Croisette a drogą krajową — jest często wskazywana jako "sweet spot" dla inwestorów. Bliskość do Palais des Festivals przy niższych cenach niż na samej Croisette przekłada się na wyższą rentowność najmu.</p>
-  </div>
-  <p class="source-note">Źródła: BARNES Cannes, Sotheby's Côte d'Azur, MeilleursAgents (luty 2026)</p>
-  <h2>Regulacje wynajmu krótkoterminowego</h2>
-  <p>Cannes należy do miast z rozwiniętą regulacją rynku najmu krótkoterminowego. Przed zakupem nieruchomości pod wynajem warto znać aktualne wymogi.</p>
-  <h3>Obowiązki właściciela</h3>
-  <ul style="margin: 32px 0; padding: 0; list-style: none;">
-    <li style="padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--border);"><span style="position: absolute; left: 0; color: var(--orange); font-weight: 500;">→</span><strong>Rejestracja w mairie</strong> — obowiązkowy numer rejestracyjny dla wszystkich platform</li>
-    <li style="padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--border);"><span style="position: absolute; left: 0; color: var(--orange); font-weight: 500;">→</span><strong>Limit 120 dni/rok</strong> — dla résidence principale</li>
-    <li style="padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--border);"><span style="position: absolute; left: 0; color: var(--orange); font-weight: 500;">→</span><strong>Résidence secondaire</strong> — brak limitu dni, ale dodatkowe wymogi formalne</li>
-    <li style="padding: 12px 0 12px 28px; position: relative;"><span style="position: absolute; left: 0; color: var(--orange); font-weight: 500;">→</span><strong>Klasa energetyczna DPE</strong> — od 2025 zakaz wynajmu klasy G, od 2028 klasy F</li>
-  </ul>
-  <div class="warning-box">
-    <div class="warning-box-title">Loi Le Meur (listopad 2024)</div>
-    <p>Nowa ustawa daje wspólnotom mieszkaniowym możliwość zakazania wynajmu krótkoterminowego większością 2/3 głosów.</p>
-    <p><strong>Przed zakupem:</strong> sprawdź regulamin wspólnoty i protokoły ostatnich zebrań.</p>
-  </div>
-  <p class="source-note">Źródła: Loi Le Meur (19.11.2024), Mairie de Cannes, Service-Public.fr</p>
-  <h2>Na co zwrócić uwagę przed zakupem</h2>
-  <h3>Klasa energetyczna (DPE)</h3>
-  <p>Od stycznia 2025 nieruchomości z klasą energetyczną G nie mogą być wynajmowane. Klasa F będzie zakazana od 2028, klasa E od 2034.</p>
-  <h3>Stan wspólnoty mieszkaniowej</h3>
-  <p>Wiele budynków na Lazurowym Wybrzeżu pochodzi z lat 60–70. Przed zakupem warto przeanalizować protokoły zebrań wspólnoty z ostatnich 2–3 lat.</p>
-  <h3>Diagnostyka techniczna (DDT)</h3>
-  <p>Sprzedający ma obowiązek dostarczyć pakiet diagnoz technicznych obejmujący m.in. azbest, ołów, termity, instalację elektryczną i gazową oraz certyfikat energetyczny DPE.</p>
-  <div class="pullquote">
-    <p>„Wiedzieliśmy, że chcemy apartament z widokiem i tarasem. Nie wiedzieliśmy, że trzy inne apartamenty które wcześniej wybraliśmy miały obciążenia hipoteczne lub problemy ze wspólnotą mieszkaniową."</p>
-    <cite>— Klient JP Team</cite>
-  </div>
-  <div class="highlight-box" style="margin-top: 48px;">
-    <p style="font-size: 16px;">Planujesz zakup w Cannes? Przejdź do <a href="/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu" style="color: var(--orange); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--orange);">przewodnika po procesie zakupu we Francji →</a></p>
-  </div>
+    <h2>Dlaczego Cannes? Kalendarz kongresowy</h2>
+    <p>Większość kupujących widzi Cannes przez pryzmat Festiwalu Filmowego. Ale dla inwestorów kluczowe jest coś innego: Cannes ma jeden z najgęstszych kalendarzy kongresowych w Europie.</p>
+    <p>W szczycie sezonu festiwalowego stawki za noc mogą być 2,5–3x wyższe niż w standardowym miesiącu. To oznacza, że Cannes ma dwa szczyty przychodów: kongresowy (wiosna) i wakacyjny (lato) — w przeciwieństwie do Nicei czy Antibes, które są zależne głównie od sezonu letniego.</p>
+    <h3>Kalendarz wydarzeń</h3>
+    <p>Cannes organizuje ponad 50 międzynarodowych wydarzeń rocznie. Oto te, które mają największy wpływ na rynek najmu:</p>
+    <table class="data-table">
+      <thead><tr><th>Wydarzenie</th><th>Termin</th><th>Uczestników</th><th>Wpływ na ceny</th></tr></thead>
+      <tbody>
+        <tr><td class="district">IPEM (private equity)</td><td>Luty</td><td>~3000</td><td>Wysoki</td></tr>
+        <tr><td class="district">MIPIM (nieruchomości)</td><td>Marzec</td><td>~23000</td><td class="price">Bardzo wysoki</td></tr>
+        <tr><td class="district">Festiwal Filmowy</td><td>Maj</td><td>~40000</td><td class="price">2,5–3x stawki</td></tr>
+        <tr><td class="district">Cannes Lions (reklama)</td><td>Czerwiec</td><td>~12000</td><td class="price">Bardzo wysoki</td></tr>
+        <tr><td class="district">Cannes Yachting Festival</td><td>Wrzesień</td><td>~54000</td><td class="price">Bardzo wysoki</td></tr>
+        <tr><td class="district">TFWA / Tax Free</td><td>Wrzesień/Październik</td><td>~7000</td><td>Wysoki</td></tr>
+        <tr><td class="district">MIPCOM (media/TV)</td><td>Październik</td><td>~12000</td><td>Wysoki</td></tr>
+        <tr><td class="district">MAPIC (retail)</td><td>Listopad</td><td>~4400</td><td>Wysoki</td></tr>
+        <tr><td class="district">ILTM (turystyka luksusowa)</td><td>Grudzień</td><td>~5000</td><td>Wysoki</td></tr>
+      </tbody>
+    </table>
+    <p class="source-note">Źródła: Palais des Festivals et des Congrès de Cannes, RX France</p>
+    <h2>Mapa dzielnic — ceny i charakterystyka</h2>
+    <p>Cannes to rynek niejednorodny, gdzie wartość nieruchomości zależy od bliskości do morza i prestiżowych punktów orientacyjnych. Różnice cenowe między dzielnicami są znaczące.</p>
+    <table class="data-table">
+      <thead><tr><th>Dzielnica</th><th>Cena za m²</th><th>Charakterystyka</th></tr></thead>
+      <tbody>
+        <tr><td class="district">La Croisette</td><td class="price">15000 – 50000 €</td><td class="desc">Pierwsza linia, Palais des Festivals, najwyższy prestiż</td></tr>
+        <tr><td class="district">La Californie</td><td class="price">9000 – 12000 €</td><td class="desc">Rezydencje na wzgórzach, panoramiczne widoki na zatokę</td></tr>
+        <tr><td class="district">Super Cannes</td><td class="price">10000 – 15000 €</td><td class="desc">Wille na wzgórzach, zieleń, prywatność</td></tr>
+        <tr><td class="district">La Banane / Centre-ville</td><td class="price">8000 – 12000 €</td><td class="desc">Centrum, blisko Palais des Festivals, wysoka rentowność najmu</td></tr>
+        <tr><td class="district">Le Suquet</td><td class="price">6000 – 8000 €</td><td class="desc">Historyczne stare miasto, klimatyczne uliczki</td></tr>
+      </tbody>
+    </table>
+    <div class="highlight-box">
+      <p><strong>La Banane</strong> — dzielnica między bulwarem Croisette a drogą krajową — jest często wskazywana jako optymalna lokalizacja dla inwestorów. Bliskość do Palais des Festivals przy niższych cenach niż na samej Croisette przekłada się na wyższą rentowność najmu.</p>
+    </div>
+    <p class="source-note">Źródła: BARNES Cannes, Sotheby's Côte d'Azur, MeilleursAgents (luty 2026)</p>
+    <h2>Regulacje wynajmu krótkoterminowego</h2>
+    <p>Cannes należy do miast z rozwiniętą regulacją rynku najmu krótkoterminowego. Przed zakupem nieruchomości pod wynajem warto znać aktualne wymogi.</p>
+    <h3>Obowiązki właściciela</h3>
+    <ul style="margin: 32px 0; padding: 0; list-style: none;">
+      <li style="padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--border);"><span style="position: absolute; left: 0; color: var(--orange); font-weight: 500;">→</span><strong>Rejestracja w mairie</strong> — obowiązkowy numer rejestracyjny dla wszystkich platform</li>
+      <li style="padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--border);"><span style="position: absolute; left: 0; color: var(--orange); font-weight: 500;">→</span><strong>Limit 120 dni/rok</strong> — dla résidence principale</li>
+      <li style="padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--border);"><span style="position: absolute; left: 0; color: var(--orange); font-weight: 500;">→</span><strong>Résidence secondaire</strong> — brak limitu dni, ale dodatkowe wymogi formalne</li>
+      <li style="padding: 12px 0 12px 28px; position: relative;"><span style="position: absolute; left: 0; color: var(--orange); font-weight: 500;">→</span><strong>Klasa energetyczna DPE</strong> — od 2025 zakaz wynajmu klasy G, od 2028 klasy F</li>
+    </ul>
+    <div class="warning-box">
+      <div class="warning-box-title">Loi Le Meur (listopad 2024)</div>
+      <p>Nowa ustawa daje wspólnotom mieszkaniowym możliwość zakazania wynajmu krótkoterminowego większością 2/3 głosów.</p>
+      <p><strong>Przed zakupem:</strong> sprawdź regulamin wspólnoty i protokoły ostatnich zebrań.</p>
+    </div>
+    <p class="source-note">Źródła: Loi Le Meur (19.11.2024), Mairie de Cannes, Service-Public.fr</p>
+    <h2>Na co zwrócić uwagę przed zakupem</h2>
+    <h3>Klasa energetyczna (DPE)</h3>
+    <p>Od stycznia 2025 nieruchomości z klasą energetyczną G nie mogą być wynajmowane. Klasa F będzie zakazana od 2028, klasa E od 2034.</p>
+    <h3>Stan wspólnoty mieszkaniowej</h3>
+    <p>Wiele budynków na Lazurowym Wybrzeżu pochodzi z lat 60–70. Przed zakupem warto przeanalizować protokoły zebrań wspólnoty z ostatnich 2–3 lat.</p>
+    <h3>Diagnostyka techniczna (DDT)</h3>
+    <p>Sprzedający ma obowiązek dostarczyć pakiet diagnoz technicznych obejmujący m.in. azbest, ołów, termity, instalację elektryczną i gazową oraz certyfikat energetyczny DPE.</p>
+    <div class="pullquote">
+      <p>„Byliśmy zdecydowani na apartament z widokiem i tarasem. Okazało się jednak, że trzy spośród wcześniej wybranych nieruchomości miały obciążenia hipoteczne lub problemy ze wspólnotą mieszkaniową."</p>
+      <cite>— Klient JP Team</cite>
+    </div>
+    <div class="highlight-box" style="margin-top: 48px;">
+      <p style="font-size: 16px;">Planujesz zakup w Cannes? Przejdź do <a href="/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu" style="color: var(--orange); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--orange);">przewodnika po procesie zakupu we Francji →</a></p>
+    </div>
 </div>
 
-<!-- CTA BAND -->
-<section class="cta-band">
-  <div class="cta-band-inner">
-    <div>
-      <h2>Zastanawiasz się nad inwestycją w Cannes?</h2>
-      <p>Napisz do nas — odpowiemy bezpłatnie, bez zobowiązań.</p>
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-section-inner">
+    <div class="contact-section-left">
+      <h2>Rozważają Państwo inwestycję w Cannes?</h2>
+      <p>Prosimy o opisanie poszukiwań. Przedstawimy wstępne propozycje oraz informację o zasadach współpracy z naszym biurem.</p>
+      <div class="contact-phone-block">
+        <h3>Preferują Państwo kontakt telefoniczny?</h3>
+        <p>Tel. Sławomir Skomiał +48 726 806 558</p>
+        <p>Tel. Biuro Francja +33 633 766 262</p>
+        <p><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></p>
+      </div>
     </div>
-    <a href="/#kontakt" class="btn-primary">Napisz do nas →</a>
+    <div class="contact-form-box">
+      <form id="contact-form" action="https://formspree.io/f/xpwzgqzg" method="POST">
+        <label for="c-name">Imię i Nazwisko</label>
+        <input type="text" id="c-name" name="name" placeholder="Jan Kowalski" required>
+        <label for="c-email">Adres Email</label>
+        <input type="email" id="c-email" name="email" placeholder="przyklad@kowalski.pl" required>
+        <label for="c-phone">Numer Tel.</label>
+        <input type="tel" id="c-phone" name="phone" placeholder="+48123456789">
+        <label for="c-message">Wiadomość</label>
+        <textarea id="c-message" name="message" placeholder="Szukamy apartamentu w ..."></textarea>
+        <button type="submit" class="form-submit">Wyślij!</button>
+        <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci">Politykę Prywatności</a></p>
+      </form>
+      <div class="form-success" id="form-success">
+        Dziękujemy za wiadomość. Odpowiemy na Państwa zapytanie w ciągu 24 godzin.
+      </div>
+    </div>
   </div>
 </section>
+<script>
+  var form = document.getElementById('contact-form');
+  if(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function(r) {
+          if(r.ok) {
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          }
+        });
+    });
+  }
+</script>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <span>© 2026 JP Team · Nieruchomości Lazurowe Wybrzeże</span>
-    <span><a href="/polityka-prywatnosci">Polityka prywatności</a></span>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="/"><img src="../logo-navbar.png" alt="JP Team"></a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-title">Menu</div>
+      <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/poradniki">Poradniki</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+        <li><a href="/polityka-prywatnosci">Polityka prywatności</a></li>
+      </ul>
+    </div>
+    <div class="footer-address">
+      <strong>Dane firmy</strong>
+      Jens Pedersen SARL<br>
+      29 impasse de la Guifette<br>
+      F-83700 Saint-Raphaël, Francja<br><br>
+      Tel. PL: <a href="tel:+48726806558">+48 726 806 558</a><br>
+      Tel. FR: <a href="tel:+33633766262">+33 633 766 262</a><br>
+      <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a><br><br>
+      Carte professionnelle: CPI83032021000000022
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Jens Pedersen SARL · Nieruchomości Lazurowe Wybrzeże</span>
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
   </div>
 </footer>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1a1a1a; color:rgba(255,255,255,0.85); font-family:sans-serif; font-size:13px; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; border-top:1px solid #333;">
-  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#c8622a; text-decoration:none; border-bottom:1px solid rgba(200,98,42,0.4);">polityce prywatności</a>.</span>
+  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#FF622E; text-decoration:none; border-bottom:1px solid rgba(200,98,42,0.4);">polityce prywatności</a>.</span>
   <div style="display:flex; gap:12px; flex-shrink:0;">
-    <button onclick="jpAcceptCookies()" style="background:#c8622a; color:#fff; border:none; border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Akceptuję</button>
+    <button onclick="jpAcceptCookies()" style="background:#FF622E; color:#fff; border:none; border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Akceptuję</button>
     <button onclick="jpRejectCookies()" style="background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Tylko niezbędne</button>
   </div>
 </div>
@@ -278,6 +537,19 @@ footer a:hover { color: rgba(255,255,255,0.8); }
     gtag("js", new Date());
     gtag("config", "G-TC56VMTG42");
   }
+</script>
+
+
+<script>
+// Wrap all tables in scroll container for mobile
+document.querySelectorAll('.article-body table, .article-body .data-table').forEach(function(t) {
+  if (!t.parentElement.classList.contains('table-scroll')) {
+    var wrap = document.createElement('div');
+    wrap.className = 'table-scroll';
+    t.parentNode.insertBefore(wrap, t);
+    wrap.appendChild(t);
+  }
+});
 </script>
 
 </body>

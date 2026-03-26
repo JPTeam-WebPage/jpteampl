@@ -54,7 +54,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap');
 
   :root {
-    --orange: #c8622a;
+    --orange: #FF622E;
     --orange-light: #f8f4f1;
     --dark: #1a1a18;
     --gray: #6b6b6b;
@@ -80,7 +80,7 @@
   .nav-logo-img { height: 72px; width: auto; display: block; }
   nav ul { list-style: none; display: flex; gap: 36px; align-items: center; }
   nav a { font-family: 'Montserrat', sans-serif; font-size: 18px; letter-spacing: 1.2px; color: #222; text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
-  nav a:hover { color: #c8622a; }
+  nav a:hover { color: #FF622E; }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
   .hamburger span { display: block; width: 22px; height: 1.5px; background: #111; border-radius: 1px; transition: all 0.25s ease; }
   .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
@@ -90,14 +90,14 @@
   .nav-mobile-menu.open { display: flex; }
   .nav-mobile-menu a { font-family: 'Inter', sans-serif; font-size: 14px; letter-spacing: 0.5px; color: #111; text-decoration: none; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid #e8e4dc; display: block; }
   .nav-mobile-menu a:last-child { border-bottom: none; }
-  .nav-mobile-menu a:hover { color: #c8622a; }
+  .nav-mobile-menu a:hover { color: #FF622E; }
 
   /* CTA BAND */
   .cta-band { padding: 80px 0; background: #1a1a1a; }
   .cta-band-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
   .cta-band h2 { font-size: 30px; font-weight: 400; color: #fff; max-width: 540px; line-height: 1.35; font-family: 'Cormorant Garamond', serif; }
   .cta-band p { font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255,255,255,0.5); margin-top: 10px; }
-  .btn-primary { background: #c8622a; color: #fff; border: none; border-radius: 30px; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; white-space: nowrap; }
+  .btn-primary { background: #FF622E; color: #fff; border: none; border-radius: 30px; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; white-space: nowrap; }
   .btn-primary:hover { background: #a8501f; }
 
   /* FOOTER */
@@ -201,7 +201,7 @@
   .toc-list a:hover { color: var(--orange); }
 
   .article-body {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 60px 80px;
   }
@@ -353,6 +353,173 @@
     .article-body h2 { font-size: 26px; }
     .data-table { font-size: 13px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   }
+
+/* CONTACT SECTION */
+.contact-section {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 80px 0;
+}
+.contact-section-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-section-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.contact-section-left p {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.contact-phone-block { margin-top: 32px; }
+.contact-phone-block h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.contact-phone-block p {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+.contact-phone-block a { color: var(--orange); text-decoration: none; }
+.contact-form-box {
+  border: 1.5px solid var(--orange);
+  border-radius: 12px;
+  padding: 36px;
+}
+.contact-form-box label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+.contact-form-box label:first-of-type { margin-top: 0; }
+.contact-form-box input,
+.contact-form-box textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--dark);
+  background: #faf9f7;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-form-box input:focus,
+.contact-form-box textarea:focus { border-color: var(--orange); }
+.contact-form-box textarea { border-radius: 12px; height: 110px; resize: vertical; }
+.contact-form-box .form-submit {
+  margin-top: 24px;
+  width: 100%;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 16px;
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form-box .form-submit:hover { background: #e04e1a; }
+.contact-form-box .form-note { font-size: 11px; color: #bbb; margin-top: 12px; line-height: 1.5; text-align: center; }
+.contact-form-box .form-note a { color: var(--orange); }
+.form-success { display: none; text-align: center; padding: 40px 0; font-size: 16px; color: var(--dark); }
+
+/* FOOTER */
+.site-footer {
+  background: #faf9f7;
+  border-top: 1px solid #e8e4dc;
+  font-family: 'DM Sans', sans-serif;
+}
+.footer-top {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 48px 48px;
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.footer-logo img {
+  height: 80px;
+  width: auto;
+}
+.footer-nav-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+.footer-nav ul { list-style: none; padding: 0; margin: 0; }
+.footer-nav ul li { margin-bottom: 10px; }
+.footer-nav ul li a { font-size: 14px; color: #444; text-decoration: none; transition: color 0.2s; }
+.footer-nav ul li a:hover { color: #FF622E; }
+.footer-address { font-size: 13px; color: #888; line-height: 1.8; }
+.footer-address strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+.footer-bottom {
+  border-top: 1px solid #e8e4dc;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #bbb;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-bottom a { color: #bbb; text-decoration: none; }
+.footer-bottom a:hover { color: #FF622E; }
+
+
+/* TABLE MOBILE SCROLL */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.table-scroll table, .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+
+@media (max-width: 900px) {
+  .contact-section-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+  .contact-section { padding: 56px 0; }
+  .contact-section-left { order: 2; }
+  .contact-form-box { order: 1; }
+}
 </style>
 </head>
 <body>
@@ -360,7 +527,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/"><img src="../../logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
+    <a href="/"><img src="../logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
     <ul>
       <li><a href="/poradniki">Poradniki</a></li>
       <li><a href="/#kontakt">Kontakt</a></li>
@@ -382,7 +549,7 @@
   <h1>Cannes: nieruchomości, dzielnice i realia inwestycji na Lazurowym Wybrzeżu</h1>
 
   <p class="article-lead">
-    Cannes to nie tylko festiwal filmowy. To jeden z najbardziej stabilnych rynków nieruchomości w Europie, z ograniczoną podażą, rosnącym popytem i realną rentownością z wynajmu krótkoterminowego. Jeśli myślisz o zakupie apartamentu lub willi na Lazurowym Wybrzeżu, to przewodnik po tym, co naprawdę decyduje o cenie i wartości inwestycji.
+    Cannes to nie tylko festiwal filmowy. To jeden z najbardziej stabilnych rynków nieruchomości w Europie, z ograniczoną podażą, rosnącym popytem i realną rentownością z wynajmu krótkoterminowego. Przewodnik po tym, co decyduje o cenie i wartości inwestycji na Lazurowym Wybrzeżu.
   </p>
 
   <nav class="toc">
@@ -406,15 +573,15 @@
   <!-- ═══ SEKCJA 1 ═══ -->
   <h2 id="miasto">Cannes — charakter miasta i rynek w liczbach</h2>
 
-  <p>Cannes to miasto o stałej populacji około 75 000 mieszkańców, które co roku przyjmuje kilka milionów turystów. Festiwal Filmowy w maju, targi MIPIM i MIPCOM, Monaco Grand Prix w pobliżu — to generuje popyt na nieruchomości zarówno ze strony kupujących na własne potrzeby, jak i inwestorów nastawionych na wynajem.</p>
+  <p>Cannes to miasto o stałej populacji około 75000 mieszkańców, które co roku przyjmuje kilka milionów turystów. Festiwal Filmowy w maju, targi MIPIM i MIPCOM, Monaco Grand Prix w pobliżu — to generuje popyt na nieruchomości zarówno ze strony kupujących na własne potrzeby, jak i inwestorów nastawionych na wynajem.</p>
 
-  <p>Według danych z początku 2025 roku, średnia cena za metr kwadratowy w Cannes wynosi 6 152 EUR dla apartamentów i 7 664 EUR dla domów. To wartości uśrednione dla całego miasta. W praktyce rozpiętość jest ogromna: od 5 000 EUR/m² w starszych budynkach w centrum, do ponad 30 000 EUR/m² za penthouse przy La Croisette.</p>
+  <p>Według danych z początku 2025 roku, średnia cena za metr kwadratowy w Cannes wynosi 6200 EUR dla apartamentów i 7700 EUR dla domów. To wartości uśrednione dla całego miasta. W praktyce rozpiętość jest ogromna: od 5000 EUR/m² w starszych budynkach w centrum, do ponad 30000 EUR/m² za penthouse przy La Croisette.</p>
 
   <div class="highlight-box">
     <p><strong>Cannes należy do najdroższych rynków nieruchomości we Francji</strong>, ale nie jest to rynek jednorodny. Wybór dzielnicy może oznaczać różnicę 3–4x w cenie za metr kwadratowy. Ta sama kwota kupuje zupełnie różne nieruchomości zależnie od lokalizacji.</p>
   </div>
 
-  <p>Rynek obsługiwany przez JP Team to segment 300 000–1 000 000+ EUR, czyli apartamenty od 50 do 130 m² w preferowanych lokalizacjach. To właśnie ten przedział łączy dostępność finansową z realnym potencjałem wzrostu wartości i wynajmu.</p>
+  <p>Rynek obsługiwany przez JP Team to segment 300000–1000000+ EUR, czyli apartamenty od 50 do 130 m² w preferowanych lokalizacjach. To właśnie ten przedział łączy dostępność finansową z realnym potencjałem wzrostu wartości i wynajmu.</p>
 
   <!-- ═══ SEKCJA 2 ═══ -->
   <h2 id="dzielnice">Dzielnice Cannes: ceny i charakterystyka</h2>
@@ -432,27 +599,27 @@
     <tbody>
       <tr>
         <td class="step">La Croisette i Palm Beach</td>
-        <td class="duration">11 385 – 15 441</td>
-        <td class="desc">Nadmorski bulwar, penthousy do 30 000 EUR/m². Najdroższy adres w mieście, stały popyt ze strony kupujących gotówkowych.</td>
+        <td class="duration">11400 – 15400</td>
+        <td class="desc">Nadmorski bulwar, penthousy do 30000 EUR/m². Najdroższy adres w mieście, stały popyt ze strony kupujących gotówkowych.</td>
       </tr>
       <tr>
         <td class="step">La Californie</td>
-        <td class="duration">8 310 – 11 000</td>
+        <td class="duration">8300 – 11000</td>
         <td class="desc">Wzgórze z widokiem na morze, wille i rezydencje, spokojniejszy charakter. Popularne wśród rodzin z wyższego segmentu.</td>
       </tr>
       <tr>
         <td class="step">La Banane (centrum)</td>
-        <td class="duration">7 362 – 9 107</td>
+        <td class="duration">7400 – 9100</td>
         <td class="desc">Centralny obszar tuż za La Croisette. Dobry punkt startowy dla inwestycji z potencjałem wynajmu krótkoterminowego.</td>
       </tr>
       <tr>
         <td class="step">Le Suquet (Stare Miasto)</td>
-        <td class="duration">5 000 – 7 218</td>
+        <td class="duration">5000 – 7200</td>
         <td class="desc">Historyczna dzielnica na wzgórzu, autentyczny charakter. Mniejsze apartamenty, duży potencjał turystyczny.</td>
       </tr>
       <tr>
         <td class="step">Prado-République</td>
-        <td class="duration">ok. 5 480</td>
+        <td class="duration">ok. 5500</td>
         <td class="desc">Dzielnica centralna, praktyczna, bez premium za adres. Dobry stosunek ceny do metrażu dla kupujących z budżetem do 400k EUR.</td>
       </tr>
     </tbody>
@@ -470,7 +637,7 @@
 
   <p>Po kilku latach dynamicznych wzrostów cen rynek Lazurowego Wybrzeża wszedł w fazę stabilizacji. Nie jest to jednak zastój — eksperci prognozują umiarkowany wzrost cen rzędu 3% w skali roku do 2026, przy równoczesnym ożywieniu popytu ze strony kupujących finansowanych kredytem.</p>
 
-  <p>Stopy procentowe we Francji ustabilizowały się między 3,11% a 3,56% dla kredytów na 25 lat. Po kilku latach rekordowego wzrostu stóp, obecny poziom przywraca siłę nabywczą kupujących, którzy wcześniej byli wypchnięci z rynku przez koszt finansowania.</p>
+  <p>Stopy procentowe we Francji ustabilizowały się między 3% a 4% dla kredytów na 25 lat. Po kilku latach rekordowego wzrostu stóp, obecny poziom przywraca siłę nabywczą kupujących, którzy wcześniej byli wypchnięci z rynku przez koszt finansowania.</p>
 
   <ul class="checklist">
     <li><strong>Ograniczona podaż:</strong> Nowe inwestycje w Cannes spadły o 10% w 2024 roku. Miasto jest geograficznie zamknięte — między morzem a wzgórzami nie ma gdzie budować nowych osiedli na dużą skalę.</li>
@@ -486,10 +653,10 @@
 
   <p>Cannes jest jednym z najbardziej rentownych rynków krótkoterminowych we Francji ze względu na rok okrągły popyt: festiwal filmowy w maju, targi latem i jesienią, turystyka zimowa z pobliskich kurortów narciarskich. To rzadka kombinacja w segmencie wakacyjnym.</p>
 
-  <p>Według danych Airbnb z 2025 roku, mediana rocznego przychodu z wynajmu w Cannes wynosi między 21 000 a 23 065 USD (około 19 000–21 000 EUR), przy średnim miesięcznym przychodzie brutto około 3 300 USD. Obłożenie roczne oscyluje między 47% a 55%, co przy standardowych kosztach operacyjnych daje realną rentowność netto na poziomie 4–6% rocznie dla dobrze zlokalizowanego apartamentu.</p>
+  <p>Według danych Airbnb z 2025 roku, mediana rocznego przychodu z wynajmu w Cannes wynosi między 21000 a 23100 USD (około 19000–21000 EUR), przy średnim miesięcznym przychodzie brutto około 3300 USD. Obłożenie roczne oscyluje między 47% a 55%, co przy standardowych kosztach operacyjnych daje realną rentowność netto na poziomie 4–6% rocznie dla dobrze zlokalizowanego apartamentu.</p>
 
   <div class="highlight-box">
-    <p><strong>Festiwal Filmowy w maju 2025 był rekordowy pod względem przychodów z najmu.</strong> Średnia dobowa stawka (ADR) w tym czasie wyniosła 315,30 EUR — o 37% więcej niż w normalnych tygodniach. RevPAR (przychód na dostępną nieruchomość) wzrósł o 99%. Dwa tygodnie festiwalu mogą pokryć 3–4 miesiące typowych kosztów utrzymania nieruchomości.</p>
+    <p><strong>Festiwal Filmowy w maju 2025 był rekordowy pod względem przychodów z najmu.</strong> Średnia dobowa stawka (ADR) w tym czasie wyniosła 315 EUR — o 37% więcej niż w normalnych tygodniach. RevPAR (przychód na dostępną nieruchomość) wzrósł o 99%. Dwa tygodnie festiwalu mogą pokryć 3–4 miesiące typowych kosztów utrzymania nieruchomości.</p>
   </div>
 
   <p>Ważne zastrzeżenie dotyczące perspektyw: Cannes wprowadza ograniczenia dla wynajmu krótkoterminowego w najbardziej nasyconych dzielnicach — La Banane i Le Suquet — planowane na jesień 2026. Nieruchomości będące wtórnym miejscem zamieszkania wymagają rejestracji i mogą podlegać limitom liczby dni wynajmu. Szczegółowe przepisy są na etapie finalizacji i warto monitorować ich rozwój przed decyzją inwestycyjną nastawioną wyłącznie na STR.</p>
@@ -530,17 +697,17 @@
       <tr>
         <td class="step">Taxe foncière (roczna)</td>
         <td class="duration">zmienna</td>
-        <td class="desc">Lokalny podatek od nieruchomości, płatny co roku przez właściciela. Dla apartamentu w Cannes zazwyczaj 1 000–3 000 EUR/rok.</td>
+        <td class="desc">Lokalny podatek od nieruchomości, płatny co roku przez właściciela. Dla apartamentu w Cannes zazwyczaj 1000–3000 EUR/rok.</td>
       </tr>
       <tr>
         <td class="step">IFI (podatek majątkowy)</td>
         <td class="duration">od 800k EUR netto</td>
-        <td class="desc">Impôt sur la Fortune Immobilière — podatek dla posiadaczy nieruchomości we Francji powyżej 800k EUR netto. Stawki od 0,5% do 1,5%.</td>
+        <td class="desc">Impôt sur la Fortune Immobilière — podatek dla posiadaczy nieruchomości we Francji powyżej 800k EUR netto. Stawki od 0% do 2%.</td>
       </tr>
     </tbody>
   </table>
 
-  <p>Praktyczna wskazówka: przy zakupie za 600 000 EUR na rynku wtórnym warto zabudżetować łącznie 645 000–650 000 EUR, żeby pokryć frais de notaire. To standardowy krok, który często zaskakuje kupujących przyzwyczajonych do polskiego rynku, gdzie koszty transakcyjne są znacznie niższe.</p>
+  <p>Praktyczna wskazówka: przy zakupie za 600 000 EUR na rynku wtórnym należy zaplanować łącznie od 645 000 do 650 000 EUR, aby pokryć frais de notaire. To standardowa pozycja kosztowa, która często zaskakuje kupujących przyzwyczajonych do polskiego rynku, gdzie koszty transakcyjne są znacznie niższe.</p>
 
   <div class="info-box">
     <div class="info-box-title">Rola notariusza we Francji jest inna niż w Polsce</div>
@@ -561,11 +728,11 @@
     </div>
     <div style="padding: 20px 0; border-bottom: 1px solid var(--border);">
       <dt style="font-weight: 500; color: var(--dark); margin-bottom: 8px;">Jaki jest minimalny budżet na sensowną inwestycję w Cannes?</dt>
-      <dd style="color: var(--gray); margin: 0; line-height: 1.7;">W segmencie apartamentów z potencjałem wynajmu i wzrostu wartości — od 350 000–400 000 EUR. Poniżej tego progu wybór lokalizacji jest mocno ograniczony do dzielnic peryferyjnych lub nieruchomości wymagających remontu.</dd>
+      <dd style="color: var(--gray); margin: 0; line-height: 1.7;">W segmencie apartamentów z potencjałem wynajmu i wzrostu wartości — od 350000–400000 EUR. Poniżej tego progu wybór lokalizacji jest mocno ograniczony do dzielnic peryferyjnych lub nieruchomości wymagających remontu.</dd>
     </div>
     <div style="padding: 20px 0; border-bottom: 1px solid var(--border);">
       <dt style="font-weight: 500; color: var(--dark); margin-bottom: 8px;">Czy wynajem Airbnb w Cannes jest opłacalny?</dt>
-      <dd style="color: var(--gray); margin: 0; line-height: 1.7;">Przy dobrze zlokalizowanym apartamencie — tak. Mediana rocznego przychodu to 19 000–21 000 EUR. Festiwal Filmowy w maju potrafi wygenerować miesięczny przychód równoważny 3–4 normalnym miesiącom. Warto jednak śledzić regulacje STR planowane na 2026 rok dla części dzielnic.</dd>
+      <dd style="color: var(--gray); margin: 0; line-height: 1.7;">Przy dobrze zlokalizowanym apartamencie — tak. Mediana rocznego przychodu to 19000–21000 EUR. Festiwal Filmowy w maju potrafi wygenerować miesięczny przychód równoważny 3–4 normalnym miesiącom. Warto jednak śledzić regulacje STR planowane na 2026 rok dla części dzielnic.</dd>
     </div>
     <div style="padding: 20px 0;">
       <dt style="font-weight: 500; color: var(--dark); margin-bottom: 8px;">Czym różni się buyer's agent od tradycyjnej agencji nieruchomości?</dt>
@@ -579,30 +746,94 @@
 
 </div>
 
-<!-- CTA BAND -->
-<section class="cta-band">
-  <div class="cta-band-inner">
-    <div>
-      <h2>Szukasz nieruchomości w Cannes?</h2>
+
+<!-- KONTAKT -->
+<section class="contact-section">
+  <div class="contact-section-inner">
+    <div class="contact-section-left">
+      <h2>Mają Państwo pytania, których nie znaleźli w tym wpisie?</h2>
       <p>Napisz do nas — odpowiemy bezpłatnie, bez zobowiązań.</p>
+      <div class="contact-phone-block">
+        <h3>Preferują Państwo kontakt telefoniczny?</h3>
+        <p>Tel. Sławomir Skomiał +48 726 806 558</p>
+        <p>Tel. Biuro Francja +33 633 766 262</p>
+        <p><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></p>
+      </div>
     </div>
-    <a href="/#kontakt" class="btn-primary">Napisz do nas →</a>
+    <div class="contact-form-box">
+      <form id="contact-form" action="https://formspree.io/f/xpwzgqzg" method="POST">
+        <label for="c-name">Imię i Nazwisko</label>
+        <input type="text" id="c-name" name="name" placeholder="Jan Kowalski" required>
+        <label for="c-email">Adres Email</label>
+        <input type="email" id="c-email" name="email" placeholder="przyklad@kowalski.pl" required>
+        <label for="c-phone">Numer Tel.</label>
+        <input type="tel" id="c-phone" name="phone" placeholder="+48123456789">
+        <label for="c-message">Wiadomość</label>
+        <textarea id="c-message" name="message" placeholder="Szukamy apartamentu w ..."></textarea>
+        <button type="submit" class="form-submit">Wyślij!</button>
+        <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci">Politykę Prywatności</a></p>
+      </form>
+      <div class="form-success" id="form-success">
+        Dziękujemy za wiadomość. Odpowiemy na Państwa zapytanie w ciągu 24h.
+      </div>
+    </div>
   </div>
 </section>
+<script>
+  var form = document.getElementById('contact-form');
+  if(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function(r) {
+          if(r.ok) {
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          }
+        });
+    });
+  }
+</script>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <span>© 2026 JP Team · Nieruchomości Lazurowe Wybrzeże</span>
-    <span><a href="/polityka-prywatnosci">Polityka prywatności</a></span>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="/"><img src="../logo-navbar.png" alt="JP Team"></a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-title">Menu</div>
+      <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/poradniki">Poradniki</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+        <li><a href="/polityka-prywatnosci">Polityka prywatności</a></li>
+      </ul>
+    </div>
+    <div class="footer-address">
+      <strong>Dane firmy</strong>
+      Jens Pedersen SARL<br>
+      29 impasse de la Guifette<br>
+      F-83700 Saint-Raphaël, Francja<br><br>
+      Tel. PL: <a href="tel:+48726806558">+48 726 806 558</a><br>
+      Tel. FR: <a href="tel:+33633766262">+33 633 766 262</a><br>
+      <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a><br><br>
+      Carte professionnelle: CPI83032021000000022
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Jens Pedersen SARL · Nieruchomości Lazurowe Wybrzeże</span>
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
   </div>
 </footer>
 
+
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1a1a1a; color:rgba(255,255,255,0.85); font-family:sans-serif; font-size:13px; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; border-top:1px solid #333;">
-  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#c8622a; text-decoration:none; border-bottom:1px solid rgba(200,98,42,0.4);">polityce prywatności</a>.</span>
+  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#FF622E; text-decoration:none; border-bottom:1px solid rgba(200,98,42,0.4);">polityce prywatności</a>.</span>
   <div style="display:flex; gap:12px; flex-shrink:0;">
-    <button onclick="jpAcceptCookies()" style="background:#c8622a; color:#fff; border:none; border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Akceptuję</button>
+    <button onclick="jpAcceptCookies()" style="background:#FF622E; color:#fff; border:none; border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Akceptuję</button>
     <button onclick="jpRejectCookies()" style="background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Tylko niezbędne</button>
   </div>
 </div>
@@ -641,6 +872,19 @@
     this.classList.toggle('open');
     document.getElementById('mobileMenu').classList.toggle('open');
   });
+</script>
+
+
+<script>
+// Wrap all tables in scroll container for mobile
+document.querySelectorAll('.article-body table, .article-body .data-table').forEach(function(t) {
+  if (!t.parentElement.classList.contains('table-scroll')) {
+    var wrap = document.createElement('div');
+    wrap.className = 'table-scroll';
+    t.parentNode.insertBefore(wrap, t);
+    wrap.appendChild(t);
+  }
+});
 </script>
 
 </body>

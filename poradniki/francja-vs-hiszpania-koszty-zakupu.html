@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Francja czy Hiszpania — gdzie kupić nieruchomość? Porównanie kosztów 2026 | JP Team</title>
-<meta name="description" content="Porównanie kosztów nabycia nieruchomości we Francji i Hiszpanii. Podatki, frais de notaire, ITP, roczne koszty utrzymania. Konkretne liczby i kalkulacja dla budżetu 400 000 EUR.">
+<meta name="description" content="Porównanie kosztów nabycia nieruchomości we Francji i Hiszpanii. Podatki, frais de notaire, ITP, roczne koszty utrzymania. Konkretne liczby i kalkulacja dla budżetu 400000 EUR.">
 <link rel="canonical" href="https://jpteam.pl/poradniki/francja-vs-hiszpania-koszty-zakupu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Francja czy Hiszpania — gdzie kupić nieruchomość? Porównanie kosztów 2026 | JP Team">
@@ -54,7 +54,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600&display=swap');
 
   :root {
-    --orange: #c8622a;
+    --orange: #FF622E;
     --orange-light: #f8f4f1;
     --dark: #1a1a18;
     --gray: #6b6b6b;
@@ -80,7 +80,7 @@
   .nav-logo-img { height: 72px; width: auto; display: block; }
   nav ul { list-style: none; display: flex; gap: 36px; align-items: center; }
   nav a { font-family: 'Montserrat', sans-serif; font-size: 18px; letter-spacing: 1.2px; color: #222; text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
-  nav a:hover { color: #c8622a; }
+  nav a:hover { color: #FF622E; }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
   .hamburger span { display: block; width: 22px; height: 1.5px; background: #111; border-radius: 1px; transition: all 0.25s ease; }
   .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
@@ -90,14 +90,14 @@
   .nav-mobile-menu.open { display: flex; }
   .nav-mobile-menu a { font-family: 'Inter', sans-serif; font-size: 14px; letter-spacing: 0.5px; color: #111; text-decoration: none; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid #e8e4dc; display: block; }
   .nav-mobile-menu a:last-child { border-bottom: none; }
-  .nav-mobile-menu a:hover { color: #c8622a; }
+  .nav-mobile-menu a:hover { color: #FF622E; }
 
   /* CTA BAND */
   .cta-band { padding: 80px 0; background: #1a1a1a; }
   .cta-band-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
   .cta-band h2 { font-size: 30px; font-weight: 400; color: #fff; max-width: 540px; line-height: 1.35; font-family: 'Cormorant Garamond', serif; }
   .cta-band p { font-family: 'DM Sans', sans-serif; font-size: 15px; color: rgba(255,255,255,0.5); margin-top: 10px; }
-  .btn-primary { background: #c8622a; color: #fff; border: none; border-radius: 30px; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; white-space: nowrap; }
+  .btn-primary { background: #FF622E; color: #fff; border: none; border-radius: 30px; padding: 16px 36px; font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; white-space: nowrap; }
   .btn-primary:hover { background: #a8501f; }
 
   /* FOOTER */
@@ -204,7 +204,7 @@
 
   /* ═══ ARTICLE BODY ═══ */
   .article-body {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 60px 80px;
   }
@@ -369,6 +369,173 @@
     .data-table { font-size: 13px; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     footer { padding: 24px; }
   }
+
+/* CONTACT SECTION */
+.contact-section {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 80px 0;
+}
+.contact-section-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-section-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.contact-section-left p {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.contact-phone-block { margin-top: 32px; }
+.contact-phone-block h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.contact-phone-block p {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+.contact-phone-block a { color: var(--orange); text-decoration: none; }
+.contact-form-box {
+  border: 1.5px solid var(--orange);
+  border-radius: 12px;
+  padding: 36px;
+}
+.contact-form-box label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+.contact-form-box label:first-of-type { margin-top: 0; }
+.contact-form-box input,
+.contact-form-box textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--dark);
+  background: #faf9f7;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-form-box input:focus,
+.contact-form-box textarea:focus { border-color: var(--orange); }
+.contact-form-box textarea { border-radius: 12px; height: 110px; resize: vertical; }
+.contact-form-box .form-submit {
+  margin-top: 24px;
+  width: 100%;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 16px;
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form-box .form-submit:hover { background: #e04e1a; }
+.contact-form-box .form-note { font-size: 11px; color: #bbb; margin-top: 12px; line-height: 1.5; text-align: center; }
+.contact-form-box .form-note a { color: var(--orange); }
+.form-success { display: none; text-align: center; padding: 40px 0; font-size: 16px; color: var(--dark); }
+
+/* FOOTER */
+.site-footer {
+  background: #faf9f7;
+  border-top: 1px solid #e8e4dc;
+  font-family: 'DM Sans', sans-serif;
+}
+.footer-top {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 48px 48px;
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.footer-logo img {
+  height: 80px;
+  width: auto;
+}
+.footer-nav-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+.footer-nav ul { list-style: none; padding: 0; margin: 0; }
+.footer-nav ul li { margin-bottom: 10px; }
+.footer-nav ul li a { font-size: 14px; color: #444; text-decoration: none; transition: color 0.2s; }
+.footer-nav ul li a:hover { color: #FF622E; }
+.footer-address { font-size: 13px; color: #888; line-height: 1.8; }
+.footer-address strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+.footer-bottom {
+  border-top: 1px solid #e8e4dc;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #bbb;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-bottom a { color: #bbb; text-decoration: none; }
+.footer-bottom a:hover { color: #FF622E; }
+
+
+/* TABLE MOBILE SCROLL */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.table-scroll table, .table-scroll .data-table { margin: 0; min-width: 500px; }
+
+
+@media (max-width: 900px) {
+  .contact-section-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+  .contact-section { padding: 56px 0; }
+  .contact-section-left { order: 2; }
+  .contact-form-box { order: 1; }
+}
 </style>
 </head>
 <body>
@@ -376,7 +543,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/"><img src="../../logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
+    <a href="/"><img src="../logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
     <ul>
       <li><a href="/poradniki">Poradniki</a></li>
       <li><a href="/#kontakt">Kontakt</a></li>
@@ -405,7 +572,7 @@
     <div class="toc-title">W tym artykule</div>
     <ol class="toc-list">
       <li><a href="#koszty-wejscia">Koszty nabycia nieruchomości: frais de notaire oraz podatek ITP</a></li>
-      <li><a href="#kalkulacja">Kalkulacja dla 400 000 EUR — zestawienie kosztów w obu krajach</a></li>
+      <li><a href="#kalkulacja">Kalkulacja dla 400000 EUR — zestawienie kosztów w obu krajach</a></li>
       <li><a href="#koszty-roczne">Roczne koszty utrzymania po zakupie</a></li>
       <li><a href="#ceny-rynkowe">Jaką nieruchomość można nabyć w danym przedziale cenowym — ceny za m²</a></li>
       <li><a href="#co-przemawia">Co przemawia za inwestycją na Lazurowym Wybrzeżu, pomimo wyższych kosztów nabycia nieruchomości</a></li>
@@ -422,19 +589,19 @@
   <!-- ═══ SEKCJA 1 ═══ -->
   <h2 id="koszty-wejscia">Koszty nabycia nieruchomości: frais de notaire oraz podatek ITP</h2>
 
-  <p>We Francji koszty transakcyjne przy zakupie nieruchomości z rynku wtórnego wynoszą od 7 do 8% wartości nieruchomości. Warto jednak wiedzieć, z jakich składowych wynika ta kwota, aby móc świadomie zaplanować budżet całej inwestycji. Ponad 80% tej kwoty to podatki odprowadzane bezpośrednio do państwa i departamentu, a nie wynagrodzenie notariusza. Wynagrodzenie notariusza (émoluments) jest regulowane ustawowo i dla transakcji powyżej 60 000 EUR wynosi ok. 0,8% ceny. Dla zakupu za 400 000 EUR jest to ok. 3 200–3 500 EUR. Pozostałe kilka procent to głównie DMTO (droits de mutation à titre onéreux), podatek od przesunięcia własności naliczany według stawki ustalanej przez departament, najczęściej 4,5%. Departament Alpes-Maritimes (gdzie leży Cannes) utrzymał stawkę 4,5% w 2025 r., nie korzystając z możliwości podwyżki do 5%, którą wybrało ponad 70 innych departamentów. <em>Źródła: barème émoluments, service-public.fr; stawka DMTO Alpes-Maritimes, syage.notaires.fr (lista departamentów 2025).</em></p>
+  <p>We Francji koszty transakcyjne przy zakupie nieruchomości z rynku wtórnego wynoszą od 7 do 8% wartości nieruchomości. Warto jednak wiedzieć, z jakich składowych wynika ta kwota, aby móc świadomie zaplanować budżet całej inwestycji. Ponad 80% tej kwoty to podatki odprowadzane bezpośrednio do państwa i departamentu, a nie wynagrodzenie notariusza. Wynagrodzenie notariusza (émoluments) jest regulowane ustawowo i dla transakcji powyżej 60000 EUR wynosi ok. 1% ceny. Dla zakupu za 400000 EUR jest to ok. 3200–3500 EUR. Pozostałe kilka procent to głównie DMTO (droits de mutation à titre onéreux), podatek od przesunięcia własności naliczany według stawki ustalanej przez departament, najczęściej 4%. Departament Alpes-Maritimes (gdzie leży Cannes) utrzymał stawkę 4% w 2025 r., nie korzystając z możliwości podwyżki do 5%, którą wybrało ponad 70 innych departamentów. <em>Źródła: barème émoluments, service-public.fr; stawka DMTO Alpes-Maritimes, syage.notaires.fr (lista departamentów 2025).</em></p>
   <p>Dla nieruchomości nowych, wybudowanych nie wcześniej niż 5 lat temu, frais de notaire spadają do 2–3%. Wynika to z innej struktury podatkowej: cena netto dewelopera zawiera już 20% VAT (TVA), który deweloper odprowadza do fiskusa. Nabywca nie płaci go osobno. W praktyce oznacza to, że kupując mieszkanie „z rynku pierwotnego" we Francji, dodatkowe koszty transakcyjne płacone przy notariuszu wynoszą tylko 2–3% ceny, a nie 7–8%. <em>Źródło: service-public.fr — frais de notaire pour un logement neuf.</em></p>
 
-  <p>W Hiszpanii mechanizm działa inaczej. Rynek wtórny obciążony jest podatkiem ITP (Impuesto sobre Transmisiones Patrimoniales), którego stawka zależy od regionu autonomicznego. W Madrycie wynosi 6%, w Katalonii 10%, w Walencji (Costa Blanca) również 10%, w Andaluzji (Costa del Sol) 7%. Do tego dochodzą opłaty notarialne i rejestracyjne (łącznie 1 500–2 500 EUR), koszty prawnika (standardowo 1% ceny plus VAT, przy czym obsługa prawna przy zakupie w Hiszpanii to standard, nie opcja), a niekiedy również gestoría, czyli biuro administracyjne zajmujące się rejestracją dokumentów. Suma tych składników wynosi od 10 do 13% ceny zakupu. Dla nieruchomości z rynku pierwotnego dochodzi 10% VAT oraz podatek od czynności prawnych AJD rzędu 1,2–1,5%, co daje łącznie 11–12%, wyraźnie więcej niż w porównywalnej sytuacji we Francji.</p>
+  <p>W Hiszpanii mechanizm działa inaczej. Rynek wtórny obciążony jest podatkiem ITP (Impuesto sobre Transmisiones Patrimoniales), którego stawka zależy od regionu autonomicznego. W Madrycie wynosi 6%, w Katalonii 10%, w Walencji (Costa Blanca) również 10%, w Andaluzji (Costa del Sol) 7%. Do tego dochodzą opłaty notarialne i rejestracyjne (łącznie 1500–2500 EUR), koszty prawnika (standardowo 1% ceny plus VAT, przy czym obsługa prawna przy zakupie w Hiszpanii to standard, nie opcja), a niekiedy również gestoría, czyli biuro administracyjne zajmujące się rejestracją dokumentów. Suma tych składników wynosi od 10 do 13% ceny zakupu. Dla nieruchomości z rynku pierwotnego dochodzi 10% VAT oraz podatek od czynności prawnych AJD rzędu 1,2–2%, co daje łącznie 11–12%, wyraźnie więcej niż w porównywalnej sytuacji we Francji.</p>
 
   <div class="highlight-box">
-    <p><strong>Obraz kosztów transakcyjnych jest odwrotny od powszechnego przekonania.</strong> Francja uchodzi za kraj z najwyższymi kosztami transakcyjnymi, jednak przy zakupie nieruchomości z rynku wtórnego całkowite koszty wynoszą tu od 7 do 8%, podczas gdy w Katalonii czy na Costa Blanca nabywca dolicza do ceny od 12 do 13%. Przy nowym budownictwie obie strony wypadają podobnie: w Hiszpanii nabywca płaci 10% VAT oraz ok. 1,5% AJD; we Francji VAT jest wliczony w cenę dewelopera, a frais de notaire wynoszą jedynie 2–3%.</p>
+    <p><strong>Obraz kosztów transakcyjnych jest odwrotny od powszechnego przekonania.</strong> Francja uchodzi za kraj z najwyższymi kosztami transakcyjnymi, jednak przy zakupie nieruchomości z rynku wtórnego całkowite koszty wynoszą tu od 7 do 8%, podczas gdy w Katalonii czy na Costa Blanca nabywca dolicza do ceny od 12 do 13%. Przy nowym budownictwie obie strony wypadają podobnie: w Hiszpanii nabywca płaci 10% VAT oraz ok. 2% AJD; we Francji VAT jest wliczony w cenę dewelopera, a frais de notaire wynoszą jedynie 2–3%.</p>
   </div>
 
   <!-- ═══ SEKCJA 2 ═══ -->
-  <h2 id="kalkulacja">Kalkulacja dla 400 000 EUR — zestawienie kosztów w obu krajach</h2>
+  <h2 id="kalkulacja">Kalkulacja dla 400000 EUR — zestawienie kosztów w obu krajach</h2>
 
-  <p>Abstrakcyjne procenty zyskują wymiar praktyczny, gdy odniesiemy je do konkretnej kwoty. Poniższa tabela przedstawia, jakie dodatkowe środki własne należy zaplanować ponad cenę nieruchomości przy zakupie apartamentu z rynku wtórnego za 400 000 EUR w trzech lokalizacjach.</p>
+  <p>Abstrakcyjne procenty zyskują wymiar praktyczny, gdy odniesiemy je do konkretnej kwoty. Poniższa tabela przedstawia, jakie dodatkowe środki własne należy zaplanować ponad cenę nieruchomości przy zakupie apartamentu z rynku wtórnego za 400000 EUR w trzech lokalizacjach.</p>
 
   <table class="data-table" style="text-align: center;">
     <thead>
@@ -448,40 +615,40 @@
     <tbody>
       <tr>
         <td class="step">Podatek transferowy (DMTO / ITP)</td>
-        <td>~18 000 EUR<br><span style="font-size:13px;color:var(--gray);">stawka 4,5% — Alpes-Maritimes nie podniosło do 5% w 2025 r.</span></td>
-        <td>~28 000 EUR<br><span style="font-size:13px;color:var(--gray);">stawka 7% ITP (stawka ogólna w Andaluzji)</span></td>
-        <td>~40 000 EUR<br><span style="font-size:13px;color:var(--gray);">stawka 10% ITP (Comunitat Valenciana)</span></td>
+        <td>~18000 EUR<br><span style="font-size:13px;color:var(--gray);">stawka 4% — Alpes-Maritimes nie podniosło do 5% w 2025 r.</span></td>
+        <td>~28000 EUR<br><span style="font-size:13px;color:var(--gray);">stawka 7% ITP (stawka ogólna w Andaluzji)</span></td>
+        <td>~40000 EUR<br><span style="font-size:13px;color:var(--gray);">stawka 10% ITP (Comunitat Valenciana)</span></td>
       </tr>
       <tr>
         <td class="step">Wynagrodzenie notariusza + opłaty sądowe</td>
-        <td>~3 500–4 500 EUR<br><span style="font-size:13px;color:var(--gray);">barème réglementé: ~0,8% powyżej 60k EUR + débours</span></td>
-        <td>~1 500–2 000 EUR<br><span style="font-size:13px;color:var(--gray);">ryczałt, zależy od notariusza i gminy</span></td>
-        <td>~1 500–2 000 EUR</td>
+        <td>~3500–4500 EUR<br><span style="font-size:13px;color:var(--gray);">barème réglementé: ~1% powyżej 60k EUR + débours</span></td>
+        <td>~1500–2000 EUR<br><span style="font-size:13px;color:var(--gray);">ryczałt, zależy od notariusza i gminy</span></td>
+        <td>~1500–2000 EUR</td>
       </tr>
       <tr>
         <td class="step">Rejestracja w księdze wieczystej</td>
         <td>wliczona powyżej</td>
-        <td>~800–1 200 EUR</td>
-        <td>~800–1 200 EUR</td>
+        <td>~800–1200 EUR</td>
+        <td>~800–1200 EUR</td>
       </tr>
       <tr>
         <td class="step">Prawnik / gestoría</td>
-        <td>opcjonalnie (0–2 000 EUR)</td>
-        <td>~4 000–5 000 EUR<br><span style="font-size:13px;color:var(--gray);">ok. 1% ceny + 21% IVA — w Hiszpanii standard, nie opcja</span></td>
-        <td>~4 000–5 000 EUR</td>
+        <td>opcjonalnie (0–2000 EUR)</td>
+        <td>~4000–5000 EUR<br><span style="font-size:13px;color:var(--gray);">ok. 1% ceny + 21% IVA — w Hiszpanii standard, nie opcja</span></td>
+        <td>~4000–5000 EUR</td>
       </tr>
       <tr>
         <td class="step"><strong>Łącznie ponad cenę</strong></td>
-        <td class="duration"><strong>~22 000–25 000 EUR (ok. 5,5–6,3%)</strong></td>
-        <td class="duration"><strong>~34 000–36 000 EUR (ok. 8,5–9%)</strong></td>
-        <td class="duration"><strong>~46 000–48 000 EUR (ok. 11,5–12%)</strong></td>
+        <td class="duration"><strong>~22000–25000 EUR (ok. 5,5–6%)</strong></td>
+        <td class="duration"><strong>~34000–36000 EUR (ok. 8,5–9%)</strong></td>
+        <td class="duration"><strong>~46000–48000 EUR (ok. 11,5–12%)</strong></td>
       </tr>
     </tbody>
   </table>
 
-  <p style="font-size: 13px; color: var(--gray); font-style: italic; margin-top: -16px; margin-bottom: 24px;">Źródła: DMTO FR — décision Conseil Départemental Alpes-Maritimes, stawka 4,5% utrzymana w 2025 r. (syage.notaires.fr); émoluments notariaux — barème réglementé, service-public.fr; ITP Andaluzja 7% — Junta de Andalucía (juntadeandalucia.es); ITP Walencja 10% — Generalitat Valenciana; koszty prawnika ES — szacunek rynkowy (1% + 21% IVA). Obliczenia własne JP Team dla transakcji 400 000 EUR, rynek wtórny. Rzeczywiste kwoty mogą się różnić — warto zweryfikować z notariuszem przed podpisaniem umowy.</p>
+  <p style="font-size: 13px; color: var(--gray); font-style: italic; margin-top: -16px; margin-bottom: 24px;">Źródła: DMTO FR — décision Conseil Départemental Alpes-Maritimes, stawka 4% utrzymana w 2025 r. (syage.notaires.fr); émoluments notariaux — barème réglementé, service-public.fr; ITP Andaluzja 7% — Junta de Andalucía (juntadeandalucia.es); ITP Walencja 10% — Generalitat Valenciana; koszty prawnika ES — szacunek rynkowy (1% + 21% IVA). Obliczenia własne JP Team dla transakcji 400000 EUR, rynek wtórny. Rzeczywiste kwoty mogą się różnić — warto zweryfikować z notariuszem przed podpisaniem umowy.</p>
 
-  <p>Różnica między Cannes a Alicante wynosi od 17 000 do 19 000 EUR przy tej samej cenie nieruchomości. Przy transakcji za 400 000 EUR jest to kwota, która może przesądzić o zamknięciu transakcji. Żadna z tych pozycji nie jest finansowana przez bank. Frais de notaire, ITP oraz koszty prawnika płatne są ze środków własnych nabywcy, przy podpisaniu aktu notarialnego.</p>
+  <p>Różnica między Cannes a Alicante wynosi od 17000 do 19000 EUR przy tej samej cenie nieruchomości. Przy transakcji za 400000 EUR jest to kwota, która może przesądzić o zamknięciu transakcji. Żadna z tych pozycji nie jest finansowana przez bank. Frais de notaire, ITP oraz koszty prawnika płatne są ze środków własnych nabywcy, przy podpisaniu aktu notarialnego.</p>
 
   <p><a href="#kontakt" style="color: var(--orange); text-decoration: none; border-bottom: 1px solid var(--orange);">Zapytaj JP Team o szczegóły kosztów dla konkretnej nieruchomości →</a></p>
 
@@ -490,15 +657,15 @@
 
   <p>Koszty zakupu to jednorazowy wydatek. Nieruchomość generuje jednak koszty co roku i w tym obszarze oba rynki są bardziej zbliżone, choć z kilkoma istotnymi różnicami.</p>
 
-  <p>We Francji podstawowym podatkiem rocznym jest taxe foncière, naliczany przez gminę od wartości katastralnej budynku. Dla apartamentu w Cannes wynosi on zazwyczaj od 900 do 1 300 EUR rocznie, dla willi od 3 000 do 8 000 EUR. Właściciel drugiego mieszkania (résidence secondaire) zobowiązany jest również do opłacania taxe d'habitation, który dla lokali nierezydenckich nadal obowiązuje, choć zniesiono go dla głównych miejsc zamieszkania. Osobną pozycją jest IFI (Impôt sur la Fortune Immobilière), podatek od majątku nieruchomościowego, który dotyczy wyłącznie tych nabywców, których aktywa nieruchomościowe we Francji przekraczają 1,3 mln EUR netto.</p>
+  <p>We Francji podstawowym podatkiem rocznym jest taxe foncière, naliczany przez gminę od wartości katastralnej budynku. Dla apartamentu w Cannes wynosi on zazwyczaj od 900 do 1300 EUR rocznie, dla willi od 3000 do 8000 EUR. Właściciel drugiego mieszkania (résidence secondaire) zobowiązany jest również do opłacania taxe d'habitation, który dla lokali nierezydenckich nadal obowiązuje, choć zniesiono go dla głównych miejsc zamieszkania. Osobną pozycją jest IFI (Impôt sur la Fortune Immobilière), podatek od majątku nieruchomościowego, który dotyczy wyłącznie tych nabywców, których aktywa nieruchomościowe we Francji przekraczają 1,3 mln EUR netto.</p>
 
-  <p>W Hiszpanii odpowiednikiem taxe foncière jest IBI (Impuesto sobre Bienes Inmuebles), naliczany od wartości katastralnej według stawek od 0,4 do 1,1% w zależności od gminy. Wartość katastralna w Hiszpanii jest zazwyczaj znacznie niższa od wartości rynkowej, stąd faktyczny podatek roczny dla typowego apartamentu na wybrzeżu kształtuje się na poziomie zbliżonym do Francji i wynosi od 500 do 1 500 EUR. Hiszpania stosuje również podatek od majątku (Impuesto sobre el Patrimonio), który przy wyższych aktywach może okazać się bardziej dotkliwy niż francuski IFI. Stawki progresywne sięgają 3,5%, a próg wejścia zależy od regionu autonomicznego.</p>
+  <p>W Hiszpanii odpowiednikiem taxe foncière jest IBI (Impuesto sobre Bienes Inmuebles), naliczany od wartości katastralnej według stawek od 0,4 do 1% w zależności od gminy. Wartość katastralna w Hiszpanii jest zazwyczaj znacznie niższa od wartości rynkowej, stąd faktyczny podatek roczny dla typowego apartamentu na wybrzeżu kształtuje się na poziomie zbliżonym do Francji i wynosi od 500 do 1500 EUR. Hiszpania stosuje również podatek od majątku (Impuesto sobre el Patrimonio), który przy wyższych aktywach może okazać się bardziej dotkliwy niż francuski IFI. Stawki progresywne sięgają 4%, a próg wejścia zależy od regionu autonomicznego.</p>
 
   <div class="info-box">
     <div class="info-box-title">Roczne koszty utrzymania — punkt odniesienia dla obu krajów</div>
     <p>Apartament 70 m² w dobrej lokalizacji (Cannes lub Marbella). Porównanie typowych rocznych wydatków:</p>
-    <p>Francja: taxe foncière 900–1 300 EUR (szacunek dla apartamentu ok. 70 m² w Cannes, na podstawie danych z naszych transakcji; indywidualna stawka zależy od gminy i wartości katastralnej), taxe d'habitation na résidence secondaire nadal obowiązuje nierezydentów (stawka zależy od gminy, brak jednolitej stawki ogólnokrajowej), ubezpieczenie 300–450 EUR, czynsz wspólnoty (copropriété) 2 000–6 000 EUR zależnie od standardu budynku.</p>
-    <p>Hiszpania: IBI 500–1 200 EUR (stawka 0,4–1,1% wartości katastralnej, która jest niższa niż rynkowa), ubezpieczenie 300–500 EUR, opłaty wspólnoty (comunidad) 1 500–4 000 EUR.</p>
+    <p>Francja: taxe foncière 900–1300 EUR (szacunek dla apartamentu ok. 70 m² w Cannes, na podstawie danych z naszych transakcji; indywidualna stawka zależy od gminy i wartości katastralnej), taxe d'habitation na résidence secondaire nadal obowiązuje nierezydentów (stawka zależy od gminy, brak jednolitej stawki ogólnokrajowej), ubezpieczenie 300–450 EUR, czynsz wspólnoty (copropriété) 2000–6000 EUR zależnie od standardu budynku.</p>
+    <p>Hiszpania: IBI 500–1200 EUR (stawka 0,4–1% wartości katastralnej, która jest niższa niż rynkowa), ubezpieczenie 300–500 EUR, opłaty wspólnoty (comunidad) 1500–4000 EUR.</p>
     <p>Bezpośrednie porównanie rocznych kosztów bez odniesienia do konkretnej nieruchomości jest trudne, zbyt wiele zależy od gminy, wartości katastralnej i standardu budynku. Jeden pewny wniosek: Francja nakłada na nierezydentów taxe d'habitation, który nie ma bezpośredniego odpowiednika w Hiszpanii. <em>Źródło: service-public.fr, taxe d'habitation sur les résidences secondaires.</em></p>
   </div>
 
@@ -518,32 +685,32 @@
     <tbody>
       <tr>
         <td class="step">Cannes (centrum, apartamenty)</td>
-        <td class="duration">6 100–6 200 EUR/m²</td>
+        <td class="duration">6100–6200 EUR/m²</td>
         <td class="desc">stabilizacja, wzrost ok. 1% r/r</td>
       </tr>
       <tr>
         <td class="step">Cannes La Californie / Palm Beach</td>
-        <td class="duration">8 000–14 000 EUR/m²</td>
+        <td class="duration">8000–14000 EUR/m²</td>
         <td class="desc">popyt stabilny, ograniczona podaż</td>
       </tr>
       <tr>
         <td class="step">Nicea (apartamenty)</td>
-        <td class="duration">4 200–5 500 EUR/m²</td>
+        <td class="duration">4200–5500 EUR/m²</td>
         <td class="desc">wzrost ok. 1–2% r/r</td>
       </tr>
       <tr>
         <td class="step">Marbella i okolice</td>
-        <td class="duration">4 000–5 500 EUR/m²</td>
+        <td class="duration">4000–5500 EUR/m²</td>
         <td class="desc">wzrost 9–10% r/r (2025)</td>
       </tr>
       <tr>
         <td class="step">Costa del Sol (Estepona, Mijas)</td>
-        <td class="duration">3 500–4 200 EUR/m²</td>
+        <td class="duration">3500–4200 EUR/m²</td>
         <td class="desc">wzrost 13–14% r/r (2025)</td>
       </tr>
       <tr>
         <td class="step">Costa Blanca (Alicante)</td>
-        <td class="duration">1 600–2 500 EUR/m²</td>
+        <td class="duration">1600–2500 EUR/m²</td>
         <td class="desc">wzrost 16% r/r (2025)</td>
       </tr>
     </tbody>
@@ -551,7 +718,7 @@
 
   <p style="font-size: 13px; color: var(--gray); font-style: italic; margin-top: -16px; margin-bottom: 24px;">Źródła do tabeli: Cannes — BARNES Cannes (barnes-cannes.com, dane Q1 2026), Cote d'Azur Sotheby's Realty (cotedazur-sothebysrealty.com); Nicea — Properstar Provence-Alpes-Côte d'Azur (properstar.com, 2026); Marbella — Marbella Invest Pro (marbellainvestpro.com, dane Q4 2025); Costa del Sol — The Olive Press, marzec 2026 (theolivepress.es); Costa Blanca — Ideal Real Estate, dane 2025 (nieruchomosci-hiszpania.com). Ceny średnie, apartamenty, rynek wtórny.</p>
 
-  <p>Z tabeli wynika prosta zależność: za 400 000 EUR na Costa Blanca można nabyć dwa razy więcej metrów niż w Cannes. Są to jednak dwa odrębne rynki, podobnie jak porównanie cen mieszkań w Łodzi i Warszawie nie odpowiada na pytanie, gdzie lepiej mieszkać. Decydujące jest to, czego szuka dany inwestor: czy powierzchni w niższym przedziale cenowym, czy określonej lokalizacji i standardu.</p>
+  <p>Z tabeli wynika prosta zależność: za 400000 EUR na Costa Blanca można nabyć dwa razy więcej metrów niż w Cannes. Są to jednak dwa odrębne rynki, podobnie jak porównanie cen mieszkań w Łodzi i Warszawie nie odpowiada na pytanie, gdzie lepiej mieszkać. Decydujące jest to, czego szuka dany inwestor: czy powierzchni w niższym przedziale cenowym, czy określonej lokalizacji i standardu.</p>
 
   <div class="pullquote">
     <p>„Klienci często porównują obie lokalizacje wyłącznie przez pryzmat ceny za metr kwadratowy. Tymczasem Lazurowe Wybrzeże i Costa del Sol to dwa odrębne rynki, z różnym profilem nabywcy, różną płynnością i różną odpornością na cykle koniunkturalne."</p>
@@ -572,7 +739,7 @@
   <ul class="checklist">
     <li>Przy zakupie z rynku wtórnego koszty transakcyjne są niższe we Francji (7–8%) niż w Katalonii czy Walencji (10–13%)</li>
     <li>Andaluzja (Marbella) stosuje ITP na poziomie 7%, zbliżonym do Francji, co eliminuje kosztową przewagę Hiszpanii dla tej lokalizacji</li>
-    <li>Przy nowym budownictwie koszty transakcyjne są zbliżone: w Hiszpanii nabywca płaci 10% VAT + ok. 1,5% AJD bezpośrednio do skarbówki; we Francji VAT jest wliczony w cenę dewelopera, a frais de notaire wynoszą tylko 2–3%</li>
+    <li>Przy nowym budownictwie koszty transakcyjne są zbliżone: w Hiszpanii nabywca płaci 10% VAT + ok. 2% AJD bezpośrednio do skarbówki; we Francji VAT jest wliczony w cenę dewelopera, a frais de notaire wynoszą tylko 2–3%</li>
     <li>Roczne koszty utrzymania w Hiszpanii są nieznacznie niższe, brak tu odpowiednika taxe d'habitation</li>
     <li>Ceny za m² na Lazurowym Wybrzeżu są o 30–50% wyższe niż na większości spanielskiego wybrzeża, ale porównywalna Marbella zbliża się do poziomów Nicei</li>
     <li>Wzrosty cen w Hiszpanii są szybsze (10–20% r/r), jednak historycznie bardziej podatne na głębsze korekty</li>
@@ -591,7 +758,7 @@
     </div>
     <div style="padding: 20px 0; border-bottom: 1px solid var(--border);">
       <dt style="font-weight: 500; color: var(--dark); margin-bottom: 8px;">Która lokalizacja ma lepszą stopę zwrotu z wynajmu?</dt>
-      <dd style="color: var(--gray); margin: 0; line-height: 1.7;">Rentowność brutto z wynajmu krótkoterminowego na Costa del Sol lokalne agencje podają na poziomie od 5 do 8%. Wyższe wartości, sięgające 10%, pojawiają się głównie w materiałach marketingowych deweloperów i dotyczą najlepszych lokalizacji przy założeniu wysokiego obłożenia. Na Lazurowym Wybrzeżu gross yield wynosi od 2 do 5,5% (dane: BARNES Cannes, Investropa), przy czym topowe lokalizacje w Cannes generują wyższe bezwzględne przychody sezonowe. Przy zakupie wyłącznie pod wynajem, gdzie rentowność brutto jest priorytetem, Hiszpania wypada korzystniej. Rentowność brutto nie uwzględnia jednak kosztów zarządzania, podatków od dochodu z najmu ani ryzyka regulacyjnego.</dd>
+      <dd style="color: var(--gray); margin: 0; line-height: 1.7;">Rentowność brutto z wynajmu krótkoterminowego na Costa del Sol lokalne agencje podają na poziomie od 5 do 8%. Wyższe wartości, sięgające 10%, pojawiają się głównie w materiałach marketingowych deweloperów i dotyczą najlepszych lokalizacji przy założeniu wysokiego obłożenia. Na Lazurowym Wybrzeżu gross yield wynosi od 2 do 6% (dane: BARNES Cannes, Investropa), przy czym topowe lokalizacje w Cannes generują wyższe bezwzględne przychody sezonowe. Przy zakupie wyłącznie pod wynajem, gdzie rentowność brutto jest priorytetem, Hiszpania wypada korzystniej. Rentowność brutto nie uwzględnia jednak kosztów zarządzania, podatków od dochodu z najmu ani ryzyka regulacyjnego.</dd>
     </div>
     <div style="padding: 20px 0; border-bottom: 1px solid var(--border);">
       <dt style="font-weight: 500; color: var(--dark); margin-bottom: 8px;">Czy kupując we Francji potrzebuję prawnika, tak jak w Hiszpanii?</dt>
@@ -599,7 +766,7 @@
     </div>
     <div style="padding: 20px 0;">
       <dt style="font-weight: 500; color: var(--dark); margin-bottom: 8px;">Jaki jest podatek od zysku przy sprzedaży nieruchomości w obu krajach?</dt>
-      <dd style="color: var(--gray); margin: 0; line-height: 1.7;">We Francji zysk ze sprzedaży nieruchomości drugorzędnej (innej niż główne miejsce zamieszkania) opodatkowany jest podatkiem dochodowym 19% oraz 17,2% social levies, łącznie 36,2%. Stawka ta maleje wraz z długością okresu posiadania: po 22 latach następuje całkowite zwolnienie z podatku dochodowego, po 30 latach zwolnienie z social levies. W Hiszpanii podatek od zysku kapitałowego (Impuesto sobre las Ganancias Patrimoniales) wynosi od 19 do 28% w zależności od kwoty zysku, z analogicznymi ulgami za długi okres posiadania.</dd>
+      <dd style="color: var(--gray); margin: 0; line-height: 1.7;">We Francji zysk ze sprzedaży nieruchomości drugorzędnej (innej niż główne miejsce zamieszkania) opodatkowany jest podatkiem dochodowym 19% oraz 17% social levies, łącznie 36%. Stawka ta maleje wraz z długością okresu posiadania: po 22 latach następuje całkowite zwolnienie z podatku dochodowego, po 30 latach zwolnienie z social levies. W Hiszpanii podatek od zysku kapitałowego (Impuesto sobre las Ganancias Patrimoniales) wynosi od 19 do 28% w zależności od kwoty zysku, z analogicznymi ulgami za długi okres posiadania.</dd>
     </div>
   </dl>
 
@@ -609,30 +776,94 @@
 
 </div>
 
-<!-- CTA BAND -->
-<section class="cta-band">
-  <div class="cta-band-inner">
-    <div>
-      <h2>Planujesz zakup nieruchomości we Francji?</h2>
+
+<!-- KONTAKT -->
+<section class="contact-section">
+  <div class="contact-section-inner">
+    <div class="contact-section-left">
+      <h2>Mają Państwo pytania, których nie znaleźli w tym wpisie?</h2>
       <p>Napisz do nas — odpowiemy bezpłatnie, bez zobowiązań.</p>
+      <div class="contact-phone-block">
+        <h3>Preferują Państwo kontakt telefoniczny?</h3>
+        <p>Tel. Sławomir Skomiał +48 726 806 558</p>
+        <p>Tel. Biuro Francja +33 633 766 262</p>
+        <p><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></p>
+      </div>
     </div>
-    <a href="/#kontakt" class="btn-primary">Napisz do nas →</a>
+    <div class="contact-form-box">
+      <form id="contact-form" action="https://formspree.io/f/xpwzgqzg" method="POST">
+        <label for="c-name">Imię i Nazwisko</label>
+        <input type="text" id="c-name" name="name" placeholder="Jan Kowalski" required>
+        <label for="c-email">Adres Email</label>
+        <input type="email" id="c-email" name="email" placeholder="przyklad@kowalski.pl" required>
+        <label for="c-phone">Numer Tel.</label>
+        <input type="tel" id="c-phone" name="phone" placeholder="+48123456789">
+        <label for="c-message">Wiadomość</label>
+        <textarea id="c-message" name="message" placeholder="Szukamy apartamentu w ..."></textarea>
+        <button type="submit" class="form-submit">Wyślij!</button>
+        <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci">Politykę Prywatności</a></p>
+      </form>
+      <div class="form-success" id="form-success">
+        Dziękujemy za wiadomość. Odpowiemy na Państwa zapytanie w ciągu 24 godzin.
+      </div>
+    </div>
   </div>
 </section>
+<script>
+  var form = document.getElementById('contact-form');
+  if(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function(r) {
+          if(r.ok) {
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          }
+        });
+    });
+  }
+</script>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <span>© 2026 JP Team · Nieruchomości Lazurowe Wybrzeże</span>
-    <span><a href="/polityka-prywatnosci">Polityka prywatności</a></span>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="/"><img src="../logo-navbar.png" alt="JP Team"></a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-title">Menu</div>
+      <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/poradniki">Poradniki</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+        <li><a href="/polityka-prywatnosci">Polityka prywatności</a></li>
+      </ul>
+    </div>
+    <div class="footer-address">
+      <strong>Dane firmy</strong>
+      Jens Pedersen SARL<br>
+      29 impasse de la Guifette<br>
+      F-83700 Saint-Raphaël, Francja<br><br>
+      Tel. PL: <a href="tel:+48726806558">+48 726 806 558</a><br>
+      Tel. FR: <a href="tel:+33633766262">+33 633 766 262</a><br>
+      <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a><br><br>
+      Carte professionnelle: CPI83032021000000022
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Jens Pedersen SARL · Nieruchomości Lazurowe Wybrzeże</span>
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
   </div>
 </footer>
 
+
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1a1a1a; color:rgba(255,255,255,0.85); font-family:sans-serif; font-size:13px; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; border-top:1px solid #333;">
-  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#c8622a; text-decoration:none; border-bottom:1px solid rgba(200,98,42,0.4);">polityce prywatności</a>.</span>
+  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#FF622E; text-decoration:none; border-bottom:1px solid rgba(200,98,42,0.4);">polityce prywatności</a>.</span>
   <div style="display:flex; gap:12px; flex-shrink:0;">
-    <button onclick="jpAcceptCookies()" style="background:#c8622a; color:#fff; border:none; border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Akceptuję</button>
+    <button onclick="jpAcceptCookies()" style="background:#FF622E; color:#fff; border:none; border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Akceptuję</button>
     <button onclick="jpRejectCookies()" style="background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Tylko niezbędne</button>
   </div>
 </div>
@@ -671,6 +902,19 @@
     this.classList.toggle('open');
     document.getElementById('mobileMenu').classList.toggle('open');
   });
+</script>
+
+
+<script>
+// Wrap all tables in scroll container for mobile
+document.querySelectorAll('.article-body table, .article-body .data-table').forEach(function(t) {
+  if (!t.parentElement.classList.contains('table-scroll')) {
+    var wrap = document.createElement('div');
+    wrap.className = 'table-scroll';
+    t.parentNode.insertBefore(wrap, t);
+    wrap.appendChild(t);
+  }
+});
 </script>
 
 </body>

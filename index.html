@@ -191,7 +191,7 @@
     font-size: 12px; color: var(--text-light);
     letter-spacing: 0.5px; margin-top: 4px;
   }
-  .about-img { width: 100%; height: 500px; object-fit: cover; border-radius: 4px; display: block; }
+  .about-img { width: 100%; height: 400px; object-fit: cover; object-position: center 20%; border-radius: 4px; display: block; max-width: 100%; }
 
   /* WYRÓŻNIKI */
   .differentiators { padding: 96px 0; background: var(--bg-warm); }
@@ -331,8 +331,9 @@
   .contact { padding: 96px 0; background: var(--bg); }
   .contact-inner {
     max-width: 1240px; margin: 0 auto; padding: 0 48px;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 96px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px 96px;
   }
+  .contact-form { grid-column: 2; grid-row: 1 / 3; }
   .contact-left h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(28px, 3vw, 40px);
@@ -342,7 +343,7 @@
     font-size: 16px; color: var(--text-mid);
     line-height: 1.8; margin-bottom: 36px; font-weight: 300;
   }
-  .contact-phone-block { margin-top: 32px; }
+  .contact-phone-block { margin-top: 0; grid-column: 1; }
   .contact-phone-block h3 {
     font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400;
     color: var(--text); margin-bottom: 12px;
@@ -471,7 +472,10 @@
     .hero { padding: 80px 24px 60px; }
     .about-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
     .about-credentials { gap: 32px; }
-    .contact-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
+    .contact-left { order: 1; }
+    .contact-form { order: 2; grid-column: 1; grid-row: auto; }
+    .contact-phone-block { order: 3; grid-column: 1; text-align: center; }
     .diff-grid { grid-template-columns: 1fr; gap: 2px; }
     .process-layout { grid-template-columns: 1fr; gap: 48px; }
     .process-aside { position: static; }
@@ -756,12 +760,6 @@
       <span class="eyebrow">Kontakt</span>
       <h2>Zapraszamy do rozmowy</h2>
       <p>Proszę opisać czego Państwo szukają. Na tej podstawie przygotujemy dla Państwa odpowiednie oferty lub odpowiemy na pytania dotyczące inwestycji w tym rejonie Francji.</p>
-      <div class="contact-phone-block">
-        <h3>Wolisz zadzwonić?</h3>
-        <p>Tel. Polska: <a href="tel:+48726806558">+48 726 806 558</a></p>
-        <p>Tel. Francja: <a href="tel:+33633766262">+33 633 766 262</a></p>
-        <p><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></p>
-      </div>
     </div>
     <div class="contact-form">
       <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
@@ -781,6 +779,12 @@
         <button type="submit" class="form-submit">Wyślij!</button>
         <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci">Politykę Prywatności</a></p>
       </form>
+    </div>
+    <div class="contact-phone-block">
+      <h3>Wolisz zadzwonić?</h3>
+      <p>Tel. Polska: <a href="tel:+48726806558">+48 726 806 558</a></p>
+      <p>Tel. Francja: <a href="tel:+33633766262">+33 633 766 262</a></p>
+      <p><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></p>
     </div>
   </div>
 </section>
