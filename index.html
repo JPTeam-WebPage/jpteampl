@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://jpteam.pl/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Nieruchomości Lazurowe Wybrzeże – Polskie Biuro Nieruchomości | JP Team">
-<meta property="og:description" content="Polskie biuro nieruchomości na Lazurowym Wybrzeżu. Cannes, Nicea, Prowansja. Znajdziemy i sprawdzimy Państwa apartament lub dom.">
+<meta property="og:description" content="Polskie biuro nieruchomości na Lazurowym Wybrzeżu. Cannes, Nicea, Prowansja. Znajdziemy i sprawdzimy Twój apartament lub dom.">
 <meta property="og:url" content="https://jpteam.pl/">
 <meta property="og:image" content="https://jpteam.pl/logo-navbar.png">
 <meta property="og:locale" content="pl_PL">
@@ -135,43 +135,11 @@
     font-weight: 400; margin-bottom: 56px;
     line-height: 1.2;
   }
-  /* Karuzela — wrapper */
-  .testimonials-carousel {
-    position: relative;
-  }
-  .testimonials {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-  }
-  /* Przyciski nawigacji */
-  .carousel-nav {
-    display: flex; gap: 12px; margin-top: 32px;
-  }
-  .carousel-btn {
-    width: 44px; height: 44px; border-radius: 50%;
-    border: 1px solid var(--border);
-    background: var(--bg); cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; color: var(--text-mid);
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .carousel-btn:hover { border-color: var(--orange); color: var(--orange); }
-  /* Kropki */
-  .carousel-dots {
-    display: flex; gap: 8px; align-items: center; margin-top: 24px;
-  }
-  .carousel-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--border); transition: background 0.2s, transform 0.2s;
-    cursor: pointer;
-  }
-  .carousel-dot.active { background: var(--orange); transform: scale(1.4); }
+  .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
   .testimonial {
     background: var(--bg-warm);
     border-radius: 4px; padding: 36px;
     border: 1px solid var(--border);
-    transition: opacity 0.3s;
   }
   .testimonial-top {
     display: flex; justify-content: space-between;
@@ -511,26 +479,7 @@
     .diff-grid { grid-template-columns: 1fr; gap: 2px; }
     .process-layout { grid-template-columns: 1fr; gap: 48px; }
     .process-aside { position: static; }
-    .locations-grid { grid-template-columns: 1fr; }
-    .testimonials {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      gap: 16px;
-      padding-bottom: 8px;
-      scroll-padding-left: 24px;
-      /* ukryj scrollbar */
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .testimonials::-webkit-scrollbar { display: none; }
-    .testimonials .testimonial {
-      min-width: 85vw;
-      scroll-snap-align: start;
-      flex-shrink: 0;
-    }
-    .carousel-nav { display: none; }
+    .locations-grid, .testimonials { grid-template-columns: 1fr; }
     .section-inner { padding: 0 24px; }
     .proof { padding: 64px 0; }
     .about { padding: 64px 0; }
@@ -628,161 +577,65 @@
   <div class="section-inner">
     <span class="eyebrow">Opinie klientów</span>
     <h2>Opinie osób, które zainwestowały z nami we Francji</h2>
-    <div class="testimonials-carousel">
-      <div class="testimonials" id="testimonials-track">
+    <div class="testimonials">
 
-        <!-- Łukasz Wieczorek -->
-        <div class="testimonial">
-          <div class="testimonial-top">
-            <div class="stars">★★★★★</div>
-            <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
-              <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-            </a>
-          </div>
-          <p>„Zaangażowany i sympatyczny agent. Doradza, podpowiada, nie «wciska» nieruchomości. Słucha potrzeb klienta. Doskonale zna lokalny rynek. Polecam."</p>
-          <div class="testimonial-author">Łukasz Wieczorek</div>
-        </div>
-
-        <!-- Agata — wyróżniona -->
-        <div class="testimonial" style="border-color: var(--orange); position: relative;">
-          <div class="testimonial-top">
-            <div class="stars">★★★★★</div>
-            <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
-              <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-            </a>
-          </div>
-          <p>„Pracowaliśmy ze Sławkiem i Jensem przy zakupie naszego domu w Francji, będąc jeszcze w Polsce. Sławek był bardzo pomocny - zarówno w przesyłaniu propozycji, które spełniały nasze wymagania, jak i w kontaktowaniu sprzedających w przypadku ogłoszeń, które znaleźliśmy sami. <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" rel="noopener" style="color:var(--orange); text-decoration:none; font-style:normal; font-weight:600;">...więcej</a>"</p>
-          <div class="testimonial-author">Agata</div>
-          <a href="https://www.forbes.pl/inwestowanie/polacy-odrzucili-hiszpanie-i-kupili-dom-we-francji-w-zyciu-tak-nie-zmarzlismy/bd393b6" target="_blank" rel="noopener" style="display:inline-block; margin-top:20px; font-size:12px; font-weight:700; letter-spacing:0.5px; color:var(--orange); text-decoration:none; border-bottom:1px solid var(--orange); padding-bottom:2px;">
-            ↗ Wywiad z Agatą w Forbes
+      <!-- Łukasz Wieczorek -->
+      <div class="testimonial">
+        <div class="testimonial-top">
+          <div class="stars">★★★★★</div>
+          <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
+            <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
           </a>
         </div>
-
-        <!-- La Mare Houseboats -->
-        <div class="testimonial">
-          <div class="testimonial-top">
-            <div class="stars">★★★★★</div>
-            <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
-              <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-            </a>
-          </div>
-          <p>„Obsługa rewelacyjna. Pan Sławek zaopiekował się nami od samego lądowania w Nicei do zakupu i jeszcze po nim również. Ma duży szacunek u pośredników, którzy chętnie pokazują mu nieruchomości, które są na rynku lub nawet jeszcze nie. Taka obsługa to marzenie kupującego."</p>
-          <div class="testimonial-author">La Mare Houseboats</div>
-        </div>
-
-        <!-- Agnieszka Kozłowska — nowa opinia -->
-        <div class="testimonial">
-          <div class="testimonial-top">
-            <div class="stars">★★★★★</div>
-            <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
-              <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-            </a>
-          </div>
-          <p>„Z pełnym przekonaniem polecam tę firmę! Profesjonalne podejście, świetny kontakt i wsparcie na każdym etapie zakupu nieruchomości w St. Raphaël. Szczególne podziękowania dla pana Sławka za ogromne zaangażowanie, cierpliwość i pomoc — czuliśmy się naprawdę zaopiekowani. Cały proces przebiegł sprawnie i bez stresu. To była prawdziwa przyjemność współpracować!"</p>
-          <div class="testimonial-author">Agnieszka Kozłowska</div>
-        </div>
-
+        <p>„Zaangażowany i sympatyczny agent. Doradza, podpowiada, nie «wciska» nieruchomości. Słucha potrzeb klienta. Doskonale zna lokalny rynek. Polecam."</p>
+        <div class="testimonial-author">Łukasz Wieczorek</div>
       </div>
-      <!-- Nawigacja desktop -->
-      <div class="carousel-nav" id="carousel-nav">
-        <button class="carousel-btn" id="btn-prev" aria-label="Poprzednia opinia">&#8592;</button>
-        <button class="carousel-btn" id="btn-next" aria-label="Następna opinia">&#8594;</button>
-        <div class="carousel-dots" id="carousel-dots"></div>
+
+      <!-- Agata — wyróżniona, środkowa -->
+      <div class="testimonial" style="border-color: var(--orange); position: relative;">
+        <div class="testimonial-top">
+          <div class="stars">★★★★★</div>
+          <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
+            <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </a>
+        </div>
+        <p>„Pracowaliśmy ze Sławkiem i Jensem przy zakupie naszego domu w Francji, będąc jeszcze w Polsce. Sławek był bardzo pomocny - zarówno w przesyłaniu propozycji, które spełniały nasze wymagania, jak i w kontaktowaniu sprzedających w przypadku ogłoszeń, które znaleźliśmy sami. <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" rel="noopener" style="color:var(--orange); text-decoration:none; font-style:normal; font-weight:600;">...więcej</a>"</p>
+        <div class="testimonial-author">Agata</div>
+        <a href="https://www.forbes.pl/inwestowanie/polacy-odrzucili-hiszpanie-i-kupili-dom-we-francji-w-zyciu-tak-nie-zmarzlismy/bd393b6" target="_blank" rel="noopener" style="display:inline-block; margin-top:20px; font-size:12px; font-weight:700; letter-spacing:0.5px; color:var(--orange); text-decoration:none; border-bottom:1px solid var(--orange); padding-bottom:2px;">
+          ↗ Wywiad z Agatą w Forbes
+        </a>
       </div>
+
+      <!-- La Mare Houseboats -->
+      <div class="testimonial">
+        <div class="testimonial-top">
+          <div class="stars">★★★★★</div>
+          <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
+            <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </a>
+        </div>
+        <p>„Obsługa rewelacyjna. Pan Sławek zaopiekował się nami od samego lądowania w Nicei do zakupu i jeszcze po nim również. Ma duży szacunek u pośredników, którzy chętnie pokazują mu nieruchomości, które są na rynku lub nawet jeszcze nie. Taka obsługa to marzenie kupującego."</p>
+        <div class="testimonial-author">La Mare Houseboats</div>
+      </div>
+
     </div>
   </div>
 </section>
-
-<script>
-(function() {
-  var track = document.getElementById('testimonials-track');
-  var dotsContainer = document.getElementById('carousel-dots');
-  if (!track) return;
-
-  var cards = track.querySelectorAll('.testimonial');
-  var total = cards.length;
-  var visibleCount = 3; // ile kart widać na raz na desktop
-  var currentIndex = 0;
-
-  // Stwórz kropki
-  for (var i = 0; i < total; i++) {
-    var dot = document.createElement('div');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('data-index', i);
-    dot.addEventListener('click', function() {
-      goTo(parseInt(this.getAttribute('data-index')));
-    });
-    dotsContainer.appendChild(dot);
-  }
-
-  function updateDots(idx) {
-    var dots = dotsContainer.querySelectorAll('.carousel-dot');
-    dots.forEach(function(d, i) {
-      d.classList.toggle('active', i === idx);
-    });
-  }
-
-  function goTo(idx) {
-    // Nie przekraczaj zakresu — ostatni widoczny to total - visibleCount
-    var maxIndex = total - visibleCount;
-    if (idx < 0) idx = 0;
-    if (idx > maxIndex) idx = maxIndex;
-    currentIndex = idx;
-
-    var cardWidth = cards[0].offsetWidth;
-    var gap = 32;
-    var offset = currentIndex * (cardWidth + gap);
-    track.style.transform = 'translateX(-' + offset + 'px)';
-    updateDots(currentIndex);
-  }
-
-  // Zablokuj natywny overflow na desktop, używaj JS transform
-  function initDesktop() {
-    if (window.innerWidth > 960) {
-      track.style.display = 'grid';
-      track.style.gridTemplateColumns = 'repeat(' + total + ', calc((100% - ' + ((total-1)*32) + 'px) / 3))';
-      track.style.overflow = 'hidden';
-      track.style.transition = 'transform 0.4s ease';
-      track.style.transform = 'translateX(0)';
-      currentIndex = 0;
-      updateDots(0);
-    } else {
-      track.style.transform = '';
-      track.style.transition = '';
-    }
-  }
-
-  document.getElementById('btn-prev').addEventListener('click', function() {
-    goTo(currentIndex - 1);
-  });
-  document.getElementById('btn-next').addEventListener('click', function() {
-    goTo(currentIndex + 1);
-  });
-
-  initDesktop();
-  window.addEventListener('resize', initDesktop);
-})();
-</script>
 
 <hr class="section-divider">
 
@@ -794,7 +647,7 @@
     <div class="diff-grid">
       <div class="diff-card">
         <span class="diff-num">01</span>
-        <h3>Szukamy dla Państwa, nie dla katalogu</h3>
+        <h3>Oferty dobieramy do potrzeb</h3>
         <p>Nie ograniczamy się do własnego katalogu ofert szukając dla Państwa nieruchomości. Przeszukujemy cały rynek: lokalne agencje, oferty prywatne i nieruchomości niepublikowane publicznie. Przedstawiamy wyłącznie te, które odpowiadają Państwa oczekiwaniom.</p>
       </div>
       <div class="diff-card">
@@ -924,7 +777,7 @@
         <textarea class="form-input" id="c-message" name="message" placeholder="Lokalizacja, typ nieruchomości, budżet, cel zakupu..." required></textarea>
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
         <button type="submit" class="form-submit">Wyślij!</button>
-        <p class="form-note">Klikając Wyślij, akceptują Państwo <a href="/polityka-prywatnosci">Politykę Prywatności</a></p>
+        <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci">Politykę Prywatności</a></p>
       </form>
     </div>
     <div class="contact-phone-block">
