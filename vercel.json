@@ -8,10 +8,10 @@
   ],
   "redirects": [
     { "source": "/contact", "destination": "/#kontakt", "statusCode": 301 },
-    { "source": "/czemu-warto-kupic", "destination": "/poradniki/czy-zakup-nieruchomosci-na-lazurowym-wybrzezu-ma-sens", "statusCode": 301 },
-    { "source": "/jak-kupic-nieruchomosc-w-cannes", "destination": "/poradniki/jak-kupic-nieruchomosc-w-cannes", "statusCode": 301 },
+    { "source": "/czemu-warto-kupic", "destination": "/poradniki", "statusCode": 301 },
+    { "source": "/jak-kupic-nieruchomosc-w-cannes", "destination": "/poradniki", "statusCode": 301 },
+    { "source": "/czy-zakup-nieruchomosci-na-lazurowym-wybrzezu-ma-sens", "destination": "/poradniki", "statusCode": 301 },
     { "source": "/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu", "destination": "/poradniki/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu", "statusCode": 301 },
-    { "source": "/czy-zakup-nieruchomosci-na-lazurowym-wybrzezu-ma-sens", "destination": "/poradniki/czy-zakup-nieruchomosci-na-lazurowym-wybrzezu-ma-sens", "statusCode": 301 },
     { "source": "/cannes-nieruchomosci-inwestycje", "destination": "/poradniki/cannes-nieruchomosci-inwestycje", "statusCode": 301 },
     { "source": "/nice-nieruchomosci-inwestycje", "destination": "/poradniki/nice-nieruchomosci-inwestycje", "statusCode": 301 },
     { "source": "/francja-vs-hiszpania-koszty-zakupu", "destination": "/poradniki/francja-vs-hiszpania-koszty-zakupu", "statusCode": 301 }
