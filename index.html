@@ -456,6 +456,12 @@
   .form-submit:hover { background: var(--orange-dark); }
   .form-note { font-size: 11px; color: #bbb; margin-top: 12px; line-height: 1.5; text-align: center; }
   .form-note a { color: var(--orange); }
+  .form-submit:disabled { background: #ccc; cursor: not-allowed; }
+  .form-submit:disabled:hover { background: #ccc; }
+  .recaptcha-wrapper { margin-top: 20px; }
+  .form-message { margin-top: 16px; padding: 14px 18px; border-radius: 10px; font-size: 14px; line-height: 1.5; }
+  .form-message--success { background: #f0faf4; border: 1px solid #7bc99a; color: #2d6a4a; }
+  .form-message--error { background: #fff5f5; border: 1px solid #f4a0a0; color: #8b2020; }
 
   /* FAQ */
   .faq { padding: 96px 0; background: var(--bg-warm); }
@@ -675,6 +681,10 @@
   }
 </style>
 </head>
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Google reCAPTCHA v2 -->
+<script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
 <body>
 
 <!-- NAV -->
@@ -989,11 +999,7 @@
       <p>Proszę opisać czego Państwo szukają. Na tej podstawie przygotujemy dla Państwa odpowiednie oferty lub odpowiemy na pytania dotyczące inwestycji w tym rejonie Francji.</p>
     </div>
     <div class="contact-form">
-      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="224e0338-5f14-46ba-8bca-9d132fa0bf38">
-        <input type="hidden" name="subject" content="Nowe zapytanie z jpteam.pl">
-        <input type="hidden" name="from_name" content="JP Team Website">
-        <input type="hidden" name="redirect" value="https://jpteam.pl/?submitted=true">
+      <form id="contact-form">
         <label for="c-name">Imię i Nazwisko</label>
         <input class="form-input" type="text" id="c-name" name="name" placeholder="Jan Kowalski" required>
         <label for="c-email">Adres Email</label>
@@ -1002,9 +1008,11 @@
         <input class="form-input" type="tel" id="c-phone" name="phone" placeholder="+48 123 456 789">
         <label for="c-message">Czego Państwo szukają?</label>
         <textarea class="form-input" id="c-message" name="message" placeholder="Lokalizacja, typ nieruchomości, budżet, cel zakupu..." required></textarea>
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-        <button type="submit" class="form-submit">Wyślij!</button>
+        <div id="recaptcha-widget" class="recaptcha-wrapper"></div>
+        <button type="submit" id="form-submit-btn" class="form-submit" disabled>Wyślij!</button>
         <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci">Politykę Prywatności</a></p>
+        <div id="form-success" class="form-message form-message--success" style="display:none;">Dziękujemy za wiadomość! Odezwiemy się wkrótce.</div>
+        <div id="form-error" class="form-message form-message--error" style="display:none;">Wystąpił błąd podczas wysyłki. Proszę spróbować ponownie lub napisać bezpośrednio na slawek@jpteam.pl.</div>
       </form>
     </div>
     <div class="contact-phone-block">
@@ -1091,6 +1099,84 @@
     <a href="/polityka-prywatnosci">Polityka prywatności</a>
   </div>
 </footer>
+
+<!-- FORMULARZ KONTAKTOWY — EmailJS + reCAPTCHA v2 -->
+<script>
+  // Inicjalizacja EmailJS
+  (function(){
+    emailjs.init({ publicKey: 'z6b75jEZvDi3kYxHP' });
+  })();
+
+  var recaptchaWidgetId = null;
+
+  // Callback wywoływany gdy biblioteka reCAPTCHA załaduje się w pełni
+  function onRecaptchaLoad() {
+    recaptchaWidgetId = grecaptcha.render('recaptcha-widget', {
+      sitekey: '6LclW-srAAAAAGx8C3rigZiP4Iuncl-h-LUf1VFe',
+      callback: function(token) {
+        // Użytkownik zaznaczył checkbox — odblokuj przycisk
+        document.getElementById('form-submit-btn').disabled = false;
+      },
+      'expired-callback': function() {
+        // Token wygasł — ponownie zablokuj przycisk
+        document.getElementById('form-submit-btn').disabled = true;
+      },
+      'error-callback': function() {
+        document.getElementById('form-submit-btn').disabled = true;
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('contact-form');
+    var submitBtn = document.getElementById('form-submit-btn');
+    var successMsg = document.getElementById('form-success');
+    var errorMsg = document.getElementById('form-error');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Pobierz token reCAPTCHA
+      var recaptchaToken = grecaptcha.getResponse(recaptchaWidgetId);
+      if (!recaptchaToken) {
+        errorMsg.style.display = 'block';
+        successMsg.style.display = 'none';
+        return;
+      }
+
+      // Zbuduj parametry szablonu EmailJS
+      var templateParams = {
+        name:    document.getElementById('c-name').value.trim(),
+        email:   document.getElementById('c-email').value.trim(),
+        phone:   document.getElementById('c-phone').value.trim(),
+        message: document.getElementById('c-message').value.trim(),
+        'g-recaptcha-response': recaptchaToken
+      };
+
+      // Zablokuj przycisk na czas wysyłki
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wysyłanie…';
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      emailjs.send('service_yxvh9rc', 'template_h9rxuma', templateParams)
+        .then(function() {
+          successMsg.style.display = 'block';
+          form.reset();
+          grecaptcha.reset(recaptchaWidgetId);
+          submitBtn.textContent = 'Wyślij!';
+          // przycisk pozostaje disabled aż do ponownego zaznaczenia reCAPTCHA
+        })
+        .catch(function(err) {
+          console.error('EmailJS error:', err);
+          errorMsg.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Wyślij!';
+          grecaptcha.reset(recaptchaWidgetId);
+        });
+    });
+  });
+</script>
 
 <!-- COOKIE BANNER -->
 <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1a1a1a; color:rgba(255,255,255,0.85); font-family:sans-serif; font-size:13px; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; border-top:1px solid #333;">
