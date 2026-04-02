@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartament w Cannes – Historia Zakupu | JP Team</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --orange: #c8622a;
+    --orange-light: #e8834a;
+    --dark: #1a1a18;
+    --gray: #6b6b6b;
+    --gray-light: #f5f4f0;
+    --border: #e8e4dc;
+    --white: #ffffff;
+    --text: #2c2c2a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    border-bottom: 1px solid var(--border);
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-leaf {
+    width: 28px;
+    height: 28px;
+    opacity: 0.7;
+  }
+
+  .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--dark);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dark);
+    font-weight: 400;
+  }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    padding: 16px 60px;
+    font-size: 12px;
+    color: var(--gray);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .breadcrumb a { color: var(--gray); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--orange); }
+  .breadcrumb-sep { color: var(--border); }
+
+  /* HERO */
+  .article-hero {
+    max-width: 860px;
+    margin: 60px auto 0;
+    padding: 0 60px;
+  }
+
+  .article-category {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .article-category::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--orange);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 24px;
+    max-width: 720px;
+  }
+
+  .article-lead {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--gray);
+    font-weight: 300;
+    max-width: 640px;
+    margin-bottom: 36px;
+  }
+
+  /* META STRIP */
+  .meta-strip {
+    display: flex;
+    gap: 32px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .meta-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .meta-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+
+  .meta-divider {
+    width: 1px;
+    background: var(--border);
+    align-self: stretch;
+  }
+
+  /* HERO IMAGE */
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16/7;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 64px;
+    background: linear-gradient(135deg, #d4e8f0 0%, #a8c8d8 40%, #7ba8c0 70%, #5a8aa8 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image-placeholder {
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  .hero-image-inner {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 100%),
+      url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=1200&q=80') center/cover;
+  }
+
+  .hero-caption {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    font-style: italic;
+  }
+
+  /* ARTICLE BODY */
+  .article-body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .article-body p {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  .article-body h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--dark);
+    margin: 52px 0 20px;
+    line-height: 1.2;
+  }
+
+  .article-body h3 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin: 40px 0 12px;
+  }
+
+  /* CALLOUT / PULLQUOTE */
+  .pullquote {
+    border-left: 2px solid var(--orange);
+    padding: 4px 0 4px 28px;
+    margin: 40px 0;
+  }
+
+  .pullquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--dark);
+    margin-bottom: 12px !important;
+  }
+
+  .pullquote cite {
+    font-size: 12px;
+    color: var(--gray);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  /* KEY FACTS BOX */
+  .facts-box {
+    background: var(--gray-light);
+    border-radius: 4px;
+    padding: 36px 40px;
+    margin: 44px 0;
+  }
+
+  .facts-box-title {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+  }
+
+  .fact-item {}
+
+  .fact-label {
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .fact-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+
+  /* TIMELINE */
+  .timeline {
+    margin: 40px 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+
+  .timeline-dot {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: white;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--orange);
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-content {}
+
+  .timeline-step {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* TAGS */
+  .article-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 48px 0 0;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .tag {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--gray);
+    text-decoration: none;
+  }
+
+  .tag:hover { border-color: var(--orange); color: var(--orange); }
+
+  /* CTA */
+  .article-cta {
+    background: var(--dark);
+    color: white;
+    padding: 64px 60px;
+    margin: 80px 0 0;
+    text-align: center;
+  }
+
+  .article-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: white;
+  }
+
+  .article-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    max-width: 480px;
+    margin: 0 auto 32px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--orange-light); }
+
+  /* RELATED */
+  .related {
+    max-width: 860px;
+    margin: 64px auto;
+    padding: 0 60px;
+  }
+
+  .related-title {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .related-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .related-card {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s;
+  }
+
+  .related-card:hover { border-color: var(--orange); }
+
+  .related-img {
+    aspect-ratio: 16/9;
+    background: var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  .related-img-1 {
+    background: linear-gradient(135deg, #e8d5c0 0%, #c8a880 100%);
+  }
+
+  .related-img-2 {
+    background: linear-gradient(135deg, #c8d8e8 0%, #88a8c8 100%);
+  }
+
+  .related-body { padding: 20px; }
+
+  .related-cat {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 8px;
+  }
+
+  .related-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .related-card p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.4);
+    padding: 32px 60px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+  /* SEO NOTE */
+  .seo-note {
+    background: #fffbf0;
+    border: 1px dashed #e8c060;
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #8a6820;
+    margin: 8px 0 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <svg class="logo-leaf" viewBox="0 0 28 28" fill="none">
+      <path d="M14 3C14 3 6 8 6 16C6 20.4 9.6 24 14 24C18.4 24 22 20.4 22 16C22 8 14 3 14 3Z" stroke="#2c2c2a" stroke-width="1" fill="none"/>
+      <path d="M14 24L14 12" stroke="#2c2c2a" stroke-width="0.8"/>
+      <path d="M14 18L10 14" stroke="#2c2c2a" stroke-width="0.8"/>
+      <path d="M14 15L18 11" stroke="#2c2c2a" stroke-width="0.8"/>
+    </svg>
+    <span class="logo-text">JPTeam</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Poradniki</a></li>
+    <li><a href="#">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Strona główna</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="#">Poradniki</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>Historia zakupu: apartament w Cannes</span>
+</div>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <div class="article-category">Historia zakupu</div>
+
+  <h1>Apartament z widokiem na morze w Cannes – jak przeprowadziliśmy transakcję za 680 000 €</h1>
+
+  <p class="article-lead">
+    Para z Warszawy szukała drugiego domu na Lazurowym Wybrzeżu od ponad roku. Samodzielne poszukiwania, trzy nieudane próby, dwie straty zadatku. Jak wyglądało to od momentu gdy zgłosili się do JP Team.
+  </p>
+
+  <!-- META -->
+  <div class="meta-strip">
+    <div class="meta-item">
+      <span class="meta-label">Lokalizacja</span>
+      <span class="meta-value">Cannes, Alpy Nadmorskie</span>
+    </div>
+    <div class="meta-divider"></div>
+    <div class="meta-item">
+      <span class="meta-label">Typ nieruchomości</span>
+      <span class="meta-value">Apartament, 78 m²</span>
+    </div>
+    <div class="meta-divider"></div>
+    <div class="meta-item">
+      <span class="meta-label">Wartość transakcji</span>
+      <span class="meta-value">680 000 €</span>
+    </div>
+    <div class="meta-divider"></div>
+    <div class="meta-item">
+      <span class="meta-label">Czas realizacji</span>
+      <span class="meta-value">11 tygodni</span>
+    </div>
+    <div class="meta-divider"></div>
+    <div class="meta-item">
+      <span class="meta-label">Klient</span>
+      <span class="meta-value">Para, Warszawa</span>
+    </div>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <div class="hero-image">
+    <div class="hero-image-inner"></div>
+    <span class="hero-caption">Widok z tarasu – zdjęcie ilustracyjne, dane klienta zanonimizowane</span>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <h3>Punkt wyjścia</h3>
+
+  <p>Małgorzata i Piotr* szukali apartamentu na Lazurowym Wybrzeżu od czternastu miesięcy. Jako przedsiębiorcy z branży finansowej, traktowali zakup zarówno jako inwestycję pod wynajem krótkoterminowy, jak i własną bazę wypadową do Europy Zachodniej. Mieli jasno określony budżet: do 700 000 €, lokalizacja preferowana – Cannes lub okolice.</p>
+
+  <p>Wcześniejsze próby – dwie przeprowadzone samodzielnie, jedna przez polską agencję nieznającą lokalnego rynku – skończyły się stratą łącznie 28 000 € w przepadłych zadatkach na nieruchomości z ukrytymi problemami prawnymi, których nie wykryto przed podpisaniem promesse de vente.</p>
+
+  <div class="pullquote">
+    <p>„Wiedzieliśmy, że chcemy apartament z widokiem i tarasem. Nie wiedzieliśmy, że trzy inne apartamenty które wcześniej wybraliśmy miały obciążenia hipoteczne lub problemy ze wspólnotą mieszkaniową."</p>
+    <cite>— Klientka, imię zmienione</cite>
+  </div>
+
+  <h2>Co zrobiliśmy inaczej</h2>
+
+  <h3>Selekcja przed wizytacją</h3>
+
+  <p>Po pierwszej rozmowie przygotowaliśmy listę 47 aktualnych ofert z całego rynku – nie tylko naszego portfolio, ale ze wszystkich współpracujących agencji lokalnych oraz ofert off-market od deweloperów i właścicieli prywatnych. Z tej listy, po wstępnej weryfikacji dokumentacji, zaprezentowaliśmy klientom 9 propozycji wartych obejrzenia.</p>
+
+  <p>Kluczowe kryterium eliminacyjne na tym etapie: stan prawny nieruchomości i kondycja finansowa wspólnoty mieszkaniowej (syndicat de copropriété). Obie kwestie są publicznie dostępne we Francji, ale wymagają znajomości lokalnych rejestrów i języka.</p>
+
+  <div class="facts-box">
+    <div class="facts-box-title">Szczegóły transakcji</div>
+    <div class="facts-grid">
+      <div class="fact-item">
+        <div class="fact-label">Powierzchnia</div>
+        <div class="fact-value">78 m² + taras 22 m²</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-label">Piętro / widok</div>
+        <div class="fact-value">4 z 5, widok na Zatokę Cannoise</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-label">Cena wywoławcza</div>
+        <div class="fact-value">720 000 €</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-label">Cena finalna</div>
+        <div class="fact-value">680 000 € (–5,6%)</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-label">Koszty notarialne</div>
+        <div class="fact-value">~54 400 € (8%)</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-label">Potencjał najmu</div>
+        <div class="fact-value">5–7% rocznie brutto</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Przebieg transakcji krok po kroku</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot">1</div>
+      <div class="timeline-content">
+        <div class="timeline-step">Tydzień 1–2</div>
+        <div class="timeline-title">Analiza potrzeb i selekcja rynku</div>
+        <div class="timeline-desc">Spotkanie online, określenie kryteriów, przegląd 47 ofert z rynku. Weryfikacja wstępna dokumentacji. Wybór 9 nieruchomości do oglądania.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">2</div>
+      <div class="timeline-content">
+        <div class="timeline-step">Tydzień 3</div>
+        <div class="timeline-title">Wizytacja – 2 dni, 9 apartamentów</div>
+        <div class="timeline-desc">Zorganizowaliśmy logistykę tak, żeby klienci obejrzeli wszystkie nieruchomości podczas jednego wyjazdu. Na miejscu towarzyszył im polskojęzyczny doradca.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">3</div>
+      <div class="timeline-content">
+        <div class="timeline-step">Tydzień 4</div>
+        <div class="timeline-title">Negocjacje i oferta zakupu</div>
+        <div class="timeline-desc">Klienci wybrali dwa apartamenty. Złożyliśmy ofertę na obie nieruchomości równocześnie, negocjując cenę w oparciu o dane rynkowe z ostatnich 18 miesięcy dla tej dzielnicy. Wynegocjowaliśmy 40 000 € poniżej ceny wywoławczej.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">4</div>
+      <div class="timeline-content">
+        <div class="timeline-step">Tydzień 5–6</div>
+        <div class="timeline-title">Due diligence i promesse de vente</div>
+        <div class="timeline-desc">Pełna weryfikacja dokumentacji prawnej, diagnostyki technicznej (DPE, amiante, plomb) oraz raportów wspólnoty. Podpisanie promesse de vente z 10-dniowym prawem odstąpienia. Zadatek 10% zabezpieczony zgodnie z prawem francuskim.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">5</div>
+      <div class="timeline-content">
+        <div class="timeline-step">Tydzień 7–10</div>
+        <div class="timeline-title">Oczekiwanie i formalności bankowe</div>
+        <div class="timeline-desc">Klienci finansowali zakup gotówką, co skróciło czas oczekiwania. Notariusz przygotował akt ostateczny. Koordynowaliśmy dokumenty ze strony polskiej i francuskiej.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">6</div>
+      <div class="timeline-content">
+        <div class="timeline-step">Tydzień 11</div>
+        <div class="timeline-title">Acte authentique – odbiór kluczy</div>
+        <div class="timeline-desc">Podpisanie aktu notarialnego, przepisanie liczników, przekazanie kluczy. Po zamknięciu transakcji skierowaliśmy klientów do partnera zarządzającego wynajmem krótkoterminowym.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Wynik i wnioski</h2>
+
+  <p>Transakcja zamknięta w 11 tygodniach od pierwszego kontaktu. Cena finalna o 40 000 € poniżej ceny wywoławczej – różnica pokryła niemal w całości koszty notarialne. Apartament został wprowadzony na rynek najmu krótkoterminowego w sezonie letnim, osiągając obłożenie 68% w pierwszych trzech miesiącach.</p>
+
+  <p>Dla klientów kluczowa różnica w porównaniu z wcześniejszymi próbami: weryfikacja dokumentacji prawnej <em>przed</em> złożeniem oferty, nie po. We Francji promesse de vente chroni kupującego przez 10 dni, ale zadatek który przepadł przy poprzednich transakcjach wynikał z problemów wykrytych zbyt późno – po tym jak nabywca emocjonalnie "zaangażował się" w daną nieruchomość.</p>
+
+  <div class="pullquote">
+    <p>„Gdybyśmy znali JP Team rok wcześniej, zaoszczędzilibyśmy nie tylko 28 000 €, ale przede wszystkim rok czasu i energii."</p>
+    <cite>— Klient, imię zmienione</cite>
+  </div>
+
+  <p style="font-size:12px; color: var(--gray); margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);">* Imiona zmienione. Dane transakcji zanonimizowane. Historia opublikowana za zgodą klientów.</p>
+
+  <!-- TAGS -->
+  <div class="article-tags">
+    <a href="#" class="tag">Cannes</a>
+    <a href="#" class="tag">Apartament</a>
+    <a href="#" class="tag">Historia zakupu</a>
+    <a href="#" class="tag">Inwestycja</a>
+    <a href="#" class="tag">Najem krótkoterminowy</a>
+    <a href="#" class="tag">Proces zakupu</a>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="article-cta">
+  <h2>Szukasz nieruchomości na Lazurowym Wybrzeżu?</h2>
+  <p>Opowiedz nam czego szukasz. Przeszukamy cały rynek i przedstawimy tylko oferty warte Twojej uwagi.</p>
+  <a href="#" class="btn-primary">Umów bezpłatną konsultację</a>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <div class="related-title">Inne historie i poradniki</div>
+  <div class="related-grid">
+    <a href="#" class="related-card">
+      <div class="related-img related-img-1"></div>
+      <div class="related-body">
+        <div class="related-cat">Historia zakupu</div>
+        <h3>Willa w Prowansji – zakup z finansowaniem francuskim</h3>
+        <p>Jak pozyskaliśmy kredyt hipoteczny we Francji dla polskiego przedsiębiorcy i zamknęliśmy transakcję na 1,2 mln €.</p>
+      </div>
+    </a>
+    <a href="#" class="related-card">
+      <div class="related-img related-img-2"></div>
+      <div class="related-body">
+        <div class="related-cat">Poradnik</div>
+        <h3>Koszty zakupu nieruchomości we Francji – kompletny przewodnik</h3>
+        <p>Podatki, opłaty notarialne, koszty stałe. Wszystko co musisz wiedzieć zanim złożysz ofertę.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 JP Team – Biuro Nieruchomości na Lazurowym Wybrzeżu</span>
+  <div style="display:flex; gap:24px;">
+    <a href="#">Polityka prywatności</a>
+    <a href="#">Kontakt</a>
+  </div>
+</footer>
+
+</body>
+</html>
