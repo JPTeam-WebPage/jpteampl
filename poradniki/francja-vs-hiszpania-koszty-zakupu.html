@@ -537,6 +537,8 @@
   .contact-form-box { order: 1; }
 }
 </style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
 </head>
 <body>
 
@@ -774,40 +776,99 @@
       </div>
     </div>
     <div class="contact-form-box">
-      <form id="contact-form" action="https://formspree.io/f/xpwzgqzg" method="POST">
+      <form id="contact-form">
         <label for="c-name">Imię i Nazwisko</label>
         <input type="text" id="c-name" name="name" placeholder="Jan Kowalski" required>
         <label for="c-email">Adres Email</label>
         <input type="email" id="c-email" name="email" placeholder="przyklad@kowalski.pl" required>
         <label for="c-phone">Numer Tel.</label>
-        <input type="tel" id="c-phone" name="phone" placeholder="+48123456789">
+        <input type="tel" id="c-phone" name="phone" placeholder="+48 123 456 789">
         <label for="c-message">Wiadomość</label>
-        <textarea id="c-message" name="message" placeholder="Szukamy apartamentu w ..."></textarea>
-        <button type="submit" class="form-submit">Wyślij!</button>
+        <textarea id="c-message" name="message" placeholder="Szukamy apartamentu w ..." required></textarea>
+        
+        <div id="recaptcha-widget" style="margin-top: 20px;"></div>
+        
+        <button type="submit" id="form-submit-btn" class="form-submit" disabled>Wyślij!</button>
         <p class="form-note">Klikając Wyślij, akceptujesz <a href="/polityka-prywatnosci">Politykę Prywatności</a></p>
+        
+        <div id="form-success" style="display:none; text-align: center; padding: 20px 0; font-size: 15px; color: #2d6a4a; background: #f0faf4; border: 1px solid #7bc99a; border-radius: 8px; margin-top: 16px;">Dziękujemy za wiadomość. Odpowiemy w ciągu 24 godzin.</div>
+        <div id="form-error" style="display:none; text-align: center; padding: 20px 0; font-size: 15px; color: #8b2020; background: #fff5f5; border: 1px solid #f4a0a0; border-radius: 8px; margin-top: 16px;">Wystąpił błąd podczas wysyłki. Spróbuj ponownie lub napisz na slawek@jpteam.pl.</div>
       </form>
-      <div class="form-success" id="form-success">
-        Dziękujemy za wiadomość. Odpowiemy na Państwa zapytanie w ciągu 24 godzin.
+
+      <script>
+        (function(){
+          emailjs.init({ publicKey: 'z6b75jEZvDi3kYxHP' });
+        })();
+
+        var recaptchaWidgetId = null;
+        function onRecaptchaLoad() {
+          recaptchaWidgetId = grecaptcha.render('recaptcha-widget', {
+            sitekey: '6LclW-srAAAAAGx8C3rigZiP4Iuncl-h-LUf1VFe',
+            callback: function(token) {
+              document.getElementById('form-submit-btn').disabled = false;
+            },
+            'expired-callback': function() {
+              document.getElementById('form-submit-btn').disabled = true;
+            },
+            'error-callback': function() {
+              document.getElementById('form-submit-btn').disabled = true;
+            }
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var form = document.getElementById('contact-form');
+          var submitBtn = document.getElementById('form-submit-btn');
+          var successMsg = document.getElementById('form-success');
+          var errorMsg = document.getElementById('form-error');
+
+          if(form) {
+            form.addEventListener('submit', function(e) {
+              e.preventDefault();
+
+              var recaptchaToken = grecaptcha.getResponse(recaptchaWidgetId);
+              if (!recaptchaToken) {
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+                return;
+              }
+
+              var templateParams = {
+                name:    document.getElementById('c-name').value.trim(),
+                email:   document.getElementById('c-email').value.trim(),
+                phone:   document.getElementById('c-phone').value.trim(),
+                message: document.getElementById('c-message').value.trim(),
+                'g-recaptcha-response': recaptchaToken
+              };
+
+              submitBtn.disabled = true;
+              submitBtn.textContent = 'Wysyłanie…';
+              successMsg.style.display = 'none';
+              errorMsg.style.display = 'none';
+
+              emailjs.send('service_yxvh9rc', 'template_h9rxuma', templateParams)
+                .then(function() {
+                  successMsg.style.display = 'block';
+                  form.reset();
+                  grecaptcha.reset(recaptchaWidgetId);
+                  submitBtn.textContent = 'Wyślij!';
+                })
+                .catch(function(err) {
+                  console.error('EmailJS error:', err);
+                  errorMsg.style.display = 'block';
+                  submitBtn.disabled = false;
+                  submitBtn.textContent = 'Wyślij!';
+                  grecaptcha.reset(recaptchaWidgetId);
+                });
+            });
+          }
+        });
+      </script>
       </div>
     </div>
   </div>
 </section>
-<script>
-  var form = document.getElementById('contact-form');
-  if(form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var data = new FormData(form);
-      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-        .then(function(r) {
-          if(r.ok) {
-            form.style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
-          }
-        });
-    });
-  }
-</script>
+
 
 <!-- FOOTER -->
 <footer class="site-footer">
