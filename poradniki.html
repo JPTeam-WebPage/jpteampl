@@ -278,8 +278,6 @@
     <button onclick="jpRejectCookies()" style="background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:sans-serif;">Tylko niezbędne</button>
   </div>
 </div>
-<\!-- Google Analytics 4 + Consent Mode v2 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TC56VMTG42"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -294,7 +292,11 @@
     'security_storage': 'granted',
     'wait_for_update': 500
   });
+</script>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TC56VMTG42"></script>
+
+<script>
   gtag('js', new Date());
   gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
 
@@ -327,6 +329,7 @@
       'analytics_storage': 'granted'
     });
   }
+  
   function jpRejectCookies(){
     localStorage.setItem("jp_cookie_consent","rejected");
     document.getElementById("cookie-banner").style.display = "none";
