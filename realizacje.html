@@ -334,9 +334,7 @@
   });
 
   gtag('js', new Date());
-  gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
 
-  // Jeśli user wcześniej zaakceptował — od razu podnieś consent do granted
   (function(){
     var consent = localStorage.getItem("jp_cookie_consent");
     var banner = document.getElementById("cookie-banner");
@@ -355,6 +353,8 @@
     }
   })();
 
+  gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
+
   function jpAcceptCookies(){
     localStorage.setItem("jp_cookie_consent","accepted");
     document.getElementById("cookie-banner").style.display = "none";
@@ -364,6 +364,7 @@
       'ad_personalization': 'granted',
       'analytics_storage': 'granted'
     });
+    gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
   }
   function jpRejectCookies(){
     localStorage.setItem("jp_cookie_consent","rejected");

@@ -588,7 +588,6 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
 
 <script>
   gtag('js', new Date());
-  gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
 
   // Jeśli user wcześniej zaakceptował — od razu podnieś consent do granted
   (function(){
@@ -609,6 +608,8 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
     }
   })();
 
+  gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
+
   function jpAcceptCookies(){
     localStorage.setItem("jp_cookie_consent","accepted");
     document.getElementById("cookie-banner").style.display = "none";
@@ -618,6 +619,9 @@ h1 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500
       'ad_personalization': 'granted',
       'analytics_storage': 'granted'
     });
+    gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
+  });
+    gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
   }
   
   function jpRejectCookies(){
