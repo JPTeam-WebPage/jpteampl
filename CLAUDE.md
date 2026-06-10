@@ -4,8 +4,25 @@
 
 - Repo: `github.com/JPTeam-WebPage/jpteampl`
 - Branch `main` → produkcja (jpteam.pl) via Vercel auto-deploy
-- Branch `draft` → Vercel preview URL (prototypy, nie idzie na prod)
+- Branch `draft` → Vercel preview (prototypy, nie idzie na prod)
 - **Zawsze pracuj na `draft` jeśli nie powiedziano inaczej**
+
+### Deploy preview (draft branch)
+
+Po każdym `git push origin draft` — triggeruj deploy hook:
+```bash
+curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_DtTW60yv2BKfkO7ynnOKPu0HdT7M/8BYxt6J2V7"
+```
+
+Preview URL (gotowe ~1-2 min po curl):
+```
+https://jpteampl-git-draft-jpteam-webpages-projects.vercel.app
+```
+
+Plik draft-jpteam.html dostępny pod:
+```
+https://jpteampl-git-draft-jpteam-webpages-projects.vercel.app/draft-jpteam.html
+```
 
 ## Struktura plików
 
