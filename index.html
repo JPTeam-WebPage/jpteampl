@@ -574,12 +574,30 @@
     font-weight: 500; margin-bottom: 56px;
   }
   .faq-list { max-width: 760px; }
-  .faq-item { border-bottom: 1px solid var(--border); padding: 28px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); }
   .faq-q {
     font-size: 16px; font-weight: 500;
-    color: var(--text); margin-bottom: 12px; line-height: 1.4;
+    color: var(--text); line-height: 1.4;
+    padding: 24px 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    transition: color 0.2s;
   }
-  .faq-a { font-size: 14px; line-height: 1.8; color: var(--text-mid); font-weight: 400; }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after {
+    content: '+';
+    font-size: 22px; font-weight: 300; line-height: 1;
+    color: var(--text-light);
+    flex-shrink: 0;
+    transition: transform 0.25s;
+  }
+  .faq-item[open] .faq-q::after { transform: rotate(45deg); }
+  .faq-q:hover { color: var(--orange); }
+  .faq-a {
+    font-size: 14px; line-height: 1.8; color: var(--text-mid); font-weight: 400;
+    padding-bottom: 28px; margin: 0;
+  }
 
   /* FOOTER — LIGHT */
   .site-footer {
@@ -1146,38 +1164,38 @@
     <span class="eyebrow">Pytania i odpowiedzi</span>
     <h2>Najczęstsze pytania o zakup nieruchomości na Lazurowym Wybrzeżu</h2>
     <div class="faq-list">
-      <div class="faq-item">
-        <p class="faq-q">Nie jestem jeszcze zdecydowany na zakup. Czy warto się kontaktować?</p>
+      <details class="faq-item">
+        <summary class="faq-q">Nie jestem jeszcze zdecydowany na zakup. Czy warto się kontaktować?</summary>
         <p class="faq-a">Tak, i to jest dobry moment. Wiele osób zaczyna od ogólnej rozmowy o rynku i dopiero na tej podstawie podejmuje decyzję. Chętnie odpowiemy na pytania, opiszemy realia i pomożemy ocenić, czy Lazurowe Wybrzeże jest odpowiednim kierunkiem dla Państwa sytuacji.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Czy jako Polak mogę kupić nieruchomość we Francji bez ograniczeń?</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Czy jako Polak mogę kupić nieruchomość we Francji bez ograniczeń?</summary>
         <p class="faq-a">Tak. Polacy, jako obywatele UE, nabywają nieruchomości na identycznych zasadach jak Francuzi. Nie potrzebują Państwo żadnych dodatkowych zezwoleń. Proces jest bezpieczny i gwarantowany przez państwowego notariusza. Znajomość francuskiego nie jest wymagana — zapewniamy pełne wsparcie językowe i tłumaczenie kluczowych dokumentów na każdym etapie.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Jak wygląda proces zakupu domu w Cannes lub Nicei?</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Jak wygląda proces zakupu domu w Cannes lub Nicei?</summary>
         <p class="faq-a">Kupno domu na Lazurowym Wybrzeżu nie różni się w zależności od lokalizacji. Całość trwa zazwyczaj 3 miesiące: znalezienie nieruchomości i negocjacja ceny, podpisanie dokumentu u notariusza (wpłata zadatku 5–10%), 10-dniowy okres na wycofanie się bez kosztów, a następnie podpisanie aktu notarialnego, przekazanie kluczy i przelanie reszty środków.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Jakie są całkowite koszty zakupu i utrzymania nieruchomości?</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Jakie są całkowite koszty zakupu i utrzymania nieruchomości?</summary>
         <p class="faq-a">Do ceny ofertowej należy doliczyć tzw. koszty notarialne: na rynku wtórnym ok. 7–8% ceny transakcyjnej, na rynku pierwotnym ok. 2–3%. Jeśli chodzi o koszty stałe — roczny podatek od nieruchomości oraz czynsz administracyjny (charges) w przypadku apartamentów.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Czy zakup apartamentu na Lazurowym Wybrzeżu to dobra inwestycja?</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Czy zakup apartamentu na Lazurowym Wybrzeżu to dobra inwestycja?</summary>
         <p class="faq-a">Rynek ten cechuje się wysoką stabilnością i prestiżem. Ograniczenie terenu z jednej strony morzem, a z drugiej górami wpływa na stabilny wzrost cen nieruchomości — średnio 2–4% rocznie w kluczowych lokalizacjach. Rentowność z najmu krótkoterminowego może sięgać 6–8% rocznie, a długoterminowego 3–5% rocznie.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Jak znaleźć okazję inwestycyjną?</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Jak znaleźć okazję inwestycyjną?</summary>
         <p class="faq-a">Najlepsze oferty znikają błyskawicznie, często zanim trafią do internetu. Jako doradcy pracujący na miejscu docieramy do ofert spoza oficjalnych katalogów. Dzięki wieloletnim relacjom z lokalnymi agencjami mamy wgląd w takie oferty i możemy je przedstawić Państwu, zanim staną się publicznie dostępne.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Jaka jest rola agenta nieruchomości i notariusza?</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Jaka jest rola agenta nieruchomości i notariusza?</summary>
         <p class="faq-a">Notariusz jako urzędnik państwowy weryfikuje stan prawny i legalność sprzedaży. Nasza agencja współpracuje z polskojęzycznym notariuszem w Nicei. Agent nieruchomości zajmuje się wyszukiwaniem ofert, organizacją wizyt oraz bierze udział w negocjacjach. Oferujemy również wsparcie posprzedażowe: przepisanie liczników, kontakt z biurem zarządzającym najmem i inne procesy wymagające znajomości języka.</p>
-      </div>
-      <div class="faq-item">
-        <p class="faq-q">Certyfikat DPE i przepisy ekologiczne — co z domami do remontu?</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Certyfikat DPE i przepisy ekologiczne — co z domami do remontu?</summary>
         <p class="faq-a">Nowe prawo ogranicza wynajem nieruchomości energochłonnych: zakaz wynajmu klasy G od 2025 r. i klasy F od 2028 r. Kupując starszy dom, warto sprawdzić certyfikat DPE i uwzględnić ewentualny koszt remontu energetycznego. Pomożemy ocenić, czy dana nieruchomość wymaga modernizacji.</p>
-      </div>
+      </details>
     </div>
   </div>
 </section>
