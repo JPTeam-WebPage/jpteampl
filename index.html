@@ -312,9 +312,10 @@
   }
   .about-text p strong { font-weight: 600; color: var(--text); }
   .license-badge {
-    display: flex; align-items: flex-start; gap: 14px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 14px;
     margin-top: 28px;
     padding: 18px 22px;
+    margin-left: -23px; /* tekst w ramce licuje z linią akapitów */
     background: var(--bg-warm);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -329,22 +330,6 @@
   .license-badge .lb-title { font-size: 13px; font-weight: 600; color: var(--text); letter-spacing: 0.2px; }
   .license-badge .lb-nums { font-size: 13px; color: var(--text-mid); margin-top: 4px; line-height: 1.6; }
   .license-badge .lb-note { font-size: 12px; color: var(--text-light); margin-top: 4px; line-height: 1.5; }
-  .about-credentials {
-    margin-top: 36px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
-    display: flex; gap: 48px;
-  }
-  .cred-item {}
-  .cred-num {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 40px; font-weight: 300;
-    color: var(--text); line-height: 1;
-  }
-  .cred-label {
-    font-size: 12px; color: var(--text-light);
-    letter-spacing: 0.5px; margin-top: 4px;
-  }
   .about-img { width: 100%; height: 400px; object-fit: cover; object-position: center 20%; border-radius: 8px; display: block; max-width: 100%; }
   .about-img-col { align-self: flex-start; padding-top: 80px; }
   .yt-card {
@@ -742,7 +727,7 @@
       object-position: center 15%;
       border-radius: 4px;
     }
-    .about-credentials { gap: 24px; flex-wrap: wrap; }
+    .license-badge { margin-left: 0; }
     .contact-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
     .contact-left { order: 1; }
     .contact-form { order: 2; grid-column: 1; grid-row: auto; }
@@ -1013,26 +998,12 @@
       <p>Od 2018 roku wraz z synem prowadzę polskojęzyczny oddział agencji JP Team — duńskiej firmy obecnej na Lazurowym Wybrzeżu <strong>od 1993 roku</strong>. Przez te lata zbudowaliśmy <strong>sieć relacji z lokalnymi agencjami, notariuszami i doradcami</strong>, która pozwala nam działać skutecznie tam, gdzie samodzielne poszukiwania napotykają na bariery.</p>
       <p>Specjalizuję się w obsłudze polskich klientów poszukujących nieruchomości w Cannes, Nicei, Antibes i okolicach.</p>
       <div class="license-badge">
-        <span class="lb-check">✓</span>
         <div>
           <div class="lb-title">Licencjonowane biuro nieruchomości</div>
-          <div class="lb-nums">Carte professionnelle CPI 83032032021000000022 · SIRET 437 566 961 00011</div>
+          <div class="lb-nums">Carte professionnelle CPI 83032032021000000022<br>SIRET 437 566 961 00011</div>
           <div class="lb-note">Licencja zawodowa wymagana francuskim prawem do pośrednictwa w obrocie nieruchomościami.</div>
         </div>
-      </div>
-      <div class="about-credentials">
-        <div class="cred-item">
-          <div class="cred-num">30+</div>
-          <div class="cred-label">lat agencji na rynku</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-num">8</div>
-          <div class="cred-label">lat obsługi polskich klientów</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-num">100%</div>
-          <div class="cred-label">procesu zakupu po polsku</div>
-        </div>
+        <span class="lb-check">✓</span>
       </div>
     </div>
     <div class="about-img-col">
