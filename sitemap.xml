@@ -7,7 +7,7 @@
   </url>
   <url>
     <loc>https://jpteam.pl/poradniki</loc>
-    <lastmod>2026-03-22</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -49,5 +49,10 @@
     <loc>https://jpteam.pl/polityka-prywatnosci</loc>
     <lastmod>2026-03-19</lastmod>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://jpteam.pl/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>
