@@ -824,7 +824,7 @@
     opacity: 0.85;
   }
   .demo-note {
-    display: inline-block; font-size: 11px; color: rgba(255,255,255,0.45);
+    display: inline-block; font-size: 11px; color: #9a938c;
     letter-spacing: 0.4px; margin-top: 10px;
   }
 
@@ -841,33 +841,32 @@
   .ghost-cta-sub { font-size: 13px; color: var(--text-light); margin-top: 12px; }
 
   /* ===== SECURITY (bezpieczenstwo transakcji) ===== */
-  .security { background: #101820; color: #fff; }
+  .security { background: var(--bg-warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .security .section-inner { max-width: 1240px; margin: 0 auto; padding: 96px 48px; }
-  .security .eyebrow { color: var(--orange); }
-  .security h2 { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 34px; line-height: 1.25; margin: 14px 0 18px; color: #fff; }
-  .security-intro { max-width: 720px; color: rgba(255,255,255,0.65); font-size: 16px; line-height: 1.75; font-weight: 300; margin-bottom: 48px; }
+  .security h2 { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 34px; line-height: 1.25; margin: 14px 0 18px; }
+  .security-intro { max-width: 720px; color: var(--text-light); font-size: 16px; line-height: 1.75; font-weight: 300; margin-bottom: 48px; }
   .security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .sec-card {
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+    background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--orange);
     border-radius: 10px; padding: 32px;
   }
-  .sec-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 18.5px; margin: 14px 0 10px; color: #fff; }
-  .sec-card p { color: rgba(255,255,255,0.6); font-size: 14.5px; line-height: 1.7; font-weight: 300; }
+  .sec-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 18.5px; margin: 14px 0 10px; }
+  .sec-card p { color: var(--text-light); font-size: 14.5px; line-height: 1.7; font-weight: 300; }
   .sec-ico {
-    width: 44px; height: 44px; border-radius: 8px; background: rgba(255,98,46,0.14);
+    width: 44px; height: 44px; border-radius: 8px; background: #fff4ef;
     display: flex; align-items: center; justify-content: center; font-size: 21px;
   }
   .sec-partner {
     display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
-    background: rgba(255,98,46,0.12); border: 1px solid rgba(255,98,46,0.35);
-    color: #ffb59d; font-size: 12.5px; padding: 6px 12px; border-radius: 100px; letter-spacing: 0.3px;
+    background: #fff4ef; border: 1px solid #ffcdb8;
+    color: var(--orange-dark); font-size: 12.5px; padding: 6px 12px; border-radius: 100px; letter-spacing: 0.3px;
   }
   .security-bar {
-    margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border);
     display: flex; flex-wrap: wrap; gap: 14px 40px; align-items: center;
-    color: rgba(255,255,255,0.5); font-size: 13px; letter-spacing: 0.3px;
+    color: var(--text-light); font-size: 13px; letter-spacing: 0.3px;
   }
-  .security-bar strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+  .security-bar strong { color: var(--text); font-weight: 500; }
 
   /* ===== KALKULATOR ROI ===== */
   .roi { background: var(--bg-warm); }
@@ -889,15 +888,15 @@
     border: 1px solid #ddd; border-radius: 8px; background: #fff; color: var(--text-mid);
   }
   .roi-toggle button.active { border-color: var(--orange); background: #fff4ef; color: var(--orange-dark); font-weight: 500; }
-  .roi-results { background: #101820; color: #fff; border-radius: 12px; padding: 36px; }
-  .roi-results h3 { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 17px; margin-bottom: 24px; color: rgba(255,255,255,0.9); }
-  .roi-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 14.5px; }
-  .roi-row span:first-child { color: rgba(255,255,255,0.55); font-weight: 300; }
+  .roi-results { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--orange); border-radius: 12px; padding: 36px; }
+  .roi-results h3 { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 17px; margin-bottom: 24px; }
+  .roi-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 14.5px; }
+  .roi-row span:first-child { color: var(--text-light); font-weight: 300; }
   .roi-row span:last-child { font-weight: 500; white-space: nowrap; }
-  .roi-row--total span { color: #fff !important; font-size: 15.5px; }
-  .roi-yield { margin-top: 22px; text-align: center; background: rgba(255,98,46,0.1); border: 1px solid rgba(255,98,46,0.3); border-radius: 10px; padding: 20px; }
-  .roi-yield .ry-num { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 500; color: var(--orange); line-height: 1.1; }
-  .roi-yield .ry-label { font-size: 12.5px; color: rgba(255,255,255,0.55); letter-spacing: 0.4px; margin-top: 6px; }
+  .roi-row--total span { color: var(--text) !important; font-size: 15.5px; }
+  .roi-yield { margin-top: 22px; text-align: center; background: #fff4ef; border: 1px solid #ffcdb8; border-radius: 10px; padding: 20px; }
+  .roi-yield .ry-num { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 500; color: var(--orange-dark); line-height: 1.1; }
+  .roi-yield .ry-label { font-size: 12.5px; color: var(--text-light); letter-spacing: 0.4px; margin-top: 6px; }
   .roi-cta { margin-top: 24px; text-align: center; }
   .roi-cta .btn-primary { display: inline-block; width: 100%; text-align: center; }
   .roi-disclaimer { margin-top: 28px; font-size: 12px; color: var(--text-light); line-height: 1.65; max-width: 900px; }
@@ -916,8 +915,8 @@
   .calendly-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 24px; line-height: 1.3; margin-bottom: 12px; }
   .calendly-card > div > p { color: var(--text-light); font-size: 15px; line-height: 1.7; font-weight: 300; }
   .cal-mock { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; position: relative; }
-  .cal-mock-head { background: #101820; color: #fff; padding: 16px 20px; font-size: 14px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
-  .cal-mock-head span:last-child { font-weight: 300; font-size: 12.5px; color: rgba(255,255,255,0.55); }
+  .cal-mock-head { background: var(--bg-warm); border-bottom: 1px solid var(--border); padding: 16px 20px; font-size: 14px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+  .cal-mock-head span:last-child { font-weight: 300; font-size: 12.5px; color: var(--text-light); }
   .cal-days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; padding: 16px 20px 6px; }
   .cal-day { text-align: center; font-size: 12px; color: var(--text-light); padding: 8px 0 4px; }
   .cal-day strong { display: block; font-size: 16px; color: var(--text); font-weight: 500; }
@@ -927,7 +926,8 @@
   .cal-slot--off { border-style: dashed; color: #b6c2cf; cursor: default; }
   .cal-slot--off:hover { background: transparent; }
   .cal-mock-note {
-    position: absolute; inset: auto 12px 12px 12px; background: rgba(16,24,32,0.92); color: rgba(255,255,255,0.85);
+    position: absolute; inset: auto 12px 12px 12px; background: #fff; color: var(--text-mid);
+    border: 1px solid var(--border); box-shadow: 0 6px 18px rgba(0,0,0,0.09);
     font-size: 12px; line-height: 1.55; padding: 10px 14px; border-radius: 8px;
   }
 
