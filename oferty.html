@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo-navbar.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-navbar.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oferty nieruchomości — Lazurowe Wybrzeże | JP Team</title>
+<meta name="description" content="Wyselekcjonowane nieruchomości na sprzedaż na Lazurowym Wybrzeżu — Cannes, Nicea, Antibes. Sprawdzone oferty, obsługa kupujących po polsku.">
+<link rel="canonical" href="https://jpteam.pl/oferty">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oferty nieruchomości — Lazurowe Wybrzeże | JP Team">
+<meta property="og:description" content="Wyselekcjonowane nieruchomości na sprzedaż na Lazurowym Wybrzeżu. Sprawdzone oferty, obsługa kupujących po polsku.">
+<meta property="og:url" content="https://jpteam.pl/oferty">
+<meta property="og:image" content="https://jpteam.pl/cannes.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { overflow-x: hidden; }
+
+  :root {
+    --orange: #FF622E;
+    --orange-dark: #e04e1a;
+    --text: #111;
+    --text-mid: #333;
+    --text-light: #555;
+    --border: #e8e8e8;
+    --bg: #fff;
+    --bg-warm: #faf9f7;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0;
+    background: rgba(255,255,255,0.97);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 48px;
+  }
+  .nav-logo-img { height: 72px; width: auto; display: block; }
+  nav ul { list-style: none; display: flex; gap: 36px; align-items: center; }
+  nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px; letter-spacing: 1.2px;
+    color: var(--text-mid); text-decoration: none; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--text); }
+  nav a.nav-cta {
+    background: var(--orange); color: #fff;
+    border-radius: 30px; padding: 11px 26px;
+    font-size: 13px; letter-spacing: 1px;
+    transition: background 0.2s;
+  }
+  nav a.nav-cta:hover { background: var(--orange-dark); color: #fff; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: all 0.25s ease; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.98); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 24px 24px; flex-direction: column; gap: 0; z-index: 99; }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a { font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 0.5px; color: #1a1a1a; text-decoration: none; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid var(--border); display: block; }
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+  .nav-mobile-menu a:hover { color: var(--orange); }
+
+  /* PAGE HERO */
+  .page-hero { background: var(--bg-warm); padding: 80px 48px 72px; border-bottom: 1px solid #ede9e3; }
+  .page-hero-inner { max-width: 1240px; margin: 0 auto; }
+  .eyebrow { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
+  .page-hero h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 4vw, 46px); font-weight: 300; line-height: 1.2; letter-spacing: -0.5px; color: var(--text); margin-bottom: 20px; max-width: 800px; }
+  .page-hero h1 strong { font-weight: 600; }
+  .page-hero p { font-size: 17px; color: var(--text-light); line-height: 1.75; max-width: 620px; }
+
+  /* OFFERS GRID */
+  .offers-section { max-width: 1240px; margin: 0 auto; padding: 64px 48px 80px; }
+  .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .offer-card {
+    display: block; background: #fff;
+    border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden; text-decoration: none; color: inherit;
+    transition: box-shadow 0.2s;
+  }
+  .offer-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+  .offer-card-img { position: relative; height: 240px; overflow: hidden; }
+  .offer-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+  .offer-card:hover .offer-card-img img { transform: scale(1.04); }
+  .offer-card-pill { position: absolute; bottom: 14px; left: 14px; background: rgba(255,255,255,0.92); color: var(--text); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; }
+  .offer-card-body { padding: 22px 24px 26px; }
+  .oc-loc { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
+  .offer-card h2 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--text); margin-bottom: 12px; transition: color 0.2s; }
+  .offer-card:hover h2 { color: var(--orange); }
+  .oc-meta { font-size: 14px; color: var(--text-light); margin-bottom: 14px; }
+  .oc-price { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); }
+
+  /* NOTE POD LISTĄ */
+  .offers-note { margin-top: 48px; padding-top: 32px; border-top: 1px solid #ede9e3; font-size: 15px; color: var(--text-light); line-height: 1.75; max-width: 720px; }
+
+  /* CTA BAND */
+  .cta-band { background: var(--bg-warm); border-top: 1px solid #ede9e3; }
+  .cta-band-inner { max-width: 1240px; margin: 0 auto; padding: 64px 48px; display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+  .cta-band h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 500; color: var(--text); margin-bottom: 8px; }
+  .cta-band p { font-size: 16px; color: var(--text-light); max-width: 620px; }
+  .btn-primary { display: inline-block; background: var(--orange); color: #fff; text-decoration: none; border-radius: 30px; padding: 16px 40px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; transition: background 0.2s; white-space: nowrap; }
+  .btn-primary:hover { background: var(--orange-dark); }
+
+  /* FOOTER — LIGHT */
+  .site-footer { background: var(--bg-warm); border-top: 1px solid #e8e4dc; font-family: 'Inter', sans-serif; }
+  .footer-top { max-width: 1240px; margin: 0 auto; padding: 56px 48px 48px; display: grid; grid-template-columns: 200px 1fr 1fr; gap: 48px; align-items: start; }
+  .footer-logo img { height: 80px; width: auto; }
+  .footer-nav-title { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 16px; }
+  .footer-nav ul { list-style: none; padding: 0; margin: 0; }
+  .footer-nav ul li { margin-bottom: 10px; }
+  .footer-nav ul li a { font-size: 14px; color: #444; text-decoration: none; transition: color 0.2s; }
+  .footer-nav ul li a:hover { color: var(--orange); }
+  .footer-address { font-size: 13px; color: #888; line-height: 1.8; }
+  .footer-address a { color: #888; }
+  .footer-address strong { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 12px; }
+  .footer-bottom { border-top: 1px solid #e8e4dc; max-width: 1240px; margin: 0 auto; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #bbb; flex-wrap: wrap; gap: 8px; }
+  .footer-bottom a { color: #bbb; text-decoration: none; }
+  .footer-bottom a:hover { color: var(--orange); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1000px) {
+    .offers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .nav-inner { padding: 14px 24px; }
+    .nav-logo-img { height: 48px; }
+    nav ul { display: none; }
+    .hamburger { display: flex; }
+    .page-hero { padding: 48px 24px 40px; }
+    .offers-section { padding: 40px 24px 60px; }
+    .offers-grid { grid-template-columns: 1fr; gap: 24px; }
+    .offer-card-img { height: 210px; }
+    .cta-band-inner { padding: 48px 24px; flex-direction: column; align-items: flex-start; }
+    .footer-top { grid-template-columns: 1fr; padding: 40px 24px 32px; }
+    .footer-bottom { padding: 16px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/"><img src="./logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
+    <ul>
+      <li><a href="/oferty">Oferty</a></li>
+      <li><a href="/poradniki">Poradniki</a></li>
+      <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="/oferty">Oferty</a>
+    <a href="/poradniki">Poradniki</a>
+    <a href="/#kontakt">Kontakt</a>
+  </div>
+</nav>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }));
+</script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="eyebrow">Oferty JP Team</p>
+    <h1>Wyselekcjonowane nieruchomości <strong>na Lazurowym Wybrzeżu</strong></h1>
+    <p>Wybrane oferty z Cannes, Nicei i okolic — każdą sprawdzamy, zanim ją Państwu pokażemy. To tylko fragment rynku: większość nieruchomości, które znajdujemy dla klientów, nigdy nie trafia na portale.</p>
+  </div>
+</div>
+
+<!-- OFERTY -->
+<section class="offers-section">
+  <div class="offers-grid">
+
+    <!-- OFERTA: przykład — podmień na realną -->
+    <a class="offer-card" href="/oferty/apartament-cannes-croisette">
+      <div class="offer-card-img">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=700&q=80" alt="Apartament Cannes — 200 m od Croisette" loading="lazy">
+        <span class="offer-card-pill">Cannes</span>
+      </div>
+      <div class="offer-card-body">
+        <p class="oc-loc">Banane · Cannes</p>
+        <h2>Trzypokojowy apartament 200 m od Croisette</h2>
+        <p class="oc-meta">72 m² · 3 pokoje · 2 sypialnie</p>
+        <p class="oc-price">745 000 €</p>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="offers-note">Powyższe oferty pochodzą od naszych partnerów i podlegają bieżącej weryfikacji dostępności. Honorarium agencji pokrywa sprzedający, chyba że wskazano inaczej.</p>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2>Nie znaleźli Państwo nic dla siebie?</h2>
+      <p>Proszę powiedzieć nam, czego Państwo szukają — przeszukamy dla Państwa cały rynek, także oferty, które nigdy nie trafiają na portale. Bezpłatnie i bez zobowiązań.</p>
+    </div>
+    <a href="/#kontakt" class="btn-primary">Bezpłatna konsultacja</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="/"><img src="./logo-navbar.png" alt="JP Team"></a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-title">Menu</div>
+      <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/oferty">Oferty</a></li>
+        <li><a href="/poradniki">Poradniki</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+        <li><a href="/polityka-prywatnosci">Polityka prywatności</a></li>
+      </ul>
+    </div>
+    <div class="footer-address">
+      <strong>Dane firmy</strong>
+      Jens Pedersen SARL<br>
+      29 impasse de la Guifette<br>
+      F-83700 Saint-Raphaël, Francja<br><br>
+      Tel. PL: <a href="tel:+48726806558">+48 726 806 558</a><br>
+      Tel. FR: <a href="tel:+33633766262">+33 633 766 262</a><br>
+      <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a><br><br>
+      Carte professionnelle: CPI83032021000000022
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Jens Pedersen SARL · Nieruchomości Lazurowe Wybrzeże</span>
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1a1a1a; color:rgba(255,255,255,0.85); font-family:'Inter',sans-serif; font-size:13px; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; border-top:1px solid #333;">
+  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#FF622E; text-decoration:none; border-bottom:1px solid rgba(255,98,46,0.4);">polityce prywatności</a>.</span>
+  <div style="display:flex; gap:12px; flex-shrink:0;">
+    <button onclick="jpAcceptCookies()" style="background:#FF622E; color:#fff; border:none; border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:'Inter',sans-serif;">Akceptuję</button>
+    <button onclick="jpRejectCookies()" style="background:transparent; color:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:9px 22px; font-size:13px; cursor:pointer; font-family:'Inter',sans-serif;">Tylko niezbędne</button>
+  </div>
+</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Consent Mode v2 — default DENIED (RODO compliant)
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TC56VMTG42"></script>
+
+<script>
+  gtag('js', new Date());
+
+  (function(){
+    var consent = localStorage.getItem("jp_cookie_consent");
+    var banner = document.getElementById("cookie-banner");
+    if(consent === "accepted"){
+      if(banner) banner.style.display = "none";
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    } else if(consent === "rejected"){
+      if(banner) banner.style.display = "none";
+    } else {
+      if(banner) banner.style.display = "flex";
+    }
+  })();
+
+  gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
+
+  function jpAcceptCookies(){
+    localStorage.setItem("jp_cookie_consent","accepted");
+    document.getElementById("cookie-banner").style.display = "none";
+    gtag('consent', 'update', {
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted'
+    });
+    gtag('config', 'G-TC56VMTG42', { 'anonymize_ip': true });
+  }
+
+  function jpRejectCookies(){
+    localStorage.setItem("jp_cookie_consent","rejected");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
