@@ -6,14 +6,14 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/logo-navbar.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poradniki — Nieruchomości na Lazurowym Wybrzeżu | JP Team</title>
-<meta name="description" content="Praktyczne poradniki dla Polaków kupujących nieruchomości na Lazurowym Wybrzeżu. Prawo, koszty, kredyty, lokalizacje — wszystko wyjaśnione po polsku.">
-<link rel="canonical" href="https://jpteam.pl/poradniki">
+<title>Oferty nieruchomości na Lazurowym Wybrzeżu | JP Team</title>
+<meta name="description" content="Oferty wyłącznościowe i wybrane nieruchomości na sprzedaż na Lazurowym Wybrzeżu. Obsługa po polsku.">
+<link rel="canonical" href="https://jpteam.pl/oferty">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Poradniki — Nieruchomości na Lazurowym Wybrzeżu | JP Team">
-<meta property="og:description" content="Praktyczne poradniki dla Polaków kupujących nieruchomości na Lazurowym Wybrzeżu.">
-<meta property="og:url" content="https://jpteam.pl/poradniki">
-<meta property="og:image" content="https://jpteam.pl/logo-navbar.png">
+<meta property="og:title" content="Oferty nieruchomości na Lazurowym Wybrzeżu | JP Team">
+<meta property="og:description" content="Oferty wyłącznościowe i wybrane nieruchomości na sprzedaż na Lazurowym Wybrzeżu. Obsługa po polsku.">
+<meta property="og:url" content="https://jpteam.pl/oferty">
+<meta property="og:image" content="https://jpteam.pl/cannes.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -87,30 +87,35 @@
   .page-hero h1 strong { font-weight: 600; }
   .page-hero p { font-size: 17px; color: var(--text-light); line-height: 1.75; max-width: 620px; }
 
-  /* ARTICLES */
-  .articles-section { max-width: 1240px; margin: 0 auto; padding: 64px 48px 80px; }
-  .articles-list { display: flex; flex-direction: column; gap: 0; }
-  .article-row { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; padding: 48px 0; border-bottom: 1px solid #ede9e3; text-decoration: none; color: inherit; }
-  .article-row:first-child { padding-top: 0; }
-  .article-row:last-child { border-bottom: none; }
-  .article-thumb { position: relative; height: 175px; border-radius: 8px; overflow: hidden; }
-  .article-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
-  .article-row:hover .article-thumb img { transform: scale(1.04); }
-  .article-tag-pill { position: absolute; bottom: 14px; left: 14px; background: rgba(255,255,255,0.92); color: var(--text); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; }
-  .article-content { padding-top: 4px; }
-  .article-cat { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
-  .article-content h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(19px, 2.2vw, 24px); font-weight: 500; line-height: 1.35; color: var(--text); margin-bottom: 12px; transition: color 0.2s; }
-  .article-row:hover .article-content h2 { color: var(--orange); }
-  .article-content > p { font-size: 15px; color: var(--text-light); line-height: 1.7; margin-bottom: 20px; max-width: 680px; }
-  .article-meta { display: flex; justify-content: space-between; align-items: center; }
-  .article-date { font-size: 13px; color: #999; }
-  .article-read-link { font-size: 13px; font-weight: 600; color: var(--orange); letter-spacing: 0.03em; }
+  /* OFFERS GRID */
+  .offers-section { max-width: 1240px; margin: 0 auto; padding: 64px 48px 80px; }
+  .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .offer-card {
+    display: block; background: #fff;
+    border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden; text-decoration: none; color: inherit;
+    transition: box-shadow 0.2s;
+  }
+  .offer-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+  .offer-card-img { position: relative; height: 240px; overflow: hidden; }
+  .offer-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+  .offer-card:hover .offer-card-img img { transform: scale(1.04); }
+  .offer-card-pill { position: absolute; bottom: 14px; left: 14px; background: rgba(255,255,255,0.92); color: var(--text); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; }
+  .offer-card-body { padding: 22px 24px 26px; }
+  .oc-loc { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
+  .offer-card h2 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--text); margin-bottom: 12px; transition: color 0.2s; }
+  .offer-card:hover h2 { color: var(--orange); }
+  .oc-meta { font-size: 14px; color: var(--text-light); margin-bottom: 14px; }
+  .oc-price { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); }
+
+  /* NOTE POD LISTĄ */
+  .offers-note { margin-top: 48px; padding-top: 32px; border-top: 1px solid #ede9e3; font-size: 15px; color: var(--text-light); line-height: 1.75; max-width: 720px; }
 
   /* CTA BAND */
   .cta-band { background: var(--bg-warm); border-top: 1px solid #ede9e3; }
   .cta-band-inner { max-width: 1240px; margin: 0 auto; padding: 64px 48px; display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
   .cta-band h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 500; color: var(--text); margin-bottom: 8px; }
-  .cta-band p { font-size: 16px; color: var(--text-light); }
+  .cta-band p { font-size: 16px; color: var(--text-light); max-width: 620px; }
   .btn-primary { display: inline-block; background: var(--orange); color: #fff; text-decoration: none; border-radius: 30px; padding: 16px 40px; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; transition: background 0.2s; white-space: nowrap; }
   .btn-primary:hover { background: var(--orange-dark); }
 
@@ -124,21 +129,25 @@
   .footer-nav ul li a { font-size: 14px; color: #444; text-decoration: none; transition: color 0.2s; }
   .footer-nav ul li a:hover { color: var(--orange); }
   .footer-address { font-size: 13px; color: #888; line-height: 1.8; }
+  .footer-address a { color: #888; }
   .footer-address strong { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 12px; }
   .footer-bottom { border-top: 1px solid #e8e4dc; max-width: 1240px; margin: 0 auto; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #bbb; flex-wrap: wrap; gap: 8px; }
   .footer-bottom a { color: #bbb; text-decoration: none; }
   .footer-bottom a:hover { color: var(--orange); }
 
   /* RESPONSIVE */
+  @media (max-width: 1000px) {
+    .offers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 768px) {
     .nav-inner { padding: 14px 24px; }
     .nav-logo-img { height: 48px; }
     nav ul { display: none; }
     .hamburger { display: flex; }
     .page-hero { padding: 48px 24px 40px; }
-    .articles-section { padding: 40px 24px 60px; }
-    .article-row { grid-template-columns: 1fr; gap: 20px; padding: 36px 0; }
-    .article-thumb { height: 180px; }
+    .offers-section { padding: 40px 24px 60px; }
+    .offers-grid { grid-template-columns: 1fr; gap: 24px; }
+    .offer-card-img { height: 210px; }
     .cta-band-inner { padding: 48px 24px; flex-direction: column; align-items: flex-start; }
     .footer-top { grid-template-columns: 1fr; padding: 40px 24px 32px; }
     .footer-bottom { padding: 16px 24px; }
@@ -150,7 +159,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/"><img src="./logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
+    <a href="/"><img src="./logo-navbar.png" alt="JP Team, Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
     <ul>
       <li><a href="/oferty">Oferty</a></li>
       <li><a href="/poradniki">Poradniki</a></li>
@@ -163,7 +172,7 @@
   <div class="nav-mobile-menu" id="mobileMenu">
     <a href="/oferty">Oferty</a>
     <a href="/poradniki">Poradniki</a>
-    <a href="/#kontakt" id="mobileKontakt">Kontakt</a>
+    <a href="/#kontakt">Kontakt</a>
   </div>
 </nav>
 
@@ -174,162 +183,134 @@
     hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open');
   });
-  document.getElementById('mobileKontakt').addEventListener('click', () => {
+  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
-  });
+  }));
 </script>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="page-hero-inner">
-    <p class="eyebrow">Poradniki JP Team</p>
-    <h1>Wszystko, co warto wiedzieć <strong>przed zakupem na Lazurowym Wybrzeżu</strong></h1>
-    <p>Praktyczne artykuły pisane przez ludzi, którzy od lat przeprowadzają Polaków przez zakup nieruchomości we Francji. Bez teorii — tylko to, co naprawdę się przydaje.</p>
+    <p class="eyebrow">Oferty JP Team</p>
+    <h1>Wyselekcjonowane nieruchomości <strong>na Lazurowym Wybrzeżu</strong></h1>
+    <p>Oferty wyłącznościowe i wybrane nieruchomości na sprzedaż na Lazurowym Wybrzeżu.</p>
   </div>
 </div>
 
-<!-- ARTICLES -->
-<section class="articles-section">
-  <div class="articles-list">
+<!-- OFERTY -->
+<section class="offers-section">
+  <div class="offers-grid">
 
-    <a class="article-row" href="/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc">
-      <div class="article-thumb">
-        <img src="./cannes.webp" alt="Lazurowe Wybrzeże — zakup na odległość" loading="lazy">
-        <span class="article-tag-pill">Prawo i formalności</span>
+    <!-- OFERTA: Nicea Parc Impérial — ref 86998179 -->
+    <a class="offer-card" href="/oferty/apartament-nicea-parc-imperial">
+      <div class="offer-card-img">
+        <img src="/oferty/apartament-nicea-parc-imperial/zdjecie-1.jpg" alt="Apartament z ogrodem w Nicei, Parc Impérial" loading="lazy">
+        <span class="offer-card-pill">Nicea</span>
       </div>
-      <div class="article-content">
-        <p class="article-cat">Prawo i formalności</p>
-        <h2>Jak kupić nieruchomość we Francji nie wyjeżdżając z Polski</h2>
-        <p>Compromis podpisywany elektronicznie, akt notarialny przez pełnomocnika, ceny weryfikowane w bazie DVF. Trzy drogi pełnomocnictwa i pułapki zakupu bez wizyty.</p>
-        <div class="article-meta">
-          <span class="article-date">Czerwiec 2026</span>
-          <span class="article-read-link">Czytaj artykuł →</span>
-        </div>
+      <div class="offer-card-body">
+        <p class="oc-loc">Parc Impérial · Nicea</p>
+        <h2>Czteropokojowy apartament z ogrodem 83 m² (rez-de-jardin)</h2>
+        <p class="oc-meta">90 m² · 4 pokoje · 2 sypialnie</p>
+        <p class="oc-price">515 000 €</p>
       </div>
     </a>
 
-    <a class="article-row" href="/poradniki/jak-nie-dac-sie-oszukac-lazurowe-wybrzeze">
-      <div class="article-thumb">
-        <img src="./cannes.webp" alt="Cannes — Lazurowe Wybrzeże" loading="lazy">
-        <span class="article-tag-pill">Przepisy i regulacje</span>
+    <!-- OFERTA: Nicea Cimiez — ref 87000067 -->
+    <a class="offer-card" href="/oferty/apartament-nicea-cimiez">
+      <div class="offer-card-img">
+        <img src="/oferty/apartament-nicea-cimiez/zdjecie-1.jpg" alt="Apartament z tarasem w Nicei, Cimiez" loading="lazy">
+        <span class="offer-card-pill">Nicea</span>
       </div>
-      <div class="article-content">
-        <p class="article-cat">Przepisy i regulacje</p>
-        <h2>Jak nie dać się oszukać przy zakupie nieruchomości na Lazurowym Wybrzeżu</h2>
-        <p>Frais de notaire, zakazy wynajmu klas F i G, ukryte zobowiązania copropriété, kary Loi Le Meur do 100&nbsp;000 EUR i pułapki metrażu Loi Carrez — z kwotami i terminami.</p>
-        <div class="article-meta">
-          <span class="article-date">Maj 2026</span>
-          <span class="article-read-link">Czytaj artykuł →</span>
-        </div>
+      <div class="offer-card-body">
+        <p class="oc-loc">Cimiez · Nicea</p>
+        <h2>Trzypokojowy apartament z tarasem i otwartym widokiem</h2>
+        <p class="oc-meta">75 m² · 3 pokoje · taras 11 m²</p>
+        <p class="oc-price">465 000 €</p>
       </div>
     </a>
 
-    <a class="article-row" href="/poradniki/gdzie-kupic-nieruchomosc-w-nicei">
-      <div class="article-thumb">
-        <img src="./nice.webp" alt="Nicea — Promenade des Anglais" loading="lazy">
-        <span class="article-tag-pill">Rynek nieruchomości</span>
+    <!-- OFERTA: Willa Callas — ref jp260701 (mandat JP Team) -->
+    <a class="offer-card" href="/oferty/willa-callas">
+      <div class="offer-card-img">
+        <img src="/oferty/willa-callas/zdjecie-1.jpg" alt="Prowansalska willa z basenem, Callas" loading="lazy">
+        <span class="offer-card-pill">Callas</span>
       </div>
-      <div class="article-content">
-        <p class="article-cat">Rynek nieruchomości · Nicea</p>
-        <h2>Gdzie kupić nieruchomość w Nicei — dzielnice, ceny 2026 i pułapki</h2>
-        <p>Porównanie sześciu dzielnic Nicei: ceny za m², rentowność najmu, regulacje Airbnb 2026 i błędy, które najczęściej kosztują kupujących.</p>
-        <div class="article-meta">
-          <span class="article-date">Maj 2026</span>
-          <span class="article-read-link">Czytaj artykuł →</span>
-        </div>
+      <div class="offer-card-body">
+        <p class="oc-loc">Callas · Var</p>
+        <h2>Prowansalska willa ok. 360 m² z basenem i panoramicznym widokiem</h2>
+        <p class="oc-meta">360 m² · działka 7 412 m² · basen · sauna</p>
+        <p class="oc-price">1 290 000 €</p>
       </div>
     </a>
 
-    <a class="article-row" href="/poradniki/kredyt-hipoteczny-francja-obcokrajowcy">
-      <div class="article-thumb">
-        <img src="./provence.webp" alt="Prowansja — Lazurowe Wybrzeże" loading="lazy">
-        <span class="article-tag-pill">Finanse i kredyt</span>
+    <!-- OFERTA: Sainte-Maxime widok morze — ref jp260501 (mandat JP Team) -->
+    <a class="offer-card" href="/oferty/apartament-sainte-maxime-widok-morze">
+      <div class="offer-card-img">
+        <img src="/oferty/apartament-sainte-maxime-widok-morze/zdjecie-1.jpg" alt="Apartament z widokiem na zatokę Saint-Tropez, Sainte-Maxime" loading="lazy">
+        <span class="offer-card-pill">Sainte-Maxime</span>
       </div>
-      <div class="article-content">
-        <p class="article-cat">Finanse i kredyt</p>
-        <h2>Kredyt hipoteczny we Francji dla obcokrajowców: co musi wiedzieć polski kupujący</h2>
-        <p>Ile wkładu własnego, które banki, jakie dokumenty i ile trwa cały proces. Praktyczny przewodnik dla polskiego kupującego na Lazurowym Wybrzeżu.</p>
-        <div class="article-meta">
-          <span class="article-date">Kwiecień 2026</span>
-          <span class="article-read-link">Czytaj artykuł →</span>
-        </div>
+      <div class="offer-card-body">
+        <p class="oc-loc">Centrum · Sainte-Maxime</p>
+        <h2>Dwupokojowy apartament z widokiem na zatokę Saint-Tropez</h2>
+        <p class="oc-meta">63 m² · taras 15 m² · ostatnie piętro</p>
+        <p class="oc-price">469 000 €</p>
       </div>
     </a>
 
-    <a class="article-row" href="/poradniki/cannes-nieruchomosci-inwestycje">
-      <div class="article-thumb">
-        <img src="./cannes.webp" alt="Cannes — panorama miasta" loading="lazy">
-        <span class="article-tag-pill">Inwestycje</span>
+    <!-- OFERTA: Fréjus dwupoziomowy — ref jp260704 (mandat JP Team) -->
+    <a class="offer-card" href="/oferty/apartament-frejus">
+      <div class="offer-card-img">
+        <img src="/oferty/apartament-frejus/zdjecie-1.jpg" alt="Czteropokojowy apartament z tarasem dachowym, Fréjus" loading="lazy">
+        <span class="offer-card-pill">Fréjus</span>
       </div>
-      <div class="article-content">
-        <p class="article-cat">Inwestycje · Cannes</p>
-        <h2>Nieruchomości Cannes — ceny, dzielnice i perspektywy inwestycyjne</h2>
-        <p>Cannes: ceny za m² według dzielnic, rentowność Airbnb, koszty zakupu dla obcokrajowca i perspektywy rynku na 2025–2026. Przewodnik dla polskiego inwestora.</p>
-        <div class="article-meta">
-          <span class="article-date">Marzec 2026</span>
-          <span class="article-read-link">Czytaj artykuł →</span>
-        </div>
+      <div class="offer-card-body">
+        <p class="oc-loc">Centrum · Fréjus</p>
+        <h2>Czteropokojowy apartament w dwóch poziomach z tarasem dachowym</h2>
+        <p class="oc-meta">85 m² · 4 pokoje · tarasy 10 m² i 28 m² · garaż</p>
+        <p class="oc-price">425 000 €</p>
       </div>
     </a>
 
-    <a class="article-row" href="/poradniki/nice-nieruchomosci-inwestycje">
-      <div class="article-thumb">
-        <img src="./nice.webp" alt="Nicea — zatoka i stare miasto" loading="lazy">
-        <span class="article-tag-pill">Inwestycje</span>
+    <!-- OFERTA: Kawalerka Sainte-Maxime — ref jp260703 (mandat JP Team) -->
+    <a class="offer-card" href="/oferty/kawalerka-sainte-maxime">
+      <div class="offer-card-img">
+        <img src="/oferty/kawalerka-sainte-maxime/zdjecie-1.jpg" alt="Kawalerka z tarasem 100 m od plaży, Sainte-Maxime" loading="lazy">
+        <span class="offer-card-pill">Sainte-Maxime</span>
       </div>
-      <div class="article-content">
-        <p class="article-cat">Inwestycje · Nicea</p>
-        <h2>Nieruchomości w Nicei — dzielnice, ceny i potencjał inwestycyjny</h2>
-        <p>Nicea: stolica Lazurowego Wybrzeża. Ceny za m², dzielnice, rentowność najmu i porównanie z Cannes. Kompletny przewodnik dla polskiego kupującego.</p>
-        <div class="article-meta">
-          <span class="article-date">Marzec 2026</span>
-          <span class="article-read-link">Czytaj artykuł →</span>
-        </div>
+      <div class="offer-card-body">
+        <p class="oc-loc">Centrum · Sainte-Maxime</p>
+        <h2>Kawalerka 21 m² z tarasem 12 m², sto metrów od plaży</h2>
+        <p class="oc-meta">21 m² · taras 12 m² · ostatnie piętro</p>
+        <p class="oc-price">159 000 €</p>
       </div>
     </a>
 
-    <a class="article-row" href="/poradniki/francja-vs-hiszpania-koszty-zakupu">
-      <div class="article-thumb">
-        <img src="./provence.webp" alt="Prowansja — krajobraz południowej Francji" loading="lazy">
-        <span class="article-tag-pill">Porównanie</span>
+    <!-- OFERTA: Działka budowlana Callas — ref jp260702 (mandat JP Team) -->
+    <a class="offer-card" href="/oferty/dzialka-callas">
+      <div class="offer-card-img">
+        <img src="/oferty/dzialka-callas/zdjecie-1.jpg" alt="Działka budowlana z widokiem, Callas" loading="lazy">
+        <span class="offer-card-pill">Callas</span>
       </div>
-      <div class="article-content">
-        <p class="article-cat">Porównanie · Koszty</p>
-        <h2>Francja vs Hiszpania — koszty zakupu nieruchomości</h2>
-        <p>Pełne porównanie kosztów zakupu nieruchomości we Francji i Hiszpanii: podatki, notariusz, opłaty, ukryte koszty. Który rynek jest korzystniejszy?</p>
-        <div class="article-meta">
-          <span class="article-date">Marzec 2026</span>
-          <span class="article-read-link">Czytaj artykuł →</span>
-        </div>
-      </div>
-    </a>
-
-    <a class="article-row" href="/poradniki/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu">
-      <div class="article-thumb">
-        <img src="./provence.webp" alt="Lazurowe Wybrzeże — południowa Francja" loading="lazy">
-        <span class="article-tag-pill">Prawo i formalności</span>
-      </div>
-      <div class="article-content">
-        <p class="article-cat">Prawo i formalności</p>
-        <h2>Jak wygląda proces zakupu nieruchomości na Lazurowym Wybrzeżu?</h2>
-        <p>5 etapów transakcji, rola notariusza i dlaczego zakup we Francji trwa 3–4 miesiące. I co dzięki temu zyskują Państwo jako kupujący.</p>
-        <div class="article-meta">
-          <span class="article-date">Listopad 2025</span>
-          <span class="article-read-link">Czytaj artykuł →</span>
-        </div>
+      <div class="offer-card-body">
+        <p class="oc-loc">Callas · Var</p>
+        <h2>Działka budowlana 1 742 m² z zatwierdzonym projektem willi</h2>
+        <p class="oc-meta">1 742 m² · projekt willi z basenem · raport geologiczny</p>
+        <p class="oc-price">153 000 €</p>
       </div>
     </a>
 
   </div>
+
+  <p class="offers-note">Powyższe oferty pochodzą z mandatów własnych JP Team oraz od naszych partnerów i podlegają bieżącej weryfikacji dostępności. Honorarium agencji pokrywa sprzedający, chyba że wskazano inaczej.</p>
 </section>
 
 <!-- CTA BAND -->
 <section class="cta-band">
   <div class="cta-band-inner">
     <div>
-      <h2>Mają Państwo pytania, na które nie znaleźli Państwo odpowiedzi?</h2>
-      <p>Prosimy o wiadomość — odpowiadamy bezpłatnie i bez zobowiązań.</p>
+      <h2>Nie znaleźli Państwo nic dla siebie?</h2>
+      <p>Proszę powiedzieć nam, czego Państwo szukają, a przeszukamy dla Państwa cały rynek. Bezpłatnie.</p>
     </div>
     <a href="/#kontakt" class="btn-primary">Bezpłatna konsultacja</a>
   </div>
