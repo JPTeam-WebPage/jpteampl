@@ -156,23 +156,54 @@
   /* INFO SECTIONS */
   .info-section { border-top: 1px solid #ede9e3; }
   .info-section.warm { background: var(--bg-warm); }
-  .info-inner { max-width: 820px; margin: 0 auto; padding: 72px 48px; }
-  .info-inner h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 500; color: var(--text); margin-bottom: 20px; }
-  .info-inner h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; color: var(--text); margin: 30px 0 8px; }
-  .info-inner p { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
-  .info-inner ul { margin: 0 0 16px 20px; }
-  .info-inner li { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 8px; }
+  .info-inner { max-width: 1240px; margin: 0 auto; padding: 72px 48px; }
+  .info-inner h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 500; color: var(--text); margin-bottom: 16px; }
+  .info-lead { font-size: 17px; color: var(--text-light); line-height: 1.75; max-width: 720px; margin-bottom: 40px; }
+  .info-inner p { font-size: 16px; color: var(--text-mid); line-height: 1.8; }
   .info-inner a { color: var(--orange); text-decoration: none; border-bottom: 1px solid rgba(255,98,46,0.35); }
   .info-inner a:hover { border-bottom-color: var(--orange); }
   .info-note { font-size: 14px; color: var(--text-light); line-height: 1.7; margin-top: 20px; }
-  .table-wrap { overflow-x: auto; margin: 24px 0 8px; }
-  .cost-table { width: 100%; border-collapse: collapse; font-size: 15px; }
-  .cost-table th, .cost-table td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); }
-  .cost-table th { font-weight: 500; color: var(--text); background: var(--bg-warm); }
-  .info-section.warm .cost-table th { background: #fff; }
-  .cost-table td:last-child { white-space: nowrap; }
+
+  /* KOSZTY — tabela + kolumna tekstu */
+  .cost-layout { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
+  .cost-table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .cost-table th, .cost-table td { text-align: left; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+  .cost-table tr:last-child td { border-bottom: none; }
+  .cost-table th { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); background: var(--bg-warm); }
+  .info-section.warm .cost-table th { background: #faf8f5; }
+  .cost-table td:last-child { white-space: nowrap; font-family: 'Montserrat', sans-serif; font-weight: 500; color: var(--text); }
+  .cost-text p + p { margin-top: 16px; }
+
+  /* LOKALIZACJE — kafle */
+  .loc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .loc-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 28px 26px 30px; }
+  .loc-card h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 12px; }
+  .loc-card p { font-size: 15px; line-height: 1.75; }
+  .loc-links { margin-top: 14px; font-size: 14px; }
+  .loc-links a { display: block; margin-top: 6px; }
+
+  /* PROCES — kroki */
+  .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .step-num { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 500; color: #c9c4bc; margin-bottom: 12px; }
+  .step h3 { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+  .step p { font-size: 15px; line-height: 1.75; }
+  .step-foot { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); font-size: 16px; max-width: 820px; }
+
+  /* WERYFIKACJA — checklista + tekst */
+  .check-layout { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
+  .check-list { list-style: none; margin: 0; padding: 0; }
+  .check-list li { position: relative; padding-left: 30px; font-size: 16px; color: var(--text-mid); line-height: 1.7; margin-bottom: 16px; }
+  .check-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--text-light); font-size: 15px; }
+  .check-text p + p { margin-top: 16px; }
+
+  @media (max-width: 1000px) {
+    .loc-grid { grid-template-columns: repeat(2, 1fr); }
+    .cost-layout, .check-layout { grid-template-columns: 1fr; gap: 36px; }
+    .step-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
   @media (max-width: 768px) {
     .info-inner { padding: 48px 24px; }
+    .loc-grid { grid-template-columns: 1fr; }
   }
 </style>
 <script type="application/ld+json">
@@ -480,20 +511,21 @@
 <section class="info-section">
   <div class="info-inner">
     <h2>Ile kosztuje zakup nieruchomości na Lazurowym Wybrzeżu</h2>
-    <p>Cena z ogłoszenia to nie cała kwota, jaką Państwo zapłacą. Na rynku wtórnym koszty transakcyjne wynoszą od 7 do 8% wartości nieruchomości. Ponad 80% tej sumy stanowią podatki odprowadzane do państwa i departamentu, więc nie ma tu pola do negocjacji.</p>
-    <p>Przy nieruchomości wybudowanej w ciągu ostatnich pięciu lat opłaty notarialne spadają do poziomu od 2 do 3%, ponieważ cena u dewelopera zawiera już podatek VAT.</p>
-    <p>Tych opłat nie pokryje kredyt hipoteczny. Płaci się je ze środków własnych przy podpisaniu ostatecznego aktu.</p>
-    <div class="table-wrap">
+    <p class="info-lead">Cena z ogłoszenia to nie cała kwota. Do niej dochodzą opłaty notarialne i podatki roczne.</p>
+    <div class="cost-layout">
       <table class="cost-table">
         <tr><th>Pozycja</th><th>Kwota</th></tr>
-        <tr><td>Opłaty notarialne, rynek wtórny</td><td>od 7 do 8% ceny</td></tr>
-        <tr><td>Opłaty notarialne, budynek do 5 lat</td><td>od 2 do 3% ceny</td></tr>
-        <tr><td>Taxe foncière, rocznie</td><td>od 900 do 1 300 €</td></tr>
-        <tr><td>Części wspólne (copropriété), rocznie</td><td>od 2 000 do 6 000 €</td></tr>
+        <tr><td>Opłaty notarialne, rynek wtórny</td><td>7–8% ceny</td></tr>
+        <tr><td>Opłaty notarialne, budynek do 5 lat</td><td>2–3% ceny</td></tr>
+        <tr><td>Taxe foncière, rocznie</td><td>900–1 300 €</td></tr>
+        <tr><td>Części wspólne (copropriété), rocznie</td><td>2 000–6 000 €</td></tr>
       </table>
+      <div class="cost-text">
+        <p>Ponad 80% opłat notarialnych to podatki odprowadzane do państwa i departamentu, więc nie ma tu pola do negocjacji. Przy budynku do pięciu lat stawka spada, bo cena u dewelopera zawiera już VAT.</p>
+        <p>Tych opłat nie pokryje kredyt hipoteczny. Płaci się je ze środków własnych przy podpisaniu aktu. Pełne wyliczenie wraz z porównaniem do rynku hiszpańskiego znajdą Państwo w poradniku o <a href="/poradniki/francja-vs-hiszpania-koszty-zakupu">kosztach zakupu we Francji i w Hiszpanii</a>.</p>
+        <p class="info-note">Stawki podatkowe zmieniają się. Przed każdą transakcją weryfikujemy je u notariusza, który ją prowadzi.</p>
+      </div>
     </div>
-    <p>Podatek taxe d'habitation obejmuje drugie mieszkanie, a jego wysokość zależy od gminy. Pełne wyliczenie wraz z porównaniem do rynku hiszpańskiego znajdą Państwo w poradniku o <a href="/poradniki/francja-vs-hiszpania-koszty-zakupu">kosztach zakupu we Francji i w Hiszpanii</a>.</p>
-    <p class="info-note">Stawki podatkowe zmieniają się. Przed każdą transakcją weryfikujemy je u notariusza, który ją prowadzi.</p>
   </div>
 </section>
 
@@ -501,19 +533,37 @@
 <section class="info-section warm">
   <div class="info-inner">
     <h2>Gdzie szukamy nieruchomości na Lazurowym Wybrzeżu</h2>
-    <p>Pracujemy na wybrzeżu od Nicei do zatoki Saint-Tropez oraz na zapleczu departamentu Var. Rejony różnią się cenami i tym, komu służą.</p>
+    <p class="info-lead">Pracujemy na wybrzeżu od Nicei do zatoki Saint-Tropez oraz na zapleczu departamentu Var. Rejony różnią się cenami i tym, komu służą.</p>
+    <div class="loc-grid">
 
-    <h3>Nicea</h3>
-    <p>Największy rynek w regionie i jedyne miasto z międzynarodowym lotniskiem, co ma znaczenie przy nieruchomości używanej sezonowo. Rozpiętość jest duża, od kawalerek w centrum do rezydencji z basenem w Cimiez i na Mont Boron. Szerzej opisaliśmy to w poradnikach o <a href="/poradniki/nice-nieruchomosci-inwestycje">inwestycjach w Nicei</a> oraz o tym, <a href="/poradniki/gdzie-kupic-nieruchomosc-w-nicei">gdzie w Nicei kupić</a>.</p>
+      <div class="loc-card">
+        <h3>Nicea</h3>
+        <p>Największy rynek w regionie i jedyne miasto z międzynarodowym lotniskiem. Od kawalerek w centrum po rezydencje z basenem w Cimiez i na Mont Boron.</p>
+        <div class="loc-links">
+          <a href="/poradniki/nice-nieruchomosci-inwestycje">Inwestycje w Nicei</a>
+          <a href="/poradniki/gdzie-kupic-nieruchomosc-w-nicei">Gdzie w Nicei kupić</a>
+        </div>
+      </div>
 
-    <h3>Cannes i Antibes</h3>
-    <p>Rynek droższy od Nicei i silniej powiązany z kalendarzem wydarzeń, co podnosi potencjał wynajmu krótkoterminowego. Wybór jest tu węższy, a dobre oferty schodzą szybko. Więcej w poradniku o <a href="/poradniki/cannes-nieruchomosci-inwestycje">nieruchomościach w Cannes</a>.</p>
+      <div class="loc-card">
+        <h3>Cannes i Antibes</h3>
+        <p>Rynek droższy od Nicei, silnie powiązany z kalendarzem wydarzeń, co podnosi potencjał wynajmu krótkoterminowego. Wybór węższy, dobre oferty schodzą szybko.</p>
+        <div class="loc-links">
+          <a href="/poradniki/cannes-nieruchomosci-inwestycje">Nieruchomości w Cannes</a>
+        </div>
+      </div>
 
-    <h3>Sainte-Maxime i Fréjus</h3>
-    <p>Zatoka Saint-Tropez bez cen Saint-Tropez. Za budżet, który w Cannes wystarczy na kawalerkę, można tu kupić mieszkanie z tarasem i widokiem na morze. Dojazd z lotniska w Nicei zajmuje ok. 1,5 godziny.</p>
+      <div class="loc-card">
+        <h3>Sainte-Maxime i Fréjus</h3>
+        <p>Zatoka Saint-Tropez bez cen Saint-Tropez. Za budżet, który w Cannes starcza na kawalerkę, kupią tu Państwo mieszkanie z tarasem i widokiem na morze. Z lotniska w Nicei ok. 1,5 godziny.</p>
+      </div>
 
-    <h3>Callas i zaplecze Var</h3>
-    <p>Średniowieczne wioski w głębi lądu, ok. 45 minut od morza i godzinę od lotniska w Nicei. Tu za cenę mieszkania na wybrzeżu dostają Państwo dom z ogrodem i basenem. Wybór dla osób, które szukają spokoju, a nie plaży pod oknem.</p>
+      <div class="loc-card">
+        <h3>Callas i zaplecze Var</h3>
+        <p>Średniowieczne wioski w głębi lądu, ok. 45 minut od morza. Za cenę mieszkania na wybrzeżu dostają Państwo dom z ogrodem i basenem. Dla szukających spokoju, nie plaży pod oknem.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -521,9 +571,25 @@
 <section class="info-section">
   <div class="info-inner">
     <h2>Jak wygląda zakup krok po kroku</h2>
-    <p>Po wyborze nieruchomości podpisują Państwo umowę przedwstępną. Od tej chwili mają Państwo ustawowe 10 dni na odstąpienie od niej bez podania przyczyny. Ostateczny akt notarialny zawiera się po upływie od 2 do 3 miesięcy, wtedy następuje przeniesienie własności i przekazanie kluczy.</p>
-    <p>Całość prowadzimy po polsku, od pierwszej rozmowy do podpisu u notariusza. Opis każdego etapu wraz z czasami znajdą Państwo w poradniku o <a href="/poradniki/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu">procesie zakupu</a>.</p>
-    <p>Przyjazd do Francji nie jest konieczny. Transakcję da się przeprowadzić <a href="/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc">z Polski, bez wyjazdu</a>.</p>
+    <p class="info-lead">Od wyboru nieruchomości do kluczy mijają zwykle dwa do trzech miesięcy.</p>
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Umowa przedwstępna</h3>
+        <p>Po wyborze nieruchomości podpisują Państwo compromis de vente, który rezerwuje ją dla Państwa.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>10 dni na odstąpienie</h3>
+        <p>Ustawowy termin, w którym mogą Państwo wycofać się z umowy bez podania przyczyny i bez kosztów.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Akt notarialny</h3>
+        <p>Po 2–3 miesiącach podpisanie aktu u notariusza: przeniesienie własności i przekazanie kluczy.</p>
+      </div>
+    </div>
+    <p class="step-foot">Całość prowadzimy po polsku, od pierwszej rozmowy do podpisu. Opis każdego etapu z czasami znajdą Państwo w poradniku o <a href="/poradniki/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu">procesie zakupu</a>, a przyjazd do Francji nie jest konieczny — transakcję da się przeprowadzić <a href="/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc">z Polski, bez wyjazdu</a>.</p>
   </div>
 </section>
 
@@ -531,16 +597,20 @@
 <section class="info-section warm">
   <div class="info-inner">
     <h2>Co sprawdzamy, zanim pokażemy Państwu ofertę</h2>
-    <p>Ogłoszenia krążą między agencjami i część z nich jest nieaktualna już w dniu publikacji. Przed rozmową z Państwem sprawdzamy:</p>
-    <ul>
-      <li>czy nieruchomość jest nadal dostępna i czy nie ma na niej przyjętej oferty</li>
-      <li>świadectwo energetyczne DPE, bo od jego klasy zależy prawo do wynajmu</li>
-      <li>wysokość opłat za części wspólne i stan finansów wspólnoty</li>
-      <li>diagnostykę techniczną, w budynkach z odpowiednich lat także obecność azbestu</li>
-      <li>zapisy regulaminu wspólnoty, jeśli w planach jest wynajem sezonowy</li>
-    </ul>
-    <p>Sławek jeździ na wizyty osobiście i wysyła Państwu zdjęcia oraz film z tego, czego w ogłoszeniu nie widać. O tym, na co uważać przy zakupie, napisaliśmy w poradniku <a href="/poradniki/jak-nie-dac-sie-oszukac-lazurowe-wybrzeze">jak nie dać się oszukać na Lazurowym Wybrzeżu</a>.</p>
-    <p>Współpracujemy z ponad dwudziestoma agencjami na wybrzeżu, więc jeśli żadna z powyższych siedmiu nieruchomości nie odpowiada Państwa oczekiwaniom, sięgniemy po oferty spoza tej listy.</p>
+    <p class="info-lead">Ogłoszenia krążą między agencjami i część z nich jest nieaktualna już w dniu publikacji.</p>
+    <div class="check-layout">
+      <ul class="check-list">
+        <li>czy nieruchomość jest nadal dostępna i czy nie ma na niej przyjętej oferty</li>
+        <li>świadectwo energetyczne DPE, bo od jego klasy zależy prawo do wynajmu</li>
+        <li>wysokość opłat za części wspólne i stan finansów wspólnoty</li>
+        <li>diagnostykę techniczną, w budynkach z odpowiednich lat także obecność azbestu</li>
+        <li>zapisy regulaminu wspólnoty, jeśli w planach jest wynajem sezonowy</li>
+      </ul>
+      <div class="check-text">
+        <p>Sławek jeździ na wizyty osobiście i wysyła Państwu zdjęcia oraz film z tego, czego w ogłoszeniu nie widać. O tym, na co uważać przy zakupie, napisaliśmy w poradniku <a href="/poradniki/jak-nie-dac-sie-oszukac-lazurowe-wybrzeze">jak nie dać się oszukać na Lazurowym Wybrzeżu</a>.</p>
+        <p>Współpracujemy z ponad dwudziestoma agencjami na wybrzeżu. Jeśli żadna z powyższych siedmiu nieruchomości nie odpowiada Państwa oczekiwaniom, sięgniemy po oferty spoza tej listy.</p>
+      </div>
+    </div>
   </div>
 </section>
 
