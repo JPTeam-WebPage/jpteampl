@@ -152,7 +152,178 @@
     .footer-top { grid-template-columns: 1fr; padding: 40px 24px 32px; }
     .footer-bottom { padding: 16px 24px; }
   }
+
+  /* INFO SECTIONS */
+  .info-section { border-top: 1px solid #ede9e3; }
+  .info-section.warm { background: var(--bg-warm); }
+  .info-inner { max-width: 820px; margin: 0 auto; padding: 72px 48px; }
+  .info-inner h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 500; color: var(--text); margin-bottom: 20px; }
+  .info-inner h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; color: var(--text); margin: 30px 0 8px; }
+  .info-inner p { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
+  .info-inner ul { margin: 0 0 16px 20px; }
+  .info-inner li { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 8px; }
+  .info-inner a { color: var(--orange); text-decoration: none; border-bottom: 1px solid rgba(255,98,46,0.35); }
+  .info-inner a:hover { border-bottom-color: var(--orange); }
+  .info-note { font-size: 14px; color: var(--text-light); line-height: 1.7; margin-top: 20px; }
+  .table-wrap { overflow-x: auto; margin: 24px 0 8px; }
+  .cost-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .cost-table th, .cost-table td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  .cost-table th { font-weight: 500; color: var(--text); background: var(--bg-warm); }
+  .info-section.warm .cost-table th { background: #fff; }
+  .cost-table td:last-child { white-space: nowrap; }
+  @media (max-width: 768px) {
+    .info-inner { padding: 48px 24px; }
+  }
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ItemList",
+ "name": "Oferty nieruchomości na Lazurowym Wybrzeżu",
+ "numberOfItems": 7,
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "url": "https://jpteam.pl/oferty/apartament-nicea-parc-imperial",
+   "name": "Czteropokojowy apartament z ogrodem 83 m² (rez-de-jardin)",
+   "item": {
+    "@type": "RealEstateListing",
+    "url": "https://jpteam.pl/oferty/apartament-nicea-parc-imperial",
+    "name": "Czteropokojowy apartament z ogrodem 83 m² (rez-de-jardin)",
+    "offers": {
+     "@type": "Offer",
+     "price": 515000,
+     "priceCurrency": "EUR",
+     "availability": "https://schema.org/InStock"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "url": "https://jpteam.pl/oferty/apartament-nicea-cimiez",
+   "name": "Trzypokojowy apartament z tarasem i otwartym widokiem",
+   "item": {
+    "@type": "RealEstateListing",
+    "url": "https://jpteam.pl/oferty/apartament-nicea-cimiez",
+    "name": "Trzypokojowy apartament z tarasem i otwartym widokiem",
+    "offers": {
+     "@type": "Offer",
+     "price": 465000,
+     "priceCurrency": "EUR",
+     "availability": "https://schema.org/InStock"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "url": "https://jpteam.pl/oferty/willa-callas",
+   "name": "Prowansalska willa ok. 360 m² z basenem i panoramicznym widokiem",
+   "item": {
+    "@type": "RealEstateListing",
+    "url": "https://jpteam.pl/oferty/willa-callas",
+    "name": "Prowansalska willa ok. 360 m² z basenem i panoramicznym widokiem",
+    "offers": {
+     "@type": "Offer",
+     "price": 1290000,
+     "priceCurrency": "EUR",
+     "availability": "https://schema.org/InStock"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 4,
+   "url": "https://jpteam.pl/oferty/apartament-sainte-maxime-widok-morze",
+   "name": "Dwupokojowy apartament z widokiem na zatokę Saint-Tropez",
+   "item": {
+    "@type": "RealEstateListing",
+    "url": "https://jpteam.pl/oferty/apartament-sainte-maxime-widok-morze",
+    "name": "Dwupokojowy apartament z widokiem na zatokę Saint-Tropez",
+    "offers": {
+     "@type": "Offer",
+     "price": 469000,
+     "priceCurrency": "EUR",
+     "availability": "https://schema.org/InStock"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 5,
+   "url": "https://jpteam.pl/oferty/apartament-frejus",
+   "name": "Czteropokojowy apartament w dwóch poziomach z tarasem dachowym",
+   "item": {
+    "@type": "RealEstateListing",
+    "url": "https://jpteam.pl/oferty/apartament-frejus",
+    "name": "Czteropokojowy apartament w dwóch poziomach z tarasem dachowym",
+    "offers": {
+     "@type": "Offer",
+     "price": 425000,
+     "priceCurrency": "EUR",
+     "availability": "https://schema.org/InStock"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 6,
+   "url": "https://jpteam.pl/oferty/kawalerka-sainte-maxime",
+   "name": "Kawalerka 21 m² z tarasem 12 m², sto metrów od plaży",
+   "item": {
+    "@type": "RealEstateListing",
+    "url": "https://jpteam.pl/oferty/kawalerka-sainte-maxime",
+    "name": "Kawalerka 21 m² z tarasem 12 m², sto metrów od plaży",
+    "offers": {
+     "@type": "Offer",
+     "price": 159000,
+     "priceCurrency": "EUR",
+     "availability": "https://schema.org/InStock"
+    }
+   }
+  },
+  {
+   "@type": "ListItem",
+   "position": 7,
+   "url": "https://jpteam.pl/oferty/dzialka-callas",
+   "name": "Działka budowlana 1 742 m² z zatwierdzonym projektem willi",
+   "item": {
+    "@type": "RealEstateListing",
+    "url": "https://jpteam.pl/oferty/dzialka-callas",
+    "name": "Działka budowlana 1 742 m² z zatwierdzonym projektem willi",
+    "offers": {
+     "@type": "Offer",
+     "price": 153000,
+     "priceCurrency": "EUR",
+     "availability": "https://schema.org/InStock"
+    }
+   }
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Strona główna",
+   "item": "https://jpteam.pl/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Oferty",
+   "item": "https://jpteam.pl/oferty"
+  }
+ ]
+}
+</script>
 </head>
 <body>
 
@@ -303,6 +474,74 @@
   </div>
 
   <p class="offers-note">Powyższe oferty pochodzą z mandatów własnych JP Team oraz od naszych partnerów i podlegają bieżącej weryfikacji dostępności. Honorarium agencji pokrywa sprzedający, chyba że wskazano inaczej.</p>
+</section>
+
+<!-- INFO: KOSZTY -->
+<section class="info-section">
+  <div class="info-inner">
+    <h2>Ile kosztuje zakup nieruchomości na Lazurowym Wybrzeżu</h2>
+    <p>Cena z ogłoszenia to nie cała kwota, jaką Państwo zapłacą. Na rynku wtórnym koszty transakcyjne wynoszą od 7 do 8% wartości nieruchomości. Ponad 80% tej sumy stanowią podatki odprowadzane do państwa i departamentu, więc nie ma tu pola do negocjacji.</p>
+    <p>Przy nieruchomości wybudowanej w ciągu ostatnich pięciu lat opłaty notarialne spadają do poziomu od 2 do 3%, ponieważ cena u dewelopera zawiera już podatek VAT.</p>
+    <p>Tych opłat nie pokryje kredyt hipoteczny. Płaci się je ze środków własnych przy podpisaniu ostatecznego aktu.</p>
+    <div class="table-wrap">
+      <table class="cost-table">
+        <tr><th>Pozycja</th><th>Kwota</th></tr>
+        <tr><td>Opłaty notarialne, rynek wtórny</td><td>od 7 do 8% ceny</td></tr>
+        <tr><td>Opłaty notarialne, budynek do 5 lat</td><td>od 2 do 3% ceny</td></tr>
+        <tr><td>Taxe foncière, rocznie</td><td>od 900 do 1 300 €</td></tr>
+        <tr><td>Części wspólne (copropriété), rocznie</td><td>od 2 000 do 6 000 €</td></tr>
+      </table>
+    </div>
+    <p>Podatek taxe d'habitation obejmuje drugie mieszkanie, a jego wysokość zależy od gminy. Pełne wyliczenie wraz z porównaniem do rynku hiszpańskiego znajdą Państwo w poradniku o <a href="/poradniki/francja-vs-hiszpania-koszty-zakupu">kosztach zakupu we Francji i w Hiszpanii</a>.</p>
+    <p class="info-note">Stawki podatkowe zmieniają się. Przed każdą transakcją weryfikujemy je u notariusza, który ją prowadzi.</p>
+  </div>
+</section>
+
+<!-- INFO: LOKALIZACJE -->
+<section class="info-section warm">
+  <div class="info-inner">
+    <h2>Gdzie szukamy nieruchomości na Lazurowym Wybrzeżu</h2>
+    <p>Pracujemy na wybrzeżu od Nicei do zatoki Saint-Tropez oraz na zapleczu departamentu Var. Rejony różnią się cenami i tym, komu służą.</p>
+
+    <h3>Nicea</h3>
+    <p>Największy rynek w regionie i jedyne miasto z międzynarodowym lotniskiem, co ma znaczenie przy nieruchomości używanej sezonowo. Rozpiętość jest duża, od kawalerek w centrum do rezydencji z basenem w Cimiez i na Mont Boron. Szerzej opisaliśmy to w poradnikach o <a href="/poradniki/nice-nieruchomosci-inwestycje">inwestycjach w Nicei</a> oraz o tym, <a href="/poradniki/gdzie-kupic-nieruchomosc-w-nicei">gdzie w Nicei kupić</a>.</p>
+
+    <h3>Cannes i Antibes</h3>
+    <p>Rynek droższy od Nicei i silniej powiązany z kalendarzem wydarzeń, co podnosi potencjał wynajmu krótkoterminowego. Wybór jest tu węższy, a dobre oferty schodzą szybko. Więcej w poradniku o <a href="/poradniki/cannes-nieruchomosci-inwestycje">nieruchomościach w Cannes</a>.</p>
+
+    <h3>Sainte-Maxime i Fréjus</h3>
+    <p>Zatoka Saint-Tropez bez cen Saint-Tropez. Za budżet, który w Cannes wystarczy na kawalerkę, można tu kupić mieszkanie z tarasem i widokiem na morze. Dojazd z lotniska w Nicei zajmuje ok. 1,5 godziny.</p>
+
+    <h3>Callas i zaplecze Var</h3>
+    <p>Średniowieczne wioski w głębi lądu, ok. 45 minut od morza i godzinę od lotniska w Nicei. Tu za cenę mieszkania na wybrzeżu dostają Państwo dom z ogrodem i basenem. Wybór dla osób, które szukają spokoju, a nie plaży pod oknem.</p>
+  </div>
+</section>
+
+<!-- INFO: PROCES -->
+<section class="info-section">
+  <div class="info-inner">
+    <h2>Jak wygląda zakup krok po kroku</h2>
+    <p>Po wyborze nieruchomości podpisują Państwo umowę przedwstępną. Od tej chwili mają Państwo ustawowe 10 dni na odstąpienie od niej bez podania przyczyny. Ostateczny akt notarialny zawiera się po upływie od 2 do 3 miesięcy, wtedy następuje przeniesienie własności i przekazanie kluczy.</p>
+    <p>Całość prowadzimy po polsku, od pierwszej rozmowy do podpisu u notariusza. Opis każdego etapu wraz z czasami znajdą Państwo w poradniku o <a href="/poradniki/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu">procesie zakupu</a>.</p>
+    <p>Przyjazd do Francji nie jest konieczny. Transakcję da się przeprowadzić <a href="/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc">z Polski, bez wyjazdu</a>.</p>
+  </div>
+</section>
+
+<!-- INFO: WERYFIKACJA -->
+<section class="info-section warm">
+  <div class="info-inner">
+    <h2>Co sprawdzamy, zanim pokażemy Państwu ofertę</h2>
+    <p>Ogłoszenia krążą między agencjami i część z nich jest nieaktualna już w dniu publikacji. Przed rozmową z Państwem sprawdzamy:</p>
+    <ul>
+      <li>czy nieruchomość jest nadal dostępna i czy nie ma na niej przyjętej oferty</li>
+      <li>świadectwo energetyczne DPE, bo od jego klasy zależy prawo do wynajmu</li>
+      <li>wysokość opłat za części wspólne i stan finansów wspólnoty</li>
+      <li>diagnostykę techniczną, w budynkach z odpowiednich lat także obecność azbestu</li>
+      <li>zapisy regulaminu wspólnoty, jeśli w planach jest wynajem sezonowy</li>
+    </ul>
+    <p>Sławek jeździ na wizyty osobiście i wysyła Państwu zdjęcia oraz film z tego, czego w ogłoszeniu nie widać. O tym, na co uważać przy zakupie, napisaliśmy w poradniku <a href="/poradniki/jak-nie-dac-sie-oszukac-lazurowe-wybrzeze">jak nie dać się oszukać na Lazurowym Wybrzeżu</a>.</p>
+    <p>Współpracujemy z ponad dwudziestoma agencjami na wybrzeżu, więc jeśli żadna z powyższych siedmiu nieruchomości nie odpowiada Państwa oczekiwaniom, sięgniemy po oferty spoza tej listy.</p>
+  </div>
 </section>
 
 <!-- CTA BAND -->

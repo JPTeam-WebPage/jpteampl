@@ -6,11 +6,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/logo-navbar.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jak kupić nieruchomość we Francji nie wyjeżdżając z Polski | JP Team</title>
+<title>Jak kupić nieruchomość we Francji z Polski | JP Team</title>
 <meta name="description" content="Compromis podpisywany elektronicznie, akt notarialny przez pełnomocnika, ceny weryfikowane w bazie DVF. Jak kupić nieruchomość we Francji bez wyjazdu z Polski?">
 <link rel="canonical" href="https://jpteam.pl/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jak kupić nieruchomość we Francji nie wyjeżdżając z Polski | JP Team">
+<meta property="og:title" content="Jak kupić nieruchomość we Francji z Polski | JP Team">
 <meta property="og:description" content="Compromis podpisywany elektronicznie, akt notarialny przez pełnomocnika, ceny weryfikowane w bazie DVF. Jak kupić nieruchomość we Francji bez wyjazdu z Polski?">
 <meta property="og:url" content="https://jpteam.pl/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc">
 <meta property="og:image" content="https://jpteam.pl/cannes.jpg">
@@ -648,6 +648,18 @@
     .article-cta { padding: 24px; }
     .author-box-inner { flex-direction: column; gap: 16px; padding: 24px; }
   }
+
+  /* OFERTY CTA */
+  .offers-cta { background: var(--bg-warm); border-top: 1px solid #ede9e3; }
+  .offers-cta-inner { max-width: 1240px; margin: 0 auto; padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .offers-cta .oc-eyebrow { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
+  .offers-cta h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(20px, 2.2vw, 26px); font-weight: 500; color: var(--text); margin-bottom: 8px; }
+  .offers-cta p { font-size: 16px; color: var(--text-light); line-height: 1.7; max-width: 620px; }
+  .offers-cta-btn { flex-shrink: 0; display: inline-block; background: var(--orange); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 500; padding: 14px 30px; border-radius: 30px; text-decoration: none; transition: background 0.2s; }
+  .offers-cta-btn:hover { background: var(--orange-dark); }
+  @media (max-width: 900px) {
+    .offers-cta-inner { padding: 40px 24px; }
+  }
 </style>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
@@ -659,6 +671,7 @@
   <div class="nav-inner">
     <a href="/"><img src="/logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
     <ul>
+      <li><a href="/oferty">Oferty</a></li>
       <li><a href="/poradniki">Poradniki</a></li>
       <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
@@ -667,6 +680,7 @@
     </button>
   </div>
   <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="/oferty">Oferty</a>
     <a href="/poradniki">Poradniki</a>
     <a href="#kontakt">Kontakt</a>
   </div>
@@ -913,6 +927,18 @@
   </div>
 </section>
 
+<!-- OFERTY CTA -->
+<section class="offers-cta">
+  <div class="offers-cta-inner">
+    <div>
+      <div class="oc-eyebrow">Oferty JP Team</div>
+      <h2>Nieruchomości na sprzedaż na Lazurowym Wybrzeżu</h2>
+      <p>Mandaty własne JP Team i oferty od agencji partnerskich, od kawalerki w Sainte-Maxime do prowansalskiej willi z basenem w Var.</p>
+    </div>
+    <a href="/oferty" class="offers-cta-btn">Zobacz nieruchomości na sprzedaż</a>
+  </div>
+</section>
+
 <!-- KONTAKT -->
 <section class="contact-section" id="kontakt">
   <div class="contact-section-inner">
@@ -1035,6 +1061,7 @@
       <div class="footer-nav-title">Menu</div>
       <ul>
         <li><a href="/">Strona główna</a></li>
+        <li><a href="/oferty">Oferty</a></li>
         <li><a href="/poradniki">Poradniki</a></li>
         <li><a href="/#kontakt">Kontakt</a></li>
         <li><a href="/polityka-prywatnosci">Polityka prywatności</a></li>
