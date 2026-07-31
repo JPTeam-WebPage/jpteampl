@@ -173,6 +173,12 @@
   .cat-grid h3 { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; color: var(--text); margin: 0 0 8px; }
   .cat-grid p { max-width: none; }
   .cat-grid .cat-item { padding: 8px 0; }
+  .cat-faq { max-width: 760px; }
+  .cat-faq .cat-item { padding: 18px 0; border-bottom: 1px solid #ede9e3; }
+  .cat-faq .cat-item:first-child { padding-top: 0; }
+  .cat-faq .cat-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .cat-faq h3 { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; color: var(--text); margin: 0 0 8px; }
+  .cat-faq p { margin-bottom: 0; }
   @media (max-width: 900px) {
     .cat-row { grid-template-columns: 1fr; gap: 16px; padding: 40px 0; }
     .cat-grid { grid-template-columns: 1fr; gap: 4px; }
@@ -602,7 +608,7 @@
 
     <div class="cat-row">
       <h2>Najczęstsze pytania</h2>
-      <div class="cat-body cat-grid">
+      <div class="cat-body cat-faq">
         <div class="cat-item">
           <h3>Czy obywatel Polski może kupić nieruchomość we Francji?</h3>
           <p>Tak, bez żadnych ograniczeń ani zezwoleń. Obywateli Unii Europejskiej obowiązują przy zakupie te same zasady co Francuzów. Dotyczy to również zakupu pod wynajem lub na firmę.</p>
