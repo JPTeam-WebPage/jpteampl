@@ -7,11 +7,11 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/logo-navbar.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zakup i obsługa nieruchomości we Francji po polsku | JP Team</title>
-<meta name="description" content="Zakup, notariusz, prawnik, ubezpieczenie, remont i wynajem. Wszystko po polsku, u jednego zespołu na Lazurowym Wybrzeżu.">
+<meta name="description" content="Prowadzimy zakup nieruchomości na Lazurowym Wybrzeżu: wybór ofert, wizyty, weryfikacja prawna, negocjacja ceny, notariusz, ubezpieczenie i opieka po zakupie.">
 <link rel="canonical" href="https://jpteam.pl/uslugi">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zakup i obsługa nieruchomości we Francji po polsku | JP Team">
-<meta property="og:description" content="Zakup, notariusz, prawnik, ubezpieczenie, remont i wynajem. Wszystko po polsku, u jednego zespołu na Lazurowym Wybrzeżu.">
+<meta property="og:description" content="Prowadzimy zakup nieruchomości na Lazurowym Wybrzeżu: wybór ofert, wizyty, weryfikacja prawna, negocjacja ceny, notariusz, ubezpieczenie i opieka po zakupie.">
 <meta property="og:url" content="https://jpteam.pl/uslugi">
 <meta property="og:image" content="https://jpteam.pl/cannes.jpg">
 <meta property="og:locale" content="pl_PL">
@@ -132,39 +132,14 @@
     font-size: 17px; line-height: 1.75; color: var(--text-mid);
     max-width: 640px; margin-bottom: 40px;
   }
+  .hero-sub:not(:last-of-type) { margin-bottom: 20px; }
   .hero-ctas { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-
-  /* PROBLEMY */
-  .problems { padding: 96px 0; background: var(--bg-warm); }
-  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-  .problem-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 40px 36px;
-    display: flex; flex-direction: column;
-  }
-  .problem-card blockquote {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 19px; font-weight: 500;
-    line-height: 1.45; color: var(--text);
-    margin-bottom: 20px;
-  }
-  .problem-card p {
-    font-size: 15px; line-height: 1.75;
-    color: var(--text-mid); margin-bottom: 24px;
-  }
-  .problem-card a {
-    margin-top: auto;
-    font-size: 14px; font-weight: 500;
-    color: var(--orange); text-decoration: none;
-  }
-  .problem-card a:hover { color: var(--orange-dark); }
 
   /* MODUŁY USŁUG */
   .services { padding: 96px 0; background: var(--bg); }
   .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
   .service-card { background: var(--bg); padding: 48px 44px; }
+  .service-card.service-card-wide { grid-column: 1 / -1; }
   .service-label {
     font-family: 'Inter', sans-serif;
     font-size: 11px; letter-spacing: 2.5px;
@@ -277,9 +252,9 @@
 
     .section-inner, .final-cta-inner { padding: 0 24px; }
     .hero { padding: 64px 0 56px; }
-    .problems, .services, .safety, .final-cta { padding: 64px 0; }
+    .services, .safety, .final-cta { padding: 64px 0; }
     .numbers { padding: 56px 0; }
-    .problems-grid, .services-grid, .safety-grid { grid-template-columns: 1fr; }
+    .services-grid, .safety-grid { grid-template-columns: 1fr; }
     .numbers-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
     .service-card { padding: 36px 28px; }
     .footer-top { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px 32px; }
@@ -321,38 +296,13 @@
 <section class="hero">
   <div class="section-inner">
     <span class="eyebrow">Zakres wsparcia</span>
-    <h1>Kupują Państwo dom we Francji, <strong>rozmawiając przez cały czas po polsku</strong></h1>
+    <h1>Prowadzimy zakup nieruchomości na Lazurowym Wybrzeżu, <strong>od wyboru ofert do podpisania aktu notarialnego</strong></h1>
     <div class="hero-rule"></div>
-    <p class="hero-sub">Samo znalezienie nieruchomości trwa kilka tygodni. Potem zaczynają się rzeczy, o których na początku mało kto myśli: akt u notariusza, ubezpieczenie obowiązkowe od pierwszego dnia, ekipa do remontu, ktoś, kto zajrzy do domu w styczniu. Do każdej z tych spraw mamy na Lazurowym Wybrzeżu kogoś, kto mówi po polsku i z kim pracujemy od lat. Jeśli potrzebują Państwo tylko pomocy przy samym zakupie, to również nie problem.</p>
+    <p class="hero-sub">Nabywca z Polski ma na Lazurowym Wybrzeżu do przejścia kilkadziesiąt agencji, z których każda pokazuje wyłącznie własne oferty, oraz procedurę transakcyjną prowadzoną w całości po francusku. Tę pracę wykonujemy za Państwa. Zbieramy oferty ze wszystkich agencji w regionie, sprawdzamy stan prawny i techniczny wybranych nieruchomości, jeździmy na wizyty razem z Państwem i prowadzimy negocjację ceny.</p>
+    <p class="hero-sub">Formę własności, kwestie spadkowe i opodatkowanie ustalamy przed podpisaniem aktu, razem z notariuszem i polskojęzycznym radcą prawnym prowadzącym praktykę na prawie francuskim. Rozmowy i dokumenty prowadzimy po polsku.</p>
     <div class="hero-ctas">
       <a href="/#kontakt" class="btn-primary">Bezpłatna konsultacja</a>
       <a href="#uslugi" class="btn-secondary">Zobacz wszystkie usługi</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEMY -->
-<section class="problems">
-  <div class="section-inner">
-    <span class="eyebrow">Z czym przychodzą klienci</span>
-    <h2>Trzy zdania, które słyszymy prawie w każdej rozmowie</h2>
-    <p class="section-intro">Zwykle padają jeszcze zanim obejrzymy pierwszą nieruchomość. Odpowiadamy na nie od razu, bo od tego zależy, czy w ogóle warto zaczynać.</p>
-    <div class="problems-grid">
-      <div class="problem-card">
-        <blockquote>„Nie podpiszę aktu, którego nie rozumiem."</blockquote>
-        <p>I bardzo dobrze. Akt podpisują Państwo u pani notariusz, która mówi po polsku, a wcześniej przechodzimy przez niego razem, zdanie po zdaniu. Jeśli sprawa jest bardziej zawiła, siada z nami polski radca prawny z Prowansji.</p>
-        <a href="#uslugi">Notariat i prawo &rarr;</a>
-      </div>
-      <div class="problem-card">
-        <blockquote>„Mieszkam w Polsce. Kto zajmie się domem, gdy wyjadę?"</blockquote>
-        <p>Robi to osoba, która mieszka w Cannes i pracuje z nami na stałe. Pilnuje ubezpieczenia i rachunków, sprawdza dom po zimie, przygotowuje go, gdy chcą Państwo wynająć go na sezon.</p>
-        <a href="#uslugi">Wynajem i opieka &rarr;</a>
-      </div>
-      <div class="problem-card">
-        <blockquote>„Chcę wyremontować, ale skąd wezmę tam ekipę, której zaufam?"</blockquote>
-        <p>Od lat pracujemy z dwiema polskimi firmami budowlanymi z okolic Cannes. Jedna wchodzi w większe przebudowy, druga robi zwykłe remonty i wykończenia.</p>
-        <a href="#uslugi">Remont i wykończenie &rarr;</a>
-      </div>
     </div>
   </div>
 </section>
@@ -361,39 +311,44 @@
 <section class="services" id="uslugi">
   <div class="section-inner">
     <span class="eyebrow">Usługi</span>
-    <h2>Czym dokładnie się zajmujemy</h2>
-    <p class="section-intro">Jedni klienci korzystają z nas tylko przy zakupie i dalej radzą sobie sami. Inni zostawiają nam dom na okrągły rok i przyjeżdżają w lipcu na gotowe. Zakres ustalamy na początku i można go zmienić w każdej chwili.</p>
+    <h2>Zakres usług przy zakupie i po zakupie</h2>
+    <p class="section-intro">Zakres ustalamy na pierwszej rozmowie i można go zmienić na każdym etapie. Część nabywców korzysta wyłącznie z pomocy przy transakcji i po odbiorze kluczy prowadzi nieruchomość samodzielnie. Część zostawia nam ubezpieczenie, remont oraz opiekę nad nieruchomością przez cały rok.</p>
     <div class="services-grid">
       <div class="service-card">
         <span class="service-label"><strong>Zakup</strong> · Poszukiwanie i negocjacje</span>
-        <h3>Szukamy w ofertach wszystkich agencji w regionie</h3>
-        <p>Zbieramy oferty z całego Lazurowego Wybrzeża, odsiewamy te, które wyglądają dobrze tylko na zdjęciach, i umawiamy wizyty tak, żeby zmieściły się w jednym przyjeździe. Na miejscu oglądamy dom razem z Państwem, sprawdzamy dokumenty i stan techniczny, a potem targujemy się o cenę już bez Państwa udziału.</p>
-        <p class="service-note">Kupujący nie płaci nam nic. Nasze wynagrodzenie pochodzi z prowizji agencji, która sprzedaje.</p>
+        <h3>Wybór ofert ze wszystkich agencji w regionie</h3>
+        <p>Przeglądamy oferty agencji z Cannes, Nicei i Antibes oraz nieruchomości sprzedawane bezpośrednio przez właścicieli. Odrzucamy te, których stan techniczny lub dokumentacja odbiegają od opisu w ogłoszeniu. Wizyty układamy tak, aby zmieściły się w jednym przyjeździe. Na miejscu oglądamy nieruchomość razem z Państwem i sprawdzamy dokumenty budynku, a negocjację ceny prowadzimy bez Państwa udziału.</p>
+        <p class="service-note">Nabywca nie płaci nam wynagrodzenia. Otrzymujemy część prowizji agencji sprzedającej, a cena nieruchomości pozostaje taka sama, niezależnie od tego, czy kupują Państwo z nami, czy bezpośrednio w agencji.</p>
       </div>
       <div class="service-card">
         <span class="service-label"><strong>Notariat</strong> · Akt notarialny po polsku</span>
-        <h3>Akt czytają Państwo po polsku</h3>
-        <p>We Francji całą transakcję prowadzi notariusz i to przez jego rachunek przechodzą pieniądze, więc od jego biura nie da się uciec. My chodzimy do kancelarii, w której pracuje pani notariusz mówiąca po polsku. Przed podpisem przechodzimy przez akt punkt po punkcie i można pytać do skutku.</p>
+        <h3>Notariusz i akt notarialny</h3>
+        <p>We Francji transakcję prowadzi notariusz i przez jego rachunek przechodzą wszystkie środki, więc jego udział jest obowiązkowy przy każdym zakupie. Współpracujemy z kancelarią, w której pracuje notariusz mówiąca po polsku. Projekt aktu omawiamy z Państwem punkt po punkcie przed terminem podpisania, a uwagi zgłaszamy do kancelarii z wyprzedzeniem.</p>
       </div>
       <div class="service-card">
         <span class="service-label"><strong>Prawo</strong> · Wsparcie prawne</span>
-        <h3>Polski radca prawny w Aix-en-Provence</h3>
-        <p>Część transakcji wychodzi poza schemat. Zakup na spółkę, rozdzielność majątkowa, dziedziczenie francuskiej nieruchomości przez dzieci mieszkające w Polsce, umowa najmu długoterminowego. W takich sytuacjach dzwonimy do polskiego radcy prawnego, który mieszka w Aix-en-Provence i na co dzień pracuje na francuskim prawie.</p>
+        <h3>Sytuacje wymagające radcy prawnego</h3>
+        <p>Zakup na spółkę, rozdzielność majątkowa małżonków, dziedziczenie francuskiej nieruchomości przez dzieci mieszkające w Polsce oraz umowy najmu długoterminowego wykraczają poza standardową procedurę notarialną. W takich sprawach pracujemy z polskojęzycznym radcą prawnym, który prowadzi praktykę na prawie francuskim.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-label"><strong>Dziedziczenie i podatki</strong> · Forma zakupu</span>
+        <h3>Dziedziczenie i podatki ustalone przed zakupem</h3>
+        <p>Forma zakupu decyduje o tym, kto odziedziczy nieruchomość i jak zostanie ona opodatkowana. Zakup na osobę fizyczną, na spółkę SCI oraz zakup z podziałem na własność i użytkowanie prowadzą do różnych skutków spadkowych i podatkowych, a zmiana tej formy po podpisaniu aktu oznacza kolejne koszty notarialne. Formę ustalamy przed aktem, razem z notariuszem i radcą prawnym.</p>
       </div>
       <div class="service-card">
         <span class="service-label"><strong>Ubezpieczenie</strong> · Polisa i formalności</span>
-        <h3>Polisa załatwiona po polsku, jeszcze przed aktem</h3>
-        <p>We Francji nieruchomość musi być ubezpieczona już w dniu podpisania aktu, więc to jedna z rzeczy, które trzeba mieć gotowe wcześniej. Zajmuje się tym polska specjalistka od ubezpieczeń: dobiera polisę, wypełnia papiery, a później zgłasza szkody, jeśli coś się wydarzy pod Państwa nieobecność.</p>
+        <h3>Ubezpieczenie nieruchomości przed podpisaniem aktu</h3>
+        <p>Francuskie prawo wymaga, aby nieruchomość była ubezpieczona już w dniu podpisania aktu, więc polisę przygotowujemy wcześniej. Zajmuje się tym polskojęzyczna specjalistka od ubezpieczeń pracująca we Francji, z którą współpracujemy: dobiera zakres ochrony, wypełnia dokumenty i zgłasza szkody wtedy, gdy są Państwo w Polsce.</p>
       </div>
       <div class="service-card">
         <span class="service-label"><strong>Remont</strong> · Przebudowy i wykończenia</span>
-        <h3>Polskie ekipy budowlane, które znamy osobiście</h3>
-        <p>Wycenę remontu robimy zwykle jeszcze przed zakupem, przy drugiej wizycie. Dzięki temu wiadomo, czy tańsze mieszkanie do odświeżenia naprawdę wychodzi taniej od droższego po remoncie. Później ekipa pracuje, a my wpadamy na budowę i wysyłamy zdjęcia, bo Państwo w tym czasie są w Polsce.</p>
+        <h3>Wycena i prowadzenie remontu</h3>
+        <p>Wycenę remontu zamawiamy przed zakupem, przy drugiej wizycie. Pozwala to porównać koszt tańszej nieruchomości wymagającej odświeżenia z ceną nieruchomości po remoncie. Pracujemy z dwiema polskojęzycznymi firmami budowlanymi działającymi na Lazurowym Wybrzeżu: jedna prowadzi przebudowy, druga remonty i wykończenia. W trakcie prac jeździmy na budowę i przesyłamy Państwu zdjęcia.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card service-card-wide">
         <span class="service-label"><strong>Wynajem</strong> · Opieka nad nieruchomością</span>
-        <h3>Dom żyje też wtedy, gdy Państwa tu nie ma</h3>
-        <p>Mieszkanie stojące puste przez dziesięć miesięcy w roku niszczeje szybciej, niż się wydaje, a przy okazji może na siebie zarabiać. Przygotowujemy je pod wynajem, wydajemy klucze gościom, sprzątamy po nich i zaglądamy do środka poza sezonem. Rozliczenia i wiadomości dostają Państwo po polsku.</p>
+        <h3>Opieka nad nieruchomością i wynajem poza sezonem</h3>
+        <p>Nieruchomość używana przez kilka tygodni w roku wymaga stałej kontroli, a poza sezonem może być wynajmowana. Opiekę na miejscu prowadzi firma, z którą współpracujemy od lat: pilnuje ubezpieczenia i rachunków, sprawdza stan mieszkania po zimie, przygotowuje je pod wynajem, przekazuje klucze gościom i organizuje sprzątanie. Rozliczenia i korespondencję otrzymują Państwo po polsku.</p>
       </div>
     </div>
   </div>
@@ -403,23 +358,23 @@
 <section class="safety">
   <div class="section-inner">
     <span class="eyebrow">Bezpieczeństwo transakcji</span>
-    <h2>Co pilnuje Państwa pieniędzy przy francuskiej transakcji</h2>
-    <p class="section-intro">Klienci najbardziej boją się tego, że wyślą przelew do obcego kraju i słuch po nim zaginie. We Francji trzy rzeczy dzieją się z mocy prawa, niezależnie od tego, przez kogo Państwo kupują.</p>
+    <h2>Zabezpieczenia wynikające z francuskiego prawa</h2>
+    <p class="section-intro">Trzy poniższe mechanizmy obowiązują przy każdej transakcji, niezależnie od tego, przez kogo Państwo kupują.</p>
     <div class="safety-grid">
       <div class="safety-card">
         <span class="safety-num">01</span>
-        <h3>Przelew idzie na rachunek notariusza</h3>
-        <p>Cała kwota leży na rachunku powierniczym notariusza, czyli urzędnika państwowego, który odpowiada za nią własnym majątkiem. Sprzedający zobaczy te pieniądze dopiero wtedy, gdy własność przejdzie na Państwa.</p>
+        <h3>Środki przechodzą przez rachunek notariusza</h3>
+        <p>Cena nieruchomości trafia na rachunek depozytowy notariusza, urzędnika państwowego, który odpowiada za powierzone środki własnym majątkiem. Sprzedający otrzymuje pieniądze dopiero po przeniesieniu własności na Państwa.</p>
       </div>
       <div class="safety-card">
         <span class="safety-num">02</span>
-        <h3>Pracujemy na francuskiej licencji zawodowej</h3>
-        <p>Pośrednictwem może się tu zajmować tylko ktoś z carte professionnelle. Nasza ma numer CPI 8303 2021 000 000 022, wiąże się z obowiązkowym OC i podlega kontroli izby handlowej, więc łatwo ją sprawdzić.</p>
+        <h3>Carte professionnelle i ubezpieczenie zawodowe</h3>
+        <p>Pośrednictwo w obrocie nieruchomościami we Francji może prowadzić wyłącznie podmiot posiadający carte professionnelle. Nasza ma numer CPI 8303 2021 000 000 022, wiąże się z obowiązkowym ubezpieczeniem odpowiedzialności cywilnej i figuruje w rejestrze prowadzonym przez izbę handlową.</p>
       </div>
       <div class="safety-card">
         <span class="safety-num">03</span>
-        <h3>Dziesięć dni na zmianę zdania</h3>
-        <p>Po podpisaniu umowy przedwstępnej mają Państwo dziesięć dni na wycofanie się z zakupu. Nie trzeba tłumaczyć powodów ani zostawiać ani jednego euro.</p>
+        <h3>Dziesięć dni na odstąpienie od umowy przedwstępnej</h3>
+        <p>Po podpisaniu umowy przedwstępnej nabywca ma dziesięć dni na odstąpienie, bez podania przyczyny i bez kosztów. Termin biegnie od doręczenia kompletu dokumentów.</p>
       </div>
     </div>
   </div>
