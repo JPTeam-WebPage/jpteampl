@@ -43,20 +43,57 @@ logo-navbar.png
 - Język: polski, forma grzecznościowa „Państwo" (nigdy ty/Ty)
 - Mobile-first, responsive
 
+## Workflow: testowanie i publikowanie
+
+### Krok 1 — zmiany na draft
+
+Zawsze edytuj na branchu `draft`. Nigdy bezpośrednio `main`.
+
+### Krok 2 — deploy preview
+
+Po każdej zmianie którą chcesz zobaczyć na mobile/preview:
+
+```bash
+git add [pliki]
+git commit -m "opis"
+git push origin draft
+curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_DtTW60yv2BKfkO7ynnOKPu0HdT7M/8BYxt6J2V7"
+```
+
+Preview gotowy ~1-2 min pod:
+```
+https://jpteampl-git-draft-jpteam-webpages-projects.vercel.app
+```
+
+> **Uwaga:** Vercel nie deployuje `draft` automatycznie — zawsze wywołaj `curl` po pushu.
+
+### Krok 3 — publikacja na produkcję
+
+Gdy preview wygląda OK → merge do `main`:
+
+```bash
+git checkout main
+git merge draft
+git push origin main
+git checkout draft
+```
+
+`main` → auto-deploy na jpteam.pl (bez curl, działa automatycznie).
+
 ## Nowy poradnik — kroki
 
 1. Utwórz folder: `poradniki/[slug-po-polsku]/`
 2. Skopiuj strukturę z istniejącego poradnika jako bazę HTML
 3. Wypełnij treść zgodnie z content-agent skill (`99 Systems/Skills/content-agent/SKILL.md`)
 4. Dodaj wpis do `poradniki.html` (lista artykułów)
-5. `git add` → `git commit` → `git push origin draft`
-6. Vercel preview URL pojawi się automatycznie (~1-2 min)
+5. Push + curl (patrz Workflow wyżej) → sprawdź preview
+6. Gdy OK → merge do `main`
 
 ## Zmiana UI — kroki
 
-1. Edytuj odpowiedni plik HTML/CSS
-2. `git push origin draft` → sprawdź na Vercel preview
-3. Gdy OK → `git merge draft main` + `git push origin main`
+1. Edytuj plik HTML na branchu `draft`
+2. Push + curl → sprawdź preview
+3. Gdy OK → merge do `main`
 
 ## Kontekst biznesowy
 
