@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/logo-navbar.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/logo-navbar.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nieruchomości Lazurowe Wybrzeże | Polskie biuro nieruchomości we Francji</title>
+<title>Nieruchomości Lazurowe Wybrzeże | mieszkania i domy na sprzedaż</title>
 <meta name="description" content="Polskie biuro nieruchomości we Francji. Dostęp do ofert w Cannes, Nicei i Antibes – także spoza portali. Prowadzimy Państwa od oglądzin do aktu notarialnego.">
 <link rel="canonical" href="https://jpteam.pl/">
 <meta property="og:type" content="website">
@@ -879,6 +879,7 @@
       <div class="hero-ctas">
         <a href="#kontakt" class="btn-primary">Bezpłatna konsultacja</a>
         <a href="#wspolpraca" class="btn-secondary">Jak przebiega współpraca</a>
+        <a href="/oferty" class="btn-secondary">Zobacz aktualne oferty</a>
       </div>
     </div>
     <div class="hero-img">
@@ -886,6 +887,84 @@
     </div>
   </div>
 </section>
+
+
+<!-- AKTUALNE OFERTY -->
+<section class="home-offers">
+  <div class="section-inner">
+    <span class="eyebrow">Oferty JP Team</span>
+    <h2 class="ho-h2">Mieszkania i domy aktualnie na sprzedaż</h2>
+    <div class="offers-grid">
+      <a class="offer-card" href="/oferty/apartament-nicea-cimiez">
+        <div class="offer-card-img">
+          <img src="/oferty/apartament-nicea-cimiez/zdjecie-1.jpg" alt="Apartament z tarasem w Nicei, Cimiez" loading="lazy">
+          <span class="offer-card-pill">Nicea</span>
+        </div>
+        <div class="offer-card-body">
+          <p class="oc-loc">Cimiez · Nicea</p>
+          <h3>Trzypokojowy apartament z tarasem 11 m²</h3>
+          <p class="oc-meta">75 m² · 3 pokoje · renowacja 2025</p>
+          <p class="oc-price">465 000 €</p>
+        </div>
+      </a>
+      <a class="offer-card" href="/oferty/apartament-sainte-maxime-widok-morze">
+        <div class="offer-card-img">
+          <img src="/oferty/apartament-sainte-maxime-widok-morze/zdjecie-1.jpg" alt="Apartament z widokiem na morze, Sainte-Maxime" loading="lazy">
+          <span class="offer-card-pill">Sainte-Maxime</span>
+        </div>
+        <div class="offer-card-body">
+          <p class="oc-loc">Centrum · Sainte-Maxime</p>
+          <h3>Apartament z widokiem na zatokę Saint-Tropez</h3>
+          <p class="oc-meta">63 m² · taras 15 m² · ostatnie piętro</p>
+          <p class="oc-price">469 000 €</p>
+        </div>
+      </a>
+      <a class="offer-card" href="/oferty/apartament-frejus">
+        <div class="offer-card-img">
+          <img src="/oferty/apartament-frejus/zdjecie-1.jpg" alt="Apartament z tarasem dachowym, Fréjus" loading="lazy">
+          <span class="offer-card-pill">Fréjus</span>
+        </div>
+        <div class="offer-card-body">
+          <p class="oc-loc">Centrum · Fréjus</p>
+          <h3>Czteropokojowy apartament z tarasem dachowym 28 m²</h3>
+          <p class="oc-meta">85 m² · 4 pokoje · garaż</p>
+          <p class="oc-price">425 000 €</p>
+        </div>
+      </a>
+    </div>
+    <div class="ho-more"><a href="/oferty" class="btn-secondary">Zobacz wszystkie oferty</a></div>
+  </div>
+</section>
+
+<style>
+  .home-offers { padding: 88px 48px; background: var(--bg-warm); border-bottom: 1px solid #ede9e3; }
+  .home-offers h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 500; margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .home-offers .ho-h2 { margin-bottom: 40px; }
+  .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1240px; }
+  .offer-card { display: block; background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: box-shadow 0.2s; }
+  .offer-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+  .offer-card-img { position: relative; height: 240px; overflow: hidden; }
+  .offer-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+  .offer-card:hover .offer-card-img img { transform: scale(1.04); }
+  .offer-card-pill { position: absolute; bottom: 14px; left: 14px; background: rgba(255,255,255,0.92); color: var(--text); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; }
+  .offer-card-body { padding: 22px 24px 26px; }
+  .oc-loc { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
+  .offer-card h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--text); margin-bottom: 12px; transition: color 0.2s; }
+  .offer-card:hover h3 { color: var(--orange); }
+  .oc-meta { font-size: 14px; color: var(--text-light); margin-bottom: 14px; }
+  .oc-price { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); }
+  .ho-more { margin-top: 36px; }
+  @media (max-width: 1024px) { .offers-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 720px) {
+    .offers-grid { grid-template-columns: 1fr; }
+    .home-offers { padding: 64px 24px; }
+  }
+</style>
 
 <!-- OPINIE -->
 <section class="proof">
