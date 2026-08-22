@@ -399,6 +399,39 @@
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
 </script>
+
+<style>
+  .cc-title { font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 2.4vw, 32px); font-weight: 500; margin: 56px 0 28px; }
+  .know-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 64px; }
+  .know-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 26px 28px; }
+  .know-card h3 { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 500; margin-bottom: 10px; }
+  .know-card p { font-size: 14.5px; line-height: 1.75; color: var(--text-mid); }
+  .know-card a { color: var(--orange); text-decoration: none; }
+  .know-card a:hover { text-decoration: underline; }
+  .cat-row--cities { padding: 0 0 48px; }
+  .cat-row--cities h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2vw, 28px); font-weight: 500; }
+  .cat-row--cities .cat-grid { gap: 16px 56px; }
+  .cat-row--cities h3 { font-size: 15px; }
+  .cat-row--cities p { font-size: 14px; line-height: 1.7; }
+  .cat-row--cities a { color: var(--orange); text-decoration: none; white-space: nowrap; }
+  .faq-block { max-width: 760px; padding-bottom: 72px; }
+  .faq-block h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(22px, 2vw, 28px); font-weight: 500; margin-bottom: 8px; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item summary {
+    font-size: 15.5px; font-weight: 500; color: var(--text);
+    padding: 22px 0; cursor: pointer; list-style: none;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .fq-mark { color: var(--orange); font-size: 20px; transition: transform 0.2s; flex-shrink: 0; }
+  .faq-item[open] .fq-mark { transform: rotate(45deg); }
+  .faq-item p { font-size: 14px; line-height: 1.8; color: var(--text-mid); padding-bottom: 26px; margin: 0; max-width: 680px; }
+  @media (max-width: 860px) {
+    .know-grid { grid-template-columns: 1fr; }
+    .cat-row--cities { display: block; }
+    .cat-row--cities .cat-grid { grid-template-columns: 1fr; margin-top: 20px; }
+  }
+</style>
 </head>
 <body>
 
@@ -559,83 +592,55 @@
 <section class="category-content">
   <div class="category-inner">
 
-    <div class="cat-row">
-      <h2>Ceny nieruchomości na Lazurowym Wybrzeżu</h2>
-      <div class="cat-body">
-        <p>Rozpiętość cen jest duża i zależy przede wszystkim od odległości od morza. Kawalerkę sto metrów od plaży w Sainte-Maxime można kupić za około 160&nbsp;000&nbsp;€, czteropokojowy apartament w dobrej dzielnicy Nicei kosztuje około 500&nbsp;000&nbsp;€, a prowansalska willa z basenem w głębi Var to wydatek od miliona euro wzwyż. Najdroższe pozostają Cannes, Antibes i nadmorskie gminy między Niceą a Monako, gdzie w najlepszych lokalizacjach ceny przekraczają 10&nbsp;000&nbsp;€ za metr kwadratowy. Im dalej od wybrzeża, tym taniej: w miasteczkach Var, takich jak Callas, działkę budowlaną z gotowym projektem willi można znaleźć poniżej 200&nbsp;000&nbsp;€.</p>
-        <p>Nasze obecne oferty mieszczą się w przedziale od 153&nbsp;000&nbsp;€ do 1&nbsp;290&nbsp;000&nbsp;€. Ceny według dzielnic opisujemy szczegółowo w poradnikach o <a href="/poradniki/nice-nieruchomosci-inwestycje">nieruchomościach w Nicei</a> oraz <a href="/poradniki/cannes-nieruchomosci-inwestycje">nieruchomościach w Cannes</a>.</p>
+    <h2 class="cc-title">Warto wiedzieć przed zakupem</h2>
+    <div class="know-grid">
+      <div class="know-card">
+        <h3>Ceny nieruchomości na Lazurowym Wybrzeżu</h3>
+        <p>Rozpiętość cen zależy głównie od odległości od morza: kawalerka przy plaży w Sainte-Maxime to ok.&nbsp;160&nbsp;000&nbsp;€, czteropokojowy apartament w dobrej dzielnicy Nicei ok.&nbsp;500&nbsp;000&nbsp;€, willa z basenem w głębi Var od miliona euro wzwyż. Nasze bieżące oferty mieszczą się między 153&nbsp;000&nbsp;a&nbsp;1&nbsp;290&nbsp;000&nbsp;€. Ceny według dzielnic opisują poradniki o <a href="/poradniki/nice-nieruchomosci-inwestycje">Nicei</a> i <a href="/poradniki/cannes-nieruchomosci-inwestycje">Cannes</a>.</p>
+      </div>
+      <div class="know-card">
+        <h3>Skąd pochodzą te oferty</h3>
+        <p>Część ogłoszeń to mandaty własne, reszta pochodzi od współpracujących z nami agencji francuskich. Każdą nieruchomość oglądamy osobiście i sprawdzamy dokumenty. To nie jest cały rynek: jeśli szukają Państwo czegoś innego, przeszukamy oferty wszystkich agencji od Saint-Tropez po Menton — <a href="/">zakup z nami nie podnosi ceny</a>.</p>
+      </div>
+      <div class="know-card">
+        <h3>Jak przebiega zakup krok po kroku</h3>
+        <p>Po zaakceptowaniu oferty strony podpisują compromis de vente z zadatkiem 5–10%. Kupujący ma wtedy 10 dni na odstąpienie bez podania przyczyny. Formalności prowadzi notariusz, akt końcowy podpisuje się zwykle po 2–3 miesiącach. Do ceny dochodzi ok.&nbsp;7–8% kosztów na rynku wtórnym. Cały proces opisujemy w <a href="/poradniki/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu">osobnym poradniku</a>.</p>
+      </div>
+      <div class="know-card">
+        <h3>Na co uważać, kupując z Polski</h3>
+        <p>Sprzedający musi dostarczyć komplet diagnostyk: ocenę energetyczną, badanie elektryki, raport azbestowy. Trzeba je umieć przeczytać — lakoniczny zapis potrafi zasłonić kosztowny problem. W apartamentach dochodzą opłaty wspólnoty i protokoły zebrań z planowanymi remontami. Najczęstsze błędy zebraliśmy w <a href="/poradniki/jak-nie-dac-sie-oszukac-lazurowe-wybrzeze">poradniku o pułapkach</a>.</p>
       </div>
     </div>
 
-    <div class="cat-row">
-      <h2>Skąd pochodzą te oferty</h2>
-      <div class="cat-body">
-        <p>Część ogłoszeń to mandaty własne, czyli nieruchomości sprzedawane bezpośrednio na zlecenie właścicieli. Pozostałe pochodzą od współpracujących z nami agencji francuskich. Każdą nieruchomość oglądamy osobiście, zanim pokażemy ją klientowi, i sprawdzamy jej stan prawny oraz dokumentację techniczną.</p>
-        <p>Lista powyżej to nie cały rynek. JP Team to <a href="/">polskie biuro nieruchomości na Lazurowym Wybrzeżu</a>: jeśli szukają Państwo czegoś innego, przeszukamy oferty wszystkich agencji od Saint-Tropez po Menton. Pracujemy w systemie współpracy między agencjami, więc zakup z nami nie podnosi ceny nieruchomości.</p>
-      </div>
-    </div>
-
-    <div class="cat-row">
-      <h2>Jak wygląda zakup nieruchomości we Francji</h2>
-      <div class="cat-body">
-        <p>Proces różni się od polskiego. Po zaakceptowaniu oferty strony podpisują compromis de vente, czyli umowę przedwstępną, przy której kupujący wpłaca zadatek, zwykle od 5 do 10 procent ceny. Od podpisania biegnie dziesięciodniowy termin, w którym kupujący może odstąpić od umowy bez podania przyczyny. Formalnościami zajmuje się notariusz, a akt końcowy podpisuje się zwykle po dwóch, trzech miesiącach.</p>
-        <p>Koszty transakcyjne na rynku wtórnym wynoszą około 7 do 8 procent ceny i obejmują podatki oraz wynagrodzenie notariusza. Cały <a href="/poradniki/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu">proces zakupu nieruchomości we Francji</a> opisaliśmy krok po kroku w osobnym poradniku. Piszemy też o tym, <a href="/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc">jak kupić nieruchomość we Francji bez wyjeżdżania z Polski</a>.</p>
-      </div>
-    </div>
-
-    <div class="cat-row">
-      <h2>Na co uważać, kupując z Polski</h2>
-      <div class="cat-body">
-        <p>Francuskie prawo chroni kupującego mocniej niż polskie, ale ma swoje pułapki. Sprzedający musi dostarczyć komplet obowiązkowych diagnostyk technicznych, między innymi ocenę energetyczną, badanie instalacji elektrycznej i raport azbestowy. Trzeba je umieć przeczytać, bo lakoniczny zapis potrafi zasłaniać kosztowny problem. W apartamentach dochodzą opłaty wspólnoty mieszkaniowej (copropriété) i protokoły zebrań, z których wynika, jakie remonty budynku są planowane. Do tego coroczny podatek taxe foncière oraz przewalutowanie i przelew środków z Polski. Najczęstsze błędy zebraliśmy w poradniku o tym, <a href="/poradniki/jak-nie-dac-sie-oszukac-lazurowe-wybrzeze">na co uważać przy zakupie na Lazurowym Wybrzeżu</a>.</p>
-      </div>
-    </div>
-
-    <div class="cat-row">
+    <div class="cat-row cat-row--cities">
       <h2>Miejscowości, w których działamy</h2>
       <div class="cat-body cat-grid">
         <div class="cat-item">
           <h3>Nicea</h3>
-          <p>Największy i najbardziej płynny rynek wybrzeża: od kawalerek pod wynajem po rodzinne apartamenty w dzielnicach takich jak Cimiez czy Parc Impérial, skąd pochodzą nasze bieżące oferty.</p>
+          <p>Największy i najbardziej płynny rynek wybrzeża, od kawalerek pod wynajem po apartamenty w Cimiez czy Parc Impérial. <a href="/poradniki/gdzie-kupic-nieruchomosc-w-nicei">Czytaj przewodnik →</a></p>
         </div>
         <div class="cat-item">
           <h3>Cannes i Antibes</h3>
-          <p>Najdroższa część wybrzeża, razem z sąsiednim Le Cannet. Wybierana często pod wynajem sezonowy i inwestycje.</p>
+          <p>Najdroższa część wybrzeża, często wybierana pod wynajem sezonowy i inwestycje. <a href="/poradniki/cannes-nieruchomosci-inwestycje">Czytaj przewodnik →</a></p>
         </div>
         <div class="cat-item">
           <h3>Sainte-Maxime i Fréjus</h3>
-          <p>Zachodnia część wybrzeża, wyraźnie niższe ceny przy tym samym morzu. Sainte-Maxime leży naprzeciwko Saint-Tropez, po drugiej stronie zatoki, a obok Fréjus znajduje się Saint-Raphaël, siedziba naszej agencji.</p>
+          <p>Zachodnia część wybrzeża, wyraźnie niższe ceny przy tym samym morzu. Obok Fréjus leży Saint-Raphaël, siedziba naszej agencji.</p>
         </div>
         <div class="cat-item">
           <h3>Głąb departamentu Var</h3>
-          <p>Miasteczka takie jak Callas czy Lorgues: prowansalskie wille i działki budowlane w cenach o połowę niższych niż nad samym morzem.</p>
+          <p>Callas, Lorgues i okolice: prowansalskie wille i działki w cenach o połowę niższych niż nad samym morzem.</p>
         </div>
       </div>
     </div>
 
-    <div class="cat-row">
+    <div class="faq-block">
       <h2>Najczęstsze pytania</h2>
-      <div class="cat-body cat-faq">
-        <div class="cat-item">
-          <h3>Czy obywatel Polski może kupić nieruchomość we Francji?</h3>
-          <p>Tak, bez żadnych ograniczeń ani zezwoleń. Obywateli Unii Europejskiej obowiązują przy zakupie te same zasady co Francuzów. Dotyczy to również zakupu pod wynajem lub na firmę.</p>
-        </div>
-        <div class="cat-item">
-          <h3>Ile wynoszą koszty zakupu poza ceną nieruchomości?</h3>
-          <p>Na rynku wtórnym około 7 do 8 procent ceny. Kwota obejmuje podatki, opłaty administracyjne i wynagrodzenie notariusza. Przy nieruchomościach nowych jest to około 2 do 3 procent. Prowizję agencji z reguły pokrywa sprzedający.</p>
-        </div>
-        <div class="cat-item">
-          <h3>Czy mogę kupić nieruchomość bez przyjazdu do Francji?</h3>
-          <p>Tak. Oględziny przeprowadzamy w imieniu klienta i relacjonujemy je na wideo, a akt notarialny można podpisać przez pełnomocnika. Cały tryb opisaliśmy w <a href="/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc">poradniku o zakupie na odległość</a>.</p>
-        </div>
-        <div class="cat-item">
-          <h3>Czy te oferty są aktualne?</h3>
-          <p>Dostępność weryfikujemy na bieżąco, a ofertę zdejmujemy ze strony po podpisaniu umowy przedwstępnej. Przed każdą prezentacją dodatkowo potwierdzamy dostępność u właściciela lub agencji.</p>
-        </div>
-        <div class="cat-item">
-          <h3>Co, jeśli żadna z ofert nie pasuje?</h3>
-          <p>Wystarczy opisać nam, czego Państwo szukają. Przeszukamy cały rynek, także oferty innych agencji na wybrzeżu, i przedstawimy wybór dopasowany do budżetu. Zakup przez JP Team nie podnosi ceny nieruchomości.</p>
-        </div>
-      </div>
+      <details class="faq-item"><summary>Czy obywatel Polski może kupić nieruchomość we Francji? <span class="fq-mark">+</span></summary><p>Tak, bez żadnych ograniczeń ani zezwoleń. Obywateli Unii Europejskiej obowiązują przy zakupie te same zasady co Francuzów. Dotyczy to również zakupu pod wynajem lub na firmę.</p></details>
+      <details class="faq-item"><summary>Ile wynoszą koszty zakupu poza ceną nieruchomości? <span class="fq-mark">+</span></summary><p>Na rynku wtórnym około 7 do 8 procent ceny: podatki, opłaty administracyjne i wynagrodzenie notariusza. Przy nieruchomościach nowych około 2 do 3 procent. Prowizję agencji z reguły pokrywa sprzedający.</p></details>
+      <details class="faq-item"><summary>Czy mogę kupić nieruchomość bez przyjazdu do Francji? <span class="fq-mark">+</span></summary><p>Tak. Oględziny przeprowadzamy w imieniu klienta i relacjonujemy je na wideo, a akt notarialny można podpisać przez pełnomocnika. Cały tryb opisaliśmy w <a href="/poradniki/zakup-nieruchomosci-we-francji-na-odleglosc">poradniku o zakupie na odległość</a>.</p></details>
+      <details class="faq-item"><summary>Czy te oferty są aktualne? <span class="fq-mark">+</span></summary><p>Dostępność weryfikujemy na bieżąco, a ofertę zdejmujemy ze strony po podpisaniu umowy przedwstępnej. Przed każdą prezentacją dodatkowo potwierdzamy dostępność u właściciela lub agencji.</p></details>
+      <details class="faq-item"><summary>Co, jeśli żadna z ofert nie pasuje? <span class="fq-mark">+</span></summary><p>Wystarczy opisać nam, czego Państwo szukają. Przeszukamy cały rynek, także oferty innych agencji na wybrzeżu, i przedstawimy wybór dopasowany do budżetu. Zakup przez JP Team nie podnosi ceny nieruchomości.</p></details>
     </div>
 
   </div>
