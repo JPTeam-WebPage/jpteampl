@@ -188,34 +188,18 @@
   .proof-carousel-wrap { position: relative; }
   .testimonials {
     display: flex;
-    overflow: hidden;
+    overflow-x: auto;
     gap: 32px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding-bottom: 8px;
   }
   .testimonial {
     flex: 0 0 calc((100% - 64px) / 3);
     transition: transform 0.4s ease;
   }
-  .carousel-track { display: flex; gap: 32px; transition: transform 0.4s ease; width: 100%; }
-  .carousel-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: #fff; border: 1px solid var(--border);
-    border-radius: 50%; width: 44px; height: 44px;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; font-size: 18px; color: var(--text-mid);
-    transition: box-shadow 0.2s, border-color 0.2s;
-    z-index: 2; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-  .carousel-btn:hover { border-color: #999; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
-  .carousel-btn:disabled { opacity: 0.3; cursor: default; }
-  .carousel-btn--prev { left: -22px; }
-  .carousel-btn--next { right: -22px; }
-  .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 32px; }
-  .carousel-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--border); border: none; cursor: pointer; padding: 0;
-    transition: background 0.2s;
-  }
-  .carousel-dot.active { background: var(--orange); }
+  .carousel-track { display: flex; gap: 32px; width: 100%; }
+  .testimonial { scroll-snap-align: start; }
   .testimonial {
     background: var(--bg);
     border-radius: 8px; padding: 36px;
@@ -230,21 +214,6 @@
     align-items: center; margin-bottom: 20px;
   }
   .stars { color: var(--stars); font-size: 14px; letter-spacing: 1px; }
-  /* stretched link — cały kafelek klikalny przez google-link */
-  .google-link {
-    display: flex; align-items: center; gap: 6px;
-    text-decoration: none;
-  }
-  .google-link .gl-label { font-size: 11px; color: var(--text-light); letter-spacing: 0.3px; }
-  .google-link::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    border-radius: 8px;
-  }
-  /* autor musi być nad stretched linkiem */
-  .testimonial-author { position: relative; z-index: 1; }
   .google-logo { width: 16px; height: 16px; }
   .testimonial p {
     font-size: 16px; line-height: 1.75;
@@ -452,8 +421,6 @@
     display: block; text-align: center;
     padding: 16px 24px; margin-bottom: 28px;
   }
-  .contact-details { display: flex; flex-direction: column; gap: 14px; }
-  .contact-line { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; color: var(--text-light); line-height: 1.5; letter-spacing: 0.3px; }
   .contact-line a { color: var(--text); text-decoration: none; font-weight: 400; transition: color 0.2s; }
   .contact-line a:hover { color: var(--orange); }
 
@@ -486,6 +453,7 @@
   }
   .loc-body { padding: 24px; }
   .loc-body p { font-size: 14px; color: var(--text-mid); line-height: 1.65; font-weight: 400; }
+  .loc-more { display:inline-block; margin-top:12px; font-size:13px; font-weight:500; color:var(--orange); letter-spacing:0.3px; }
   .locations-note {
     font-size: 14px; color: var(--text-light);
     line-height: 1.75; margin-top: 40px;
@@ -752,7 +720,6 @@
     .contact-phone-block { order: 3; grid-column: 1; text-align: center; }
     .btn-whatsapp { display: inline-flex; margin: 16px auto 0; }
     .btn-whatsapp-outline { display: inline-flex; }
-    .contact-line--email { display: none; }
     .diff-grid { grid-template-columns: 1fr; gap: 2px; }
     .process-layout { grid-template-columns: 1fr; gap: 48px; }
     .process-aside { position: static; }
@@ -776,26 +743,6 @@
       min-width: 0;
       height: auto;
       align-self: flex-start;
-    }
-    .carousel-btn { display: none; }
-    /* dot indicators */
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 20px;
-    }
-    .carousel-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--border);
-      transition: background 0.25s, transform 0.25s;
-      cursor: pointer;
-      border: none; padding: 0;
-    }
-    .carousel-dot.active {
-      background: var(--orange);
-      transform: scale(1.2);
     }
     .section-inner { padding: 0 24px; }
     .proof { padding: 64px 0; }
@@ -866,7 +813,7 @@
     <div class="hero-text">
       <div class="opt2-badge">
         <span class="opt2-badge-dot"></span>
-        Polskie biuro nieruchomości · Lazurowe Wybrzeże
+        Na Lazurowym Wybrzeżu od 1993 roku · obsługa po polsku
       </div>
       <h1 class="opt2-h1">
         Nieruchomości<br>
@@ -982,7 +929,6 @@
       <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" rel="noopener">Zobacz wszystkie opinie w Google →</a>
     </div>
     <div class="proof-carousel-wrap">
-    <button class="carousel-btn carousel-btn--prev" id="carousel-prev" aria-label="Poprzednia opinia">&#8592;</button>
     <div class="testimonials" id="testimonials-carousel">
       <div class="carousel-track" id="carousel-track">
 
@@ -990,15 +936,6 @@
       <div class="testimonial">
         <div class="testimonial-top">
           <div class="stars">★★★★★</div>
-          <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
-            <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-            </svg>
-            <span class="gl-label">Google</span>
-          </a>
         </div>
         <p>„Pracowaliśmy ze Sławkiem i Jensem przy zakupie naszego domu w Francji, będąc jeszcze w Polsce. Sławek był bardzo pomocny — zarówno w przesyłaniu propozycji, jak i kontaktowaniu sprzedających w przypadku ogłoszeń, które znaleźliśmy sami."</p>
         <div class="testimonial-author">
@@ -1011,15 +948,6 @@
       <div class="testimonial">
         <div class="testimonial-top">
           <div class="stars">★★★★★</div>
-          <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
-            <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-            </svg>
-            <span class="gl-label">Google</span>
-          </a>
         </div>
         <p>„Zaangażowany i sympatyczny agent. Doradza, podpowiada, nie «wciska» nieruchomości. Słucha potrzeb klienta. Doskonale zna lokalny rynek. Polecam."</p>
         <div class="testimonial-author">
@@ -1032,15 +960,6 @@
       <div class="testimonial">
         <div class="testimonial-top">
           <div class="stars">★★★★★</div>
-          <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
-            <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-            </svg>
-            <span class="gl-label">Google</span>
-          </a>
         </div>
         <p>„Obsługa rewelacyjna. Pan Sławek zaopiekował się nami od samego lądowania w Nicei do zakupu i jeszcze po nim również. Ma duży szacunek u pośredników, którzy chętnie pokazują mu nieruchomości, które są na rynku lub nawet jeszcze nie. Taka obsługa to marzenie kupującego."</p>
         <div class="testimonial-author">
@@ -1053,15 +972,6 @@
       <div class="testimonial">
         <div class="testimonial-top">
           <div class="stars">★★★★★</div>
-          <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" class="google-link" title="Zobacz opinię na Google">
-            <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-            </svg>
-            <span class="gl-label">Google</span>
-          </a>
         </div>
         <p>„Profesjonalne podejście, świetny kontakt i wsparcie na każdym etapie zakupu nieruchomości w St. Raphaël. Czuliśmy się naprawdę zaopiekowani — cały proces przebiegł sprawnie i bez stresu."</p>
         <div class="testimonial-author">
@@ -1072,12 +982,7 @@
 
       </div><!-- /carousel-track -->
     </div><!-- /testimonials -->
-    <button class="carousel-btn carousel-btn--next" id="carousel-next" aria-label="Następna opinia">&#8594;</button>
     </div><!-- /proof-carousel-wrap -->
-    <div class="carousel-dots" id="carousel-dots">
-      <button class="carousel-dot active" data-index="0" aria-label="Opinia 1"></button>
-      <button class="carousel-dot" data-index="1" aria-label="Opinia 2"></button>
-    </div>
     <div class="press-strip">
       <span class="ps-label">Pisali o nas</span>
       <a href="https://www.forbes.pl/inwestowanie/polacy-odrzucili-hiszpanie-i-kupili-dom-we-francji-w-zyciu-tak-nie-zmarzlismy/bd393b6" target="_blank" rel="noopener" onclick="gtag('event', 'click_forbes', {'event_category': 'social_proof', 'event_label': 'artykul_forbes'})">
@@ -1194,17 +1099,7 @@
         <h3>Pierwsza rozmowa do niczego nie zobowiązuje</h3>
         <p>Proszę opisać czego Państwo szukają. Odpiszemy i zaproponujemy dalsze kroki.</p>
         <a href="#kontakt" class="btn-primary">Napisz do nas</a>
-        <div class="contact-details">
-          <div class="contact-line">Polska: <a href="tel:+48726806558">+48 726 806 558</a></div>
-          <div class="contact-line">Francja: <a href="tel:+33633766262">+33 633 766 262</a></div>
-          <div class="contact-line contact-line--email"><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></div>
-          <a href="https://wa.me/48726806558" target="_blank" class="btn-whatsapp-outline" aria-label="Napisz na WhatsApp" onclick="gtag('event', 'click_whatsapp', {'event_category': 'kontakt', 'event_label': 'btn_whatsapp'})">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Napisz na WhatsApp
-          </a>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -1222,21 +1117,21 @@
         <div class="loc-img cannes"><span class="loc-name">Cannes</span></div>
         <div class="loc-body">
           <p>Apartamenty przy Croisette, wille w spokojniejszych dzielnicach oraz nieruchomości pod wynajem sezonowy. Cannes to jeden z najbardziej rozpoznawalnych adresów na Lazurowym Wybrzeżu.</p>
-          <span style="display:inline-block; margin-top:12px; font-size:13px; font-weight:500; color:var(--orange); letter-spacing:0.3px;">Czytaj przewodnik →</span>
+          <span class="loc-more">Czytaj przewodnik →</span>
         </div>
       </a>
       <a href="/poradniki/nice-nieruchomosci-inwestycje" class="loc-card">
         <div class="loc-img nice"><span class="loc-name">Nicea</span></div>
         <div class="loc-body">
           <p>Największe miasto Lazurowego Wybrzeża, z lotniskiem i dobrą komunikacją. Szeroki wybór nieruchomości, od małych apartamentów po willę. To świetne miejsce dla inwestycji pod wynajem jak i miejsce na drugi dom.</p>
-          <span style="display:inline-block; margin-top:12px; font-size:13px; font-weight:500; color:var(--orange); letter-spacing:0.3px;">Czytaj przewodnik →</span>
+          <span class="loc-more">Czytaj przewodnik →</span>
         </div>
       </a>
       <a href="/#kontakt" class="loc-card">
         <div class="loc-img provence"><span class="loc-name">Prowansja</span></div>
         <div class="loc-body">
           <p>Domy i mieszkania w mniejszych miastach regionu, dobrze skomunikowane, w sąsiedztwie lokalnych restauracji. Dla tych, którzy szukają spokoju i oddalenia od turystów w rozsądnej cenie i bliskiej odległości od morza.</p>
-          <span style="display:inline-block; margin-top:12px; font-size:13px; font-weight:500; color:var(--orange); letter-spacing:0.3px;">Zapytaj o Prowansję →</span>
+          <span class="loc-more">Zapytaj o Prowansję →</span>
         </div>
       </a>
     </div>
@@ -1617,102 +1512,7 @@
 }
 </script>
 
-<script>
-  (function() {
-    const VISIBLE = 3; // ile opinii widać jednocześnie na desktop
-    const track    = document.getElementById('carousel-track');
-    const wrapper  = document.getElementById('testimonials-carousel');
-    const dotsWrap = document.getElementById('carousel-dots');
-    const btnPrev  = document.getElementById('carousel-prev');
-    const btnNext  = document.getElementById('carousel-next');
-    if (!track || !wrapper || !dotsWrap || !btnPrev || !btnNext) return;
 
-    const cards = Array.from(track.querySelectorAll('.testimonial'));
-    const total = cards.length;
-    let current = 0; // indeks pierwszej widocznej karty
-
-    function isMobile() { return window.innerWidth <= 960; }
-
-    // --- DESKTOP ---
-    function desktopGoTo(index) {
-      const maxIndex = total - VISIBLE;
-      current = Math.max(0, Math.min(index, maxIndex));
-      const cardWidth = cards[0].offsetWidth;
-      const gap = 32;
-      track.style.transform = `translateX(-${current * (cardWidth + gap)}px)`;
-      btnPrev.disabled = current === 0;
-      btnNext.disabled = current >= maxIndex;
-      updateDesktopDots();
-    }
-
-    function updateDesktopDots() {
-      const maxIndex = total - VISIBLE;
-      const dots = dotsWrap.querySelectorAll('.carousel-dot');
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
-    }
-
-    function buildDesktopDots() {
-      const maxIndex = total - VISIBLE; // 4-3 = 1 → 2 pozycje (0 i 1)
-      dotsWrap.innerHTML = '';
-      for (let i = 0; i <= maxIndex; i++) {
-        const btn = document.createElement('button');
-        btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        btn.setAttribute('aria-label', 'Opinia ' + (i + 1));
-        btn.addEventListener('click', () => desktopGoTo(i));
-        dotsWrap.appendChild(btn);
-      }
-    }
-
-    function initDesktop() {
-      track.style.transition = 'transform 0.4s ease';
-      wrapper.style.overflow = 'hidden';
-      btnPrev.style.display = 'flex';
-      btnNext.style.display = 'flex';
-      buildDesktopDots();
-      desktopGoTo(0);
-    }
-
-    // --- MOBILE ---
-    function initMobile() {
-      track.style.transform = '';
-      track.style.transition = '';
-      wrapper.style.overflow = 'scroll';
-      btnPrev.style.display = 'none';
-      btnNext.style.display = 'none';
-      // dots mobile — po jednej na kartę
-      dotsWrap.innerHTML = '';
-      cards.forEach((_, i) => {
-        const btn = document.createElement('button');
-        btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        btn.setAttribute('aria-label', 'Opinia ' + (i + 1));
-        btn.addEventListener('click', () => {
-          cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-        });
-        dotsWrap.appendChild(btn);
-      });
-      // update dot przy scrollu
-      wrapper.addEventListener('scroll', () => {
-        let closest = 0, minDist = Infinity;
-        cards.forEach((card, i) => {
-          const dist = Math.abs(card.offsetLeft - wrapper.scrollLeft);
-          if (dist < minDist) { minDist = dist; closest = i; }
-        });
-        dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === closest));
-      }, { passive: true });
-    }
-
-    // --- INIT ---
-    function init() {
-      if (isMobile()) { initMobile(); } else { initDesktop(); }
-    }
-
-    btnPrev.addEventListener('click', () => desktopGoTo(current - 1));
-    btnNext.addEventListener('click', () => desktopGoTo(current + 1));
-
-    window.addEventListener('resize', init);
-    init();
-  })();
-</script>
 
 </body>
 </html>
