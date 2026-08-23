@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opinie — 3 alternatywy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FF622E;
+    --orange-dark: #e04e1a;
+    --text: #111;
+    --text-mid: #222;
+    --text-light: #555;
+    --border: #e8e8e8;
+    --bg: #fff;
+    --bg-warm: #faf9f7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: #f5f4f2; color: var(--text); }
+
+  /* NAV WARIANTÓW */
+  .variant-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #111; display: flex; gap: 0;
+    border-bottom: 3px solid var(--orange);
+  }
+  .variant-nav a {
+    padding: 14px 24px; color: #aaa; text-decoration: none;
+    font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; transition: color 0.2s, background 0.2s;
+    border-right: 1px solid #333;
+  }
+  .variant-nav a:hover, .variant-nav a.active { color: #fff; background: #222; }
+  .variant-nav span { padding: 14px 20px; color: #555; font-size: 11px; align-self: center; margin-left: auto; }
+
+  .variant-section {
+    padding: 60px 0 0;
+    scroll-margin-top: 52px;
+  }
+  .variant-label {
+    text-align: center; margin-bottom: 40px;
+  }
+  .variant-label h2 {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
+  }
+  .variant-label p {
+    font-size: 14px; color: var(--text-light); max-width: 600px; margin: 0 auto;
+  }
+  .variant-frame {
+    background: var(--bg);
+    border-top: 4px solid var(--orange);
+    border-bottom: 4px solid #e8e8e8;
+  }
+  .section-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
+  .eyebrow {
+    display: block; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 16px;
+  }
+
+  /* ===================== */
+  /* WARIANT A             */
+  /* ===================== */
+
+  .proof-a { padding: 80px 0; }
+  .proof-a h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(26px, 2.8vw, 38px);
+    font-weight: 400; margin-bottom: 48px; line-height: 1.2;
+  }
+
+  /* Forbes hero strip */
+  .forbes-hero {
+    background: #111;
+    border-radius: 6px;
+    padding: 36px 48px;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 40px;
+    text-decoration: none;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .forbes-hero::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--orange);
+  }
+  .forbes-hero:hover { background: #1a1a1a; }
+  .forbes-hero-logo {
+    flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .forbes-wordmark {
+    font-family: Georgia, serif;
+    font-size: 32px; font-weight: 700;
+    color: #fff; letter-spacing: -1px;
+  }
+  .forbes-hero-logo span {
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #666;
+  }
+  .forbes-divider { width: 1px; background: #333; align-self: stretch; flex-shrink: 0; }
+  .forbes-hero-content { flex: 1; }
+  .forbes-hero-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  }
+  .forbes-hero-quote {
+    font-size: 18px; font-style: italic; color: #e8e8e8;
+    line-height: 1.6; margin-bottom: 16px;
+    font-weight: 300;
+  }
+  .forbes-hero-meta {
+    font-size: 12px; color: #666; font-weight: 700; letter-spacing: 0.5px;
+  }
+  .forbes-hero-arrow {
+    flex-shrink: 0; font-size: 28px; color: #444;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .forbes-hero:hover .forbes-hero-arrow { color: var(--orange); transform: translateX(4px); }
+
+  /* Karty opinii A */
+  .testimonials-a { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .testimonial-a {
+    background: var(--bg-warm); border-radius: 4px;
+    padding: 28px; border: 1px solid var(--border);
+    transition: box-shadow 0.2s;
+  }
+  .testimonial-a:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+  .stars-a { color: var(--orange); font-size: 13px; letter-spacing: 1px; margin-bottom: 16px; }
+  .testimonial-a p {
+    font-size: 15px; line-height: 1.7; color: var(--text-mid);
+    font-style: italic; font-weight: 400; margin-bottom: 16px;
+  }
+  .testimonial-a-author { font-size: 11px; color: var(--text-light); letter-spacing: 0.5px; font-weight: 700; }
+
+
+  /* ===================== */
+  /* WARIANT B             */
+  /* ===================== */
+
+  .proof-b { padding: 80px 0; }
+  .proof-b h2 {
+    font-size: clamp(26px, 2.8vw, 38px);
+    font-weight: 400; margin-bottom: 48px; line-height: 1.2;
+  }
+  .proof-b-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* Featured card — Agata */
+  .featured-card {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 36px;
+  }
+  .featured-quote {
+    font-size: 18px; font-style: italic; font-weight: 300;
+    line-height: 1.8; color: var(--text-mid);
+    margin-bottom: 24px;
+  }
+  .featured-author-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  .featured-author-name { font-size: 12px; font-weight: 700; color: var(--text-light); letter-spacing: 0.5px; }
+  .stars-b { color: var(--orange); font-size: 13px; letter-spacing: 1px; }
+  .featured-press-link {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    width: 100%;
+    transition: opacity 0.2s;
+  }
+  .featured-press-link:hover { opacity: 0.7; }
+  .press-f {
+    font-family: Georgia, serif; font-size: 20px; font-weight: 700;
+    color: var(--text); line-height: 1;
+  }
+  .press-text { flex: 1; }
+  .press-text-top { font-size: 10px; color: var(--text-light); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px; }
+  .press-text-main { font-size: 13px; color: var(--text-mid); line-height: 1.4; }
+  .press-arrow { color: var(--text-light); font-size: 16px; }
+
+  /* Side stack */
+  .side-stack { display: flex; flex-direction: column; gap: 20px; }
+  .testimonial-b {
+    background: var(--bg-warm); border-radius: 4px;
+    padding: 24px 28px; border: 1px solid var(--border);
+    transition: box-shadow 0.2s;
+  }
+  .testimonial-b:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .tb-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .tb-stars { color: var(--orange); font-size: 12px; letter-spacing: 1px; }
+  .testimonial-b p { font-size: 14px; line-height: 1.65; color: var(--text-mid); font-style: italic; margin-bottom: 12px; }
+  .testimonial-b-author { font-size: 11px; color: var(--text-light); letter-spacing: 0.5px; font-weight: 700; }
+
+
+  /* ===================== */
+  /* WARIANT C             */
+  /* ===================== */
+
+  .proof-c { padding: 80px 0; }
+  .proof-c-inner { max-width: 1240px; margin: 0 auto; padding: 0 48px; }
+
+  /* Press bar */
+  .press-bar {
+    display: flex; align-items: center; gap: 0;
+    border: 1px solid var(--border); border-radius: 6px;
+    overflow: hidden; margin-bottom: 56px;
+    background: var(--bg-warm);
+  }
+  .press-bar-label {
+    padding: 20px 28px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--text-light);
+    border-right: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .press-bar-logos {
+    display: flex; align-items: center; gap: 0; flex: 1;
+  }
+  .press-item {
+    padding: 20px 36px;
+    display: flex; align-items: center; gap: 12px;
+    border-right: 1px solid var(--border);
+    text-decoration: none; transition: background 0.2s;
+    flex: 1; justify-content: center;
+  }
+  .press-item:hover { background: #fff; }
+  .press-item-last { border-right: none; }
+  .press-logo-forbes {
+    font-family: Georgia, serif; font-size: 22px; font-weight: 700; color: #111;
+  }
+  .press-item-text { font-size: 12px; color: var(--text-light); line-height: 1.4; }
+  .press-item-text strong { color: var(--text); display: block; }
+  .google-rating {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .google-rating-num { font-size: 22px; font-weight: 700; color: var(--text); }
+  .google-rating-stars { color: var(--orange); font-size: 14px; }
+  .google-rating-sub { font-size: 11px; color: var(--text-light); }
+
+  /* Testimonials C */
+  .proof-c h2 {
+    font-size: clamp(26px, 2.8vw, 38px);
+    font-weight: 400; margin-bottom: 48px; line-height: 1.2;
+  }
+  .testimonials-c-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .testimonial-c-featured {
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 40px;
+    position: relative;
+  }
+  .tc-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 20px; border-bottom: 1px solid var(--orange);
+    padding-bottom: 4px;
+  }
+  .tc-quote-mark {
+    font-size: 80px; line-height: 0.6; color: var(--orange);
+    opacity: 0.15; font-family: Georgia, serif;
+    margin-bottom: 8px; display: block;
+  }
+  .tc-quote {
+    font-size: 18px; font-style: italic; font-weight: 300;
+    line-height: 1.75; color: var(--text-mid); margin-bottom: 24px;
+  }
+  .tc-footer { display: flex; align-items: center; justify-content: space-between; }
+  .tc-author { font-size: 12px; font-weight: 700; color: var(--text-light); letter-spacing: 0.5px; }
+  .tc-stars { color: var(--orange); font-size: 13px; }
+
+  .tc-forbes-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #111; color: #fff;
+    padding: 10px 16px; border-radius: 4px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    text-decoration: none; margin-top: 20px;
+    transition: background 0.2s;
+  }
+  .tc-forbes-pill:hover { background: #222; }
+  .tc-forbes-f { font-family: Georgia, serif; font-size: 16px; font-weight: 700; }
+
+  .testimonial-c-small {
+    background: var(--bg-warm);
+    border: 1px solid var(--border); border-radius: 4px;
+    padding: 28px;
+  }
+  .tcs-stars { color: var(--orange); font-size: 12px; margin-bottom: 14px; }
+  .testimonial-c-small p { font-size: 14px; font-style: italic; line-height: 1.65; color: var(--text-mid); margin-bottom: 14px; }
+  .tcs-author { font-size: 11px; font-weight: 700; color: var(--text-light); letter-spacing: 0.5px; }
+
+  .testimonials-c-bottom {
+    margin-top: 24px;
+  }
+
+  /* responsive */
+  @media (max-width: 900px) {
+    .section-inner { padding: 0 24px; }
+    .forbes-hero { flex-direction: column; gap: 24px; padding: 28px; }
+    .forbes-divider { width: 100%; height: 1px; align-self: auto; }
+    .testimonials-a { grid-template-columns: 1fr 1fr; }
+    .proof-b-grid { grid-template-columns: 1fr; }
+    .testimonials-c-grid { grid-template-columns: 1fr; }
+    .press-bar { flex-direction: column; }
+    .press-bar-label { border-right: none; border-bottom: 1px solid var(--border); width: 100%; }
+    .press-bar-logos { flex-direction: column; width: 100%; }
+    .press-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .proof-c-inner { padding: 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="variant-nav">
+  <a href="#variant-a" class="active">A — Forbes hero banner</a>
+  <a href="#variant-b">B — Featured story + stack</a>
+  <a href="#variant-c">C — Press bar + featured card</a>
+  <span>Scroll down → porównaj →</span>
+</div>
+
+<!-- ===================== -->
+<!-- WARIANT A             -->
+<!-- ===================== -->
+<section class="variant-section" id="variant-a">
+  <div class="variant-label">
+    <h2>Wariant A</h2>
+    <p>Forbes jako samodzielny hero strip nad karuzelą. Unmissable. Editorial = osobna warstwa nad opiniami klientów.</p>
+  </div>
+  <div class="variant-frame">
+    <div class="proof-a">
+      <div class="section-inner">
+        <span class="eyebrow">Opinie klientów</span>
+        <h2>Opinie osób, które zainwestowały z nami we Francji</h2>
+
+        <!-- Forbes hero strip -->
+        <a href="https://www.forbes.pl/inwestowanie/polacy-odrzucili-hiszpanie-i-kupili-dom-we-francji-w-zyciu-tak-nie-zmarzlismy/bd393b6" target="_blank" rel="noopener" class="forbes-hero">
+          <div class="forbes-hero-logo">
+            <div class="forbes-wordmark">Forbes</div>
+            <span>wywiad</span>
+          </div>
+          <div class="forbes-divider"></div>
+          <div class="forbes-hero-content">
+            <div class="forbes-hero-eyebrow">Nasi klienci w mediach</div>
+            <div class="forbes-hero-quote">„Pracowaliśmy ze Sławkiem przy zakupie naszego domu w Francji, będąc jeszcze w Polsce."</div>
+            <div class="forbes-hero-meta">Agata — klientka JP Team · Wywiad opublikowany w Forbes.pl</div>
+          </div>
+          <div class="forbes-hero-arrow">↗</div>
+        </a>
+
+        <!-- Testimonials grid (bez karuzeli — wszystkie widoczne) -->
+        <div class="testimonials-a">
+          <div class="testimonial-a">
+            <div class="stars-a">★★★★★</div>
+            <p>„Pracowaliśmy ze Sławkiem i Jensem przy zakupie naszego domu w Francji, będąc jeszcze w Polsce. Sławek był bardzo pomocny — zarówno w przesyłaniu propozycji, jak i kontaktowaniu sprzedających."</p>
+            <div class="testimonial-a-author">Agata</div>
+          </div>
+          <div class="testimonial-a">
+            <div class="stars-a">★★★★★</div>
+            <p>„Zaangażowany i sympatyczny agent. Doradza, podpowiada, nie «wciska» nieruchomości. Słucha potrzeb klienta. Doskonale zna lokalny rynek. Polecam."</p>
+            <div class="testimonial-a-author">Łukasz Wieczorek</div>
+          </div>
+          <div class="testimonial-a">
+            <div class="stars-a">★★★★★</div>
+            <p>„Obsługa rewelacyjna. Pan Sławek zaopiekował się nami od samego lądowania w Nicei do zakupu i jeszcze po nim również. Ma duży szacunek u pośredników, którzy chętnie pokazują mu nieruchomości niepublikowane publicznie."</p>
+            <div class="testimonial-a-author">La Mare Houseboats</div>
+          </div>
+          <div class="testimonial-a">
+            <div class="stars-a">★★★★★</div>
+            <p>„Z pełnym przekonaniem polecam tę firmę! Profesjonalne podejście, świetny kontakt i wsparcie na każdym etapie zakupu nieruchomości w St. Raphaël."</p>
+            <div class="testimonial-a-author">Agnieszka Kozłowska</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== -->
+<!-- WARIANT B             -->
+<!-- ===================== -->
+<section class="variant-section" id="variant-b">
+  <div class="variant-label">
+    <h2>Wariant B</h2>
+    <p>Split layout: historia Agaty w dużym kafelku po lewej (z Forbes embedded), 3 opinie stacked po prawej. Bez karuzeli — wszystko widoczne od razu.</p>
+  </div>
+  <div class="variant-frame">
+    <div class="proof-b">
+      <div class="section-inner">
+        <span class="eyebrow">Opinie klientów</span>
+        <h2>Opinie osób, które zainwestowały z nami we Francji</h2>
+
+        <div class="proof-b-grid">
+
+          <!-- Featured: Agata -->
+          <div class="featured-card">
+            <div class="stars-b" style="margin-bottom:20px;">★★★★★</div>
+            <div class="featured-quote">„Pracowaliśmy ze Sławkiem i Jensem przy zakupie naszego domu w Francji, będąc jeszcze w Polsce. Sławek był bardzo pomocny — zarówno w przesyłaniu propozycji, jak i kontaktowaniu sprzedających w przypadku ogłoszeń, które znaleźliśmy sami."</div>
+            <div class="featured-author-row">
+              <div class="featured-author-name">Agata</div>
+            </div>
+            <a href="https://www.forbes.pl/inwestowanie/polacy-odrzucili-hiszpanie-i-kupili-dom-we-francji-w-zyciu-tak-nie-zmarzlismy/bd393b6" target="_blank" rel="noopener" class="featured-press-link">
+              <div class="press-f">Forbes</div>
+              <div class="press-text">
+                <div class="press-text-top">Wywiad z klientką</div>
+                <div class="press-text-main">Polacy odrzucili Hiszpanię i kupili dom we Francji</div>
+              </div>
+              <div class="press-arrow">↗</div>
+            </a>
+          </div>
+
+          <!-- Side stack: 3 pozostałe -->
+          <div class="side-stack">
+            <div class="testimonial-b">
+              <div class="tb-top">
+                <div class="tb-stars">★★★★★</div>
+              </div>
+              <p>„Zaangażowany i sympatyczny agent. Doradza, podpowiada, nie «wciska» nieruchomości. Słucha potrzeb klienta. Doskonale zna lokalny rynek. Polecam."</p>
+              <div class="testimonial-b-author">Łukasz Wieczorek</div>
+            </div>
+            <div class="testimonial-b">
+              <div class="tb-top">
+                <div class="tb-stars">★★★★★</div>
+              </div>
+              <p>„Obsługa rewelacyjna. Pan Sławek zaopiekował się nami od samego lądowania w Nicei do zakupu i jeszcze po nim również. Ma duży szacunek u pośredników, którzy chętnie pokazują mu nieruchomości niepublikowane publicznie."</p>
+              <div class="testimonial-b-author">La Mare Houseboats</div>
+            </div>
+            <div class="testimonial-b">
+              <div class="tb-top">
+                <div class="tb-stars">★★★★★</div>
+              </div>
+              <p>„Z pełnym przekonaniem polecam tę firmę! Profesjonalne podejście i wsparcie na każdym etapie zakupu nieruchomości w St. Raphaël."</p>
+              <div class="testimonial-b-author">Agnieszka Kozłowska</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== -->
+<!-- WARIANT C             -->
+<!-- ===================== -->
+<section class="variant-section" id="variant-c">
+  <div class="variant-label">
+    <h2>Wariant C</h2>
+    <p>Press bar na górze ("Pisali o nas") — Forbes + ocena Google jako credibility signals. Poniżej: asymetryczny grid z featured card Agaty (Forbes badge na górze karty, nie dole).</p>
+  </div>
+  <div class="variant-frame">
+    <div class="proof-c">
+      <div class="proof-c-inner">
+        <span class="eyebrow">Opinie klientów</span>
+        <h2>Opinie osób, które zainwestowały z nami we Francji</h2>
+
+        <!-- Press bar -->
+        <div class="press-bar">
+          <div class="press-bar-label">Pisali o nas</div>
+          <div class="press-bar-logos">
+            <a href="https://www.forbes.pl/inwestowanie/polacy-odrzucili-hiszpanie-i-kupili-dom-we-francji-w-zyciu-tak-nie-zmarzlismy/bd393b6" target="_blank" rel="noopener" class="press-item">
+              <div class="press-logo-forbes">Forbes</div>
+              <div class="press-item-text">
+                <strong>Wywiad z klientką</strong>
+                Polacy kupili dom we Francji
+              </div>
+            </a>
+            <div class="press-item press-item-last">
+              <div class="google-rating">
+                <div class="google-rating-num">5.0</div>
+                <div>
+                  <div class="google-rating-stars">★★★★★</div>
+                  <div class="google-rating-sub">Google Reviews</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Asymmetric grid -->
+        <div class="testimonials-c-grid">
+          <!-- Featured card -->
+          <div class="testimonial-c-featured">
+            <div class="tc-badge">
+              <span class="tc-forbes-f">F</span>
+              Historia opisana w Forbes.pl
+            </div>
+            <span class="tc-quote-mark">"</span>
+            <div class="tc-quote">„Pracowaliśmy ze Sławkiem i Jensem przy zakupie naszego domu w Francji, będąc jeszcze w Polsce. Sławek był bardzo pomocny — zarówno w przesyłaniu propozycji, jak i kontaktowaniu sprzedających w przypadku ogłoszeń, które znaleźliśmy sami."</div>
+            <div class="tc-footer">
+              <div class="tc-author">Agata</div>
+              <div class="tc-stars">★★★★★</div>
+            </div>
+            <a href="https://www.forbes.pl/inwestowanie/polacy-odrzucili-hiszpanie-i-kupili-dom-we-francji-w-zyciu-tak-nie-zmarzlismy/bd393b6" target="_blank" rel="noopener" class="tc-forbes-pill">
+              <span class="tc-forbes-f">F</span>
+              Przeczytaj wywiad w Forbes ↗
+            </a>
+          </div>
+
+          <!-- 2 small -->
+          <div class="testimonial-c-small">
+            <div class="tcs-stars">★★★★★</div>
+            <p>„Zaangażowany i sympatyczny agent. Doradza, podpowiada, nie «wciska» nieruchomości. Słucha potrzeb klienta. Doskonale zna lokalny rynek. Polecam."</p>
+            <div class="tcs-author">Łukasz Wieczorek</div>
+          </div>
+
+          <div class="testimonial-c-small">
+            <div class="tcs-stars">★★★★★</div>
+            <p>„Obsługa rewelacyjna. Pan Sławek zaopiekował się nami od samego lądowania w Nicei. Ma duży szacunek u pośredników, którzy chętnie pokazują mu nieruchomości niepublikowane publicznie."</p>
+            <div class="tcs-author">La Mare Houseboats</div>
+          </div>
+        </div>
+
+        <!-- Bottom row -->
+        <div class="testimonials-c-bottom">
+          <div class="testimonial-c-small">
+            <div class="tcs-stars">★★★★★</div>
+            <p>„Z pełnym przekonaniem polecam tę firmę! Profesjonalne podejście, świetny kontakt i wsparcie na każdym etapie zakupu nieruchomości w St. Raphaël. Szczególne podziękowania dla pana Sławka za ogromne zaangażowanie, cierpliwość i pomoc."</p>
+            <div class="tcs-author">Agnieszka Kozłowska</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height:60px; background:#f5f4f2;"></div>
+
+<script>
+  const links = document.querySelectorAll('.variant-nav a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview — sekcja buyer's agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --orange: #FF622E;
+    --orange-dark: #e04e1a;
+    --text: #111;
+    --text-mid: #222;
+    --text-light: #555;
+    --border: #e8e8e8;
+    --bg: #fff;
+    --bg-warm: #faf9f7;
+  }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: #f0eeeb;
+    -webkit-font-smoothing: antialiased;
+  }
+  .preview-note {
+    max-width: 1240px; margin: 32px auto; padding: 0 48px;
+    font-size: 12px; color: #999; font-family: monospace;
+  }
+
+  /* EYEBROW */
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 16px; display: block;
+  }
+
+  /* BUTTONS (z index.html) */
+  .btn-primary {
+    background: var(--orange); color: #fff;
+    border: none; border-radius: 30px;
+    padding: 20px 52px;
+    font-family: 'Inter', sans-serif; font-size: 15px;
+    letter-spacing: 0.5px; font-weight: 500;
+    cursor: pointer; transition: background 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--orange-dark); }
+  .btn-secondary {
+    color: var(--text-mid);
+    font-family: 'Inter', sans-serif; font-size: 15px;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--border); background: transparent;
+    border-radius: 30px; padding: 19px 44px;
+    cursor: pointer; transition: border-color 0.2s, color 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-secondary:hover { border-color: #999; color: var(--text); }
+
+  /* ── BUYER'S AGENT SECTION ── */
+  .buyers-agent {
+    padding: 96px 0;
+    background: var(--bg-warm);
+  }
+  .ba-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 48px;
+  }
+
+  /* H2 — dopasowany do reszty strony: clamp(28px, 3vw, 40px) Montserrat 400 */
+  .ba-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400; line-height: 1.2;
+    color: var(--text);
+    max-width: 780px;
+    margin-bottom: 20px;
+  }
+
+  /* intro — Inter 16px weight 300 line-height 1.8, jak hero-sub i diff-card p */
+  .ba-intro {
+    font-size: 16px; line-height: 1.8;
+    color: var(--text-mid); font-weight: 300;
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+
+  /* TESTIMONIAL QUOTE */
+  .ba-quote {
+    display: flex; align-items: flex-start; gap: 20px;
+    background: var(--bg);
+    border-left: 3px solid var(--orange);
+    border-radius: 0 4px 4px 0;
+    padding: 24px 28px;
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+  .ba-quote-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px; font-weight: 400;
+    font-style: italic; line-height: 1.65;
+    color: var(--text-mid);
+  }
+  .ba-quote-author {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-light); margin-top: 10px;
+  }
+
+  /* SPLIT */
+  .ba-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .ba-col {
+    padding: 48px 44px;
+    background: var(--bg);
+  }
+  .ba-col--other {
+    border: 1px solid var(--border);
+    border-radius: 4px 0 0 4px;
+  }
+  .ba-col--us {
+    border: 1px solid var(--orange);
+    border-radius: 0 4px 4px 0;
+  }
+  .ba-col-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; font-weight: 500;
+    margin-bottom: 20px; display: block;
+  }
+  .ba-col--other .ba-col-tag { color: var(--text-light); }
+  .ba-col--us .ba-col-tag { color: var(--orange); }
+
+  /* col-title — Montserrat 22px 400, jak diff-card h3 */
+  .ba-col-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px; font-weight: 400;
+    line-height: 1.3; margin-bottom: 28px;
+  }
+  .ba-col--other .ba-col-title { color: var(--text-light); }
+  .ba-col--us .ba-col-title { color: var(--text); }
+
+  /* lista bez myslnikow */
+  .ba-list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column;
+  }
+  .ba-list li {
+    font-size: 15px; line-height: 1.7;
+    font-weight: 300;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .ba-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .ba-list li .ba-icon {
+    flex-shrink: 0;
+    font-size: 13px;
+    margin-top: 2px;
+    font-style: normal;
+  }
+  .ba-col--other .ba-list li { color: var(--text-light); }
+  .ba-col--other .ba-icon { color: #ccc; }
+  .ba-col--us .ba-list li { color: var(--text-mid); }
+  .ba-col--us .ba-icon { color: var(--orange); }
+
+  /* OBJEKCJA KOSZT — callout */
+  .ba-objection {
+    margin-top: 32px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px 40px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .ba-objection-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; font-weight: 500;
+    color: var(--text-light);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .ba-objection-text {
+    font-size: 15px; line-height: 1.75;
+    color: var(--text-mid); font-weight: 300;
+  }
+  .ba-objection-text strong {
+    font-weight: 500; color: var(--text);
+  }
+
+  /* CTA */
+  .ba-cta {
+    margin-top: 48px;
+    display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    .ba-inner { padding: 0 24px; }
+    .buyers-agent { padding: 64px 0; }
+    .ba-split { grid-template-columns: 1fr; gap: 0; }
+    .ba-col { padding: 32px 28px; }
+    .ba-col--other {
+      border-radius: 4px 4px 0 0;
+      border-bottom: none;
+    }
+    .ba-col--us { border-radius: 0 0 4px 4px; }
+    .ba-objection {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 24px;
+    }
+    .ba-intro { margin-bottom: 32px; }
+    .ba-quote { margin-bottom: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<p class="preview-note">[ PODGLĄD — wstawić po hero lub po "Kim jesteśmy" ]</p>
+
+<!-- ── SEKCJA: BUYER'S AGENT ── -->
+<section class="buyers-agent">
+  <div class="ba-inner">
+
+    <span class="eyebrow">Jak pracujemy z kupującymi</span>
+
+    <h2 class="ba-headline">Większość agentów nieruchomości na Lazurowym Wybrzeżu pracuje dla sprzedającego. My pracujemy dla Państwa.</h2>
+
+    <p class="ba-intro">Agencja, która wystawia nieruchomość, dostaje prowizję od sprzedającego. Im wyższa cena transakcji, tym więcej zarabia. Jako Państwa agent stoimy po drugiej stronie stołu: szukamy najlepszej nieruchomości w jak najniższej cenie.</p>
+
+    <div class="ba-quote">
+      <div>
+        <p class="ba-quote-text">„Pan Sławek ma duży szacunek u pośredników, którzy chętnie pokazują mu nieruchomości będące na rynku lub nawet jeszcze nie. Taka obsługa to marzenie kupującego."</p>
+        <p class="ba-quote-author">La Mare Houseboats, klient JP Team</p>
+      </div>
+    </div>
+
+    <div class="ba-split">
+
+      <div class="ba-col ba-col--other">
+        <span class="ba-col-tag">Typowa agencja z ofertami</span>
+        <h3 class="ba-col-title">Reprezentuje sprzedającego</h3>
+        <ul class="ba-list">
+          <li><span class="ba-icon">✕</span> Podpisuje umowę ze sprzedającym (mandat de vente)</li>
+          <li><span class="ba-icon">✕</span> Zarabia więcej przy wyższej cenie transakcji</li>
+          <li><span class="ba-icon">✕</span> Pokazuje tylko nieruchomości z własnego portfela</li>
+          <li><span class="ba-icon">✕</span> Negocjacje prowadzi w interesie sprzedającego</li>
+          <li><span class="ba-icon">✕</span> Brak dostępu do ofert spoza sieci MLS</li>
+        </ul>
+      </div>
+
+      <div class="ba-col ba-col--us">
+        <span class="ba-col-tag">JP Team — agent kupującego</span>
+        <h3 class="ba-col-title">Reprezentuje wyłącznie ciebie</h3>
+        <ul class="ba-list">
+          <li><span class="ba-icon">✓</span> Agent pracuje wyłącznie dla Państwa</li>
+          <li><span class="ba-icon">✓</span> Negocjuje cenę w dół. W Państwa imieniu.</li>
+          <li><span class="ba-icon">✓</span> Dostęp do całego rynku: agencje, oferty prywatne i off-market</li>
+          <li><span class="ba-icon">✓</span> Mówi wprost, które nieruchomości odrzucić i dlaczego</li>
+          <li><span class="ba-icon">✓</span> Obsługa po polsku na każdym etapie, łącznie z notariuszem</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="ba-objection">
+      <span class="ba-objection-label">Częste pytanie</span>
+      <p class="ba-objection-text"><strong>Czy korzystanie z buyer's agenta wiąże się z dodatkowym kosztem?</strong> W zdecydowanej większości przypadków nie. Nasze wynagrodzenie pochodzi ze standardowej prowizji agencji sprzedającej, takiej samej jak przy zakupie bez naszej pomocy. Koszt dla Państwa jest taki sam. Różnica jest po czyjej stronie stoi agent.</p>
+    </div>
+
+    <div class="ba-cta">
+      <a href="#kontakt" class="btn-primary">Napisz do nas</a>
+      <a href="#wspolpraca" class="btn-secondary">Jak przebiega współpraca</a>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

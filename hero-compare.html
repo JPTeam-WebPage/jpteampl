@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero — porównanie 3 wersji</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --orange: #FF622E;
+  --text: #1a1410;
+  --text-mid: #2e261e;
+  --text-light: #6b5d52;
+  --border: #e8e4dc;
+  --bg: #fff;
+  --bg-warm: #faf9f7;
+}
+body { font-family: 'Inter', sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; }
+
+/* LABEL */
+.version-label {
+  background: var(--text); color: #fff;
+  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500;
+  padding: 10px 24px; letter-spacing: 0.5px;
+}
+.version-label span { opacity: 0.5; margin-left: 12px; font-weight: 400; }
+
+/* SHARED HERO BASE */
+.hero {
+  background: var(--bg);
+  overflow: hidden;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+}
+.hero-text {
+  padding: 60px 64px 60px 80px;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg-warm); border: 1px solid var(--border);
+  border-radius: 30px; padding: 8px 18px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.3px;
+  color: var(--text-mid); margin-bottom: 36px;
+}
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 56px; font-weight: 300;
+  line-height: 1.1; letter-spacing: -1px;
+  margin-bottom: 32px;
+}
+h1 strong { font-weight: 600; color: var(--orange); }
+.rule { width: 48px; height: 2px; background: var(--orange); margin-bottom: 28px; }
+.sub { font-size: 17px; line-height: 1.75; color: var(--text-mid); margin-bottom: 16px; }
+.free { font-size: 14px; color: var(--text-light); margin-bottom: 48px; display: flex; align-items: center; gap: 8px; }
+.free::before { content: '✓'; color: var(--orange); font-weight: 600; }
+.ctas { display: flex; gap: 16px; }
+.btn-p {
+  background: var(--orange); color: #fff; border: none;
+  border-radius: 30px; padding: 18px 44px;
+  font-size: 15px; font-weight: 500; cursor: pointer;
+}
+.btn-s {
+  color: var(--text-mid); border: 1px solid var(--border);
+  background: transparent; border-radius: 30px; padding: 17px 36px;
+  font-size: 15px; cursor: pointer;
+}
+.divider { border: none; border-top: 4px solid var(--bg-warm); }
+
+/* ============================================
+   WERSJA A — OBECNA (full bleed, bez zmian)
+   ============================================ */
+.va .hero-img {
+  overflow: hidden;
+  position: relative;
+}
+.va .hero-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  display: block;
+}
+
+/* ============================================
+   WERSJA B — GRADIENT FADE
+   Obraz przechodzi w białe tło od lewej
+   ============================================ */
+.vb .hero-img {
+  overflow: hidden;
+  position: relative;
+}
+.vb .hero-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  display: block;
+}
+.vb .hero-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.6) 25%, transparent 55%);
+  pointer-events: none;
+}
+
+/* ============================================
+   WERSJA C — INSET + ROUNDED
+   Obraz z marginesem góra/dół, zaokrąglone
+   lewe rogi, prawa krawędź nadal przy ekranie
+   ============================================ */
+.vc .hero-img {
+  overflow: visible;
+  position: relative;
+  padding: 36px 0 36px 24px;
+}
+.vc .hero-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  display: block;
+  border-radius: 12px 0 0 12px;
+}
+
+/* ============================================
+   WERSJA D — PEŁNY INSET + SHADOW
+   Obraz unoszący się w kolumnie, cień, wszystkie rogi
+   ============================================ */
+.vd .hero-inner { min-height: 620px; }
+.vd .hero-img {
+  overflow: visible;
+  position: relative;
+  padding: 40px 40px 40px 24px;
+  display: flex; align-items: stretch;
+}
+.vd .hero-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.18);
+}
+</style>
+</head>
+<body>
+
+<!-- WERSJA A — obecna -->
+<div class="version-label">A — Obecna (full bleed) <span>bez zmian — dla porównania</span></div>
+<section class="hero va">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="badge"><span class="dot"></span>Polskie biuro nieruchomości · Lazurowe Wybrzeże</div>
+      <h1>Nieruchomości<br>na Lazurowym<br>Wybrzeżu.<br><strong>Bezpłatnie.</strong></h1>
+      <div class="rule"></div>
+      <p class="sub">Cannes, Nicea, Prowansja. Cały proces zakupu po polsku — od pierwszej rozmowy do podpisania aktu notarialnego.</p>
+      <p class="free">Nasza obsługa jest bezpłatna dla kupującego</p>
+      <div class="ctas">
+        <button class="btn-p">Zapytaj bezpłatnie</button>
+        <button class="btn-s">Jak przebiega współpraca</button>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="./cannes.webp" alt="Cannes">
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WERSJA B — gradient -->
+<div class="version-label">B — Gradient fade <span>obraz przechodzi w białe tło od lewej</span></div>
+<section class="hero vb">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="badge"><span class="dot"></span>Polskie biuro nieruchomości · Lazurowe Wybrzeże</div>
+      <h1>Nieruchomości<br>na Lazurowym<br>Wybrzeżu.<br><strong>Bezpłatnie.</strong></h1>
+      <div class="rule"></div>
+      <p class="sub">Cannes, Nicea, Prowansja. Cały proces zakupu po polsku — od pierwszej rozmowy do podpisania aktu notarialnego.</p>
+      <p class="free">Nasza obsługa jest bezpłatna dla kupującego</p>
+      <div class="ctas">
+        <button class="btn-p">Zapytaj bezpłatnie</button>
+        <button class="btn-s">Jak przebiega współpraca</button>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="./cannes.webp" alt="Cannes">
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WERSJA C — inset + rounded left -->
+<div class="version-label">C — Inset + zaokrąglone rogi <span>margines góra/dół, zaokrąglone lewe rogi</span></div>
+<section class="hero vc">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="badge"><span class="dot"></span>Polskie biuro nieruchomości · Lazurowe Wybrzeże</div>
+      <h1>Nieruchomości<br>na Lazurowym<br>Wybrzeżu.<br><strong>Bezpłatnie.</strong></h1>
+      <div class="rule"></div>
+      <p class="sub">Cannes, Nicea, Prowansja. Cały proces zakupu po polsku — od pierwszej rozmowy do podpisania aktu notarialnego.</p>
+      <p class="free">Nasza obsługa jest bezpłatna dla kupującego</p>
+      <div class="ctas">
+        <button class="btn-p">Zapytaj bezpłatnie</button>
+        <button class="btn-s">Jak przebiega współpraca</button>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="./cannes.webp" alt="Cannes">
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WERSJA D — full inset + shadow -->
+<div class="version-label">D — Pełny inset + shadow <span>obraz unosi się, wszystkie rogi, cień</span></div>
+<section class="hero vd">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="badge"><span class="dot"></span>Polskie biuro nieruchomości · Lazurowe Wybrzeże</div>
+      <h1>Nieruchomości<br>na Lazurowym<br>Wybrzeżu.<br><strong>Bezpłatnie.</strong></h1>
+      <div class="rule"></div>
+      <p class="sub">Cannes, Nicea, Prowansja. Cały proces zakupu po polsku — od pierwszej rozmowy do podpisania aktu notarialnego.</p>
+      <p class="free">Nasza obsługa jest bezpłatna dla kupującego</p>
+      <div class="ctas">
+        <button class="btn-p">Zapytaj bezpłatnie</button>
+        <button class="btn-s">Jak przebiega współpraca</button>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="./cannes.webp" alt="Cannes">
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

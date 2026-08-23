@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/logo-navbar.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/logo-navbar.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przewodnik Kupującego — Nicea | JP Team Nieruchomości</title>
+  <meta name="description" content="Kompletny przewodnik dla Polaków kupujących nieruchomość w Nicei. Dom wakacyjny czy inwestycja — tłumaczymy gdzie szukać, co kupić i ile to naprawdę kosztuje.">
+  <link rel="canonical" href="https://jpteam.pl/przewodnik-kupujacego">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Przewodnik Kupującego — Nicea | JP Team">
+  <meta property="og:description" content="Kompletny przewodnik dla Polaków kupujących nieruchomość w Nicei. Dom wakacyjny czy inwestycja — tłumaczymy jak to zrobić.">
+  <meta property="og:url" content="https://jpteam.pl/przewodnik-kupujacego">
+  <meta property="og:image" content="https://jpteam.pl/nice.webp">
+  <meta property="og:locale" content="pl_PL">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { overflow-x: hidden; }
+
+    :root {
+      --orange: #FF622E;
+      --orange-dark: #e04e1a;
+      --text: #111;
+      --text-mid: #222;
+      --text-light: #555;
+      --border: #e8e8e8;
+      --border-warm: #ede9e3;
+      --bg: #fff;
+      --bg-warm: #f9f6f2;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0;
+      background: rgba(255,255,255,0.97);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1240px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px;
+    }
+    .nav-logo-img { height: 72px; width: auto; display: block; }
+    nav ul { list-style: none; display: flex; gap: 36px; align-items: center; }
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px; letter-spacing: 1.2px;
+      color: var(--text-mid); text-decoration: none; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--text); }
+    nav a.active { color: var(--orange); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: all 0.25s ease; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid var(--border); padding: 16px 24px 24px; flex-direction: column; z-index: 99; }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a { font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 0.5px; color: #1a1a1a; text-decoration: none; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid var(--border); display: block; }
+    .nav-mobile-menu a:last-child { border-bottom: none; }
+    .nav-mobile-menu a:hover { color: var(--orange); }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: var(--bg-warm);
+      padding: 80px 48px 72px;
+      border-bottom: 1px solid var(--border-warm);
+    }
+    .page-hero-inner { max-width: 800px; margin: 0 auto; }
+    .eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 20px; display: block;
+    }
+    .page-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 400; line-height: 1.2;
+      color: var(--text); margin-bottom: 20px;
+    }
+    .page-hero h1 em { font-style: italic; font-weight: 300; }
+    .page-hero p {
+      font-size: 17px; color: var(--text-light);
+      line-height: 1.75; max-width: 620px;
+      font-weight: 300;
+    }
+
+    /* PATHS SECTION */
+    .paths-section {
+      max-width: 1240px; margin: 0 auto;
+      padding: 72px 48px 80px;
+    }
+    .paths-intro {
+      margin-bottom: 48px;
+    }
+    .paths-intro p {
+      font-size: 15px; color: var(--text-light);
+      line-height: 1.7; max-width: 560px;
+    }
+    .paths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* PATH CARD */
+    .path-card {
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+      border: 1px solid var(--border-warm);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 0.25s, border-color 0.25s;
+    }
+    .path-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+      border-color: #d8d4ce;
+    }
+    .path-card-photo {
+      height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    .path-card-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .path-card:hover .path-card-photo img {
+      transform: scale(1.03);
+    }
+    .path-card-photo-overlay {
+      position: absolute; inset: 0;
+      display: flex; align-items: flex-end;
+      padding: 24px;
+    }
+    .path-card-photo-overlay.holiday {
+      background: linear-gradient(to top, rgba(30,50,80,0.72) 0%, rgba(30,50,80,0.1) 60%, transparent 100%);
+    }
+    .path-card-photo-overlay.invest {
+      background: linear-gradient(to top, rgba(60,35,15,0.72) 0%, rgba(60,35,15,0.1) 60%, transparent 100%);
+    }
+    .path-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 6px 14px; border-radius: 20px;
+      backdrop-filter: blur(4px);
+    }
+    .path-card-body {
+      padding: 36px 36px 32px;
+      background: var(--bg);
+      flex: 1; display: flex; flex-direction: column;
+    }
+    .path-card-body h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px; font-weight: 400;
+      line-height: 1.3; color: var(--text);
+      margin-bottom: 14px;
+    }
+    .path-card-body p {
+      font-size: 15px; color: var(--text-light);
+      line-height: 1.7; margin-bottom: 28px;
+      flex: 1;
+    }
+
+    /* WHAT'S INSIDE LIST */
+    .path-contents {
+      list-style: none;
+      margin-bottom: 32px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .path-contents li {
+      font-size: 13px; color: var(--text-light);
+      display: flex; align-items: flex-start; gap: 10px;
+      line-height: 1.5;
+    }
+    .path-contents li::before {
+      content: '';
+      display: block; flex-shrink: 0;
+      width: 16px; height: 1px;
+      background: var(--orange);
+      margin-top: 9px;
+    }
+
+    .path-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-mid);
+      transition: color 0.2s;
+    }
+    .path-cta-arrow {
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+    .path-card:hover .path-cta { color: var(--orange); }
+    .path-card:hover .path-cta-arrow { transform: translateX(4px); }
+
+    /* DIVIDER */
+    .section-divider {
+      border: none; border-top: 1px solid var(--border-warm); margin: 0;
+    }
+
+    /* RELATED PORADNIKI */
+    .related-section {
+      background: var(--bg-warm);
+      padding: 64px 48px 72px;
+    }
+    .related-inner { max-width: 1240px; margin: 0 auto; }
+    .related-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 40px;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .related-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 400; color: var(--text);
+    }
+    .related-header a {
+      font-size: 13px; color: var(--text-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-warm);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .related-header a:hover { color: var(--orange); border-color: var(--orange); }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .related-card {
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+      background: var(--bg);
+      border: 1px solid var(--border-warm);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .related-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      border-color: #d8d4ce;
+    }
+    .related-card-thumb {
+      height: 120px;
+    }
+    .related-card-thumb.blue { background: linear-gradient(135deg, #c8daf5 0%, #9fb8e8 100%); }
+    .related-card-thumb.sand { background: linear-gradient(135deg, #f5e6c8 0%, #e8c99f 100%); }
+    .related-card-thumb.green { background: linear-gradient(135deg, #c8dfc8 0%, #9fc49f 100%); }
+    .related-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .related-card-cat {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 10px;
+    }
+    .related-card-body h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px; font-weight: 400;
+      line-height: 1.4; color: var(--text);
+      margin-bottom: 12px; flex: 1;
+    }
+    .related-card-link {
+      font-size: 13px; font-weight: 600;
+      color: var(--orange); letter-spacing: 0.03em;
+      align-self: flex-start;
+    }
+
+    /* CTA BAND */
+    .cta-band {
+      background: var(--bg);
+      border-top: 1px solid var(--border-warm);
+    }
+    .cta-band-inner {
+      max-width: 1240px; margin: 0 auto;
+      padding: 64px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 48px; flex-wrap: wrap;
+    }
+    .cta-band h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 400; color: var(--text); margin-bottom: 8px;
+    }
+    .cta-band p { font-size: 15px; color: var(--text-light); font-weight: 300; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange); color: #fff;
+      text-decoration: none;
+      padding: 16px 36px; border-radius: 30px;
+      font-family: 'Inter', sans-serif; font-size: 15px;
+      font-weight: 500; letter-spacing: 0.3px;
+      transition: background 0.2s; white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--orange-dark); }
+
+    /* FOOTER */
+    .site-footer { background: var(--bg-warm); border-top: 1px solid var(--border-warm); }
+    .footer-top {
+      max-width: 1240px; margin: 0 auto;
+      padding: 56px 48px 48px;
+      display: grid; grid-template-columns: 200px 1fr 1fr;
+      gap: 48px; align-items: start;
+    }
+    .footer-logo img { height: 80px; width: auto; }
+    .footer-nav-title { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 16px; }
+    .footer-nav ul { list-style: none; }
+    .footer-nav ul li { margin-bottom: 10px; }
+    .footer-nav ul li a { font-size: 14px; color: #444; text-decoration: none; transition: color 0.2s; }
+    .footer-nav ul li a:hover { color: var(--orange); }
+    .footer-address { font-size: 13px; color: #888; line-height: 1.8; }
+    .footer-address strong { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 12px; }
+    .footer-address a { color: #888; text-decoration: none; }
+    .footer-bottom {
+      border-top: 1px solid var(--border-warm); max-width: 1240px;
+      margin: 0 auto; padding: 20px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: #bbb; flex-wrap: wrap; gap: 8px;
+    }
+    .footer-bottom a { color: #bbb; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--orange); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .paths-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-inner { padding: 14px 24px; }
+      .nav-logo-img { height: 48px; }
+      nav ul { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 48px 24px 40px; }
+      .paths-section { padding: 48px 24px 60px; }
+      .path-card-photo { height: 200px; }
+      .path-card-body { padding: 28px 24px 24px; }
+      .related-section { padding: 48px 24px 56px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .cta-band-inner { padding: 48px 24px; flex-direction: column; align-items: flex-start; }
+      .footer-top { grid-template-columns: 1fr; padding: 40px 24px 32px; }
+      .footer-bottom { padding: 16px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/"><img src="./logo-navbar.png" alt="JP Team — Nieruchomości Lazurowe Wybrzeże" class="nav-logo-img"></a>
+    <ul>
+      <li><a href="/przewodnik-kupujacego" class="active">Przewodnik</a></li>
+      <li><a href="/poradniki">Poradniki</a></li>
+      <li><a href="/#kontakt">Kontakt</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="/przewodnik-kupujacego">Przewodnik</a>
+    <a href="/poradniki">Poradniki</a>
+    <a href="/#kontakt" id="mobileKontakt">Kontakt</a>
+  </div>
+</nav>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.getElementById('mobileKontakt').addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+</script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow">Przewodnik kupującego · Nicea</span>
+    <h1>Kupujesz nieruchomość<br>w Nicei?<em> Zacznij tutaj.</em></h1>
+    <p>Wszystko, co musisz wiedzieć przed zakupem — w jednym miejscu, po polsku. Bez ogólników. Napisane przez ludzi, którzy na co dzień przeprowadzają Polaków przez ten rynek.</p>
+  </div>
+</div>
+
+<!-- PATHS -->
+<section class="paths-section">
+  <div class="paths-intro">
+    <p>Kupujący w Nicei dzielą się na dwa typy — z różnymi priorytetami i różnymi pytaniami. Wybierz swój profil.</p>
+  </div>
+
+  <div class="paths-grid">
+
+    <!-- CARD 1: DOM WAKACYJNY -->
+    <a class="path-card" href="/przewodnik-kupujacego/dom-wakacyjny">
+      <div class="path-card-photo">
+        <img src="./nice.webp" alt="Nicea — apartament wakacyjny na Lazurowym Wybrzeżu">
+        <div class="path-card-photo-overlay holiday">
+          <span class="path-tag">Dom wakacyjny</span>
+        </div>
+      </div>
+      <div class="path-card-body">
+        <h2>Twój kąt we Francji</h2>
+        <p>Chcesz mieć własne miejsce na Lazurowym Wybrzeżu — do przyjazdu kiedy chcesz, na swoich zasadach. Może do wynajmu przy okazji, żeby pokryć koszty. Pokażemy Ci co wybrać, gdzie szukać i na co uważać.</p>
+        <ul class="path-contents">
+          <li>Na co zwrócić uwagę przy pierwszym zakupie</li>
+          <li>Budżet a to, co dostaniesz w Nicei</li>
+          <li>Dzielnice — które pasują do którego stylu życia</li>
+          <li>Wynajem krótkoterminowy jako uzupełnienie</li>
+        </ul>
+        <span class="path-cta">
+          Czytaj przewodnik
+          <span class="path-cta-arrow">→</span>
+        </span>
+      </div>
+    </a>
+
+    <!-- CARD 2: INWESTYCJA -->
+    <a class="path-card" href="/przewodnik-kupujacego/inwestycja">
+      <div class="path-card-photo">
+        <img src="./nice.webp" alt="Nicea — inwestycja w nieruchomości na Lazurowym Wybrzeżu" style="object-position: center 30%;">
+        <div class="path-card-photo-overlay invest">
+          <span class="path-tag">Inwestycja</span>
+        </div>
+      </div>
+      <div class="path-card-body">
+        <h2>Rentowność w centrum uwagi</h2>
+        <p>Szukasz nieruchomości, która będzie pracować na siebie przez wynajem — i docelowo zyska na wartości. Tłumaczymy dlaczego Nicea, gdzie kupić przy danym budżecie i ile możesz zarobić.</p>
+        <ul class="path-contents">
+          <li>Dlaczego Nicea — stabilność i perspektywy</li>
+          <li>Tabela: budżet → dzielnica → co dostaniesz</li>
+          <li>Rentowność najmu — realnie, bez ściemy</li>
+          <li>Kalkulator przepływów gotówkowych</li>
+        </ul>
+        <span class="path-cta">
+          Czytaj przewodnik
+          <span class="path-cta-arrow">→</span>
+        </span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- RELATED PORADNIKI -->
+<section class="related-section">
+  <div class="related-inner">
+    <div class="related-header">
+      <h2>Powiązane poradniki</h2>
+      <a href="/poradniki">Wszystkie artykuły →</a>
+    </div>
+    <div class="related-grid">
+
+      <a class="related-card" href="/poradniki/proces-zakupu-nieruchomosci-na-lazurowym-wybrzezu">
+        <div class="related-card-thumb green"></div>
+        <div class="related-card-body">
+          <p class="related-card-cat">Prawo i formalności</p>
+          <h3>Jak wygląda proces zakupu nieruchomości na Lazurowym Wybrzeżu?</h3>
+          <span class="related-card-link">Czytaj →</span>
+        </div>
+      </a>
+
+      <a class="related-card" href="/poradniki/kredyt-hipoteczny-francja-obcokrajowcy">
+        <div class="related-card-thumb blue"></div>
+        <div class="related-card-body">
+          <p class="related-card-cat">Finanse i kredyt</p>
+          <h3>Kredyt hipoteczny we Francji dla obcokrajowców</h3>
+          <span class="related-card-link">Czytaj →</span>
+        </div>
+      </a>
+
+      <a class="related-card" href="/poradniki/nice-nieruchomosci-inwestycje">
+        <div class="related-card-thumb sand"></div>
+        <div class="related-card-body">
+          <p class="related-card-cat">Inwestycje · Nicea</p>
+          <h3>Nieruchomości w Nicei — dzielnice, ceny i potencjał inwestycyjny</h3>
+          <span class="related-card-link">Czytaj →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2>Masz konkretne pytania o Niceę?</h2>
+      <p>Napisz do nas — bezpłatna konsultacja, bez zobowiązań.</p>
+    </div>
+    <a href="/#kontakt" class="btn-primary">Napisz do nas →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="/"><img src="./logo-navbar.png" alt="JP Team"></a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-nav-title">Menu</div>
+      <ul>
+        <li><a href="/">Strona główna</a></li>
+        <li><a href="/przewodnik-kupujacego">Przewodnik kupującego</a></li>
+        <li><a href="/poradniki">Poradniki</a></li>
+        <li><a href="/#kontakt">Kontakt</a></li>
+        <li><a href="/polityka-prywatnosci">Polityka prywatności</a></li>
+      </ul>
+    </div>
+    <div class="footer-address">
+      <strong>Dane firmy</strong>
+      Jens Pedersen SARL<br>
+      29 impasse de la Guifette<br>
+      F-83700 Saint-Raphaël, Francja<br><br>
+      Tel. PL: <a href="tel:+48726806558">+48 726 806 558</a><br>
+      Tel. FR: <a href="tel:+33633766262">+33 633 766 262</a><br>
+      <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a><br><br>
+      Carte professionnelle: CPI83032021000000022
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Jens Pedersen SARL · Nieruchomości Lazurowe Wybrzeże</span>
+    <a href="/polityka-prywatnosci">Polityka prywatności</a>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1a1a1a; color:rgba(255,255,255,0.85); font-family:sans-serif; font-size:13px; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; border-top:1px solid #333;">
+  <span>Ta strona używa plików cookies do analizy ruchu (Google Analytics). Więcej informacji w <a href="/polityka-prywatnosci" style="color:#c8622a; text-decoration:none; border-bottom:1px solid rgba(200,98,42,0.4);">polityce prywatności</a>.</span>
+  <div style="display:flex; gap:12px; flex-shrink:0;">
+    <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookies-ok','1')" style="background:#FF622E; color:#fff; border:none; padding:8px 20px; border-radius:4px; font-size:13px; cursor:pointer; font-weight:600;">Akceptuję</button>
+  </div>
+</div>
+<script>
+  if (localStorage.getItem('cookies-ok')) {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
