@@ -171,20 +171,6 @@
 
   /* Mapa */
   .offer-map { width: 100%; height: 380px; border: 1px solid var(--border); border-radius: 10px; margin: 16px 0 8px; }
-  .map-placeholder {
-    width: 100%; height: 380px; border: 1px solid var(--border); border-radius: 10px;
-    margin: 16px 0 8px; background: var(--bg-warm);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 14px; text-align: center; padding: 24px;
-  }
-  .map-placeholder .map-icon { font-size: 34px; line-height: 1; }
-  .map-placeholder p { font-size: 13px; color: var(--text-light); max-width: 380px; margin: 0; line-height: 1.6; }
-  .map-load-btn {
-    background: var(--orange); color: #fff; border: none; border-radius: 30px;
-    padding: 12px 28px; font-size: 14px; font-family: 'Inter', sans-serif;
-    font-weight: 500; cursor: pointer; transition: background 0.2s;
-  }
-  .map-load-btn:hover { background: var(--orange-dark); }
 
   /* SIDEBAR — sticky karta kontaktu */
   .offer-aside { position: sticky; top: 100px; }
@@ -510,24 +496,8 @@
         <li>Lotnisko Nicea <span>ok. 1 h autem</span></li>
         <li>Saint-Tropez <span>ok. 1 h autem</span></li>
       </ul>
-      <div class="map-placeholder" id="map-placeholder">
-        <div class="map-icon">📍</div>
-        <p>Mapa lokalizacji (Fréjus, centrum) ładowana jest z Google Maps. Po kliknięciu przeglądarka prześle Twoje dane (m.in. adres IP) do Google — zgodnie z <a href="/polityka-prywatnosci" style="color:var(--orange)">polityką prywatności</a>.</p>
-        <button class="map-load-btn" onclick="loadMap()">Pokaż mapę</button>
-      </div>
-      <script>
-        function loadMap(){
-          var ph = document.getElementById('map-placeholder');
-          var iframe = document.createElement('iframe');
-          iframe.className = 'offer-map';
-          iframe.src = 'https://www.google.com/maps?q=Fr%C3%A9jus,+France&output=embed';
-          iframe.loading = 'lazy';
-          iframe.referrerPolicy = 'no-referrer-when-downgrade';
-          iframe.title = 'Mapa lokalizacji';
-          iframe.style.margin = '0';
-          ph.replaceWith(iframe);
-        }
-      </script>
+      <iframe class="offer-map" src="https://www.openstreetmap.org/export/embed.html?bbox=6.7070%2C43.4131%2C6.7670%2C43.4531&layer=mapnik&marker=43.4331%2C6.7370" loading="lazy" title="Mapa lokalizacji — Fréjus"></iframe>
+      <p style="font-size:12px; color:var(--text-light); margin:-4px 0 8px;">Mapa: OpenStreetMap · <a href="https://www.google.com/maps?q=Fr%C3%A9jus,+France" target="_blank" rel="noopener" style="color:var(--orange)">Otwórz w Google Maps ↗</a></p>
 
     </div>
 
