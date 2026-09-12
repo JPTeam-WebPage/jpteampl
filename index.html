@@ -95,12 +95,6 @@
     background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0.45) 18%, transparent 46%);
     pointer-events: none;
   }
-  .hero-cat {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px; letter-spacing: 2.5px;
-    text-transform: uppercase; color: var(--text-light);
-    margin-bottom: 18px; display: block;
-  }
   .opt-h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(38px, 5vw, 62px); font-weight: 300;
@@ -534,13 +528,11 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <span class="hero-cat rv">Nieruchomości · Lazurowe Wybrzeże</span>
-      <h1 class="opt-h1 rv">Znajdziemy Twój dom na <strong>Lazurowym Wybrzeżu</strong></h1>
+      <h1 class="opt-h1 rv">Znajdziemy dla Państwa mieszkanie lub dom na <strong>Lazurowym Wybrzeżu</strong></h1>
       <div class="opt-rule rv" aria-hidden="true"></div>
       <p class="opt-sub rv">Przeszukamy dla Państwa cały rynek, również oferty niepublikowane w portalach, i bezpiecznie przeprowadzimy przez cały zakup po polsku.</p>
       <div class="hero-ctas rv">
-        <a href="/oferty" class="btn-primary">Zobacz aktualne oferty</a>
-        <a href="#kontakt" class="btn-secondary">Bezpłatna konsultacja</a>
+        <a href="#kontakt" class="btn-primary">Bezpłatna konsultacja</a>
       </div>
     </div>
     <div class="hero-img">
@@ -553,7 +545,7 @@
 <section class="home-offers">
   <div class="section-inner">
     <h2 class="rv">Mieszkania i domy aktualnie na sprzedaż</h2>
-    <p class="ho-sub rv">Poniżej oferty wyłącznościowe naszej agencji. Jeśli szukają Państwo czegoś innego, prosimy o wiadomość, dobierzemy oferty i pomożemy wybrać tę właściwą.</p>
+    <p class="ho-sub rv">Poniżej oferty wyłącznościowe naszej agencji. Jeśli szukają Państwo czegoś innego, prosimy o wiadomość, dobierzemy oferty i pomożemy wybrać tę właściwą. Nasze wynagrodzenie pokrywa agencja sprzedającego.</p>
     <div class="offers-grid" data-stagger>
       <a class="offer-card rv" href="/oferty/apartament-nicea-cimiez">
         <div class="offer-card-img">
@@ -594,6 +586,7 @@
     </div>
     <div class="ho-more rv">
       <a href="/oferty" class="btn-primary">Zobacz wszystkie oferty</a>
+      <a href="#kontakt" class="btn-secondary">Bezpłatna konsultacja</a>
     </div>
   </div>
 </section>
@@ -611,7 +604,7 @@
       </svg>
       <span class="pm-score">5,0</span>
       <span class="pm-stars" aria-hidden="true">★★★★★</span>
-      <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" rel="noopener">Zobacz wszystkie opinie w Google →</a>
+      <a href="https://www.google.com/maps/place/Pedersen+Jens/@43.4311582,6.78003,670m/data=!4m8!3m7!1s0x12ce978f481ac417:0xe62de45365a60c7f!8m2!3d43.4311582!4d6.78003!9m1!1b1!16s%2Fg%2F1td8vdm9" target="_blank" rel="noopener">Zobacz wszystkie opinie w Google</a>
     </div>
     <div class="proof-carousel-wrap rv">
       <div class="testimonials" id="testimonials-carousel" tabindex="0" aria-label="Opinie klientów — przewijaj strzałkami">
@@ -738,7 +731,7 @@
           <div class="step-num" aria-hidden="true">01</div>
           <div class="step-content">
             <h4>Rozmowa wstępna</h4>
-            <span class="step-time">Bez zobowiązań · telefon lub wiadomość</span>
+            <span class="step-time">Telefon lub wiadomość</span>
             <p>Poznajemy Państwa oczekiwania, budżet i preferowane lokalizacje. Przygotowujemy wstępną selekcję ofert dopasowaną do Państwa potrzeb.</p>
           </div>
         </div>
@@ -791,21 +784,21 @@
         <div class="loc-img cannes"><span class="loc-name">Cannes</span></div>
         <div class="loc-body">
           <p>Apartamenty przy Croisette, wille w spokojniejszych dzielnicach oraz nieruchomości pod wynajem sezonowy.</p>
-          <span class="loc-more">Czytaj przewodnik →</span>
+          <span class="loc-more">Czytaj przewodnik</span>
         </div>
       </a>
       <a href="/poradniki/nice-nieruchomosci-inwestycje" class="loc-card rv">
         <div class="loc-img nice"><span class="loc-name">Nicea</span></div>
         <div class="loc-body">
           <p>Największe miasto regionu, z lotniskiem i dobrą komunikacją. Świetne miejsce dla inwestycji pod wynajem i drugiego domu.</p>
-          <span class="loc-more">Czytaj przewodnik →</span>
+          <span class="loc-more">Czytaj przewodnik</span>
         </div>
       </a>
       <a href="/oferty" class="loc-card rv">
         <div class="loc-img provence"><span class="loc-name">Prowansja</span></div>
         <div class="loc-body">
           <p>Domy i mieszkania w mniejszych miastach regionu: spokój, bliskość morza i rozsądne ceny z dala od turystów.</p>
-          <span class="loc-more">Zapytaj o Prowansję →</span>
+          <span class="loc-more">Zapytaj o Prowansję</span>
         </div>
       </a>
     </div>
@@ -819,7 +812,7 @@
     <div class="faq-list">
       <details class="faq-item">
         <summary class="faq-q">Nie jestem jeszcze zdecydowany na zakup. Czy warto się kontaktować?</summary>
-        <p class="faq-a">Tak, i to jest dobry moment. Wiele osób zaczyna od ogólnej rozmowy o rynku i dopiero na tej podstawie podejmuje decyzję. Opiszemy realia i pomożemy ocenić, czy Lazurowe Wybrzeże pasuje do Państwa sytuacji. <a href="#kontakt">Napisz do nas →</a></p>
+        <p class="faq-a">Tak, i to jest dobry moment. Wiele osób zaczyna od ogólnej rozmowy o rynku i dopiero na tej podstawie podejmuje decyzję. Opiszemy realia i pomożemy ocenić, czy Lazurowe Wybrzeże pasuje do Państwa sytuacji. <a href="#kontakt">Napisz do nas</a></p>
       </details>
       <details class="faq-item">
         <summary class="faq-q">Czy jako Polak mogę kupić nieruchomość we Francji bez ograniczeń?</summary>
@@ -860,7 +853,7 @@
       <h2 class="rv">Zapraszamy do rozmowy</h2>
       <p class="rv">Proszę opisać czego Państwo szukają. Na tej podstawie przygotujemy odpowiednie oferty lub odpowiemy na pytania dotyczące inwestycji w tym rejonie Francji.</p>
       <ul class="contact-points rv">
-        <li>Bez zobowiązań</li>
+        <li>Wynagrodzenie pokrywa agencja sprzedającego</li>
         <li>Odpowiedź w ciągu 24 godzin</li>
         <li>Obsługa w całości po polsku</li>
       </ul>
