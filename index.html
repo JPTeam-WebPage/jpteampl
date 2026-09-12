@@ -27,8 +27,8 @@
     --bg-warm: #faf9f7;
 
     /* SKALA TYPOGRAFICZNA */
-    --fs-h1: clamp(38px, 5vw, 62px);
-    --fs-h2: clamp(28px, 3vw, 40px);
+    --fs-h1: clamp(28px, 3.4vw, 48px);
+    --fs-h2: clamp(26px, 2.6vw, 36px);
     --fs-h3: 20px;
     --fs-body: 16px;
     --fs-small: 13px;   /* uppercase labelki, meta, stopka */
@@ -86,7 +86,7 @@
     min-height: 600px;
   }
   .hero-text {
-    padding: 60px 48px 60px max(48px, calc(50vw - 620px));
+    padding: 60px 48px 60px max(48px, calc(50vw - 660px));
     display: flex; flex-direction: column; justify-content: center;
     align-items: flex-start;
   }
@@ -105,9 +105,14 @@
   .opt-h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: var(--fs-h1); font-weight: 300;
-    line-height: 1.08; color: var(--text);
-    margin-bottom: 26px; letter-spacing: -1px; max-width: 600px;
+    line-height: 1.15; color: var(--text);
+    margin-bottom: 26px; letter-spacing: -0.5px; max-width: 640px;
     text-wrap: balance;
+  }
+  /* lamanie H1 sterowane recznie na desktopie, balance na telefonie */
+  .opt-h1 br { display: none; }
+  @media (min-width: 961px) {
+    .opt-h1 br { display: inline; }
   }
   .opt-h1 strong { font-weight: 600; }
   .opt-rule { width: 48px; height: 2px; background: var(--orange); margin-bottom: 24px; }
@@ -532,7 +537,7 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <h1 class="opt-h1 rv">Znajdziemy dla Państwa mieszkanie lub dom na <strong>Lazurowym Wybrzeżu</strong></h1>
+      <h1 class="opt-h1 rv">Znajdziemy dla Państwa <br>mieszkanie lub dom <br>na <strong>Lazurowym Wybrzeżu</strong></h1>
       <div class="opt-rule rv" aria-hidden="true"></div>
       <p class="opt-sub rv">Przeszukamy dla Państwa cały rynek, również oferty niepublikowane w portalach, i bezpiecznie przeprowadzimy przez cały zakup po polsku.</p>
       <div class="hero-ctas rv">
