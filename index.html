@@ -256,7 +256,7 @@
   .about-inner {
     max-width: 1240px; margin: 0 auto; padding: 0 48px;
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 96px; align-items: center;
+    gap: 96px; align-items: start;
   }
   .about-text h2 {
     font-family: 'Montserrat', sans-serif;
@@ -264,33 +264,33 @@
     font-weight: 500; line-height: 1.25;
     margin-bottom: 12px; color: var(--text);
   }
-  .about-name { font-family: 'Montserrat', sans-serif; font-size: var(--fs-h3); font-weight: 600; color: var(--text); margin-bottom: 22px; }
+  .about-text p.about-name { font-family: 'Montserrat', sans-serif; font-size: var(--fs-h3); font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 22px; }
   .about-name em { font-style: normal; font-weight: 400; font-size: var(--fs-small); color: var(--text-light); }
   .about-text p { font-size: var(--fs-body); line-height: 1.8; color: var(--text-mid); margin-bottom: 18px; font-weight: 400; }
   .about-text p strong { font-weight: 600; color: var(--text); }
   .license-badge {
-    display: flex; align-items: flex-start; justify-content: space-between; gap: 14px;
-    margin-top: 28px; padding: 18px 22px;
+    margin-top: 28px; padding: 20px 22px;
     background: var(--bg-warm);
     border: 1px solid var(--border);
     border-radius: 8px;
   }
-  .license-badge .lb-check {
-    width: 22px; height: 22px; border-radius: 50%;
-    background: var(--orange-btn); color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: var(--fs-small); font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  .license-badge .lb-title { font-size: var(--fs-body); font-weight: 600; color: var(--text); }
+  .license-badge .lb-nums { font-size: var(--fs-body); color: var(--text-mid); margin-top: 8px; line-height: 1.6; font-variant-numeric: tabular-nums; }
+  .license-badge .lb-note { font-size: var(--fs-body); color: var(--text-light); margin-top: 12px; line-height: 1.5; }
+  .about-img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 8px; display: block; max-width: 100%; outline: 1px solid rgba(0,0,0,0.1); }
+  .about-img-col { align-self: start; }
+  .yt-card {
+    display: flex; align-items: center; gap: 20px; margin-top: 20px;
+    padding: 16px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--bg); text-decoration: none; color: inherit;
+    transition: border-color 0.2s, background 0.2s;
   }
-  .license-badge .lb-title { font-size: var(--fs-small); font-weight: 600; color: var(--text); letter-spacing: 0.2px; }
-  .license-badge .lb-nums { font-size: var(--fs-small); color: var(--text-mid); margin-top: 4px; line-height: 1.6; }
-  .license-badge .lb-note { font-size: var(--fs-small); color: var(--text-light); margin-top: 4px; line-height: 1.5; }
-  .about-img { width: 100%; height: 400px; object-fit: cover; object-position: center 20%; border-radius: 8px; display: block; max-width: 100%; outline: 1px solid rgba(0,0,0,0.1); }
-  .about-img-col { align-self: flex-start; padding-top: 80px; }
-  .yt-card { display: block; position: relative; margin-top: 20px; border-radius: 8px; overflow: hidden; text-decoration: none; }
-  .yt-card img { width: 100%; height: 150px; object-fit: cover; display: block; filter: brightness(0.65); transition: filter 0.2s; }
-  .yt-card:hover img { filter: brightness(0.8); }
-  .yt-card .yt-play { position: absolute; top: 50%; left: 28px; transform: translateY(-50%); width: 48px; height: 34px; flex-shrink: 0; }
-  .yt-card .yt-caption { position: absolute; top: 50%; left: 92px; right: 20px; transform: translateY(-50%); color: #fff; font-size: var(--fs-body); font-weight: 500; line-height: 1.45; }
+  .yt-card:hover { border-color: #c9c9c9; background: var(--bg-warm); }
+  .yt-thumb { position: relative; flex: 0 0 180px; border-radius: 6px; overflow: hidden; }
+  .yt-thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+  .yt-card .yt-play { position: absolute; inset: 0; margin: auto; width: 44px; height: 31px; }
+  .yt-card .yt-caption { font-size: var(--fs-body); font-weight: 500; line-height: 1.45; color: var(--text); }
+  .yt-card .yt-meta { display: block; font-size: var(--fs-body); font-weight: 400; color: var(--text-light); margin-top: 4px; }
 
   /* WYRÓŻNIKI — ikony zamiast numerów */
   .differentiators { padding: 96px 0; background: var(--bg-warm); }
@@ -481,8 +481,9 @@
     .testimonials .testimonial { flex: 0 0 88%; }
     .about { padding: 64px 0; }
     .about-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; width: 100%; }
-    .about-img-col { padding-top: 0; }
-    .about-img { height: 360px; object-position: center 15%; }
+    .about-img { aspect-ratio: 3 / 2; }
+    .yt-card { flex-direction: column; align-items: stretch; gap: 14px; }
+    .yt-thumb { flex: none; }
     .contact-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
     .contact-left { order: 1; }
     .contact-form { order: 2; grid-column: 1; grid-row: auto; }
@@ -672,17 +673,18 @@
           <div class="lb-nums">Carte professionnelle CPI 83032032021000000022<br>SIRET 437 566 961 00011</div>
           <div class="lb-note">Licencja zawodowa wymagana francuskim prawem do pośrednictwa w obrocie nieruchomościami.</div>
         </div>
-        <span class="lb-check" aria-hidden="true">✓</span>
       </div>
     </div>
     <div class="about-img-col rv">
       <img src="./slawomir-michal-skomial-jpteam-v2.webp" alt="Sławomir i Michał Skomiał, JP Team, nieruchomości na Lazurowym Wybrzeżu" class="about-img" loading="lazy" width="1200" height="800">
       <a href="https://www.youtube.com/watch?v=NyVpvO0b0-Q&t=42s" target="_blank" rel="noopener" class="yt-card" onclick="plausible('Click YouTube')">
-        <img src="https://img.youtube.com/vi/NyVpvO0b0-Q/hqdefault.jpg" alt="Wywiad — rynek nieruchomości na Lazurowym Wybrzeżu" loading="lazy">
-        <svg class="yt-play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/>
-        </svg>
-        <span class="yt-caption">Obejrzyj wywiad o rynku Lazurowego Wybrzeża</span>
+        <span class="yt-thumb">
+          <img src="https://img.youtube.com/vi/NyVpvO0b0-Q/hqdefault.jpg" alt="" loading="lazy">
+          <svg class="yt-play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/>
+          </svg>
+        </span>
+        <span class="yt-caption">Wywiad o rynku Lazurowego Wybrzeża<span class="yt-meta">YouTube, otwiera się w nowej karcie</span></span>
       </a>
     </div>
   </div>
