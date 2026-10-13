@@ -245,26 +245,45 @@
   .car-btn:hover { border-color: var(--orange-btn); }
   .car-btn svg { display: block; }
 
+  /* LICZBY */
+  .stats { padding: 32px 0 0; background: var(--bg); }
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+  .stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(40px, 4.4vw, 56px); font-weight: 300;
+    line-height: 1; letter-spacing: -1px; color: var(--text-mid);
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  .stat-label { margin-top: 14px; font-size: 16px; line-height: 1.5; color: var(--text-light); }
+
   /* KIM JESTEŚMY */
   .about { padding: 96px 0; background: var(--bg); }
   .about-inner {
     max-width: 1240px; margin: 0 auto; padding: 0 48px;
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 96px; align-items: center;
+    gap: 20px 96px; align-items: stretch;
   }
-  .about-text h2 {
+  .about-text { grid-column: 1; grid-row: 1; }
+  .license-badge { grid-column: 1; grid-row: 2; }
+  .about-img { grid-column: 2; grid-row: 1; }
+  .yt-card { grid-column: 2; grid-row: 2; }
+  .about-title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(28px, 3vw, 40px);
-    font-weight: 500; line-height: 1.25;
-    margin-bottom: 12px; color: var(--text);
+    font-weight: 500; line-height: 1.1;
+    margin-bottom: 32px; color: var(--text);
+    text-box: trim-start cap alphabetic;
   }
-  .about-name { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 22px; }
-  .about-name em { font-style: normal; font-weight: 400; font-size: 15px; color: var(--text-light); }
-  .about-text p { font-size: 16px; line-height: 1.8; color: var(--text-mid); margin-bottom: 18px; font-weight: 400; }
+  .about-title span {
+    display: block; margin-top: 12px;
+    font-size: 18px; font-weight: 400; line-height: 1.5;
+    color: var(--text-light); text-wrap: balance;
+  }
+  .about-text p { font-size: 16px; line-height: 1.8; color: var(--text-mid); margin-bottom: 18px; font-weight: 400; text-wrap: pretty; }
   .about-text p strong { font-weight: 600; color: var(--text); }
   .license-badge {
     display: flex; align-items: flex-start; justify-content: space-between; gap: 14px;
-    margin-top: 28px; padding: 18px 22px;
+    padding: 24px 28px;
     background: var(--bg-warm);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -275,16 +294,15 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
   }
-  .license-badge .lb-title { font-size: 13px; font-weight: 600; color: var(--text); letter-spacing: 0.2px; }
-  .license-badge .lb-nums { font-size: 13px; color: var(--text-mid); margin-top: 4px; line-height: 1.6; }
-  .license-badge .lb-note { font-size: 12px; color: var(--text-light); margin-top: 4px; line-height: 1.5; }
-  .about-img { width: 100%; height: 400px; object-fit: cover; object-position: center 20%; border-radius: 8px; display: block; max-width: 100%; outline: 1px solid rgba(0,0,0,0.1); }
-  .about-img-col { align-self: flex-start; padding-top: 80px; }
-  .yt-card { display: block; position: relative; margin-top: 20px; border-radius: 8px; overflow: hidden; text-decoration: none; }
-  .yt-card img { width: 100%; height: 150px; object-fit: cover; display: block; filter: brightness(0.65); transition: filter 0.2s; }
+  .license-badge .lb-title { font-size: 18px; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .license-badge .lb-nums { font-size: 16px; color: var(--text-mid); margin-top: 6px; line-height: 1.6; }
+  .license-badge .lb-note { font-size: 16px; color: var(--text-light); margin-top: 6px; line-height: 1.5; }
+  .about-img { width: 100%; height: 100%; min-height: 400px; object-fit: cover; object-position: center 20%; border-radius: 8px; display: block; max-width: 100%; outline: 1px solid rgba(0,0,0,0.1); }
+  .yt-card { display: block; position: relative; min-height: 150px; border-radius: 8px; overflow: hidden; text-decoration: none; }
+  .yt-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.65); transition: filter 0.2s; }
   .yt-card:hover img { filter: brightness(0.8); }
   .yt-card .yt-play { position: absolute; top: 50%; left: 28px; transform: translateY(-50%); width: 48px; height: 34px; flex-shrink: 0; }
-  .yt-card .yt-caption { position: absolute; top: 50%; left: 92px; right: 20px; transform: translateY(-50%); color: #fff; font-size: 14px; font-weight: 500; line-height: 1.45; }
+  .yt-card .yt-caption { position: absolute; top: 50%; left: 92px; right: 20px; transform: translateY(-50%); color: #fff; font-size: 16px; font-weight: 500; line-height: 1.45; }
 
   /* WYRÓŻNIKI — ikony zamiast numerów */
   .differentiators { padding: 96px 0; background: var(--bg-warm); }
@@ -305,14 +323,13 @@
 
   /* PROCES */
   .process { padding: 96px 0; background: var(--bg); }
-  .process h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3vw, 40px); font-weight: 500; margin-bottom: 12px; }
+  .process h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 3vw, 40px); font-weight: 500; margin-bottom: 12px; text-wrap: balance; }
   .process-intro { font-size: 16px; color: var(--text-mid); max-width: 520px; margin-bottom: 64px; font-weight: 400; line-height: 1.7; }
   .process-layout { display: grid; grid-template-columns: 3fr 2fr; gap: 80px; align-items: start; }
   .process-step { display: grid; grid-template-columns: 48px 1fr; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--border); }
   .process-step:first-child { padding-top: 0; }
   .step-num { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 400; color: var(--text-light); line-height: 1; padding-top: 2px; }
-  .step-content h4 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 500; margin-bottom: 4px; color: var(--text); }
-  .step-time { display: block; font-size: 12px; color: var(--text-light); letter-spacing: 0.3px; margin-bottom: 10px; }
+  .step-content h4 { font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 500; margin-bottom: 10px; color: var(--text); }
   .step-content p { font-size: 14px; color: var(--text-mid); line-height: 1.7; font-weight: 400; }
   .process-aside { background: var(--bg-warm); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; position: sticky; top: 100px; }
   .pa-photo { height: 180px; }
@@ -352,9 +369,6 @@
   .contact-points li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--text-mid); }
   .contact-points li::before { content: '✓'; color: var(--orange-btn); font-weight: 700; font-size: 14px; }
   .contact-phone-block { margin-top: 0; grid-column: 1; }
-  .contact-phone-block h3 { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400; color: var(--text); margin-bottom: 12px; }
-  .contact-phone-block p { font-size: 14px; color: var(--text-light); margin-bottom: 6px; line-height: 1.6; }
-  .contact-phone-block a { color: var(--orange-btn); text-decoration: none; }
   .contact-form { border: 1px solid var(--border); border-radius: 8px; padding: 36px; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
   .contact-form label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; margin-top: 20px; }
   .contact-form label:first-of-type { margin-top: 0; }
@@ -404,15 +418,18 @@
 
   /* FOOTER */
   .site-footer { background: #faf9f7; border-top: 1px solid #e8e4dc; font-family: 'Inter', sans-serif; }
-  .footer-top { max-width: 1240px; margin: 0 auto; padding: 56px 48px 48px; display: grid; grid-template-columns: 200px 1fr 1fr; gap: 48px; align-items: start; }
+  .footer-top { max-width: 1240px; margin: 0 auto; padding: 56px 48px 48px; display: grid; grid-template-columns: 200px 1fr 1fr 1fr; gap: 48px; align-items: start; }
   .footer-logo img { height: 80px; width: auto; }
-  .footer-nav-title { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--footer-faint); margin-bottom: 16px; }
+  .footer-nav-title { line-height: 1.5; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--footer-faint); margin-bottom: 16px; }
   .footer-nav ul { list-style: none; padding: 0; margin: 0; }
   .footer-nav ul li { margin-bottom: 10px; }
   .footer-nav ul li a { font-size: 14px; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
   .footer-nav ul li a:hover { color: var(--orange-btn); }
+  .footer-contact { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .footer-contact a { font-size: 16px; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--orange-btn); }
   .footer-address { font-size: 13px; color: var(--footer-mid); line-height: 1.8; }
-  .footer-address strong { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--footer-faint); margin-bottom: 12px; }
+  .footer-address strong { display: block; line-height: 1.5; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--footer-faint); margin-bottom: 12px; }
   .footer-address a { color: var(--footer-mid); text-decoration: none; }
   .footer-address a:hover { color: var(--orange-btn); }
   .footer-bottom { border-top: 1px solid #e8e4dc; max-width: 1240px; margin: 0 auto; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--footer-faint); flex-wrap: wrap; gap: 8px; }
@@ -475,10 +492,14 @@
     .testimonials::-webkit-scrollbar { display: none; }
     .testimonials .testimonial { flex: 0 0 88%; }
     .about { padding: 64px 0; }
-    .about-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; width: 100%; }
-    .about-text h2 { font-size: 26px; }
-    .about-img-col { padding-top: 0; }
-    .about-img { height: 360px; object-position: center 15%; }
+    .about-inner { grid-template-columns: 1fr; gap: 24px; padding: 0 24px; width: 100%; }
+    .about-text, .license-badge, .about-img, .yt-card { grid-column: 1; grid-row: auto; }
+    .about-title { font-size: 32px; }
+    .stats { padding: 8px 0 0; }
+    .stats-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .stat-num { font-size: 44px; }
+    .stat-label { margin-top: 8px; }
+    .about-img { height: 360px; min-height: 0; object-position: center 15%; }
     .contact-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
     .contact-left { order: 1; }
     .contact-form { order: 2; grid-column: 1; grid-row: auto; }
@@ -539,8 +560,7 @@
       <div class="opt-rule rv" aria-hidden="true"></div>
       <p class="opt-sub rv">Przeszukamy dla Państwa cały rynek, również oferty niepublikowane w portalach, i bezpiecznie przeprowadzimy przez cały zakup po polsku.</p>
       <div class="hero-ctas rv">
-        <a href="/oferty" class="btn-primary">Zobacz aktualne oferty</a>
-        <a href="#kontakt" class="btn-secondary">Bezpłatna konsultacja</a>
+        <a href="#kontakt" class="btn-primary">Bezpłatna konsultacja</a>
       </div>
     </div>
     <div class="hero-img">
@@ -549,52 +569,42 @@
   </div>
 </section>
 
-<!-- AKTUALNE OFERTY -->
-<section class="home-offers">
+<!-- LICZBY -->
+<section class="stats" aria-label="JP Team w liczbach">
   <div class="section-inner">
-    <h2 class="rv">Mieszkania i domy aktualnie na sprzedaż</h2>
-    <p class="ho-sub rv">Poniżej oferty wyłącznościowe naszej agencji. Jeśli szukają Państwo czegoś innego, prosimy o wiadomość, dobierzemy oferty i pomożemy wybrać tę właściwą.</p>
-    <div class="offers-grid" data-stagger>
-      <a class="offer-card rv" href="/oferty/apartament-nicea-cimiez">
-        <div class="offer-card-img">
-          <img src="/oferty/apartament-nicea-cimiez/zdjecie-1.jpg" alt="Apartament z tarasem w Nicei, Cimiez" loading="lazy">
-          <span class="offer-card-pill">Nicea</span>
-        </div>
-        <div class="offer-card-body">
-          <p class="oc-loc">Cimiez · Nicea</p>
-          <h3>Trzypokojowy apartament z tarasem 11 m²</h3>
-          <p class="oc-meta">75 m² · 3 pokoje · renowacja 2025</p>
-          <p class="oc-price">465 000 €</p>
-        </div>
-      </a>
-      <a class="offer-card rv" href="/oferty/apartament-sainte-maxime-widok-morze">
-        <div class="offer-card-img">
-          <img src="/oferty/apartament-sainte-maxime-widok-morze/zdjecie-1.jpg" alt="Apartament z widokiem na morze, Sainte-Maxime" loading="lazy">
-          <span class="offer-card-pill">Sainte-Maxime</span>
-        </div>
-        <div class="offer-card-body">
-          <p class="oc-loc">Centrum · Sainte-Maxime</p>
-          <h3>Apartament z widokiem na zatokę Saint-Tropez</h3>
-          <p class="oc-meta">63 m² · taras 15 m² · ostatnie piętro</p>
-          <p class="oc-price">469 000 €</p>
-        </div>
-      </a>
-      <a class="offer-card rv" href="/oferty/apartament-frejus">
-        <div class="offer-card-img">
-          <img src="/oferty/apartament-frejus/zdjecie-1.jpg" alt="Apartament z tarasem dachowym, Fréjus" loading="lazy">
-          <span class="offer-card-pill">Fréjus</span>
-        </div>
-        <div class="offer-card-body">
-          <p class="oc-loc">Centrum · Fréjus</p>
-          <h3>Czteropokojowy apartament z tarasem dachowym 28 m²</h3>
-          <p class="oc-meta">85 m² · 4 pokoje · garaż</p>
-          <p class="oc-price">425 000 €</p>
-        </div>
-      </a>
+    <div class="stats-grid" data-stagger>
+      <div class="stat rv"><p class="stat-num">30+</p><p class="stat-label">lat na Lazurowym Wybrzeżu</p></div>
+      <div class="stat rv"><p class="stat-num">200+</p><p class="stat-label">sfinalizowanych transakcji</p></div>
+      <div class="stat rv"><p class="stat-num">100 mln €</p><p class="stat-label">łącznej wartości nieruchomości</p></div>
     </div>
-    <div class="ho-more rv">
-      <a href="/oferty" class="btn-primary">Zobacz wszystkie oferty</a>
+  </div>
+</section>
+
+<!-- KIM JESTEŚMY -->
+<section class="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2 class="about-title rv">Sławomir Skomiał<span>Polski agent nieruchomości na Lazurowym Wybrzeżu</span></h2>
+      <p class="rv">Od 2018 roku prowadzę wraz z synem polskojęzyczny oddział agencji JP Team, duńskiej firmy obecnej na Lazurowym Wybrzeżu <strong>od&nbsp;1993&nbsp;roku</strong>.</p>
+      <p class="rv">Przez te lata zbudowaliśmy <strong>sieć relacji z lokalnymi agencjami, notariuszami i doradcami</strong>. Dzięki temu docieramy do ofert, których samodzielne poszukiwania nie znajdują.</p>
+      <p class="rv">Specjalizuję się w obsłudze polskich klientów poszukujących nieruchomości w Cannes, Nicei, Antibes i okolicach.</p>
     </div>
+    <div class="license-badge rv">
+        <div>
+          <div class="lb-title">Licencjonowane biuro nieruchomości</div>
+          <div class="lb-nums">Carte professionnelle CPI 83032032021000000022<br>SIRET 437 566 961 00011</div>
+          <div class="lb-note">Licencja zawodowa wymagana francuskim prawem do pośrednictwa w obrocie nieruchomościami.</div>
+        </div>
+        <span class="lb-check" aria-hidden="true">✓</span>
+    </div>
+    <img src="./slawomir-skomial-jpteam.webp" alt="Sławomir Skomiał — JP Team, nieruchomości Lazurowe Wybrzeże" class="about-img rv" loading="lazy" width="900" height="675">
+      <a href="https://www.youtube.com/watch?v=NyVpvO0b0-Q&t=42s" target="_blank" rel="noopener" class="yt-card rv" onclick="plausible('Click YouTube')">
+        <img src="https://img.youtube.com/vi/NyVpvO0b0-Q/hqdefault.jpg" alt="Wywiad — rynek nieruchomości na Lazurowym Wybrzeżu" loading="lazy">
+        <svg class="yt-play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/>
+        </svg>
+        <span class="yt-caption">Obejrzyj wywiad o rynku Lazurowego Wybrzeża</span>
+      </a>
   </div>
 </section>
 
@@ -655,33 +665,51 @@
   </div>
 </section>
 
-<!-- KIM JESTEŚMY -->
-<section class="about">
-  <div class="about-inner">
-    <div class="about-text">
-      <h2 class="rv">Polski agent nieruchomości na Lazurowym Wybrzeżu</h2>
-      <p class="about-name rv">Sławomir Skomiał</p>
-      <p class="rv">Od 2018 roku prowadzę wraz z synem polskojęzyczny oddział agencji JP Team — duńskiej firmy obecnej na Lazurowym Wybrzeżu <strong>od 1993 roku</strong>.</p>
-      <p class="rv">Przez te lata zbudowaliśmy <strong>sieć relacji z lokalnymi agencjami, notariuszami i doradcami</strong>. Dzięki temu docieramy do ofert, których samodzielne poszukiwania nie znajdują.</p>
-      <p class="rv">Specjalizuję się w obsłudze polskich klientów poszukujących nieruchomości w Cannes, Nicei, Antibes i okolicach.</p>
-      <div class="license-badge rv">
-        <div>
-          <div class="lb-title">Licencjonowane biuro nieruchomości</div>
-          <div class="lb-nums">Carte professionnelle CPI 83032032021000000022<br>SIRET 437 566 961 00011</div>
-          <div class="lb-note">Licencja zawodowa wymagana francuskim prawem do pośrednictwa w obrocie nieruchomościami.</div>
+<!-- AKTUALNE OFERTY -->
+<section class="home-offers">
+  <div class="section-inner">
+    <h2 class="rv">Mieszkania i domy aktualnie na sprzedaż</h2>
+    <p class="ho-sub rv">Poniżej oferty wyłącznościowe naszej agencji. Jeśli szukają Państwo czegoś innego, prosimy o wiadomość, dobierzemy oferty i pomożemy wybrać tę właściwą.</p>
+    <div class="offers-grid" data-stagger>
+      <a class="offer-card rv" href="/oferty/apartament-nicea-cimiez">
+        <div class="offer-card-img">
+          <img src="/oferty/apartament-nicea-cimiez/zdjecie-1.jpg" alt="Apartament z tarasem w Nicei, Cimiez" loading="lazy">
+          <span class="offer-card-pill">Nicea</span>
         </div>
-        <span class="lb-check" aria-hidden="true">✓</span>
-      </div>
-    </div>
-    <div class="about-img-col rv">
-      <img src="./slawomir-skomial-jpteam.webp" alt="Sławomir Skomiał — JP Team, nieruchomości Lazurowe Wybrzeże" class="about-img" loading="lazy" width="900" height="675">
-      <a href="https://www.youtube.com/watch?v=NyVpvO0b0-Q&t=42s" target="_blank" rel="noopener" class="yt-card" onclick="plausible('Click YouTube')">
-        <img src="https://img.youtube.com/vi/NyVpvO0b0-Q/hqdefault.jpg" alt="Wywiad — rynek nieruchomości na Lazurowym Wybrzeżu" loading="lazy">
-        <svg class="yt-play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/>
-        </svg>
-        <span class="yt-caption">Obejrzyj wywiad o rynku Lazurowego Wybrzeża</span>
+        <div class="offer-card-body">
+          <p class="oc-loc">Cimiez · Nicea</p>
+          <h3>Trzypokojowy apartament z tarasem 11 m²</h3>
+          <p class="oc-meta">75 m² · 3 pokoje · renowacja 2025</p>
+          <p class="oc-price">465 000 €</p>
+        </div>
       </a>
+      <a class="offer-card rv" href="/oferty/apartament-sainte-maxime-widok-morze">
+        <div class="offer-card-img">
+          <img src="/oferty/apartament-sainte-maxime-widok-morze/zdjecie-1.jpg" alt="Apartament z widokiem na morze, Sainte-Maxime" loading="lazy">
+          <span class="offer-card-pill">Sainte-Maxime</span>
+        </div>
+        <div class="offer-card-body">
+          <p class="oc-loc">Centrum · Sainte-Maxime</p>
+          <h3>Apartament z widokiem na zatokę Saint-Tropez</h3>
+          <p class="oc-meta">63 m² · taras 15 m² · ostatnie piętro</p>
+          <p class="oc-price">469 000 €</p>
+        </div>
+      </a>
+      <a class="offer-card rv" href="/oferty/apartament-frejus">
+        <div class="offer-card-img">
+          <img src="/oferty/apartament-frejus/zdjecie-1.jpg" alt="Apartament z tarasem dachowym, Fréjus" loading="lazy">
+          <span class="offer-card-pill">Fréjus</span>
+        </div>
+        <div class="offer-card-body">
+          <p class="oc-loc">Centrum · Fréjus</p>
+          <h3>Czteropokojowy apartament z tarasem dachowym 28 m²</h3>
+          <p class="oc-meta">85 m² · 4 pokoje · garaż</p>
+          <p class="oc-price">425 000 €</p>
+        </div>
+      </a>
+    </div>
+    <div class="ho-more rv">
+      <a href="/oferty" class="btn-primary">Zobacz wszystkie oferty</a>
     </div>
   </div>
 </section>
@@ -730,7 +758,7 @@
 <!-- PROCES: zdjęcie w sticky aside -->
 <section class="process" id="wspolpraca">
   <div class="section-inner">
-    <h2 class="rv">Jak wygląda zakup nieruchomości na Lazurowym Wybrzeżu z JP Team</h2>
+    <h2 class="rv">Jak wygląda zakup nieruchomości na Lazurowym Wybrzeżu z&nbsp;JP&nbsp;Team</h2>
     <p class="process-intro rv">Od pierwszej rozmowy do przekazania kluczy cały proces trwa zazwyczaj około 3 miesięcy.</p>
     <div class="process-layout">
       <div class="process-steps" data-stagger>
@@ -738,7 +766,6 @@
           <div class="step-num" aria-hidden="true">01</div>
           <div class="step-content">
             <h4>Rozmowa wstępna</h4>
-            <span class="step-time">Bez zobowiązań · telefon lub wiadomość</span>
             <p>Poznajemy Państwa oczekiwania, budżet i preferowane lokalizacje. Przygotowujemy wstępną selekcję ofert dopasowaną do Państwa potrzeb.</p>
           </div>
         </div>
@@ -746,7 +773,6 @@
           <div class="step-num" aria-hidden="true">02</div>
           <div class="step-content">
             <h4>Selekcja i weryfikacja ofert</h4>
-            <span class="step-time">Zwykle 1–4 tygodnie</span>
             <p>Przeszukujemy rynek i kontaktujemy się z agencjami w Państwa imieniu. Przedstawiamy oferty spełniające kryteria, wraz z podstawowymi informacjami o stanie prawnym i opłatach.</p>
           </div>
         </div>
@@ -754,7 +780,6 @@
           <div class="step-num" aria-hidden="true">03</div>
           <div class="step-content">
             <h4>Wizytacja we Francji</h4>
-            <span class="step-time">Kilka dni na miejscu</span>
             <p>Organizujemy harmonogram wizyt tak, aby pobyt był jak najlepiej wykorzystany. Towarzyszymy podczas oglądania, pomagamy zadawać właściwe pytania i wybrać ofertę.</p>
           </div>
         </div>
@@ -762,7 +787,6 @@
           <div class="step-num" aria-hidden="true">04</div>
           <div class="step-content">
             <h4>Negocjacje i finalizacja zakupu</h4>
-            <span class="step-time">Ok. 2–3 miesiące do aktu notarialnego</span>
             <p>Uczestniczymy w negocjacjach cenowych i pilnujemy zapisów umowy. Proces notarialny prowadzi polskojęzyczny notariusz. Jesteśmy do dyspozycji również po podpisaniu dokumentów.</p>
           </div>
         </div>
@@ -885,10 +909,6 @@
       </form>
     </div>
     <div class="contact-phone-block">
-      <h3>Wolą Państwo zadzwonić?</h3>
-      <p>Tel. Polska: <a href="tel:+48726806558">+48 726 806 558</a></p>
-      <p>Tel. Francja: <a href="tel:+33633766262">+33 633 766 262</a></p>
-      <p><a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a></p>
       <a href="https://wa.me/48726806558?text=Dzie%C5%84%20dobry%2C%20pisz%C4%99%20w%20sprawie%20nieruchomo%C5%9Bci%20na%20Lazurowym%20Wybrze%C5%BCu." target="_blank" rel="noopener" class="btn-whatsapp-outline" onclick="plausible('Click WhatsApp')">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -905,6 +925,21 @@
     <div class="footer-logo">
       <a href="/"><img src="./logo-navbar.png" alt="JP Team"></a>
     </div>
+    <div class="footer-contact">
+      <div class="footer-nav-title">Kontakt</div>
+      <a href="tel:+48726806558">+48 726 806 558</a>
+      <a href="tel:+33633766262">+33 633 766 262</a>
+      <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a>
+    </div>
+    <div class="footer-address">
+      <strong>Dane firmy</strong>
+      Jens Pedersen SARL<br>
+      29 impasse de la Guifette<br>
+      F-83700 Saint-Raphaël, Francja<br><br>
+      SIREN: 437 566 961<br>
+      VAT: FR89 437566961<br>
+      Carte professionnelle: CPI 83032032021000000022
+    </div>
     <div class="footer-nav">
       <div class="footer-nav-title">Menu</div>
       <ul>
@@ -914,18 +949,6 @@
         <li><a href="#kontakt">Kontakt</a></li>
         <li><a href="/polityka-prywatnosci">Polityka prywatności</a></li>
       </ul>
-    </div>
-    <div class="footer-address">
-      <strong>Dane firmy</strong>
-      Jens Pedersen SARL<br>
-      29 impasse de la Guifette<br>
-      F-83700 Saint-Raphaël, Francja<br><br>
-      Tel. PL: <a href="tel:+48726806558">+48 726 806 558</a><br>
-      Tel. FR: <a href="tel:+33633766262">+33 633 766 262</a><br>
-      <a href="mailto:slawek@jpteam.pl">slawek@jpteam.pl</a><br><br>
-      SIREN: 437 566 961<br>
-      VAT: FR89 437566961<br>
-      Carte professionnelle: CPI 83032032021000000022
     </div>
   </div>
   <div class="footer-bottom">
