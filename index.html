@@ -247,11 +247,11 @@
 
   /* LICZBY */
   .stats { padding: 32px 0 0; background: var(--bg); }
-  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+  .stats-grid { display: flex; flex-wrap: wrap; gap: 32px 88px; }
   .stat-num {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(40px, 4.4vw, 56px); font-weight: 300;
-    line-height: 1; letter-spacing: -1px; color: var(--text-mid);
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-size: clamp(36px, 3.4vw, 48px); font-weight: 200;
+    line-height: 1; letter-spacing: -0.5px; color: var(--text-mid);
     font-variant-numeric: tabular-nums; white-space: nowrap;
   }
   .stat-label { margin-top: 14px; font-size: 16px; line-height: 1.5; color: var(--text-light); }
@@ -496,8 +496,8 @@
     .about-text, .license-badge, .about-img, .yt-card { grid-column: 1; grid-row: auto; }
     .about-title { font-size: 32px; }
     .stats { padding: 8px 0 0; }
-    .stats-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
-    .stat-num { font-size: 44px; }
+    .stats-grid { flex-direction: column; align-items: center; gap: 28px; text-align: center; }
+    .stat-num { font-size: 40px; }
     .stat-label { margin-top: 8px; }
     .about-img { height: 360px; min-height: 0; object-position: center 15%; }
     .contact-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
@@ -575,7 +575,7 @@
     <div class="stats-grid" data-stagger>
       <div class="stat rv"><p class="stat-num">30+</p><p class="stat-label">lat na Lazurowym Wybrzeżu</p></div>
       <div class="stat rv"><p class="stat-num">200+</p><p class="stat-label">sfinalizowanych transakcji</p></div>
-      <div class="stat rv"><p class="stat-num">100 mln €</p><p class="stat-label">łącznej wartości nieruchomości</p></div>
+      <div class="stat rv"><p class="stat-num">100 mln+</p><p class="stat-label">euro łącznej wartości transakcji</p></div>
     </div>
   </div>
 </section>
